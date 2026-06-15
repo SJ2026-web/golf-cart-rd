@@ -273,10 +273,24 @@ const CustomerForm = memo(function CustomerForm({onSubmit, totalPrice, model, cf
     const ws=WINDSHIELDS.find(w=>w.id===cfg.windshield);
     const opts=cfg.optionals.map(id=>OPTIONAL_ITEMS.find(x=>x.id===id)).filter(Boolean);
 
+    const isAssistenza = !!cfg._assistenza;
     const templateParams = {
       to_email: "golfcartrd@gmail.com",
-      subject: `Richiesta Preventivo Golf Cart - ${nome} ${cognome}`,
-      message: `
+      subject: isAssistenza ? `Richiesta Assistenza - ${nome} ${cognome}` : `Richiesta Preventivo Golf Cart - ${nome} ${cognome}`,
+      message: isAssistenza ? `
+NUOVA RICHIESTA ASSISTENZA / RIPARAZIONI
+=====================================
+DATI CLIENTE:
+Nome: ${nome} ${cognome}
+Telefono: ${telefono}
+Email: ${email}
+Indirizzo: ${indirizzo}
+Luogo: ${consegna}
+Note: ${note}
+
+SERVIZI RICHIESTI:
+${cfg._assistenza}
+      ` : `
 NUOVA RICHIESTA PREVENTIVO GOLF CART
 =====================================
 DATI CLIENTE:
@@ -1002,74 +1016,132 @@ export default function App() {
     return null;
   }
 
-  function Service() {
+  function AssistenzaPage() {
+    const [manutenzione, setManutenzione] = useState(false);
+    const [riparazioni, setRiparazioni] = useState([]);
+    const [altroText, setAltroText] = useState("");
+    const [showForm, setShowForm] = useState(false);
+
+    const toggleRip = (name) => setRiparazioni(p => p.includes(name) ? p.filter(x=>x!==name) : [...p, name]);
+
+    const riparazioniItems = [
+      {icon:"🔋",it:"Batterie",es:"Baterías",en:"Batteries"},
+      {icon:"⚙️",it:"Motore Elettrico",es:"Motor Eléctrico",en:"Electric Motor"},
+      {icon:"🛑",it:"Freni",es:"Frenos",en:"Brakes"},
+      {icon:"🔄",it:"Sterzo",es:"Dirección",en:"Steering"},
+      {icon:"🛞",it:"Pneumatici",es:"Neumáticos",en:"Tires"},
+      {icon:"🎨",it:"Carrozzeria",es:"Carrocería",en:"Body"},
+    ];
+
+    const hasSelection = manutenzione || riparazioni.length > 0;
+
+    const buildRiepilogo = () => {
+      const lines = [];
+      if(manutenzione) lines.push("- Manutenzione Programmata");
+      riparazioni.forEach(r => lines.push("- Riparazione: " + r + (r==="Altro" && altroText ? " — " + altroText : "")));
+      return lines.join("\n");
+    };
+
+    if(showForm) return (
+      <div style={S.sec}>
+        <CustomerForm
+          onSubmit={(action)=>{ if(action==="back") setShowForm(false); else setPage("home"); }}
+          totalPrice={0}
+          model={null}
+          cfg={{
+            model:"—", seats:"—",
+            bodyColor:{code:"—",it:"—"},
+            battery:"—", motor:"—",
+            seatType:"—", seatColor:{it:"—"},
+            tire:"—", steering:"—", windshield:"—",
+            optionals:[],
+            _assistenza: buildRiepilogo(),
+          }}
+          BATTERIES={[]} MOTORS={[]} SEAT_TYPES={[]} TIRES={[]} STEERING={[]} WINDSHIELDS={[]} OPTIONAL_ITEMS={[]}
+        />
+      </div>
+    );
+
     return (
       <div style={S.sec}>
-        <div style={{color:C.gold,fontSize:10,letterSpacing:4,fontWeight:700,marginBottom:14,textTransform:"uppercase"}}>Assistenza / Asistencia / Service</div>
-        <h2 style={S.title}>Manutenzione Programmata</h2>
-        <div style={{color:C.muted,fontSize:13,marginBottom:4}}>Mantenimiento Programado</div>
-        <div style={{color:"#666",fontSize:12,marginBottom:24}}>Scheduled Maintenance</div>
+        <div style={{color:C.gold,fontSize:10,letterSpacing:4,fontWeight:700,marginBottom:14,textTransform:"uppercase"}}>Assistenza & Riparazioni</div>
+        <h2 style={S.title}>Prenota un Servizio</h2>
+        <div style={{color:C.muted,fontSize:13,marginBottom:4}}>Reservar un Servicio / Book a Service</div>
         <div style={S.goldLine}/>
-        <div style={S.grid2}>
-          {[
-            {icon:"🔋",it:"Controllo Batterie",es:"Control de Baterías",en:"Battery Check"},
-            {icon:"🛑",it:"Freni",es:"Frenos",en:"Brakes"},
-            {icon:"🛞",it:"Pneumatici",es:"Neumáticos",en:"Tires"},
-            {icon:"⚡",it:"Impianto Elettrico",es:"Sistema Eléctrico",en:"Electrical System"},
-            {icon:"🧹",it:"Pulizia Professionale",es:"Limpieza Profesional",en:"Professional Cleaning"},
-          ].map(i=>(
-            <div key={i.it} style={{...S.card(false),display:"flex",alignItems:"center",gap:14}}>
-              <span style={{fontSize:24}}>{i.icon}</span>
-              <div>
-                <div style={{color:C.white,fontWeight:600,fontSize:14}}>{i.it}</div>
-                <div style={{color:"#777",fontSize:11}}>{i.es} / {i.en}</div>
-              </div>
+        <div style={{color:C.muted,fontSize:13,marginBottom:8}}>Seleziona uno o più servizi / Select one or more services</div>
+
+        <div style={{marginBottom:28}}>
+          <div style={{color:C.gold,fontSize:11,fontWeight:700,marginBottom:12,letterSpacing:2}}>MANUTENZIONE / MAINTENANCE</div>
+          <div
+            style={{...S.card(manutenzione),display:"flex",alignItems:"center",gap:14,cursor:"pointer"}}
+            onClick={()=>setManutenzione(p=>!p)}>
+            <span style={{fontSize:24}}>🔧</span>
+            <div style={{flex:1}}>
+              <div style={{color:manutenzione?C.gold:C.white,fontWeight:600,fontSize:14}}>Manutenzione Programmata</div>
+              <div style={{color:"#777",fontSize:11}}>Mantenimiento Programado / Scheduled Maintenance</div>
+              <div style={{color:"#555",fontSize:11,marginTop:2}}>Il manutentore eseguirà tutti i controlli necessari</div>
             </div>
-          ))}
+            <div style={{width:20,height:20,borderRadius:5,background:manutenzione?C.gold:"transparent",border:manutenzione?"1.5px solid #C9A84C":"1.5px solid #444",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+              {manutenzione&&<span style={{color:"#000",fontSize:13,fontWeight:900}}>✓</span>}
+            </div>
+          </div>
         </div>
-        <div style={{marginTop:36,textAlign:"center"}}>
-          <button style={S.goldBtn} onClick={()=>setPage("contact")}>
-            📅 Prenota / Reservar / Book
-          </button>
+
+        <div>
+          <div style={{color:C.gold,fontSize:11,fontWeight:700,marginBottom:12,letterSpacing:2}}>RIPARAZIONI / REPAIRS</div>
+          <div style={S.grid2}>
+            {riparazioniItems.map(i=>{
+              const sel = riparazioni.includes(i.it);
+              return (
+                <div key={i.it} style={{...S.card(sel),display:"flex",alignItems:"center",gap:14,cursor:"pointer"}} onClick={()=>toggleRip(i.it)}>
+                  <span style={{fontSize:24}}>{i.icon}</span>
+                  <div style={{flex:1}}>
+                    <div style={{color:sel?C.gold:C.white,fontWeight:600,fontSize:14}}>{i.it}</div>
+                    <div style={{color:"#777",fontSize:11}}>{i.es} / {i.en}</div>
+                  </div>
+                  <div style={{width:20,height:20,borderRadius:5,background:sel?C.gold:"transparent",border:sel?"1.5px solid #C9A84C":"1.5px solid #444",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+                    {sel&&<span style={{color:"#000",fontSize:13,fontWeight:900}}>✓</span>}
+                  </div>
+                </div>
+              );
+            })}
+            <div style={{...S.card(riparazioni.includes("Altro")),display:"flex",flexDirection:"column",gap:10,cursor:"pointer"}} onClick={()=>toggleRip("Altro")}>
+              <div style={{display:"flex",alignItems:"center",gap:14}}>
+                <span style={{fontSize:24}}>✏️</span>
+                <div style={{flex:1}}>
+                  <div style={{color:riparazioni.includes("Altro")?C.gold:C.white,fontWeight:600,fontSize:14}}>Altro / Otro / Other</div>
+                  <div style={{color:"#777",fontSize:11}}>Descrivi il problema</div>
+                </div>
+                <div style={{width:20,height:20,borderRadius:5,background:riparazioni.includes("Altro")?C.gold:"transparent",border:riparazioni.includes("Altro")?"1.5px solid #C9A84C":"1.5px solid #444",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+                  {riparazioni.includes("Altro")&&<span style={{color:"#000",fontSize:13,fontWeight:900}}>✓</span>}
+                </div>
+              </div>
+              {riparazioni.includes("Altro")&&(
+                <textarea
+                  value={altroText}
+                  onChange={e=>{e.stopPropagation();setAltroText(e.target.value);}}
+                  onClick={e=>e.stopPropagation()}
+                  placeholder="Descrivi il problema / Describe the issue..."
+                  style={{width:"100%",background:"#111",border:"1px solid #444",borderRadius:8,padding:"10px 12px",color:C.white,fontSize:13,outline:"none",resize:"vertical",minHeight:70,boxSizing:"border-box",fontFamily:"inherit"}}
+                />
+              )}
+            </div>
+          </div>
         </div>
+
+        {hasSelection&&(
+          <div style={{marginTop:28,textAlign:"center"}}>
+            <button style={S.goldBtn} onClick={()=>setShowForm(true)}>
+              📅 Prenota / Book →
+            </button>
+          </div>
+        )}
       </div>
     );
   }
 
-  function Maint() {
-    return (
-      <div style={S.sec}>
-        <div style={{color:C.gold,fontSize:10,letterSpacing:4,fontWeight:700,marginBottom:14,textTransform:"uppercase"}}>Riparazioni / Reparaciones / Repairs</div>
-        <h2 style={S.title}>Servizio Riparazioni</h2>
-        <div style={{color:C.muted,fontSize:13,marginBottom:4}}>Servicio de Reparaciones</div>
-        <div style={{color:"#666",fontSize:12,marginBottom:24}}>Repair Service</div>
-        <div style={S.goldLine}/>
-        <div style={S.grid2}>
-          {[
-            {icon:"🔋",it:"Batterie",es:"Baterías",en:"Batteries"},
-            {icon:"⚙️",it:"Motore Elettrico",es:"Motor Eléctrico",en:"Electric Motor"},
-            {icon:"🛑",it:"Freni",es:"Frenos",en:"Brakes"},
-            {icon:"🔄",it:"Sterzo",es:"Dirección",en:"Steering"},
-            {icon:"🛞",it:"Pneumatici",es:"Neumáticos",en:"Tires"},
-            {icon:"🎨",it:"Carrozzeria",es:"Carrocería",en:"Body"},
-          ].map(i=>(
-            <div key={i.it} style={{...S.card(false),display:"flex",alignItems:"center",gap:14}}>
-              <span style={{fontSize:24}}>{i.icon}</span>
-              <div>
-                <div style={{color:C.white,fontWeight:600,fontSize:14}}>{i.it}</div>
-                <div style={{color:"#777",fontSize:11}}>{i.es} / {i.en}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div style={{marginTop:36,textAlign:"center"}}>
-          <button style={S.goldBtn} onClick={()=>setPage("contact")}>
-            🔧 Richiedi Intervento / Solicitar / Request
-          </button>
-        </div>
-      </div>
-    );
-  }
+  function Service() { return <AssistenzaPage/>; }
+  function Maint() { return <AssistenzaPage/>; }
 
   function Contact() {
     return (
