@@ -1507,13 +1507,13 @@ export default function App() {
             <div style={{color:C.gold,fontWeight:800,fontSize:18,marginBottom:6}}>{t("Configure your own","Configura el tuyo","Configura il tuo")}</div>
             <div style={{color:C.muted,fontSize:12,lineHeight:1.6,marginBottom:16}}>{t("Build your golf cart from scratch, choosing every detail yourself.","Crea tu golf cart desde cero, eligiendo cada detalle tú mismo.","Costruisci il tuo golf cart da zero, scegliendo ogni dettaglio.")}</div>
             <button style={{...S.goldBtn,marginTop:18,width:"100%"}}>{t("Start configuring","Empezar","Inizia")} →</button>
-          
+          </div>
           <div style={{...S.card(false),textAlign:"center",padding:32}} onClick={()=>setPage("readyModels")}>
             <div style={{fontSize:44,marginBottom:14}}>🛺</div>
             <div style={{color:C.gold,fontWeight:800,fontSize:18,marginBottom:6}}>{t("Pre-configured models","Modelos preconfigurados","Modelli già configurati")}</div>
             <div style={{color:C.muted,fontSize:12,lineHeight:1.6,marginBottom:16}}>{t("Browse ready-to-buy golf carts already set up and available now.","Ver golf carts listos para comprar.","Vedi golf cart già configurati pronti all'acquisto.")}</div>
             <button style={{...S.goldBtn,marginTop:18,width:"100%"}}>{t("Browse models","Ver modelos","Vedi modelli")} →</button>
-          </div></div>
+          </div>
         </div>
         <div style={{marginTop:28,textAlign:"center"}}>
           <button style={S.outBtn} onClick={()=>setPage(prevPage)}>← {t("Back","Atrás","Indietro")}</button>
@@ -1531,11 +1531,11 @@ export default function App() {
 
         <div style={{background:C.card,border:"1px solid #222",borderRadius:18,padding:40,textAlign:"center"}}>
           <div style={{fontSize:44,marginBottom:14}}>🏌️</div>
-          <div style={{color:C.white,fontWeight:700,fontSize:16,marginBottom:8}}>Coming soon</div>
-          <div style={{color:C.muted,fontSize:13,marginBottom:2}}>Próximamente</div>
-          <div style={{color:"#777",fontSize:13,marginBottom:20}}>Prossimamente</div>
+          <div style={{color:C.white,fontWeight:700,fontSize:16,marginBottom:12}}>{t("Coming soon","Próximamente","Prossimamente")}</div>
           <div style={{color:C.muted,fontSize:12,lineHeight:1.7,maxWidth:480,margin:"0 auto"}}>
-            We're preparing a selection of ready-to-buy, pre-configured golf carts. Check back soon, or configure your own custom golf cart right now.
+            {t("We're preparing a selection of ready-to-buy golf carts. Check back soon, or configure your own right now.",
+               "Estamos preparando una selección de golf carts listos para comprar. Vuelve pronto, o configura el tuyo ahora.",
+               "Stiamo preparando una selezione di golf cart pronti all'acquisto. Torna presto, o configura il tuo adesso.")}
           </div>
         </div>
 
