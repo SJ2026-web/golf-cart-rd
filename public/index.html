@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -8,9 +7,28 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Design your own electric golf cart online. Solar panel included, local delivery & support in Bayahibe, Dominican Republic."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <!-- Preload foto Home + modelli (viste dalla quasi totalità dei visitatori) -->
+    <link rel="preload" as="image" href="/images/foto-home-page.png" />
+    <link rel="preload" as="image" href="/images/foto-modello-a1.jpg" />
+    <link rel="preload" as="image" href="/images/foto-modello-b1.jpg" />
+    <link rel="preload" as="image" href="/images/foto-modello-c1.jpg" />
+    <link rel="preload" as="image" href="/images/foto-modello-d1.jpg" />
+
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:title" content="Custom Electric Golf Carts | TAAAC Solutions" />
+    <meta property="og:description" content="Design your own electric golf cart online. Solar panel included, local delivery & support in Bayahibe, Dominican Republic." />
+    <meta property="og:image" content="https://www.taaac.solutions/og-image.jpg" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Custom Electric Golf Carts | TAAAC Solutions" />
+    <meta name="twitter:description" content="Design your own electric golf cart online. Solar panel included, local delivery & support in Bayahibe, Dominican Republic." />
+    <meta name="twitter:image" content="https://www.taaac.solutions/og-image.jpg" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -20,13 +38,36 @@
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
-
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Golf Cart DR</title>
+    <title>Custom Electric Golf Carts | TAAAC Solutions Bayahibe</title>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBTXVGB4BB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-CBTXVGB4BB');
+    </script>
+    <style>
+      @keyframes stepFadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes robotWave {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-25deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(-25deg); }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -34,10 +75,8 @@
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
-
       You can add webfonts, meta tags, or analytics to this file.
       The build step will place the bundled scripts into the <body> tag.
-
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
