@@ -6,7 +6,7 @@ const IMGS = {"modA": "/images/foto-modello-a1.jpg", "modB": "/images/foto-model
 const C = {
   bg:"#0a0a0a",surface:"#111111",card:"#161616",border:"#222222",
   gold:"#C9A84C",goldLight:"#E2C07A",goldDim:"#7a6230",
-  green:"#3a7d44",white:"#F5F0E8",muted:"#888888",red:"#E53935",
+  green:"#3a7d44",white:"#F5F0E8",muted:"#a8a8a8",red:"#E53935",
 };
 
 // ── TRILINGUAL LABEL COMPONENT ────────────────────────────────
@@ -2520,8 +2520,8 @@ export default function App() {
           <span style={{color:C.white,fontWeight:800,fontSize:11}}>🚗 {cartDisplayName}</span>
           <span style={{color:"#555"}}>|</span>
           <span style={{color:C.gold,fontWeight:700,fontSize:10}}>{t("Model","Modelo","Modello")} {cfg.model}</span>
-          {cfg.seats&&<span style={{color:C.muted,fontSize:10}}>· {cfg.seats}</span>}
-          {cfg.bodyColor&&<span style={{display:"flex",alignItems:"center",gap:4}}><span style={{width:9,height:9,borderRadius:"50%",background:cfg.bodyColor.hex,border:"1px solid #555",display:"inline-block"}}/><span style={{color:C.muted,fontSize:9}}>{cfg.bodyColor.code}</span></span>}
+          {cfg.seats&&<span style={{color:C.muted,fontSize:11}}>· {cfg.seats}</span>}
+          {cfg.bodyColor&&<span style={{display:"flex",alignItems:"center",gap:4}}><span style={{width:9,height:9,borderRadius:"50%",background:cfg.bodyColor.hex,border:"1px solid #555",display:"inline-block"}}/><span style={{color:C.muted,fontSize:10}}>{cfg.bodyColor.code}</span></span>}
         </div>
         <div style={{textAlign:"right"}}>
           <div style={{color:"#888",fontSize:8,fontWeight:600,letterSpacing:1,textTransform:"uppercase"}}>{t("Total","Total","Totale")}</div>
@@ -2656,7 +2656,7 @@ export default function App() {
             <span style={{fontSize:17}}>{t("Starting from","Desde","A partire da")} </span>
             <span style={{fontSize:28}}>$8,990 USD</span>
           </div>
-          <div style={{color:C.muted,fontSize:12.5,fontWeight:500,letterSpacing:0.2,marginBottom:24}}>
+          <div style={{color:C.muted,fontSize:13.5,fontWeight:500,letterSpacing:0.2,marginBottom:24}}>
             {t6("Configure it your way. Clear pricing from the start.","Configúralo a tu manera. Precio claro desde el principio.","Configuralo a modo tuo. Prezzo chiaro fin dall'inizio.","Configurez-le à votre façon. Un prix clair dès le départ.","Skonfiguruj go po swojemu. Jasna cena od samego początku.","Настройте его по-своему. Понятная цена с самого начала.")}
           </div>
           <div style={{display:"flex",flexWrap:"wrap",gap:16,justifyContent:"center",width:"100%",maxWidth:700,marginBottom:20}}>
@@ -2727,11 +2727,11 @@ export default function App() {
               <div key={i} style={{background:C.card,border:"1px solid #222",borderRadius:14,padding:"16px 12px"}}>
                 <div style={{fontSize:24,marginBottom:6}}>{card.icon}</div>
                 <div style={{color:C.gold,fontWeight:700,fontSize:13,marginBottom:2}}>{card.title}</div>
-                <div style={{color:C.muted,fontSize:11.5}}>{card.sub}</div>
+                <div style={{color:C.muted,fontSize:12.5}}>{card.sub}</div>
               </div>
             ))}
           </div>
-          <div style={{color:C.muted,fontSize:12.5,fontStyle:"italic",marginTop:24,maxWidth:560,marginLeft:"auto",marginRight:"auto"}}>
+          <div style={{color:C.muted,fontSize:13.5,fontStyle:"italic",marginTop:24,maxWidth:560,marginLeft:"auto",marginRight:"auto"}}>
             {t6("The starting price already includes the essentials. Customize only what you want to change or add.","El precio inicial ya incluye lo esencial. Personaliza solo lo que quieras cambiar o añadir.","Il prezzo iniziale include già l'essenziale. Personalizza solo ciò che vuoi cambiare o aggiungere.","Le prix de départ inclut déjà l'essentiel. Personnalisez uniquement ce que vous souhaitez modifier ou ajouter.","Cena początkowa obejmuje już najważniejsze elementy. Personalizuj tylko to, co chcesz zmienić lub dodać.","Начальная цена уже включает всё необходимое. Настраивайте только то, что хотите изменить или добавить.")}
           </div>
         </div>
@@ -2793,7 +2793,7 @@ export default function App() {
                     <Img k={m.imgKey} style={{maxHeight:"100%",maxWidth:"100%",objectFit:"contain"}}/>
                   </div>
                   <div style={{color:C.gold,fontWeight:700,fontSize:13}}>{t(m.name.split(" / ")[0], m.name.split(" / ")[1], m.name.split(" / ")[2])}</div>
-                  <div style={{color:C.muted,fontSize:11,marginTop:2}}>{t("from","desde","da")} ${m.price.toLocaleString()}</div>
+                  <div style={{color:C.muted,fontSize:12,marginTop:2}}>{t("from","desde","da")} ${m.price.toLocaleString()}</div>
                 </div>
               ))}
             </div>
@@ -2860,7 +2860,7 @@ export default function App() {
               {t6("Configure your Golf Cart","Configura tu Golf Cart","Configura il tuo Golf Cart","Configurez votre Golf Cart","Skonfiguruj swój Golf Cart","Настройте свой Golf Cart")}
             </button>
             <div style={{marginTop:14}}>
-              <span onClick={()=>setPage("readyModels")} style={{color:C.muted,fontSize:12.5,textDecoration:"underline",cursor:"pointer"}}>
+              <span onClick={()=>setPage("readyModels")} style={{color:C.muted,fontSize:13.5,textDecoration:"underline",cursor:"pointer"}}>
                 {t6("Prefer one already configured? View available models.","¿Prefieres uno ya configurado? Ver modelos disponibles.","Preferisci un modello già configurato? Vedi i modelli disponibili.","Vous préférez un modèle déjà configuré ? Voir les modèles disponibles.","Wolisz gotową konfigurację? Zobacz dostępne modele.","Предпочитаете готовую конфигурацию? Посмотрите доступные модели.")}
               </span>
             </div>
@@ -2888,7 +2888,7 @@ export default function App() {
                 <div key={i} style={{background:"#0000002a",border:"1px solid #C9A84C33",borderRadius:14,padding:"20px 14px"}}>
                   <div style={{fontSize:26,marginBottom:8}}>{pillar.icon}</div>
                   <div style={{color:C.gold,fontWeight:700,fontSize:14,marginBottom:6}}>{pillar.title}</div>
-                  <div style={{color:C.muted,fontSize:12.5,lineHeight:1.5}}>{pillar.desc}</div>
+                  <div style={{color:C.muted,fontSize:13.5,lineHeight:1.5}}>{pillar.desc}</div>
                 </div>
               ))}
             </div>
@@ -3094,7 +3094,7 @@ export default function App() {
                 <Img k={m.imgKey} style={{width:"100%",height:"100%",objectFit:"contain",objectPosition:"center"}}/>
               </div>
               <div style={{color:cfg.model===m.id?C.gold:C.white,fontWeight:700,fontSize:15,marginBottom:8}}>{t("Model","Modelo","Modello")} {m.id}</div>
-              <div style={{color:C.muted,fontSize:12,marginBottom:4,lineHeight:1.5}}>{t(m.desc.en, m.desc.es, m.desc.it)}</div>
+              <div style={{color:C.muted,fontSize:13,marginBottom:4,lineHeight:1.5}}>{t(m.desc.en, m.desc.es, m.desc.it)}</div>
             </div>
           ))}
         </div>
@@ -3130,7 +3130,7 @@ export default function App() {
           {cfg.bodyColor&&<div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
             <div style={{width:16,height:16,borderRadius:"50%",background:cfg.bodyColor.hex,border:"2px solid #555"}}/>
             <span style={{color:C.gold,fontWeight:600,fontSize:12}}>{cfg.bodyColor.code}</span>
-            <span style={{color:C.muted,fontSize:11}}>— {t(cfg.bodyColor.en, cfg.bodyColor.es, cfg.bodyColor.it)}</span>
+            <span style={{color:C.muted,fontSize:12}}>— {t(cfg.bodyColor.en, cfg.bodyColor.es, cfg.bodyColor.it)}</span>
           </div>}
           {cfg.bodyColor&&<div style={{color:C.goldLight,fontSize:22,fontWeight:700,marginBottom:16}}>
             {tName(
@@ -3185,7 +3185,7 @@ export default function App() {
                 <div style={{color:cfg.seats===s.id?C.gold:C.white,fontWeight:700,fontSize:14}}>{t(s.en, s.es, s.it)}</div>
                 {extra>0 && s.id!=="other" && <span style={{color:C.goldLight,fontWeight:800,fontSize:13}}>+${extra.toLocaleString()}</span>}
               </div>
-              <div style={{color:C.muted,fontSize:11,marginTop:4}}>{t(s.descEn, s.descEs, s.descIt)}</div>
+              <div style={{color:C.muted,fontSize:12,marginTop:4}}>{t(s.descEn, s.descEs, s.descIt)}</div>
             </div>
           );})}
         </div>
@@ -3224,7 +3224,7 @@ export default function App() {
                   {cfg.seatType==="standard" && <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>✓ {t("Selected","Seleccionado","Selezionato")}</span>}
                   {cfg.seatType!=="standard" && <span style={{background:"#22222244",color:"#666",fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>{t("Default","Por defecto","Predefinito")}</span>}
                 </div>
-                <div style={{color:C.muted,fontSize:12,lineHeight:1.6}}>{t(stdSeat.descEn, stdSeat.descEs, stdSeat.descIt)}</div>
+                <div style={{color:C.muted,fontSize:13,lineHeight:1.6}}>{t(stdSeat.descEn, stdSeat.descEs, stdSeat.descIt)}</div>
               </div>
             </div>
           )}
@@ -3250,7 +3250,7 @@ export default function App() {
                       <div style={{color:cfg.seatType===s.id?C.gold:C.white,fontWeight:700,fontSize:13}}>{t(s.en, s.es, s.it)}</div>
                       {s.price&&<span style={{color:C.goldLight,fontSize:12,fontWeight:800,marginLeft:8}}>+${s.price}</span>}
                     </div>
-                    <div style={{color:C.muted,fontSize:11}}>{t(s.descEn, s.descEs, s.descIt)}</div>
+                    <div style={{color:C.muted,fontSize:12}}>{t(s.descEn, s.descEs, s.descIt)}</div>
                   </div>
                 ))}
               </div>
@@ -3355,7 +3355,7 @@ export default function App() {
                   {cfg.steering==="standard" && <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>✓ {t("Selected","Seleccionado","Selezionato")}</span>}
                   {cfg.steering!=="standard" && <span style={{background:"#22222244",color:"#666",fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>{t("Default","Por defecto","Predefinito")}</span>}
                 </div>
-                <div style={{color:C.muted,fontSize:12,lineHeight:1.6}}>{t(stdSteer.descEn, stdSteer.descEs, stdSteer.descIt)}</div>
+                <div style={{color:C.muted,fontSize:13,lineHeight:1.6}}>{t(stdSteer.descEn, stdSteer.descEs, stdSteer.descIt)}</div>
               </div>
             </div>
           )}
@@ -3381,7 +3381,7 @@ export default function App() {
                       <div style={{color:cfg.steering===s.id?C.gold:C.white,fontWeight:700,fontSize:13}}>{t(s.en, s.es, s.it)}</div>
                       {s.price&&<span style={{color:C.goldLight,fontSize:12,fontWeight:800,marginLeft:8}}>+${s.price}</span>}
                     </div>
-                    <div style={{color:C.muted,fontSize:11}}>{t(s.descEn, s.descEs, s.descIt)}</div>
+                    <div style={{color:C.muted,fontSize:12}}>{t(s.descEn, s.descEs, s.descIt)}</div>
                   </div>
                 ))}
               </div>
@@ -3409,7 +3409,7 @@ export default function App() {
                     {cfg.tire==="offroad-12" && <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>✓ {t("Selected","Seleccionado","Selezionato")}</span>}
                     {cfg.tire!=="offroad-12" && <span style={{background:"#22222244",color:"#666",fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>{t("Default","Por defecto","Predefinito")}</span>}
                   </div>
-                  <div style={{color:C.muted,fontSize:12,lineHeight:1.6}}>{t(stdTire.descEn, stdTire.descEs, stdTire.descIt)}</div>
+                  <div style={{color:C.muted,fontSize:13,lineHeight:1.6}}>{t(stdTire.descEn, stdTire.descEs, stdTire.descIt)}</div>
                 </div>
               </div>
             )}
@@ -3436,7 +3436,7 @@ export default function App() {
                           <div style={{color:cfg.tire===tire.id?C.gold:C.white,fontWeight:700,fontSize:13}}>{t(tire.en, tire.es, tire.it)}</div>
                           {tp>0&&<span style={{color:C.goldLight,fontSize:12,fontWeight:800,marginLeft:8}}>+${tp}</span>}
                         </div>
-                        <div style={{color:C.muted,fontSize:11,marginTop:4}}>{t(tire.descEn, tire.descEs, tire.descIt)}</div>
+                        <div style={{color:C.muted,fontSize:12,marginTop:4}}>{t(tire.descEn, tire.descEs, tire.descIt)}</div>
                       </div>
                       );})}
                   </div>
@@ -3466,7 +3466,7 @@ export default function App() {
                           <div style={{color:cfg.tire===tire.id?C.gold:C.white,fontWeight:700,fontSize:13}}>{t(tire.en, tire.es, tire.it)}</div>
                           {tp>0&&<span style={{color:C.goldLight,fontSize:12,fontWeight:800,marginLeft:8}}>+${tp}</span>}
                         </div>
-                        <div style={{color:C.muted,fontSize:11,marginTop:4}}>{t(tire.descEn, tire.descEs, tire.descIt)}</div>
+                        <div style={{color:C.muted,fontSize:12,marginTop:4}}>{t(tire.descEn, tire.descEs, tire.descIt)}</div>
                       </div>
                       );})}
                   </div>
@@ -3506,7 +3506,7 @@ export default function App() {
                     {cfg.windshield==="standard" && <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>✓ {t("Selected","Seleccionado","Selezionato")}</span>}
                     {cfg.windshield!=="standard" && <span style={{background:"#22222244",color:"#666",fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>{t("Default","Por defecto","Predefinito")}</span>}
                   </div>
-                  <div style={{color:C.muted,fontSize:12,lineHeight:1.6}}>{t(stdWind.descEn, stdWind.descEs, stdWind.descIt)}</div>
+                  <div style={{color:C.muted,fontSize:13,lineHeight:1.6}}>{t(stdWind.descEn, stdWind.descEs, stdWind.descIt)}</div>
                 </div>
               </div>
             )}
@@ -3532,7 +3532,7 @@ export default function App() {
                         <div style={{color:cfg.windshield===w.id?C.gold:C.white,fontWeight:700,fontSize:13}}>{t(w.en, w.es, w.it)}</div>
                         {w.price&&<span style={{color:C.goldLight,fontSize:12,fontWeight:800,marginLeft:8}}>+${w.price}</span>}
                       </div>
-                      <div style={{color:C.muted,fontSize:11}}>{t(w.descEn, w.descEs, w.descIt)}</div>
+                      <div style={{color:C.muted,fontSize:12}}>{t(w.descEn, w.descEs, w.descIt)}</div>
                     </div>
                   ))}
                 </div>
@@ -3579,7 +3579,7 @@ export default function App() {
                   {stdBattId==="48v150a-litio" && <span style={{background:"linear-gradient(135deg,#3a7d44,#2d9e3a)",color:"#fff",fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>{t("TAAAC's Choice","Elección TAAAC","Scelta TAAAC")} ✓</span>}
                   {cfg.battery===stdBattId && <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>✓ {t("Selected","Seleccionado","Selezionato")}</span>}
                 </div>
-                <div style={{color:C.muted,fontSize:12,lineHeight:1.6}}>{t(stdBatt.descEn||"", stdBatt.descEs||"", stdBatt.descIt||"")}</div>
+                <div style={{color:C.muted,fontSize:13,lineHeight:1.6}}>{t(stdBatt.descEn||"", stdBatt.descEs||"", stdBatt.descIt||"")}</div>
                 {stdBattId==="48v150a-litio" && <div style={{color:C.goldLight,fontSize:12,fontWeight:600,marginTop:6}}>{t("Recommended for daily use.","Recomendada para el uso diario.","Consigliata per l'uso quotidiano.")}</div>}
                 {stdBattId==="48v150a-litio" && <button style={{background:"transparent",border:"1px solid #3a7d44",color:"#3a7d44",borderRadius:8,padding:"4px 10px",cursor:"pointer",fontSize:11,marginTop:8}} onClick={(e)=>{e.stopPropagation();setShowTip(true);}}>
                   💡 {t("Read our advice","Lee nuestro consejo","Leggi il nostro consiglio")}
@@ -3625,7 +3625,7 @@ export default function App() {
                         ? <span style={{color:C.gold,fontSize:11,fontWeight:700,marginLeft:8,whiteSpace:"nowrap"}}>{t("On Request","Bajo Pedido","Su Richiesta")}</span>
                         : (bp>0 && <span style={{color:C.goldLight,fontSize:12,fontWeight:800,marginLeft:8}}>+${bp}</span>)}
                     </div>
-                    <div style={{color:C.muted,fontSize:11,marginTop:3}}>{t(b.descEn||"", b.descEs||"", b.descIt||"")}</div>
+                    <div style={{color:C.muted,fontSize:12,marginTop:3}}>{t(b.descEn||"", b.descEs||"", b.descIt||"")}</div>
                   </div>
                   );})}
               </div>
@@ -3653,7 +3653,7 @@ export default function App() {
                     <span style={{background:"linear-gradient(135deg,#3a7d44,#2d9e3a)",color:"#fff",fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>{t("TAAAC's Choice","Elección TAAAC","Scelta TAAAC")} ✓</span>
                     {(cfg.motor===defaultMotorFor(cfg.model,cfg.seats)) && <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>✓ {t("Selected","Seleccionado","Selezionato")}</span>}
                   </div>
-                  <div style={{color:C.muted,fontSize:12,lineHeight:1.6}}>{t(stdMotor.descEn, stdMotor.descEs, stdMotor.descIt)}</div>
+                  <div style={{color:C.muted,fontSize:13,lineHeight:1.6}}>{t(stdMotor.descEn, stdMotor.descEs, stdMotor.descIt)}</div>
                   <div style={{color:C.goldLight,fontSize:12,fontWeight:600,marginTop:6}}>{t("Our recommended balance between performance, efficiency and daily use.","Nuestro equilibrio recomendado entre rendimiento, eficiencia y uso diario.","Il nostro equilibrio consigliato tra prestazioni, efficienza e utilizzo quotidiano.")}</div>
                 </div>
               </div>
@@ -3679,7 +3679,7 @@ export default function App() {
                           <div style={{color:cfg.motor===m.id?C.gold:C.white,fontWeight:900,fontSize:20}}>{t(m.en, m.es, m.it)}</div>
                           {mp>0&&<span style={{color:C.goldLight,fontSize:12,fontWeight:800,marginLeft:8}}>+${mp}</span>}
                         </div>
-                        <div style={{color:C.muted,fontSize:11,marginTop:3}}>{t(m.descEn, m.descEs, m.descIt)}</div>
+                        <div style={{color:C.muted,fontSize:12,marginTop:3}}>{t(m.descEn, m.descEs, m.descIt)}</div>
                       </div>
                     );
                   })}
@@ -3763,7 +3763,7 @@ export default function App() {
                         <div style={{color:sel?C.gold:C.white,fontWeight:700,fontSize:12,lineHeight:1.4}}>{t(o.en, o.es, o.it)}</div>
                         <span style={{color:C.goldLight,fontSize:12,fontWeight:800,marginLeft:8}}>+${o.price}</span>
                       </div>
-                      <div style={{color:C.muted,fontSize:10,lineHeight:1.5}}>{t(o.descEn, o.descEs, o.descIt)}</div>
+                      <div style={{color:C.muted,fontSize:11,lineHeight:1.5}}>{t(o.descEn, o.descEs, o.descIt)}</div>
                       {o.noteEn&&<span style={{color:C.gold,fontSize:9}}>⚠️ {t(o.noteEn,o.noteEs,o.noteIt)}</span>}
                       <div style={{alignSelf:"flex-end",width:18,height:18,borderRadius:5,background:sel?C.gold:C.surface,border:sel?"1.5px solid #C9A84C":"1.5px solid #222",display:"flex",alignItems:"center",justifyContent:"center"}}>
                         {sel&&<span style={{color:"#000",fontSize:12,fontWeight:900}}>✓</span>}
@@ -3846,7 +3846,7 @@ export default function App() {
               {it:"Parabrezza",es:"Parabrisas",en:"Windshield",v:t(ws?.en,ws?.es,ws?.it)},
             ].map(r=>(
               <div key={r.it} style={{background:C.surface,borderRadius:10,padding:12}}>
-                <div style={{color:C.muted,fontSize:10,marginBottom:3}}>{t(r.en, r.es, r.it)}</div>
+                <div style={{color:C.muted,fontSize:11,marginBottom:3}}>{t(r.en, r.es, r.it)}</div>
                 <div style={{color:C.white,fontWeight:600,fontSize:12,display:"flex",alignItems:"center",gap:6}}>
                   {r.it==="Col. Sedile" && <span style={{display:"inline-block",width:12,height:12,borderRadius:"50%",background:cfg.seatColor.hex,border:"1px solid #555",flexShrink:0}}/>}
                   {r.v}
@@ -3872,7 +3872,7 @@ export default function App() {
               </div>):null;
             })}
             <div style={{paddingTop:12,marginTop:8,borderTop:"1px solid #222"}}>
-              <div style={{color:C.muted,fontSize:11}}>* {t("The official quote will be calculated by our team, including any discounts.","El presupuesto será calculado por nuestro equipo, incluyendo posibles descuentos.","Il preventivo ufficiale verrà calcolato dal nostro team, includendo eventuali scontistiche.")}</div>
+              <div style={{color:C.muted,fontSize:12}}>* {t("The official quote will be calculated by our team, including any discounts.","El presupuesto será calculado por nuestro equipo, incluyendo posibles descuentos.","Il preventivo ufficiale verrà calcolato dal nostro team, includendo eventuali scontistiche.")}</div>
             </div>
           </div>
           {/* Delivery time */}
@@ -3888,7 +3888,7 @@ export default function App() {
             <span style={{fontSize:24}}>🛡️</span>
             <div>
               <div style={{color:C.goldLight,fontWeight:700,fontSize:13}}>{t("12-Month Warranty Included","Garantía de 12 Meses Incluida","Garanzia 12 Mesi Inclusa")}</div>
-              <div style={{color:C.muted,fontSize:12,marginTop:2}}>{t("See details in the FAQ","Ver detalles en las FAQ","Dettagli nelle FAQ")}</div>
+              <div style={{color:C.muted,fontSize:13,marginTop:2}}>{t("See details in the FAQ","Ver detalles en las FAQ","Dettagli nelle FAQ")}</div>
             </div>
           </div>
           <div style={{display:"flex",justifyContent:"space-between"}}>
@@ -3982,7 +3982,7 @@ export default function App() {
               <div key={i} style={{...S.card(false)}}>
                 <div style={{fontSize:24,marginBottom:8}}>{area.icon}</div>
                 <div style={{color:C.gold,fontWeight:700,fontSize:14,marginBottom:6}}>{area.title}</div>
-                <div style={{color:C.muted,fontSize:12.5,lineHeight:1.6}}>{area.desc}</div>
+                <div style={{color:C.muted,fontSize:13.5,lineHeight:1.6}}>{area.desc}</div>
               </div>
             ))}
           </div>
@@ -3994,7 +3994,7 @@ export default function App() {
             <p style={{color:C.muted,fontSize:13,lineHeight:1.7,marginBottom:12}}>
               {t6("We keep a selected stock of frequently needed and critical components for TAAAC models. When a part is used, we can replenish the stock through our supply channel.","Mantenemos una selección de componentes críticos y de uso frecuente para los modelos TAAAC. Cuando utilizamos una pieza, podemos reponer el stock a través de nuestro canal de suministro.","Manteniamo una selezione di componenti critici e più frequentemente necessari per i modelli TAAAC. Quando utilizziamo un ricambio, possiamo reintegrare la scorta attraverso il nostro canale di fornitura.","Nous conservons une sélection de composants critiques et fréquemment nécessaires pour les modèles TAAAC. Lorsqu'une pièce est utilisée, nous pouvons réapprovisionner le stock par notre canal d'approvisionnement.","Utrzymujemy wybrany zapas najważniejszych i częściej potrzebnych komponentów do modeli TAAAC. Po wykorzystaniu części możemy uzupełnić zapas poprzez nasz kanał dostaw.","Мы поддерживаем выбранный запас наиболее важных и часто необходимых компонентов для моделей TAAAC. После использования детали запас может быть пополнен через наш канал поставок.")}
             </p>
-            <p style={{color:C.muted,fontSize:12.5,lineHeight:1.6,fontStyle:"italic",margin:0}}>
+            <p style={{color:C.muted,fontSize:13.5,lineHeight:1.6,fontStyle:"italic",margin:0}}>
               {t6("If a specific component is not in local stock, we help identify and source the correct part for your TAAAC.","Si un componente específico no está disponible en nuestro stock local, te ayudamos a identificar y conseguir la pieza correcta para tu TAAAC.","Se un componente specifico non è disponibile nella nostra scorta locale, ti aiutiamo a identificare e reperire il ricambio corretto per il tuo TAAAC.","Si un composant spécifique n'est pas disponible dans notre stock local, nous vous aidons à identifier et obtenir la pièce adaptée à votre TAAAC.","Jeśli konkretnego komponentu nie ma w lokalnym zapasie, pomagamy zidentyfikować i pozyskać właściwą część do Twojego TAAAC.","Если нужного компонента нет в локальном запасе, мы поможем определить и заказать подходящую деталь для вашего TAAAC.")}
             </p>
           </div>
@@ -4015,7 +4015,7 @@ export default function App() {
                 <div key={i} style={{background:"#0000002a",border:"1px solid #C9A84C33",borderRadius:14,padding:"18px 14px"}}>
                   <div style={{width:26,height:26,borderRadius:"50%",background:"linear-gradient(135deg,#C9A84C,#E2C07A)",color:"#000",fontWeight:800,fontSize:13,display:"flex",alignItems:"center",justifyContent:"center",marginBottom:10}}>{i+1}</div>
                   <div style={{color:C.white,fontWeight:700,fontSize:13,marginBottom:5}}>{s.step}</div>
-                  <div style={{color:C.muted,fontSize:12,lineHeight:1.5}}>{s.desc}</div>
+                  <div style={{color:C.muted,fontSize:13,lineHeight:1.5}}>{s.desc}</div>
                 </div>
               ))}
             </div>
@@ -4042,13 +4042,13 @@ export default function App() {
                   {t6("Preventive maintenance and direct support for your TAAAC.","Mantenimiento preventivo y atención directa para tu TAAAC.","Manutenzione preventiva e assistenza diretta per il tuo TAAAC.","Entretien préventif et assistance directe pour votre TAAAC.","Konserwacja prewencyjna i bezpośrednie wsparcie dla Twojego TAAAC.","Профилактическое обслуживание и прямая поддержка вашего TAAAC.")}
                 </p>
 
-                <div style={{color:C.muted,fontSize:12.5,lineHeight:1.8,marginBottom:14}}>
+                <div style={{color:C.muted,fontSize:13.5,lineHeight:1.8,marginBottom:14}}>
                   ✓ {t6("Two preventive inspections per year, usually scheduled about six months apart.","Dos revisiones preventivas al año, normalmente programadas con unos seis meses de diferencia.","Due controlli preventivi all'anno, normalmente programmati a circa sei mesi di distanza.","Deux contrôles préventifs par an, généralement programmés à environ six mois d'intervalle.","Dwa przeglądy prewencyjne rocznie, zwykle planowane w odstępie około sześciu miesięcy.","Два профилактических осмотра в год, обычно с интервалом около шести месяцев.")}<br/>
                   ✓ {t6("Labor for the two scheduled inspections is included.","La mano de obra de las dos revisiones programadas está incluida.","La manodopera dei due controlli programmati è inclusa.","La main-d'œuvre des deux contrôles programmés est incluse.","Robocizna podczas dwóch zaplanowanych przeglądów jest wliczona w cenę.","Работа по двум плановым осмотрам включена в стоимость.")}<br/>
                   ✓ {t6("We keep track of your maintenance schedule and contact you when it's time to plan your next inspection.","Seguimos tu calendario de mantenimiento y te contactamos cuando llega el momento de programar la próxima revisión.","Teniamo sotto controllo il calendario di manutenzione e ti contattiamo quando è il momento di programmare il controllo successivo.","Nous suivons votre calendrier d'entretien et vous contactons lorsqu'il est temps de planifier votre prochain contrôle.","Monitorujemy harmonogram serwisowy i kontaktujemy się z Tobą, gdy nadejdzie czas na zaplanowanie kolejnego przeglądu.","Мы отслеживаем график обслуживания и связываемся с вами, когда приходит время запланировать следующий осмотр.")}
                 </div>
 
-                <div style={{color:C.muted,fontSize:12.5,lineHeight:2,marginBottom:14}}>
+                <div style={{color:C.muted,fontSize:13.5,lineHeight:2,marginBottom:14}}>
                   🛑 {t6("Brakes","Frenos","Freni","Freins","Hamulce","Тормоза")} ·{" "}
                   🔧 {t6("Suspension & shock absorbers","Suspensión y amortiguadores","Sospensioni e ammortizzatori","Suspension et amortisseurs","Zawieszenie i amortyzatory","Подвеска и амортизаторы")}<br/>
                   🔋 {t6("Lithium battery & BMS","Batería de litio y BMS","Batteria al litio e BMS","Batterie au lithium et BMS","Bateria litowa i BMS","Литиевая батарея и BMS")}<br/>
@@ -4059,10 +4059,10 @@ export default function App() {
                   📞 {t6("Direct post-sale support","Atención posventa directa","Assistenza post-vendita diretta","Assistance après-vente directe","Bezpośrednie wsparcie posprzedażowe","Прямая послепродажная поддержка")}
                 </div>
 
-                <p style={{color:C.muted,fontSize:11.5,lineHeight:1.6,fontStyle:"italic",marginBottom:12}}>
+                <p style={{color:C.muted,fontSize:12.5,lineHeight:1.6,fontStyle:"italic",marginBottom:12}}>
                   {t6("Replacement parts and repairs outside warranty coverage are not included and are quoted separately when required.","Los repuestos y las reparaciones fuera de la cobertura de garantía no están incluidos y se cotizan por separado cuando sea necesario.","I ricambi e le riparazioni fuori dalla copertura della garanzia non sono inclusi e vengono quotati separatamente quando necessario.","Les pièces de rechange et les réparations hors garantie ne sont pas incluses et font l'objet d'un devis séparé si nécessaire.","Części zamienne i naprawy poza zakresem gwarancji nie są wliczone i w razie potrzeby są wyceniane osobno.","Запасные части и ремонт вне гарантийного покрытия не включены и при необходимости рассчитываются отдельно.")}
                 </p>
-                <p style={{color:C.muted,fontSize:11.5,lineHeight:1.6,fontStyle:"italic",marginBottom:18}}>
+                <p style={{color:C.muted,fontSize:12.5,lineHeight:1.6,fontStyle:"italic",marginBottom:18}}>
                   {t6("TAAAC Care members may request a Courtesy Golf Cart at an additional cost when available.","Los miembros de TAAAC Care pueden solicitar un Golf Cart de Cortesía con un coste adicional cuando esté disponible.","I clienti TAAAC Care possono richiedere un Golf Cart di Cortesia a pagamento, quando disponibile.","Les membres TAAAC Care peuvent demander un Golf Cart de Courtoisie moyennant un coût supplémentaire, selon disponibilité.","Członkowie TAAAC Care mogą odpłatnie poprosić o zastępczy Golf Cart, jeśli jest dostępny.","Участники TAAAC Care могут запросить подменный гольф-кар за дополнительную плату при его наличии.")}
                 </p>
 
@@ -4087,7 +4087,7 @@ export default function App() {
                   {t6("Everything in TAAAC Care, plus priority assistance and access to a Courtesy Golf Cart.","Todo lo incluido en TAAAC Care, más asistencia prioritaria y acceso a un Golf Cart de Cortesía.","Tutto ciò che è incluso in TAAAC Care, più assistenza prioritaria e accesso a un Golf Cart di Cortesia.","Tout ce qui est inclus dans TAAAC Care, plus une assistance prioritaire et l'accès à un Golf Cart de Courtoisie.","Wszystko, co obejmuje TAAAC Care, plus priorytetowa obsługa i dostęp do zastępczego Golf Carta.","Всё, что входит в TAAAC Care, плюс приоритетное обслуживание и доступ к подменному гольф-кару.")}
                 </p>
 
-                <div style={{color:C.muted,fontSize:12.5,lineHeight:1.8,marginBottom:14}}>
+                <div style={{color:C.muted,fontSize:13.5,lineHeight:1.8,marginBottom:14}}>
                   ⭐ {t6("Priority assistance when your TAAAC requires service.","Atención prioritaria cuando tu TAAAC necesita asistencia.","Assistenza prioritaria quando il tuo TAAAC necessita di un intervento.","Assistance prioritaire lorsque votre TAAAC nécessite une intervention.","Priorytetowa obsługa, gdy Twój TAAAC wymaga serwisu.","Приоритетное обслуживание, когда вашему TAAAC требуется сервис.")}
                 </div>
 
@@ -4095,7 +4095,7 @@ export default function App() {
                   <div style={{color:C.gold,fontWeight:700,fontSize:12.5,marginBottom:8}}>
                     🚗 {t6("Courtesy Golf Cart","Golf Cart de Cortesía","Golf Cart di Cortesia","Golf Cart de Courtoisie","Zastępczy Golf Cart","Подменный гольф-кар")}
                   </div>
-                  <div style={{color:C.muted,fontSize:11.5,lineHeight:1.7}}>
+                  <div style={{color:C.muted,fontSize:12.5,lineHeight:1.7}}>
                     {t6("If TAAAC determines that an eligible repair is expected to require 24 hours or more, Care+ members can access a Courtesy Golf Cart, subject to availability and service area.","Si TAAAC determina que una reparación requiere previsiblemente 24 horas o más, los miembros Care+ pueden acceder a un Golf Cart de Cortesía, sujeto a disponibilidad y zona de servicio.","Se TAAAC determina che una riparazione richiede prevedibilmente almeno 24 ore, i clienti Care+ possono accedere a un Golf Cart di Cortesia, soggetto a disponibilità e area di servizio.","Si TAAAC estime qu'une réparation devrait nécessiter au moins 24 heures, les membres Care+ peuvent accéder à un Golf Cart de Courtoisie, sous réserve de disponibilité et de la zone de service.","Jeśli TAAAC oceni, że naprawa będzie wymagała co najmniej 24 godzin, członkowie Care+ mogą skorzystać z zastępczego Golf Carta, zależnie od dostępności i obszaru serwisu.","Если TAAAC определит, что ремонт предположительно займёт не менее 24 часов, участники Care+ могут получить подменный гольф-кар при наличии и в пределах зоны обслуживания.")}
                     <br/><br/>
                     {t6("Up to 2 days included per eligible repair. Additional days may be available depending on availability and applicable conditions.","Hasta 2 días incluidos por reparación elegible. Los días adicionales pueden estar disponibles según disponibilidad y condiciones aplicables.","Fino a 2 giorni inclusi per ogni riparazione idonea. Eventuali giorni aggiuntivi possono essere disponibili in base alla disponibilità e alle condizioni applicabili.","Jusqu'à 2 jours inclus par réparation éligible. Des jours supplémentaires peuvent être disponibles selon la disponibilité et les conditions applicables.","Do 2 dni w cenie na każdą kwalifikującą się naprawę. Dodatkowe dni mogą być dostępne zależnie od dostępności i obowiązujących warunków.","До 2 дней включено для каждого подходящего случая ремонта. Дополнительные дни могут быть доступны при наличии и на применимых условиях.")}
@@ -4120,7 +4120,7 @@ export default function App() {
               <div style={{color:C.gold,fontWeight:700,fontSize:11,letterSpacing:1,textTransform:"uppercase",marginBottom:10}}>
                 {t6("Plan terms","Condiciones del plan","Condizioni del piano","Conditions du programme","Warunki planu","Условия плана")}
               </div>
-              <div style={{color:C.muted,fontSize:11.5,lineHeight:1.9}}>
+              <div style={{color:C.muted,fontSize:12.5,lineHeight:1.9}}>
                 • {t6("Scheduled home service visits included in Bayahibe, Dominicus and Casa de Campo.","Las visitas programadas a domicilio están incluidas en Bayahibe, Dominicus y Casa de Campo.","Le visite programmate a domicilio sono incluse a Bayahibe, Dominicus e Casa de Campo.","Les visites d'entretien programmées à domicile sont incluses à Bayahibe, Dominicus et Casa de Campo.","Zaplanowane wizyty serwisowe u klienta są wliczone w cenę w Bayahibe, Dominicus i Casa de Campo.","Плановые выездные сервисные визиты включены в Байяибе, Доминикус и Casa de Campo.")}<br/>
                 • {t6("Service conditions for other locations are evaluated according to distance and location.","Las condiciones del servicio para otras localidades se evalúan según la distancia y la ubicación.","Le condizioni del servizio per le altre località vengono valutate in base alla distanza e alla zona.","Les conditions de service pour les autres localités sont évaluées selon la distance et la zone.","Warunki serwisu w innych lokalizacjach są ustalane w zależności od odległości i miejsca.","Условия обслуживания в других регионах определяются в зависимости от расстояния и местоположения.")}<br/>
                 • {t6("12-month plan from activation date.","Plan de 12 meses desde la fecha de activación.","Piano di 12 mesi dalla data di attivazione.","Programme de 12 mois à compter de la date d'activation.","Plan na 12 miesięcy od daty aktywacji.","План на 12 месяцев с даты активации.")}<br/>
@@ -4136,7 +4136,7 @@ export default function App() {
             <svg viewBox="0 0 32 32" width="18" height="18" fill="#25D366"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.625.86 5.055 2.312 7.031L4 29l7.157-2.281A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.96 9.96 0 0 1-5.086-1.398l-.365-.217-3.789 1.207 1.229-3.693-.239-.38A9.96 9.96 0 0 1 6 15c0-5.523 4.478-10 10.001-10zm-3.61 5.06c-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.075.148.198 2.057 3.278 5.076 4.462 2.516.988 3.028.792 3.575.743.546-.05 1.762-.72 2.01-1.414.247-.694.247-1.29.173-1.414-.074-.124-.271-.198-.568-.347-.297-.148-1.762-.87-2.036-.968-.273-.099-.472-.148-.67.148-.198.297-.767.968-.94 1.166-.173.198-.347.223-.644.074-.297-.148-1.253-.462-2.387-1.472-.883-.788-1.48-1.762-1.653-2.06-.173-.297-.019-.457.13-.605.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.67-1.613-.918-2.208-.242-.583-.487-.504-.67-.513-.173-.008-.371-.01-.57-.01z"/></svg>
             {t6("Need assistance? Contact us on WhatsApp","¿Necesitas asistencia? Contáctanos por WhatsApp","Hai bisogno di assistenza? Contattaci su WhatsApp","Besoin d'assistance ? Contactez-nous sur WhatsApp","Potrzebujesz pomocy? Skontaktuj się z nami przez WhatsApp","Нужна помощь? Свяжитесь с нами в WhatsApp")}
           </a>
-          <div style={{color:C.muted,fontSize:12,textAlign:"center",opacity:0.8}}>
+          <div style={{color:C.muted,fontSize:13,textAlign:"center",opacity:0.8}}>
             {t6("Support remains available after the warranty period.","El soporte sigue disponible después del período de garantía.","Il supporto resta disponibile anche dopo il periodo di garanzia.","L'assistance reste disponible après la période de garantie.","Wsparcie pozostaje dostępne również po okresie gwarancyjnym.","Поддержка остаётся доступной и после окончания гарантийного периода.")}
           </div>
         </div>
@@ -4257,7 +4257,7 @@ export default function App() {
         <div style={{color:C.goldLight,fontWeight:800,fontSize:22,textAlign:"center",marginBottom:6}}>
           {t("Starting from","Desde","A partire da")} ${model.price.toLocaleString()} USD
         </div>
-        <div style={{color:C.muted,fontSize:12.5,fontWeight:500,textAlign:"center",marginBottom:20}}>
+        <div style={{color:C.muted,fontSize:13.5,fontWeight:500,textAlign:"center",marginBottom:20}}>
           {t6("Configure it your way. Clear pricing from the start.","Configúralo a tu manera. Precio claro desde el principio.","Configuralo a modo tuo. Prezzo chiaro fin dall'inizio.","Configurez-le à votre façon. Un prix clair dès le départ.","Skonfiguruj go po swojemu. Jasna cena od samego początku.","Настройте его по-своему. Понятная цена с самого начала.")}
         </div>
 
@@ -4268,7 +4268,7 @@ export default function App() {
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(140px,1fr))",gap:10,marginBottom:28}}>
           {Object.entries(specs).map(([k,v])=>(
             <div key={k} style={{background:C.surface,borderRadius:10,padding:12,textAlign:"center"}}>
-              <div style={{color:C.muted,fontSize:10,marginBottom:3}}>{k}</div>
+              <div style={{color:C.muted,fontSize:11,marginBottom:3}}>{k}</div>
               <div style={{color:C.white,fontWeight:700,fontSize:13}}>{v}</div>
             </div>
           ))}
@@ -4299,7 +4299,7 @@ export default function App() {
           </div>
 
           <div style={{borderTop:"1px solid #222",paddingTop:10}}>
-            <span style={{color:C.muted,fontSize:12,opacity:0.75}}>🕒 {t("Estimated delivery: ~90 days from deposit","Entrega estimada: ~90 días desde el depósito","Consegna stimata: ~90 giorni dal deposito")}</span>
+            <span style={{color:C.muted,fontSize:13,opacity:0.75}}>🕒 {t("Estimated delivery: ~90 days from deposit","Entrega estimada: ~90 días desde el depósito","Consegna stimata: ~90 giorni dal deposito")}</span>
           </div>
         </div>
 
@@ -4368,7 +4368,7 @@ export default function App() {
                 <div style={{color:C.gold,fontWeight:800,fontSize:15,marginBottom:4}}>
                   {t(m.name.split(" / ")[0], m.name.split(" / ")[1], m.name.split(" / ")[2])}
                 </div>
-                <div style={{color:C.muted,fontSize:12,lineHeight:1.6}}>{t(m.desc.en, m.desc.es, m.desc.it)}</div>
+                <div style={{color:C.muted,fontSize:13,lineHeight:1.6}}>{t(m.desc.en, m.desc.es, m.desc.it)}</div>
               </a>
             );
           })}
@@ -4559,7 +4559,7 @@ export default function App() {
                 <div style={{color:C.gold,fontWeight:800,fontSize:15,marginBottom:4}}>
                   {t(m.name.split(" / ")[0], m.name.split(" / ")[1], m.name.split(" / ")[2])}
                 </div>
-                <div style={{color:C.muted,fontSize:12,lineHeight:1.6}}>{t(m.desc.en, m.desc.es, m.desc.it)}</div>
+                <div style={{color:C.muted,fontSize:13,lineHeight:1.6}}>{t(m.desc.en, m.desc.es, m.desc.it)}</div>
               </a>
             );
           })}
@@ -6862,13 +6862,13 @@ export default function App() {
               <div style={{...S.card(false),textAlign:"center",padding:32}} onClick={goNext}>
                 <div style={{fontSize:44,marginBottom:14}}>🛺🔧</div>
                 <div style={{color:C.gold,fontWeight:800,fontSize:18,marginBottom:6}}>{t("Configure your own","Configura el tuyo","Configura il tuo")}</div>
-                <div style={{color:C.muted,fontSize:12,lineHeight:1.6,marginBottom:16}}>{t6("Start with your model and personalize it your way.","Elige tu modelo y personalízalo a tu manera.","Parti dal tuo modello e personalizzalo a modo tuo.","Partez de votre modèle et personnalisez-le à votre façon.","Zacznij od wybranego modelu i spersonalizuj go po swojemu.","Начните с выбранной модели и настройте её по-своему.")}</div>
+                <div style={{color:C.muted,fontSize:13,lineHeight:1.6,marginBottom:16}}>{t6("Start with your model and personalize it your way.","Elige tu modelo y personalízalo a tu manera.","Parti dal tuo modello e personalizzalo a modo tuo.","Partez de votre modèle et personnalisez-le à votre façon.","Zacznij od wybranego modelu i spersonalizuj go po swojemu.","Начните с выбранной модели и настройте её по-своему.")}</div>
                 <button style={{...S.goldBtn,marginTop:18,width:"100%"}}>{t("Start configuring","Empezar","Inizia")} →</button>
               </div>
               <div style={{...S.card(false),textAlign:"center",padding:32}} onClick={()=>setPage("readyModels")}>
                 <div style={{fontSize:44,marginBottom:14}}>🛺</div>
                 <div style={{color:C.gold,fontWeight:800,fontSize:18,marginBottom:6}}>{t("Pre-configured models","Modelos preconfigurados","Modelli già configurati")}</div>
-                <div style={{color:C.muted,fontSize:12,lineHeight:1.6,marginBottom:16}}>{t("Browse ready-to-buy golf carts already set up and available now.","Ver golf carts listos para comprar.","Vedi golf cart già configurati pronti all'acquisto.")}</div>
+                <div style={{color:C.muted,fontSize:13,lineHeight:1.6,marginBottom:16}}>{t("Browse ready-to-buy golf carts already set up and available now.","Ver golf carts listos para comprar.","Vedi golf cart già configurati pronti all'acquisto.")}</div>
                 <button style={{...S.goldBtn,marginTop:18,width:"100%"}}>{t("Browse models","Ver modelos","Vedi modelli")} →</button>
               </div>
             </div>
@@ -7030,7 +7030,7 @@ export default function App() {
             <div style={{color:C.white,fontSize:20,lineHeight:1.6,marginBottom:6,textAlign:"center"}}>
               {tName("What character will {name} have?","¿Qué carácter tendrá {name}?","Che carattere avrà {name}?","Quel caractère aura {name} ?","Jaki charakter będzie mieć {name}?","Какой характер будет у {name}?")}
             </div>
-            <div style={{color:C.muted,fontSize:12,textAlign:"center",marginBottom:16}}>
+            <div style={{color:C.muted,fontSize:13,textAlign:"center",marginBottom:16}}>
               {aUsage==="golf"
                 ? t("Showing grass tires, ideal for golf courses","Mostrando neumáticos de césped, ideales para campos de golf","Ti mostro i pneumatici da erba, ideali per campi da golf")
                 : t("Showing off-road tires, ideal for rough terrain","Mostrando neumáticos todoterreno, ideales para terrenos difíciles","Ti mostro i pneumatici off-road, ideali per terreni difficili")}
@@ -7152,7 +7152,7 @@ export default function App() {
               <div style={{fontSize:28,marginBottom:10}}>{c.icon}</div>
               <div style={{color:C.gold,fontWeight:700,marginBottom:2,fontSize:14}}>{c.label}</div>
               {c.v && <div style={{color:C.white,fontWeight:600,fontSize:15,marginBottom:4}}>{c.v}</div>}
-              <div style={{color:C.muted,fontSize:11}}>{c.s()}</div>
+              <div style={{color:C.muted,fontSize:12}}>{c.s()}</div>
               {c.link && <div style={{color:C.gold,fontSize:11,marginTop:6,fontWeight:600}}>→ {t("Click to open","Clic para abrir","Clicca per aprire")}</div>}
             </div>
           ))}
@@ -7217,13 +7217,13 @@ export default function App() {
           <div style={{...S.card(false),textAlign:"center",padding:32,border:"1.5px solid #C9A84C"}} onClick={()=>{upd("model",null);setPage("configurator");setStep(-1);}}>
             <div style={{fontSize:44,marginBottom:14}}>🛺🔧</div>
             <div style={{color:C.gold,fontWeight:800,fontSize:18,marginBottom:6}}>{t("Configure your own","Configura el tuyo","Configura il tuo")}</div>
-            <div style={{color:C.muted,fontSize:12,lineHeight:1.6,marginBottom:16}}>{t6("Start with your model and personalize it your way.","Elige tu modelo y personalízalo a tu manera.","Parti dal tuo modello e personalizzalo a modo tuo.","Partez de votre modèle et personnalisez-le à votre façon.","Zacznij od wybranego modelu i spersonalizuj go po swojemu.","Начните с выбранной модели и настройте её по-своему.")}</div>
+            <div style={{color:C.muted,fontSize:13,lineHeight:1.6,marginBottom:16}}>{t6("Start with your model and personalize it your way.","Elige tu modelo y personalízalo a tu manera.","Parti dal tuo modello e personalizzalo a modo tuo.","Partez de votre modèle et personnalisez-le à votre façon.","Zacznij od wybranego modelu i spersonalizuj go po swojemu.","Начните с выбранной модели и настройте её по-своему.")}</div>
             <button style={{...S.goldBtn,marginTop:18,width:"100%"}}>{t("Start configuring","Empezar","Inizia")} →</button>
           </div>
           <div style={{...S.card(false),textAlign:"center",padding:32}} onClick={()=>setPage("readyModels")}>
             <div style={{fontSize:44,marginBottom:14}}>🛺</div>
             <div style={{color:C.gold,fontWeight:800,fontSize:18,marginBottom:6}}>{t("Pre-configured models","Modelos preconfigurados","Modelli già configurati")}</div>
-            <div style={{color:C.muted,fontSize:12,lineHeight:1.6,marginBottom:16}}>{t("Browse ready-to-buy golf carts already set up and available now.","Ver golf carts listos para comprar.","Vedi golf cart già configurati pronti all'acquisto.")}</div>
+            <div style={{color:C.muted,fontSize:13,lineHeight:1.6,marginBottom:16}}>{t("Browse ready-to-buy golf carts already set up and available now.","Ver golf carts listos para comprar.","Vedi golf cart già configurati pronti all'acquisto.")}</div>
             <button style={{...S.outBtn,marginTop:18,width:"100%"}}>{t("Browse models","Ver modelos","Vedi modelli")} →</button>
           </div>
         </div>
@@ -7244,7 +7244,7 @@ export default function App() {
         <div style={{background:C.card,border:"1px solid #222",borderRadius:18,padding:40,textAlign:"center"}}>
           <div style={{fontSize:44,marginBottom:14}}>🏌️</div>
           <div style={{color:C.white,fontWeight:700,fontSize:16,marginBottom:12}}>{t("Coming soon","Próximamente","Prossimamente")}</div>
-          <div style={{color:C.muted,fontSize:12,lineHeight:1.7,maxWidth:480,margin:"0 auto"}}>
+          <div style={{color:C.muted,fontSize:13,lineHeight:1.7,maxWidth:480,margin:"0 auto"}}>
             {t("We're preparing a selection of ready-to-buy golf carts. Check back soon, or configure your own right now.",
                "Estamos preparando una selección de golf carts listos para comprar. Vuelve pronto, o configura el tuyo ahora.",
                "Stiamo preparando una selezione di golf cart pronti all'acquisto. Torna presto, o configura il tuo adesso.")}
@@ -7670,7 +7670,7 @@ export default function App() {
         </div>
         <div style={{background:"#C9A84C11",border:"1px solid #7a6230",borderRadius:14,padding:18,marginBottom:24}}>
           <div style={{color:C.gold,fontWeight:700,fontSize:13,marginBottom:6}}>⚖️ {t("Legal Disclaimer","Aviso Legal","Disclaimer Legale")}</div>
-          <div style={{color:C.muted,fontSize:12,lineHeight:1.8}}>
+          <div style={{color:C.muted,fontSize:13,lineHeight:1.8}}>
             {t(
               "Golf Cart DR declines all responsibility for use of the vehicle that does not comply with the laws, regulations, and requirements in force in the Dominican Republic or in any other country where the vehicle is used. It is the sole responsibility of the buyer to obtain any required insurance, licenses, or permits.",
               "Golf Cart DR declina toda responsabilidad por el uso del vehículo que no cumpla con las leyes, reglamentos y requisitos vigentes en la República Dominicana o en cualquier otro país donde se utilice el vehículo. Es responsabilidad exclusiva del comprador obtener cualquier seguro, licencia o permiso requerido.",
@@ -7750,7 +7750,7 @@ export default function App() {
       <div style={S.sec}>
         <div style={{color:C.gold,fontSize:10,letterSpacing:4,fontWeight:700,marginBottom:14,textTransform:"uppercase"}}>{t("Privacy Policy","Política de Privacidad","Informativa Privacy")}</div>
         <h1 style={S.title}>{t("Privacy Policy","Política de Privacidad","Informativa Privacy")}</h1>
-        <div style={{color:C.muted,fontSize:12,marginBottom:8}}>{t("Last updated: 2025","Última actualización: 2025","Ultimo aggiornamento: 2025")}</div>
+        <div style={{color:C.muted,fontSize:13,marginBottom:8}}>{t("Last updated: 2025","Última actualización: 2025","Ultimo aggiornamento: 2025")}</div>
         <div style={S.goldLine}/>
         <div style={{display:"flex",flexDirection:"column",gap:20,marginBottom:32}}>
           {sections.map((s,i)=>(
@@ -7889,30 +7889,30 @@ export default function App() {
 
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:16,marginBottom:24}}>
           <div>
-            <div style={{fontSize:11,color:C.muted,marginBottom:4,fontWeight:600}}>{t("Name *","Nombre *","Nome *")}</div>
+            <div style={{fontSize:12,color:C.muted,marginBottom:4,fontWeight:600}}>{t("Name *","Nombre *","Nome *")}</div>
             <input ref={pNomeRef} style={fieldErrors.nome?inpErr:S.input} placeholder="Mario"/>
             {fieldErrors.nome&&<div style={errText}>{fieldErrors.nome}</div>}
           </div>
           <div>
-            <div style={{fontSize:11,color:C.muted,marginBottom:4,fontWeight:600}}>{t("Surname *","Apellido *","Cognome *")}</div>
+            <div style={{fontSize:12,color:C.muted,marginBottom:4,fontWeight:600}}>{t("Surname *","Apellido *","Cognome *")}</div>
             <input ref={pCognomeRef} style={S.input} placeholder="Rossi"/>
           </div>
           <div>
-            <div style={{fontSize:11,color:C.muted,marginBottom:4,fontWeight:600}}>{t("Phone *","Teléfono *","Telefono *")}</div>
+            <div style={{fontSize:12,color:C.muted,marginBottom:4,fontWeight:600}}>{t("Phone *","Teléfono *","Telefono *")}</div>
             <input ref={pTelefonoRef} defaultValue="+" style={fieldErrors.telefono?inpErr:S.input} placeholder="+1 809 000 0000"/>
             {fieldErrors.telefono&&<div style={errText}>{fieldErrors.telefono}</div>}
           </div>
           <div>
-            <div style={{fontSize:11,color:C.muted,marginBottom:4,fontWeight:600}}>Email *</div>
+            <div style={{fontSize:12,color:C.muted,marginBottom:4,fontWeight:600}}>Email *</div>
             <input ref={pEmailRef} style={fieldErrors.email?inpErr:S.input} placeholder="email@example.com"/>
             {fieldErrors.email&&<div style={errText}>{fieldErrors.email}</div>}
           </div>
           <div>
-            <div style={{fontSize:11,color:C.muted,marginBottom:4,fontWeight:600}}>{t("Address","Dirección","Indirizzo")}</div>
+            <div style={{fontSize:12,color:C.muted,marginBottom:4,fontWeight:600}}>{t("Address","Dirección","Indirizzo")}</div>
             <input ref={pIndirizzoRef} style={S.input} placeholder="Bayahibe, Dominicus"/>
           </div>
           <div style={{gridColumn:"1 / -1"}}>
-            <div style={{fontSize:11,color:C.muted,marginBottom:4,fontWeight:600}}>{t("Notes","Notas","Note")}</div>
+            <div style={{fontSize:12,color:C.muted,marginBottom:4,fontWeight:600}}>{t("Notes","Notas","Note")}</div>
             <textarea ref={pNoteRef} style={{...S.input,minHeight:80,resize:"vertical"}} placeholder="Additional notes..."/>
           </div>
         </div>
@@ -8077,7 +8077,7 @@ export default function App() {
         </div>
       )}
       <footer style={{borderTop:"1px solid #222",padding:"24px 20px",textAlign:"center"}}>
-        <div style={{color:C.muted,fontSize:12}}>Premium Golf Cart · Bayahibe & Dominicus · República Dominicana</div>
+        <div style={{color:C.muted,fontSize:13}}>Premium Golf Cart · Bayahibe & Dominicus · República Dominicana</div>
         <div style={{color:"#555",fontSize:11,marginTop:4}}>© 2025 Golf Cart DR. {t("All rights reserved","Todos los derechos reservados","Tutti i diritti riservati")}.</div>
         <div style={{marginTop:8,display:"flex",gap:16,justifyContent:"center",alignItems:"center"}}>
           <span style={{color:"#555",fontSize:10,cursor:"pointer",textDecoration:"underline"}} onClick={()=>setPage("faq")}>
