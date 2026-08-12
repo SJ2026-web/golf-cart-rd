@@ -1568,9 +1568,17 @@ const STEPS = [
   {it:"Conferma",es:"Confirmar",en:"Confirm"},
 ];
 
-function Img({k, style={}}) {
+function Img({k, style={}, eager=false}) {
   if (!IMGS[k]) return null;
-  return <img src={IMGS[k]} alt="" style={{objectFit:"contain", ...style}} />;
+  return (
+    <img
+      src={IMGS[k]}
+      alt=""
+      loading={eager ? "eager" : "lazy"}
+      decoding="async"
+      style={{objectFit:"contain", ...style}}
+    />
+  );
 }
 
 function GolfCartPreview({bodyColor="#ffffff", seatColor="#C8B89A"}) {
@@ -4251,7 +4259,7 @@ export default function App() {
         <div style={S.goldLine}/>
 
         <div style={{display:"flex",justifyContent:"center",marginBottom:20}}>
-          <Img k={model.imgKey} style={{maxHeight:260,maxWidth:"100%",objectFit:"contain"}}/>
+          <Img k={model.imgKey} eager={true} style={{maxHeight:260,maxWidth:"100%",objectFit:"contain"}}/>
         </div>
 
         <div style={{color:C.goldLight,fontWeight:800,fontSize:22,textAlign:"center",marginBottom:6}}>
