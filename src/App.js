@@ -1965,6 +1965,68 @@ export default function App() {
     } catch(e) {}
   };
 
+  // Structured data (Product) per le pagine Modello — solo dati realmente disponibili in MODELS.
+  // Nessuna disponibilita' dichiarata (i golf cart sono configurati su richiesta, non "in stock"),
+  // nessuna valutazione/recensione inventata.
+  const setProductStructuredData = (model, description, path) => {
+    try {
+      const url = "https://www.taaac.solutions" + path;
+      const imageUrl = "https://www.taaac.solutions" + IMGS[model.imgKey];
+      const modelName = model.name.split(" / ")[0];
+      const data = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": modelName,
+        "description": description,
+        "image": imageUrl,
+        "url": url,
+        "brand": { "@type": "Brand", "name": "TAAAC Solutions" },
+        "offers": {
+          "@type": "Offer",
+          "url": url,
+          "priceCurrency": "USD",
+          "price": String(model.price)
+        }
+      };
+      let el = document.getElementById("product-structured-data");
+      if(!el) { el = document.createElement("script"); el.id = "product-structured-data"; el.type = "application/ld+json"; document.head.appendChild(el); }
+      el.textContent = JSON.stringify(data);
+    } catch(e) {}
+  };
+  const removeProductStructuredData = () => {
+    try {
+      const el = document.getElementById("product-structured-data");
+      if(el) el.remove();
+    } catch(e) {}
+  };
+
+  // Structured data (LocalBusiness) per le due landing geografiche — solo dati realmente pubblici
+  // (nessun indirizzo fisico: TAAAC Solutions opera online senza sede al pubblico).
+  // areaServed riflette esattamente la zona reale gia' dichiarata nel testo del sito per ciascuna pagina.
+  const setLocalBusinessStructuredData = (areaServed, description, path) => {
+    try {
+      const url = "https://www.taaac.solutions" + path;
+      const data = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "TAAAC Solutions",
+        "description": description,
+        "url": url,
+        "telephone": "+41764372290",
+        "areaServed": areaServed
+      };
+      let el = document.getElementById("localbusiness-structured-data");
+      if(!el) { el = document.createElement("script"); el.id = "localbusiness-structured-data"; el.type = "application/ld+json"; document.head.appendChild(el); }
+      el.textContent = JSON.stringify(data);
+    } catch(e) {}
+  };
+  const removeLocalBusinessStructuredData = () => {
+    try {
+      const el = document.getElementById("localbusiness-structured-data");
+      if(el) el.remove();
+    } catch(e) {}
+  };
+
   useEffect(() => {
     // Contenuti SEO localizzati EN/ES/IT per ogni pagina pubblica.
     // FR/PL/RU non hanno traduzioni SEO dedicate: t() ricade automaticamente sull'inglese quando la chiave manca nei dizionari RU/FR/PL.
@@ -2198,6 +2260,23 @@ export default function App() {
       setGuideStructuredData(title, description, path, seoContent.guias.title);
     } else {
       removeGuideStructuredData();
+    }
+
+    const MODEL_PAGE_IDS = { "model-a":"A", "model-b":"B", "model-c":"C", "model-d":"D" };
+    if(MODEL_PAGE_IDS[page]) {
+      const pageModel = MODELS.find(m => m.id === MODEL_PAGE_IDS[page]);
+      if(pageModel) setProductStructuredData(pageModel, description, path);
+      else removeProductStructuredData();
+    } else {
+      removeProductStructuredData();
+    }
+
+    if(page === "golf-carts-dominican-republic") {
+      setLocalBusinessStructuredData(["Dominican Republic"], description, path);
+    } else if(page === "golf-carts-bayahibe") {
+      setLocalBusinessStructuredData(["Bayahibe", "Dominicus", "Casa de Campo"], description, path);
+    } else {
+      removeLocalBusinessStructuredData();
     }
   }, [page, cartDisplayName, lang]);
 
