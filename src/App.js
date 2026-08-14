@@ -1585,14 +1585,19 @@ const STEPS = [
 
 function Img({k, style={}, eager=false}) {
   if (!IMGS[k]) return null;
+  const src = IMGS[k];
+  const webpSrc = src.replace(/\.(jpe?g|png)(\?.*)?$/i, ".webp$2");
   return (
-    <img
-      src={IMGS[k]}
-      alt=""
-      loading={eager ? "eager" : "lazy"}
-      decoding="async"
-      style={{objectFit:"contain", ...style}}
-    />
+    <picture>
+      {webpSrc !== src && <source srcSet={webpSrc} type="image/webp" />}
+      <img
+        src={src}
+        alt=""
+        loading={eager ? "eager" : "lazy"}
+        decoding="async"
+        style={{objectFit:"contain", ...style}}
+      />
+    </picture>
   );
 }
 
