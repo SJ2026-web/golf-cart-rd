@@ -200,7 +200,7 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
   );
 }
 
-function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg, upd, lang, totalPrice, showOptionals, setShowOptionals, MODELS, SEATS_OPTIONS, SEAT_PRICE_EXTRA, TIRE_PRICE_EXTRA, BATTERIES, MOTORS, SEAT_TYPES, TIRES, STEERING, WINDSHIELDS, OPTIONAL_ITEMS, RAL_COLORS, SEAT_COLORS, Img, GolfCartPreview, defaultMotorFor, defaultBatteryFor, motorPrice, batteryPrice, toggleOpt, ru, fr, pl, tNamePrefix, cartDisplayName, showRobotHint, SummaryBar, showSeatOpts, setShowSeatOpts, showSteerOpts, setShowSteerOpts, showOtherInch, setShowOtherInch, showGrass, setShowGrass, showWindOpts, setShowWindOpts, showTip, setShowTip, showBattOpts, setShowBattOpts, showMotorOpts, setShowMotorOpts }) {
+function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg, upd, lang, totalPrice, showOptionals, setShowOptionals, MODELS, SEATS_OPTIONS, SEAT_PRICE_EXTRA, TIRE_PRICE_EXTRA, BATTERIES, MOTORS, SEAT_TYPES, TIRES, STEERING, WINDSHIELDS, OPTIONAL_ITEMS, RAL_COLORS, SEAT_COLORS, Img, GolfCartPreview, defaultMotorFor, defaultBatteryFor, motorPrice, batteryPrice, toggleOpt, ru, fr, pl, tNamePrefix, cartDisplayName, showRobotHint, SummaryBar, showSeatOpts, setShowSeatOpts, showSteerOpts, setShowSteerOpts, showOtherInch, setShowOtherInch, showGrass, setShowGrass, showWindOpts, setShowWindOpts, showTip, setShowTip, showBattOpts, setShowBattOpts, showMotorOpts, setShowMotorOpts, prevPage }) {
   const model = MODELS.find(m=>m.id===cfg.model);
   const cartNameRef = useRef();
   const previewNameRef = useRef();
@@ -284,7 +284,7 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
       </div>
 
       <div style={{marginTop:24,display:"flex",justifyContent:"space-between"}}>
-        <button style={S.outBtn} onClick={()=>{upd("cartName",cartNameRef.current.value);setPage("chooseMode");}}>← {t("Back","Atrás","Indietro")}</button>
+        <button style={S.outBtn} onClick={()=>{upd("cartName",cartNameRef.current.value);setPage(prevPage);}}>← {t("Back","Atrás","Indietro")}</button>
         <button style={S.goldBtn} onClick={()=>{upd("cartName",cartNameRef.current.value);setStep(cfg.model?1:0);window.scrollTo({top:0,behavior:"smooth"});}}>
           {t("Next","Siguiente","Avanti")} →
         </button>

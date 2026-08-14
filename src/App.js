@@ -2483,7 +2483,7 @@ export default function App() {
             {t6("Configure it your way. Clear pricing from the start.","Configúralo a tu manera. Precio claro desde el principio.","Configuralo a modo tuo. Prezzo chiaro fin dall'inizio.","Configurez-le à votre façon. Un prix clair dès le départ.","Skonfiguruj go po swojemu. Jasna cena od samego początku.","Настройте его по-своему. Понятная цена с самого начала.")}
           </div>
           <div style={{display:"flex",flexWrap:"wrap",gap:16,justifyContent:"center",width:"100%",maxWidth:700,marginBottom:20}}>
-            <div onClick={()=>{upd("model",null);setPage("configurator");setStep(-1);}}
+            <div onClick={()=>{upd("model",null);setPrevPage(page);setPage("configurator");setStep(-1);}}
               style={{
                 flex:"1 1 260px", minWidth:220, maxWidth:320,
                 borderRadius:20, overflow:"hidden", cursor:"pointer", background:C.card,
@@ -2649,7 +2649,7 @@ export default function App() {
                 "Простой процесс, понятная конфигурация и цена, основанная на том, что вы действительно выбираете."
               )}
             </div>
-            <button style={S.goldBtn} onClick={()=>{upd("model",null);setPage("configurator");setStep(-1);}}>
+            <button style={S.goldBtn} onClick={()=>{upd("model",null);setPrevPage(page);setPage("configurator");setStep(-1);}}>
               {t6("Configure your Golf Cart","Configura tu Golf Cart","Configura il tuo Golf Cart","Configurez votre Golf Cart","Skonfiguruj swój Golf Cart","Настройте свой Golf Cart")}
             </button>
           </div>
@@ -2679,7 +2679,7 @@ export default function App() {
               ))}
             </div>
 
-            <button style={S.goldBtn} onClick={()=>{upd("model",null);setPage("configurator");setStep(-1);}}>
+            <button style={S.goldBtn} onClick={()=>{upd("model",null);setPrevPage(page);setPage("configurator");setStep(-1);}}>
               {t6("Configure your Golf Cart","Configura tu Golf Cart","Configura il tuo Golf Cart","Configurez votre Golf Cart","Skonfiguruj swój Golf Cart","Настройте свой Golf Cart")}
             </button>
             <div style={{marginTop:14}}>
@@ -3118,6 +3118,7 @@ export default function App() {
       upd("seatType", "standard");
       upd("steering", "standard");
       upd("tire", "offroad-12");
+      setPrevPage(page);
       setPage("configurator");
       setStep(-1);
     };
@@ -3298,7 +3299,7 @@ export default function App() {
         <h2 style={S.title}>{t("How would you like to proceed?","¿Cómo deseas continuar?","Come vuoi procedere?")}</h2>
         <div style={S.goldLine}/>
         <div style={S.grid2}>
-          <div style={{...S.card(false),textAlign:"center",padding:32,border:"1.5px solid #C9A84C"}} onClick={()=>{upd("model",null);setPage("configurator");setStep(-1);}}>
+          <div style={{...S.card(false),textAlign:"center",padding:32,border:"1.5px solid #C9A84C"}} onClick={()=>{upd("model",null);setPrevPage(page);setPage("configurator");setStep(-1);}}>
             <div style={{fontSize:44,marginBottom:14}}>🛺🔧</div>
             <div style={{color:C.gold,fontWeight:800,fontSize:18,marginBottom:6}}>{t("Configure your own","Configura el tuyo","Configura il tuo")}</div>
             <div style={{color:C.muted,fontSize:13,lineHeight:1.6,marginBottom:16}}>{t6("Start with your model and personalize it your way.","Elige tu modelo y personalízalo a tu manera.","Parti dal tuo modello e personalizzalo a modo tuo.","Partez de votre modèle et personnalisez-le à votre façon.","Zacznij od wybranego modelu i spersonalizuj go po swojemu.","Начните с выбранной модели и настройте её по-своему.")}</div>
@@ -3514,7 +3515,7 @@ export default function App() {
                   {navItems.map(n=>(
                     <button key={n.id}
                       style={{background:page===n.id?"linear-gradient(135deg,#C9A84C,#E2C07A)":"transparent",color:page===n.id?"#000":"#aaa",border:"none",borderRadius:7,padding:"9px 14px",cursor:"pointer",fontSize:14,fontWeight:page===n.id?800:500,textAlign:"left"}}
-                      onClick={()=>{setPage(n.id);if(n.id==="configurator")setStep(-1);setMenuOpen(false);setGuidesOpen(false);}}>
+                      onClick={()=>{if(n.id==="configurator"){setPrevPage(page);setStep(-1);}setPage(n.id);setMenuOpen(false);setGuidesOpen(false);}}>
                       {t(n.en, n.es, n.it)}
                     </button>
                   ))}
@@ -3752,7 +3753,7 @@ export default function App() {
                 Loading...
               </div>
             }>
-              <ConfiguratorPage t={t} tName={tName} S={S} C={C} setPage={setPage} step={step} setStep={setStep} cfg={cfg} setCfg={setCfg} upd={upd} lang={lang} totalPrice={totalPrice} showOptionals={showOptionals} setShowOptionals={setShowOptionals} MODELS={MODELS} SEATS_OPTIONS={SEATS_OPTIONS} SEAT_PRICE_EXTRA={SEAT_PRICE_EXTRA} TIRE_PRICE_EXTRA={TIRE_PRICE_EXTRA} BATTERIES={BATTERIES} MOTORS={MOTORS} SEAT_TYPES={SEAT_TYPES} TIRES={TIRES} STEERING={STEERING} WINDSHIELDS={WINDSHIELDS} OPTIONAL_ITEMS={OPTIONAL_ITEMS} RAL_COLORS={RAL_COLORS} SEAT_COLORS={SEAT_COLORS} Img={Img} GolfCartPreview={GolfCartPreview} defaultMotorFor={defaultMotorFor} defaultBatteryFor={defaultBatteryFor} motorPrice={motorPrice} batteryPrice={batteryPrice} toggleOpt={toggleOpt} ru={ru} fr={fr} pl={pl} tNamePrefix={tNamePrefix} cartDisplayName={cartDisplayName} showRobotHint={showRobotHint} SummaryBar={SummaryBar} showSeatOpts={showSeatOpts} setShowSeatOpts={setShowSeatOpts} showSteerOpts={showSteerOpts} setShowSteerOpts={setShowSteerOpts} showOtherInch={showOtherInch} setShowOtherInch={setShowOtherInch} showGrass={showGrass} setShowGrass={setShowGrass} showWindOpts={showWindOpts} setShowWindOpts={setShowWindOpts} showTip={showTip} setShowTip={setShowTip} showBattOpts={showBattOpts} setShowBattOpts={setShowBattOpts} showMotorOpts={showMotorOpts} setShowMotorOpts={setShowMotorOpts} />
+              <ConfiguratorPage t={t} tName={tName} S={S} C={C} setPage={setPage} step={step} setStep={setStep} cfg={cfg} setCfg={setCfg} upd={upd} lang={lang} totalPrice={totalPrice} showOptionals={showOptionals} setShowOptionals={setShowOptionals} MODELS={MODELS} SEATS_OPTIONS={SEATS_OPTIONS} SEAT_PRICE_EXTRA={SEAT_PRICE_EXTRA} TIRE_PRICE_EXTRA={TIRE_PRICE_EXTRA} BATTERIES={BATTERIES} MOTORS={MOTORS} SEAT_TYPES={SEAT_TYPES} TIRES={TIRES} STEERING={STEERING} WINDSHIELDS={WINDSHIELDS} OPTIONAL_ITEMS={OPTIONAL_ITEMS} RAL_COLORS={RAL_COLORS} SEAT_COLORS={SEAT_COLORS} Img={Img} GolfCartPreview={GolfCartPreview} defaultMotorFor={defaultMotorFor} defaultBatteryFor={defaultBatteryFor} motorPrice={motorPrice} batteryPrice={batteryPrice} toggleOpt={toggleOpt} ru={ru} fr={fr} pl={pl} tNamePrefix={tNamePrefix} cartDisplayName={cartDisplayName} showRobotHint={showRobotHint} SummaryBar={SummaryBar} showSeatOpts={showSeatOpts} setShowSeatOpts={setShowSeatOpts} showSteerOpts={showSteerOpts} setShowSteerOpts={setShowSteerOpts} showOtherInch={showOtherInch} setShowOtherInch={setShowOtherInch} showGrass={showGrass} setShowGrass={setShowGrass} showWindOpts={showWindOpts} setShowWindOpts={setShowWindOpts} showTip={showTip} setShowTip={setShowTip} showBattOpts={showBattOpts} setShowBattOpts={setShowBattOpts} showMotorOpts={showMotorOpts} setShowMotorOpts={setShowMotorOpts} prevPage={prevPage} />
             </Suspense>
           </div>
         </div>
