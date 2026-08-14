@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function PrivacyPage({ t, S, C, setPage }) {
   const sections = [
     {
@@ -82,5 +84,12 @@ function PrivacyPage({ t, S, C, setPage }) {
     </div>
   );
 }
+
+PrivacyPage.propTypes = {
+  t: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  setPage: PropTypes.func.isRequired,
+};
 
 export default PrivacyPage;

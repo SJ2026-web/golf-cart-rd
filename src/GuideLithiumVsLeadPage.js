@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function GuideLithiumVsLeadPage({ t6, S, C, navigateTo }) {
   const faqs = [
     { q: t6("Is a lithium or lead battery better for a golf cart?","¿Es mejor una batería de litio o de plomo para un carrito de golf?","È meglio una batteria al litio o al piombo per un golf cart?","Une batterie au lithium ou au plomb est-elle meilleure pour un golf cart ?","Czy do wózka golfowego lepsza jest bateria litowa czy ołowiowa?","Что лучше для гольф-кара — литиевая или свинцовая батарея?"), a: t6("It depends on use, budget, and desired maintenance. LiFePO4 can offer significant advantages in weight, maintenance, and cycle life, while lead can be attractive when reducing the initial cost is a priority.","Depende del uso, presupuesto y mantenimiento deseado. LiFePO4 puede ofrecer ventajas importantes en peso, mantenimiento y vida por ciclos, mientras que el plomo puede resultar interesante cuando reducir el coste inicial es prioritario.","Dipende dall'uso, dal budget e dalla manutenzione desiderata. Il LiFePO4 può offrire vantaggi importanti in termini di peso, manutenzione e durata dei cicli, mentre il piombo può essere interessante quando ridurre il costo iniziale è prioritario.","Cela dépend de l'usage, du budget et de l'entretien souhaité. Le LiFePO4 peut offrir des avantages importants en poids, entretien et durée de vie en cycles, tandis que le plomb peut être intéressant lorsque réduire le coût initial est prioritaire.","Zależy od użytkowania, budżetu i pożądanej konserwacji. LiFePO4 może oferować istotne zalety pod względem wagi, konserwacji i żywotności cykli, podczas gdy ołów może być atrakcyjny, gdy priorytetem jest niższy koszt początkowy.","Это зависит от использования, бюджета и желаемого обслуживания. LiFePO4 может предложить значительные преимущества в весе, обслуживании и сроке службы по циклам, тогда как свинец может быть интересен, если приоритетом является снижение первоначальной стоимости.") },
@@ -269,5 +271,12 @@ function GuideLithiumVsLeadPage({ t6, S, C, navigateTo }) {
     </div>
   );
 }
+
+GuideLithiumVsLeadPage.propTypes = {
+  t6: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  navigateTo: PropTypes.func.isRequired,
+};
 
 export default GuideLithiumVsLeadPage;

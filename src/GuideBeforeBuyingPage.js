@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function GuideBeforeBuyingPage({ t6, S, C, navigateTo }) {
   const faqs = [
     { q: t6("What should I check before buying a golf cart?","¿Qué debo revisar antes de comprar un carrito de golf?","Cosa devo controllare prima di comprare un golf cart?","Que dois-je vérifier avant d'acheter un golf cart ?","Co powinienem sprawdzić przed zakupem wózka golfowego?","Что нужно проверить перед покупкой гольф-кара?"), a: t6("Check the battery, BMS if it uses lithium, charger, motor, controller, brakes, steering, suspension, tires, chassis, load capacity, warranty, spare parts, and support. If it's used, also check its history and the actual condition of its components.","Revisa batería, BMS si utiliza litio, cargador, motor, controlador, frenos, dirección, suspensión, neumáticos, chasis, capacidad de carga, garantía, repuestos y asistencia. Si es usado, revisa también su historial y el estado real de sus componentes.","Controlla batteria, BMS se utilizza litio, caricatore, motore, controller, freni, sterzo, sospensioni, pneumatici, telaio, capacità di carico, garanzia, ricambi e assistenza. Se è usato, controlla anche la sua storia e lo stato reale dei suoi componenti.","Vérifie la batterie, le BMS s'il utilise du lithium, le chargeur, le moteur, le contrôleur, les freins, la direction, la suspension, les pneus, le châssis, la capacité de charge, la garantie, les pièces de rechange et l'assistance. S'il est d'occasion, vérifie aussi son historique et l'état réel de ses composants.","Sprawdź baterię, BMS jeśli wykorzystuje lit, ładowarkę, silnik, kontroler, hamulce, układ kierowniczy, zawieszenie, opony, podwozie, nośność, gwarancję, części zamienne i wsparcie. Jeśli jest używany, sprawdź także jego historię i rzeczywisty stan komponentów.","Проверьте батарею, BMS, если используется литий, зарядное устройство, двигатель, контроллер, тормоза, рулевое управление, подвеску, шины, шасси, грузоподъёмность, гарантию, запчасти и поддержку. Если он подержанный, проверьте также его историю и реальное состояние компонентов.") },
@@ -408,5 +410,12 @@ function GuideBeforeBuyingPage({ t6, S, C, navigateTo }) {
     </div>
   );
 }
+
+GuideBeforeBuyingPage.propTypes = {
+  t6: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  navigateTo: PropTypes.func.isRequired,
+};
 
 export default GuideBeforeBuyingPage;

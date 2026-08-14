@@ -30,9 +30,11 @@ test('2. il configuratore si apre dalla Home e mostra "Name your Golf Cart"', as
   fireEvent.click(screen.getByText(/Configure your own/i));
 
   // ConfiguratorPage e' lazy-loaded: aspettiamo che il chunk venga caricato.
+  // Timeout esteso a 3s: con PropTypes attivo (solo in sviluppo/test), i controlli aggiuntivi
+  // ad ogni render possono rallentare leggermente il primo caricamento del componente lazy.
   await waitFor(() => {
     expect(screen.getByText(/Name your Golf Cart/i)).toBeInTheDocument();
-  });
+  }, { timeout: 3000 });
 });
 
 test('3. il bottone Indietro dal configuratore riporta alla Home (fix bug prevPage)', async () => {
@@ -41,7 +43,7 @@ test('3. il bottone Indietro dal configuratore riporta alla Home (fix bug prevPa
 
   await waitFor(() => {
     expect(screen.getByText(/Name your Golf Cart/i)).toBeInTheDocument();
-  });
+  }, { timeout: 3000 });
 
   fireEvent.click(screen.getByText(/← Back/i));
 
@@ -49,7 +51,7 @@ test('3. il bottone Indietro dal configuratore riporta alla Home (fix bug prevPa
   // Verifichiamo che la card "Configure your own" della Home sia di nuovo visibile.
   await waitFor(() => {
     expect(screen.getByText(/Configure your own/i)).toBeInTheDocument();
-  });
+  }, { timeout: 3000 });
   // E che la schermata del configuratore non sia piu' presente.
   expect(screen.queryByText(/Name your Golf Cart/i)).not.toBeInTheDocument();
 });
@@ -60,7 +62,7 @@ test('4. il prezzo base del Modello A ($8,990) viene mostrato correttamente nel 
 
   await waitFor(() => {
     expect(screen.getByText(/Name your Golf Cart/i)).toBeInTheDocument();
-  });
+  }, { timeout: 3000 });
 
   // Avanziamo dallo step -1 (nome) allo step 0 (scelta modello), senza inserire un nome.
   fireEvent.click(screen.getByText(/Next/i));
@@ -76,5 +78,5 @@ test('4. il prezzo base del Modello A ($8,990) viene mostrato correttamente nel 
       return digitsOnly.includes('8990') && element.textContent.includes('USD');
     });
     expect(matches.length).toBeGreaterThan(0);
-  });
+  }, { timeout: 3000 });
 });

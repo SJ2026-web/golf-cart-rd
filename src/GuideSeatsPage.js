@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function GuideSeatsPage({ t6, S, C, navigateTo }) {
   const faqs = [
     { q: t6("Is a 2, 4, or 6-seat golf cart better?","¿Es mejor un carrito de golf de 2, 4 o 6 plazas?","È meglio un golf cart da 2, 4 o 6 posti?","Un golf cart 2, 4 ou 6 places est-il meilleur ?","Czy lepszy jest wózek golfowy 2, 4 czy 6-osobowy?","Что лучше — гольф-кар на 2, 4 или 6 мест?"), a: t6("There's no single configuration that's best for everyone. It depends on the usual number of passengers, available space, load, terrain, and how you'll use the vehicle.","No existe una configuración mejor para todos. Depende del número habitual de pasajeros, espacio disponible, carga, terreno y forma de utilizar el vehículo.","Non esiste una configurazione migliore per tutti. Dipende dal numero abituale di passeggeri, dallo spazio disponibile, dal carico, dal terreno e da come utilizzerai il veicolo.","Il n'existe pas de configuration meilleure pour tout le monde. Cela dépend du nombre habituel de passagers, de l'espace disponible, de la charge, du terrain et de la façon dont tu utiliseras le véhicule.","Nie istnieje jedna konfiguracja najlepsza dla wszystkich. Zależy to od zwykłej liczby pasażerów, dostępnej przestrzeni, obciążenia, terenu i sposobu użytkowania pojazdu.","Не существует единой конфигурации, идеальной для всех. Это зависит от обычного количества пассажиров, доступного пространства, нагрузки, местности и способа использования транспортного средства.") },
@@ -341,5 +343,12 @@ function GuideSeatsPage({ t6, S, C, navigateTo }) {
     </div>
   );
 }
+
+GuideSeatsPage.propTypes = {
+  t6: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  navigateTo: PropTypes.func.isRequired,
+};
 
 export default GuideSeatsPage;

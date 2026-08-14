@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState, useRef, useEffect } from "react";
 
 function GuidedAssistantPage({ t, t6, tName, S, C, setPage, setStep, cfg, setCfg, upd, MODELS, SEAT_TYPES, TIRES, STEERING, WINDSHIELDS, OPTIONAL_ITEMS, RAL_COLORS, SEAT_COLORS, defaultMotorFor, defaultBatteryFor, Img, aStep, setAStep, aUsage, setAUsage, aShowMoreOpts, setAShowMoreOpts, showRobotHint, toggleOpt }) {
@@ -391,5 +392,37 @@ function GuidedAssistantPage({ t, t6, tName, S, C, setPage, setStep, cfg, setCfg
     </div>
   );
 }
+
+GuidedAssistantPage.propTypes = {
+  t: PropTypes.func.isRequired,
+  t6: PropTypes.func.isRequired,
+  tName: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  setPage: PropTypes.func.isRequired,
+  setStep: PropTypes.func.isRequired,
+  cfg: PropTypes.object.isRequired,
+  setCfg: PropTypes.func.isRequired,
+  upd: PropTypes.func.isRequired,
+  MODELS: PropTypes.array.isRequired,
+  SEAT_TYPES: PropTypes.array.isRequired,
+  TIRES: PropTypes.array.isRequired,
+  STEERING: PropTypes.array.isRequired,
+  WINDSHIELDS: PropTypes.array.isRequired,
+  OPTIONAL_ITEMS: PropTypes.array.isRequired,
+  RAL_COLORS: PropTypes.array.isRequired,
+  SEAT_COLORS: PropTypes.array.isRequired,
+  defaultMotorFor: PropTypes.func.isRequired,
+  defaultBatteryFor: PropTypes.func.isRequired,
+  Img: PropTypes.elementType.isRequired,
+  aStep: PropTypes.number.isRequired,
+  setAStep: PropTypes.func.isRequired,
+  aUsage: PropTypes.string,
+  setAUsage: PropTypes.func.isRequired,
+  aShowMoreOpts: PropTypes.bool.isRequired,
+  setAShowMoreOpts: PropTypes.func.isRequired,
+  showRobotHint: PropTypes.bool.isRequired,
+  toggleOpt: PropTypes.func.isRequired,
+};
 
 export default GuidedAssistantPage;

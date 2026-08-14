@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Guide48vVs72vPage({ t6, S, C, navigateTo }) {
   const faqs = [
     { q: t6("Is a 48V or 72V golf cart better?","¿Es mejor un carrito de golf de 48V o de 72V?","È meglio un golf cart da 48V o da 72V?","Un golf cart 48V ou 72V est-il meilleur ?","Czy lepszy jest wózek golfowy 48V czy 72V?","Что лучше — гольф-кар на 48В или 72В?"), a: t6("Neither is automatically better. The choice depends on battery, motor, controller, weight, passengers, terrain, performance, and intended use.","Ninguno es automáticamente mejor. La elección depende de batería, motor, controlador, peso, pasajeros, terreno, prestaciones y uso previsto.","Nessuno dei due è automaticamente migliore. La scelta dipende da batteria, motore, controller, peso, passeggeri, terreno, prestazioni e uso previsto.","Aucun des deux n'est automatiquement meilleur. Le choix dépend de la batterie, du moteur, du contrôleur, du poids, des passagers, du terrain, des performances et de l'usage prévu.","Żaden z nich nie jest automatycznie lepszy. Wybór zależy od baterii, silnika, kontrolera, wagi, pasażerów, terenu, osiągów i planowanego zastosowania.","Ни один из вариантов не является автоматически лучше. Выбор зависит от батареи, двигателя, контроллера, веса, пассажиров, местности, характеристик и предполагаемого использования.") },
@@ -331,5 +333,12 @@ function Guide48vVs72vPage({ t6, S, C, navigateTo }) {
     </div>
   );
 }
+
+Guide48vVs72vPage.propTypes = {
+  t6: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  navigateTo: PropTypes.func.isRequired,
+};
 
 export default Guide48vVs72vPage;

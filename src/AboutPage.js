@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function AboutPage({ t, S, C, setPage, lang }) {
   const STORY = {
     it: [
@@ -236,5 +238,13 @@ function AboutPage({ t, S, C, setPage, lang }) {
     </div>
   );
 }
+
+AboutPage.propTypes = {
+  t: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  setPage: PropTypes.func.isRequired,
+  lang: PropTypes.string.isRequired,
+};
 
 export default AboutPage;

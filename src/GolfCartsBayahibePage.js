@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function GolfCartsBayahibePage({ t, t6, S, C, navigateTo, MODELS, Img }) {
   const faqs = [
     {
@@ -198,5 +200,15 @@ function GolfCartsBayahibePage({ t, t6, S, C, navigateTo, MODELS, Img }) {
     </div>
   );
 }
+
+GolfCartsBayahibePage.propTypes = {
+  t: PropTypes.func.isRequired,
+  t6: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  navigateTo: PropTypes.func.isRequired,
+  MODELS: PropTypes.array.isRequired,
+  Img: PropTypes.elementType.isRequired,
+};
 
 export default GolfCartsBayahibePage;

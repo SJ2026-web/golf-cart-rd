@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function GuideSeaMaintenancePage({ t6, S, C, navigateTo }) {
   const faqs = [
     { q: t6("Can sea salt affect a golf cart even if it never goes onto the beach?","¿El salitre puede afectar a un carrito de golf aunque no entre en la playa?","La salsedine può danneggiare un golf cart anche se non va mai in spiaggia?","Le sel marin peut-il abîmer un golf cart même s'il ne va jamais à la plage ?","Czy słona mgiełka może uszkodzić wózek golfowy, nawet jeśli nigdy nie jeździ po plaży?","Может ли морская соль повредить гольф-кар, даже если он никогда не выезжает на пляж?"), a: t6("Yes, environmental exposure can exist near the coast even without direct contact with sand or seawater. The actual level depends on location and usage conditions.","Sí, la exposición ambiental puede existir cerca de la costa incluso sin contacto directo con arena o agua del mar. El nivel real depende de la ubicación y las condiciones de uso.","Sì, l'esposizione ambientale può esistere vicino alla costa anche senza contatto diretto con sabbia o acqua di mare. Il livello reale dipende dalla posizione e dalle condizioni d'uso.","Oui, l'exposition environnementale peut exister près de la côte même sans contact direct avec le sable ou l'eau de mer. Le niveau réel dépend de l'emplacement et des conditions d'utilisation.","Tak, ekspozycja środowiskowa może występować w pobliżu wybrzeża nawet bez bezpośredniego kontaktu z piaskiem lub wodą morską. Rzeczywisty poziom zależy od lokalizacji i warunków użytkowania.","Да, воздействие окружающей среды может присутствовать вблизи побережья даже без прямого контакта с песком или морской водой. Реальный уровень зависит от местоположения и условий эксплуатации.") },
@@ -461,5 +463,12 @@ function GuideSeaMaintenancePage({ t6, S, C, navigateTo }) {
     </div>
   );
 }
+
+GuideSeaMaintenancePage.propTypes = {
+  t6: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  navigateTo: PropTypes.func.isRequired,
+};
 
 export default GuideSeaMaintenancePage;

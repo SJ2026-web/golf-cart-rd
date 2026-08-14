@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 function FAQPage({ t, S, C, setPage }) {
@@ -188,5 +189,12 @@ function FAQPage({ t, S, C, setPage }) {
     </div>
   );
 }
+
+FAQPage.propTypes = {
+  t: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  setPage: PropTypes.func.isRequired,
+};
 
 export default FAQPage;

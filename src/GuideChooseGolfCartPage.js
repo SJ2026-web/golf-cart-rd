@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function GuideChooseGolfCartPage({ t6, S, C, navigateTo }) {
   const faqs = [
     { q: t6("Which golf cart is best for a family?","¿Qué carrito de golf es mejor para una familia?","Quale golf cart è migliore per una famiglia?","Quel golf cart est le mieux adapté à une famille ?","Który wózek golfowy jest najlepszy dla rodziny?","Какой гольф-кар лучше всего подходит для семьи?"), a: t6("It mainly depends on the usual number of passengers, the route, and the space needed. For many families, a 4-seat cart is a versatile solution, while larger groups may prefer 6 seats.","Depende principalmente del número habitual de pasajeros, el recorrido y el espacio necesario. Para muchas familias un carrito de 4 plazas es una solución versátil, mientras que grupos más numerosos pueden valorar 6 plazas.","Dipende principalmente dal numero abituale di passeggeri, dal percorso e dallo spazio necessario. Per molte famiglie un golf cart da 4 posti è una soluzione versatile, mentre gruppi più numerosi possono valutare 6 posti.","Cela dépend principalement du nombre habituel de passagers, du trajet et de l'espace nécessaire. Pour de nombreuses familles, un golf cart 4 places est une solution polyvalente, tandis que les groupes plus nombreux peuvent privilégier 6 places.","Zależy głównie od zwykłej liczby pasażerów, trasy i potrzebnej przestrzeni. Dla wielu rodzin wózek 4-osobowy to wszechstronne rozwiązanie, podczas gdy większe grupy mogą rozważyć 6 miejsc.","Это зависит в первую очередь от обычного количества пассажиров, маршрута и необходимого пространства. Для многих семей гольф-кар на 4 места — универсальное решение, а более крупным группам может подойти вариант на 6 мест.") },
@@ -198,5 +200,12 @@ function GuideChooseGolfCartPage({ t6, S, C, navigateTo }) {
     </div>
   );
 }
+
+GuideChooseGolfCartPage.propTypes = {
+  t6: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  navigateTo: PropTypes.func.isRequired,
+};
 
 export default GuideChooseGolfCartPage;

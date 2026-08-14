@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function ContactPage({ t, S, C, setPage, prevPage }) {
   return (
     <div style={S.sec}>
@@ -26,5 +28,13 @@ function ContactPage({ t, S, C, setPage, prevPage }) {
     </div>
   );
 }
+
+ContactPage.propTypes = {
+  t: PropTypes.func.isRequired,
+  S: PropTypes.object.isRequired,
+  C: PropTypes.object.isRequired,
+  setPage: PropTypes.func.isRequired,
+  prevPage: PropTypes.string.isRequired,
+};
 
 export default ContactPage;
