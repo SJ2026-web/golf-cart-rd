@@ -2473,83 +2473,6 @@ export default function App() {
   ];
 
   function Home() {
-    const [showReviewForm, setShowReviewForm] = useState(false);
-    const [reviewStars, setReviewStars] = useState(5);
-    const [reviewSent, setReviewSent] = useState(false);
-    const [reviewSending, setReviewSending] = useState(false);
-    const reviewNameRef = useRef();
-    const reviewLocRef = useRef();
-    const reviewEmailRef = useRef();
-    const reviewTextRef = useRef();
-
-    const handleReviewSend = async () => {
-      if(reviewSending) return;
-      const name = reviewNameRef.current?.value || "";
-      const loc = reviewLocRef.current?.value || "";
-      const reviewEmail = reviewEmailRef.current?.value || "";
-      const text = reviewTextRef.current?.value || "";
-      if(!name || !text) { alert(t("Please fill in your name and review","Por favor completa tu nombre y reseña","Per favore compila nome e recensione")); return; }
-      if(!reviewEmail.includes("@")) { alert(t("Please enter a valid email","Por favor ingresa un email válido","Per favore inserisci un'email valida")); return; }
-      const voucherCode = "TAAAC-REV-" + Math.random().toString(36).substring(2,7).toUpperCase();
-      const msg = [
-        "NEW CUSTOMER REVIEW",
-        "=====================================",
-        "Name: "+name,
-        "Location: "+loc,
-        "Email: "+reviewEmail,
-        "Stars: "+reviewStars+"/5",
-        "Review: "+text,
-        "",
-        "Voucher code issued: "+voucherCode,
-      ].join("\n");
-      setReviewSending(true);
-      try {
-        await window.emailjs.send("service_f1ysovn","template_e36a3gp",{
-          to_email:"info@taaac.solutions",
-          subject:"New Review from "+name+" ("+reviewStars+"★)",
-          message:msg,
-          name:name,
-          from_name:name,
-          from_email:"noreply@taaac.solutions",
-          email:"noreply@taaac.solutions",
-          phone:"",
-        },"G_ndpmoIfpB6oi8pP");
-
-        try {
-          const thankYouTemplates = {
-            en: "Hi {name},\n\nThank you so much for sharing your experience with us — reviews like yours help us grow and show what it really means to be part of the TAAAC Family.\n\nAs a small thank you, here's a free maintenance service for your golf cart, on us:\n\nVoucher code: {code}\n(No expiration date. Valid for one use only. Just mention this code when booking your service from the Service section of the site.)\n\nThank you again,\nThe TAAAC Solutions team",
-            es: "Hola {name},\n\nMuchas gracias por compartir tu experiencia con nosotros — reseñas como la tuya nos ayudan a crecer y muestran mejor que nadie lo que significa ser parte de la TAAAC Family.\n\nComo pequeño agradecimiento, aquí tienes un servicio de mantenimiento gratuito para tu golf cart, de nuestra parte:\n\nCódigo del bono: {code}\n(Sin fecha de caducidad. Válido para un solo uso. Solo menciona este código al reservar tu servicio en la sección Asistencia del sitio.)\n\nGracias de nuevo,\nEl equipo de TAAAC Solutions",
-            it: "Ciao {name},\n\nGrazie di cuore per aver condiviso la tua esperienza con noi — recensioni come la tua ci aiutano a crescere e raccontano meglio di chiunque altro cosa significa far parte della TAAAC Family.\n\nCome piccolo ringraziamento, ecco in regalo una manutenzione gratuita per il tuo golf cart:\n\nCodice buono: {code}\n(Senza scadenza. Valido per un solo utilizzo. Ti basta citare questo codice quando prenoti il servizio dalla sezione Assistenza del sito.)\n\nGrazie ancora,\nIl team TAAAC Solutions",
-            fr: "Bonjour {name},\n\nMerci infiniment d'avoir partagé ton expérience avec nous — des avis comme le tien nous aident à grandir et montrent mieux que quiconque ce que signifie faire partie de la TAAAC Family.\n\nEn guise de petit remerciement, voici un entretien gratuit pour ton golf cart, offert par nous :\n\nCode du bon : {code}\n(Sans date d'expiration. Valable pour une seule utilisation. Il te suffit de mentionner ce code lors de la réservation de ton service dans la section Assistance du site.)\n\nMerci encore,\nL'équipe TAAAC Solutions",
-            pl: "Cześć {name},\n\nBardzo dziękujemy za podzielenie się z nami swoją opinią — takie recenzje jak Twoja pomagają nam się rozwijać i najlepiej pokazują, co znaczy być częścią TAAAC Family.\n\nW ramach małego podziękowania, otrzymujesz od nas bezpłatny serwis konserwacyjny dla swojego wózka golfowego:\n\nKod vouchera: {code}\n(Bez terminu ważności. Ważny tylko na jedno użycie. Wystarczy podać ten kod podczas rezerwacji serwisu w sekcji Serwis na stronie.)\n\nJeszcze raz dziękujemy,\nZespół TAAAC Solutions",
-            ru: "Привет, {name}!\n\nОгромное спасибо, что поделился своим опытом с нами — такие отзывы, как твой, помогают нам расти и лучше всего показывают, что значит быть частью TAAAC Family.\n\nВ знак благодарности дарим тебе бесплатное техобслуживание твоего гольф-кара:\n\nКод ваучера: {code}\n(Без срока действия. Действителен для одного использования. Просто укажи этот код при бронировании сервиса в разделе Сервис на сайте.)\n\nЕщё раз спасибо,\nКоманда TAAAC Solutions",
-          };
-          const thankYouMsg = (thankYouTemplates[lang] || thankYouTemplates.en)
-            .split("{name}").join(name)
-            .split("{code}").join(voucherCode);
-          await window.emailjs.send("service_f1ysovn","template_e36a3gp",{
-            to_email:reviewEmail,
-            subject:t("A gift for your review — TAAAC Solutions","Un regalo por tu reseña — TAAAC Solutions","Un regalo per la tua recensione — TAAAC Solutions"),
-            message:thankYouMsg,
-            name:"TAAAC Solutions",
-            from_name:"TAAAC Solutions",
-            from_email:"info@taaac.solutions",
-            email:"info@taaac.solutions",
-            phone:"",
-          },"G_ndpmoIfpB6oi8pP");
-        } catch(confirmErr) {
-          console.error("Errore invio email di ringraziamento recensione:", confirmErr);
-        }
-
-        setReviewSent(true);
-      } catch(err) {
-        console.error(err);
-        alert(t("Error sending review. Please try again.","Error al enviar la reseña. Inténtalo de nuevo.","Errore nell'invio della recensione. Riprova."));
-      } finally {
-        setReviewSending(false);
-      }
-    };
-
     return (
       <div>
         <div style={{background:"linear-gradient(135deg,#080808 0%,#0f0f0f 60%,#0a0d0a 100%)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",textAlign:"center",padding:"8px 20px 60px",position:"relative",overflow:"visible"}}>
@@ -2799,6 +2722,11 @@ export default function App() {
                 </div>
               ))}
             </div>
+            <div style={{marginTop:20}}>
+              <span onClick={()=>setPage("service")} style={{color:C.muted,fontSize:12.5,textDecoration:"underline",cursor:"pointer"}}>
+                {t6("Want even more peace of mind? Discover TAAAC Care →","¿Quieres aún más tranquilidad? Descubre TAAAC Care →","Vuoi ancora più tranquillità? Scopri TAAAC Care →","Vous voulez encore plus de tranquillité d'esprit ? Découvrez TAAAC Care →","Chcesz jeszcze więcej spokoju ducha? Poznaj TAAAC Care →","Хотите ещё больше спокойствия? Узнайте о TAAAC Care →")}
+              </span>
+            </div>
           </div>
 
           <div style={{marginTop:48}}>
@@ -2836,50 +2764,6 @@ export default function App() {
             <button style={S.goldBtn} onClick={()=>setPage("partner")}>
               {t("Partner with us","Colabora con nosotros","Collabora con noi")}
             </button>
-          </div>
-
-          <div style={{marginTop:56}}>
-            <div style={{color:C.gold,fontSize:20,fontWeight:800,marginBottom:14,textAlign:"center"}}>{t("What they say about us","Lo que dicen de nosotros","Cosa dicono di noi")}</div>
-            <h2 style={{...S.title,textAlign:"center"}}>{t6("Customer experiences","Experiencias de nuestros clientes","Esperienze dei nostri clienti","Expériences de nos clients","Doświadczenia naszych klientów","Опыт наших клиентов")}</h2>
-
-            <div style={{marginTop:16,marginBottom:32,textAlign:"center"}}>
-              {!showReviewForm && !reviewSent && (
-                <button style={S.outBtn} onClick={()=>setShowReviewForm(true)}>
-                  ✍️ {t("Write a Review","Escribir una Reseña","Scrivi una Recensione")}
-                </button>
-              )}
-
-              {showReviewForm && !reviewSent && (
-                <div style={{...S.card(false),textAlign:"left",maxWidth:440,margin:"0 auto"}}>
-                  <h3 style={{color:C.gold,fontSize:16,marginBottom:16,textAlign:"center"}}>{t("Write a Review","Escribir una Reseña","Scrivi una Recensione")}</h3>
-                  <input ref={reviewNameRef} type="text" placeholder={t("Your name","Tu nombre","Il tuo nome")} style={{width:"100%",background:C.card,border:"1.5px solid #333",borderRadius:10,padding:"12px 14px",fontSize:14,color:C.white,marginBottom:10,outline:"none"}}/>
-                  <input ref={reviewLocRef} type="text" placeholder={t("Location (optional)","Ubicación (opcional)","Località (opzionale)")} style={{width:"100%",background:C.card,border:"1.5px solid #333",borderRadius:10,padding:"12px 14px",fontSize:14,color:C.white,marginBottom:10,outline:"none"}}/>
-                  <input ref={reviewEmailRef} type="email" placeholder="Email *" style={{width:"100%",background:C.card,border:"1.5px solid #333",borderRadius:10,padding:"12px 14px",fontSize:14,color:C.white,marginBottom:10,outline:"none"}}/>
-                  <div style={{textAlign:"center",marginBottom:10}}>
-                    {[1,2,3,4,5].map(n=>(
-                      <span key={n} onClick={()=>setReviewStars(n)} style={{cursor:"pointer",fontSize:24,color:n<=reviewStars?C.gold:"#444"}}>★</span>
-                    ))}
-                  </div>
-                  <textarea ref={reviewTextRef} rows={4} placeholder={t("Your review","Tu reseña","La tua recensione")} style={{width:"100%",background:C.card,border:"1.5px solid #333",borderRadius:10,padding:"12px 14px",fontSize:14,color:C.white,marginBottom:14,outline:"none",resize:"vertical",fontFamily:"inherit"}}/>
-                  <div style={{display:"flex",gap:10,justifyContent:"center"}}>
-                    <button style={S.outBtn} onClick={()=>setShowReviewForm(false)}>{t("Cancel","Cancelar","Annulla")}</button>
-                    <button style={{...S.goldBtn,opacity:reviewSending?0.6:1,cursor:reviewSending?"not-allowed":"pointer"}} onClick={handleReviewSend} disabled={reviewSending}>
-                      {reviewSending ? t("Sending...","Enviando...","Invio...") : "📩 "+t("Send","Enviar","Invia")}
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {reviewSent && (
-                <div style={{color:C.goldLight,fontSize:14,fontWeight:600}}>
-                  ✅ {t("Thank you for your review!","¡Gracias por tu reseña!","Grazie per la tua recensione!")}
-                </div>
-              )}
-            </div>
-
-            <div style={{textAlign:"center",color:C.muted,fontSize:13,padding:"20px 0"}}>
-              {t("No reviews yet — be the first to share your experience!","Aún no hay reseñas — ¡sé el primero en compartir tu experiencia!","Nessuna recensione ancora — sii il primo a condividere la tua esperienza!")}
-            </div>
           </div>
         </div>
 
