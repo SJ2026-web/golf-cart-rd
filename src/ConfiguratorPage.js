@@ -146,7 +146,7 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
       setSent(true);
       if (typeof window.gtag === "function") {
         window.gtag('event', 'conversion', {
-          'send_to': 'AW-18371544376/d_QCknUw-AcELiKnrhE'
+          'send_to': 'AW-18371544376/-d_QCknUw-AcELiKnrhE'
         });
       }
     } catch(err) {
