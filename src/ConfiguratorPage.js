@@ -144,6 +144,11 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
 
       try { localStorage.removeItem("golfcart_draft"); } catch(e) {}
       setSent(true);
+      if (typeof window.gtag === "function") {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-18371544376/d_QCknUw-AcELiKnrhE'
+        });
+      }
     } catch(err) {
       console.error(err);
       alert(t("Error sending request. Please try WhatsApp.","Error al enviar la solicitud. Prueba WhatsApp.","Errore nell'invio della richiesta. Prova WhatsApp."));
