@@ -6,25 +6,25 @@ function PrivacyPage({ t, S, C, setPage }) {
       en: "1. Data Controller",
       es: "1. Responsable del Tratamiento",
       it: "1. Titolare del Trattamento",
-      body_en: "Golf Cart DR, based in Bayahibe, Dominicus, República Dominicana. Contact: info@taaac.solutions",
-      body_es: "Golf Cart DR, con sede en Bayahibe, Dominicus, República Dominicana. Contacto: info@taaac.solutions",
-      body_it: "Golf Cart DR, con sede a Bayahibe, Dominicus, Repubblica Dominicana. Contatto: info@taaac.solutions",
+      body_en: "TAAAC Solutions is the commercial name used by Samuele Maggio for the activity. Samuele Maggio is the Data Controller responsible for the processing of personal data collected through taaac.solutions and TAAAC Solutions contact forms. Contact: info@taaac.solutions",
+      body_es: "TAAAC Solutions es el nombre comercial utilizado por Samuele Maggio para la actividad. Samuele Maggio es el Responsable del Tratamiento de los datos personales recopilados a través de taaac.solutions y de los formularios de contacto de TAAAC Solutions. Contacto: info@taaac.solutions",
+      body_it: "TAAAC Solutions è il nome commerciale utilizzato da Samuele Maggio per l'attività. Samuele Maggio è il Titolare del Trattamento dei dati personali raccolti tramite taaac.solutions e i moduli di contatto di TAAAC Solutions. Contatto: info@taaac.solutions",
     },
     {
       en: "2. Data We Collect",
       es: "2. Datos que Recopilamos",
       it: "2. Dati che Raccogliamo",
-      body_en: "When you submit a quote request or collaboration request, we collect: first name, last name, phone number, email address, delivery address, and any notes you provide.",
-      body_es: "Cuando envía una solicitud de presupuesto o de colaboración, recopilamos: nombre, apellido, número de teléfono, correo electrónico, dirección de entrega y cualquier nota que proporcione.",
-      body_it: "Quando invii una richiesta di preventivo o di collaborazione, raccogliamo: nome, cognome, numero di telefono, indirizzo email, indirizzo di consegna e qualsiasi nota fornita.",
+      body_en: "When you submit a quote request or collaboration request, we collect: first name, last name, phone number, email address, delivery address, and any notes you provide. Data may also be collected through Facebook and Instagram lead forms, and may include your name, email address, phone or WhatsApp number, and any information you voluntarily provide.",
+      body_es: "Cuando envía una solicitud de presupuesto o de colaboración, recopilamos: nombre, apellido, número de teléfono, correo electrónico, dirección de entrega y cualquier nota que proporcione. Los datos también pueden recopilarse a través de formularios de clientes potenciales de Facebook e Instagram, y pueden incluir su nombre, correo electrónico, número de teléfono o WhatsApp, y cualquier información que proporcione voluntariamente.",
+      body_it: "Quando invii una richiesta di preventivo o di collaborazione, raccogliamo: nome, cognome, numero di telefono, indirizzo email, indirizzo di consegna e qualsiasi nota fornita. I dati possono essere raccolti anche tramite moduli per potenziali clienti di Facebook e Instagram, e possono includere nome, indirizzo email, numero di telefono o WhatsApp, e qualsiasi informazione fornita volontariamente.",
     },
     {
       en: "3. How We Use Your Data",
       es: "3. Cómo Usamos sus Datos",
       it: "3. Come Utilizziamo i Tuoi Dati",
-      body_en: "Your data is used exclusively to respond to your request, provide a quote, or schedule a meeting. We do not sell, rent, or share your data with third parties.",
-      body_es: "Sus datos se utilizan exclusivamente para responder a su solicitud, proporcionar un presupuesto o programar una reunión. No vendemos, alquilamos ni compartimos sus datos con terceros.",
-      body_it: "I tuoi dati vengono utilizzati esclusivamente per rispondere alla tua richiesta, fornire un preventivo o programmare un incontro. Non vendiamo, affittiamo né condividiamo i tuoi dati con terze parti.",
+      body_en: "Your data is used to: respond to your request; contact you by email, phone, or WhatsApp when needed; prepare a quote; verify payments; and organize the delivery of your golf cart. We do not sell or rent your personal data. We only share it with third parties when necessary to provide the requested service, process payments or organize delivery, or when required by law.",
+      body_es: "Sus datos se utilizan para: responder a su solicitud; contactarlo por correo electrónico, teléfono o WhatsApp cuando sea necesario; preparar un presupuesto; verificar los pagos; y organizar la entrega de su golf cart. No vendemos ni alquilamos sus datos personales. Solo los compartimos con terceros cuando sea necesario para prestar el servicio solicitado, procesar pagos u organizar la entrega, o cuando lo exija la ley.",
+      body_it: "I tuoi dati vengono utilizzati per: rispondere alla tua richiesta; contattarti via email, telefono o WhatsApp quando necessario; preparare un preventivo; verificare i pagamenti; e organizzare la consegna del tuo golf cart. Non vendiamo né cediamo in affitto i tuoi dati personali. Li condividiamo con terzi solo quando necessario per fornire il servizio richiesto, gestire i pagamenti o organizzare la consegna, oppure quando richiesto dalla legge.",
     },
     {
       en: "4. Data Retention",
@@ -64,7 +64,7 @@ function PrivacyPage({ t, S, C, setPage }) {
     <div style={S.sec}>
       <div style={{color:C.gold,fontSize:10,letterSpacing:4,fontWeight:700,marginBottom:14,textTransform:"uppercase"}}>{t("Privacy Policy","Política de Privacidad","Informativa Privacy")}</div>
       <h1 style={S.title}>{t("Privacy Policy","Política de Privacidad","Informativa Privacy")}</h1>
-      <div style={{color:C.muted,fontSize:13,marginBottom:8}}>{t("Last updated: 2025","Última actualización: 2025","Ultimo aggiornamento: 2025")}</div>
+      <div style={{color:C.muted,fontSize:13,marginBottom:8}}>{t("Last updated: 2026","Última actualización: 2026","Ultimo aggiornamento: 2026")}</div>
       <div style={S.goldLine}/>
       <div style={{display:"flex",flexDirection:"column",gap:20,marginBottom:32}}>
         {sections.map((s,i)=>(

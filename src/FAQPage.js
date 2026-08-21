@@ -144,9 +144,9 @@ function FAQPage({ t, S, C, setPage }) {
     {
       q: {en:"Is the golf cart street legal? Do I need insurance?", es:"¿El golf cart es legal en la vía pública? ¿Necesito seguro?", it:"Il golf cart è omologato per la strada? Serve l'assicurazione?"},
       a: {
-        en:"The golf cart is approved for road use. However, Golf Cart DR declines all responsibility for use that does not comply with the laws and regulations of the Dominican Republic. It is the buyer's responsibility to ensure compliance with local regulations regarding insurance, licensing, and road use.",
-        es:"El golf cart está homologado para circular por la vía pública. Sin embargo, Golf Cart DR declina toda responsabilidad por un uso que no cumpla con las leyes y reglamentos de la República Dominicana. Es responsabilidad del comprador asegurarse del cumplimiento de la normativa local en materia de seguro, licencias y uso vial.",
-        it:"Il golf cart è omologato per la circolazione su strada. Tuttavia, Golf Cart DR declina ogni responsabilità per un utilizzo non conforme alle leggi e ai regolamenti della Repubblica Dominicana. È responsabilità dell'acquirente garantire il rispetto delle normative locali in materia di assicurazione, patente e circolazione."
+        en:"The golf cart is approved for road use. However, TAAAC Solutions declines all responsibility for use that does not comply with the laws and regulations of the Dominican Republic. It is the buyer's responsibility to ensure compliance with local regulations regarding insurance, licensing, and road use.",
+        es:"El golf cart está homologado para circular por la vía pública. Sin embargo, TAAAC Solutions declina toda responsabilidad por un uso que no cumpla con las leyes y reglamentos de la República Dominicana. Es responsabilidad del comprador asegurarse del cumplimiento de la normativa local en materia de seguro, licencias y uso vial.",
+        it:"Il golf cart è omologato per la circolazione su strada. Tuttavia, TAAAC Solutions declina ogni responsabilità per un utilizzo non conforme alle leggi e ai regolamenti della Repubblica Dominicana. È responsabilità dell'acquirente garantire il rispetto delle normative locali in materia di assicurazione, patente e circolazione."
       }
     },
   ];
@@ -155,7 +155,7 @@ function FAQPage({ t, S, C, setPage }) {
     <div style={S.sec}>
       <div style={{color:C.gold,fontSize:10,letterSpacing:4,fontWeight:700,marginBottom:14,textTransform:"uppercase"}}>FAQ</div>
       <h1 style={S.title}>{t("Frequently Asked Questions","Preguntas Frecuentes","Domande Frequenti")}</h1>
-      <div style={{color:C.muted,fontSize:13,marginBottom:24}}>{t("Everything you need to know about Golf Cart DR","Todo lo que necesita saber sobre Golf Cart DR","Tutto quello che devi sapere su Golf Cart DR")}</div>
+      <div style={{color:C.muted,fontSize:13,marginBottom:24}}>{t("Everything you need to know about TAAAC Solutions","Todo lo que necesita saber sobre TAAAC Solutions","Tutto quello che devi sapere su TAAAC Solutions")}</div>
       <div style={S.goldLine}/>
       <div style={{display:"flex",flexDirection:"column",gap:10,marginBottom:32}}>
         {faqs.map((faq,i)=>(
@@ -176,9 +176,9 @@ function FAQPage({ t, S, C, setPage }) {
         <div style={{color:C.gold,fontWeight:700,fontSize:13,marginBottom:6}}>⚖️ {t("Legal Disclaimer","Aviso Legal","Disclaimer Legale")}</div>
         <div style={{color:C.muted,fontSize:13,lineHeight:1.8}}>
           {t(
-            "Golf Cart DR declines all responsibility for use of the vehicle that does not comply with the laws, regulations, and requirements in force in the Dominican Republic or in any other country where the vehicle is used. It is the sole responsibility of the buyer to obtain any required insurance, licenses, or permits.",
-            "Golf Cart DR declina toda responsabilidad por el uso del vehículo que no cumpla con las leyes, reglamentos y requisitos vigentes en la República Dominicana o en cualquier otro país donde se utilice el vehículo. Es responsabilidad exclusiva del comprador obtener cualquier seguro, licencia o permiso requerido.",
-            "Golf Cart DR declina ogni responsabilità per l'utilizzo del veicolo non conforme alle leggi, ai regolamenti e ai requisiti vigenti nella Repubblica Dominicana o in qualsiasi altro paese in cui il veicolo viene utilizzato. È responsabilità esclusiva dell'acquirente ottenere qualsiasi assicurazione, licenza o permesso richiesto."
+            "TAAAC Solutions declines all responsibility for use of the vehicle that does not comply with the laws, regulations, and requirements in force in the Dominican Republic or in any other country where the vehicle is used. It is the sole responsibility of the buyer to obtain any required insurance, licenses, or permits.",
+            "TAAAC Solutions declina toda responsabilidad por el uso del vehículo que no cumpla con las leyes, reglamentos y requisitos vigentes en la República Dominicana o en cualquier otro país donde se utilice el vehículo. Es responsabilidad exclusiva del comprador obtener cualquier seguro, licencia o permiso requerido.",
+            "TAAAC Solutions declina ogni responsabilità per l'utilizzo del veicolo non conforme alle leggi, ai regolamenti e ai requisiti vigenti nella Repubblica Dominicana o in qualsiasi altro paese in cui il veicolo viene utilizzato. È responsabilità esclusiva dell'acquirente ottenere qualsiasi assicurazione, licenza o permesso richiesto."
           )}
         </div>
       </div>

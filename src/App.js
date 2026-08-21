@@ -85,17 +85,19 @@ const RU_DICT = {
   "Describe what you need...":"Опишите, что вам нужно...",
   "Edit":"Изменить",
   "Estimated Delivery":"Ориентировочный срок доставки",
-  "Everything you need to know about Golf Cart DR":"Всё, что нужно знать о Golf Cart DR",
+  "Everything you need to know about TAAAC Solutions":"Всё, что нужно знать о TAAAC Solutions",
   "Fill in your details to receive the official quote":"Заполните свои данные, чтобы получить официальное предложение",
   "For Sale":"В продаже",
   "Frequently Asked Questions":"Часто задаваемые вопросы",
-  "Golf Cart DR declines all responsibility for use of the vehicle that does not comply with the laws, regulations, and requirements in force in the Dominican Republic or in any other country where the vehicle is used. It is the sole responsibility of the buyer to obtain any required insurance, licenses, or permits.":"Golf Cart DR снимает с себя всякую ответственность за использование транспортного средства, не соответствующее законам, нормам и требованиям, действующим в Доминиканской Республике или в любой другой стране использования транспортного средства. Покупатель несёт единоличную ответственность за получение необходимых страховок, лицензий или разрешений.",
+  "TAAAC Solutions declines all responsibility for use of the vehicle that does not comply with the laws, regulations, and requirements in force in the Dominican Republic or in any other country where the vehicle is used. It is the sole responsibility of the buyer to obtain any required insurance, licenses, or permits.":"TAAAC Solutions снимает с себя всякую ответственность за использование транспортного средства, не соответствующее законам, нормам и требованиям, действующим в Доминиканской Республике или в любой другой стране использования транспортного средства. Покупатель несёт единоличную ответственность за получение необходимых страховок, лицензий или разрешений.",
   "Golf Cart for every need":"Гольф-кар на любые нужды",
   "Grass tires":"Шины для травы",
   "How would you like to proceed?":"Как вы хотите продолжить?",
   "Included":"Включено",
   "Join Our Team":"Присоединяйтесь к нашей команде",
-  "Last updated: 2025":"Последнее обновление: 2025",
+  "Last updated: 2026":"Последнее обновление: 2026",
+  "When you submit a quote request or collaboration request, we collect: first name, last name, phone number, email address, delivery address, and any notes you provide. Data may also be collected through Facebook and Instagram lead forms, and may include your name, email address, phone or WhatsApp number, and any information you voluntarily provide.":"Когда вы отправляете запрос на предложение цены или запрос о сотрудничестве, мы собираем: имя, фамилию, номер телефона, адрес электронной почты, адрес доставки и любые заметки, которые вы предоставляете. Данные также могут собираться через формы для потенциальных клиентов Facebook и Instagram и могут включать ваше имя, адрес электронной почты, номер телефона или WhatsApp, а также любую информацию, предоставленную вами добровольно.",
+  "Your data is used to: respond to your request; contact you by email, phone, or WhatsApp when needed; prepare a quote; verify payments; and organize the delivery of your golf cart. We do not sell or rent your personal data. We only share it with third parties when necessary to provide the requested service, process payments or organize delivery, or when required by law.":"Ваши данные используются для того, чтобы: ответить на ваш запрос; связаться с вами по электронной почте, телефону или WhatsApp при необходимости; подготовить предложение цены; проверить платежи; и организовать доставку вашего гольф-кара. Мы не продаём и не сдаём в аренду ваши персональные данные. Мы передаём их третьим лицам только тогда, когда это необходимо для предоставления запрошенной услуги, обработки платежей или организации доставки, либо когда этого требует закон.",
   "Legal Disclaimer":"Юридический отказ от ответственности",
   "Location":"Местоположение",
   "Model":"Модель",
@@ -159,7 +161,7 @@ const RU_DICT = {
   "Total":"Итого",
   "Trusted by Our Customers":"Нам доверяют клиенты",
   "Want to grow with us?":"Хотите расти вместе с нами?",
-  "We are Golf Cart DR, a premium golf cart sales company based in Bayahibe and Dominicus, Dominican Republic. We are looking for motivated partners and collaborators across the entire country to help us grow and bring premium golf carts to more communities, resorts, and residences.":"Мы — Golf Cart DR, компания премиум-класса по продаже гольф-каров, базирующаяся в Байяибе и Доминикусе, Доминиканская Республика. Мы ищем мотивированных партнёров и сотрудников по всей стране, которые помогут нам расти и привозить премиальные гольф-кары в новые районы, курорты и жилые комплексы.",
+  "We are TAAAC Solutions, a premium golf cart sales company based in Bayahibe and Dominicus, Dominican Republic. We are looking for motivated partners and collaborators across the entire country to help us grow and bring premium golf carts to more communities, resorts, and residences.":"Мы — TAAAC Solutions, компания премиум-класса по продаже гольф-каров, базирующаяся в Байяибе и Доминикусе, Доминиканская Республика. Мы ищем мотивированных партнёров и сотрудников по всей стране, которые помогут нам расти и привозить премиальные гольф-кары в новые районы, курорты и жилые комплексы.",
   "We recommend a lithium battery because it lasts much longer, with over 3,000 charge cycles. It also charges faster, requires less maintenance, and lithium loses very little charge if the golf car sits idle for weeks. Ideal where heat and humidity are high.":"Мы рекомендуем литиевый аккумулятор, так как он служит намного дольше — более 3000 циклов зарядки. Он также заряжается быстрее, требует меньше обслуживания и почти не теряет заряд, если гольф-кар простаивает несколько недель. Идеален в условиях высокой жары и влажности.",
   "We'll get back to you to schedule your free interview":"Мы свяжемся с вами, чтобы назначить бесплатное собеседование",
   "We're preparing a selection of ready-to-buy golf carts. Check back soon, or configure your own right now.":"Мы готовим подборку гольф-каров, готовых к покупке. Загляните позже или настройте свой прямо сейчас.",
@@ -175,7 +177,7 @@ const RU_DICT = {
   "Error sending request. Please try again.":"Ошибка отправки запроса. Пожалуйста, попробуйте снова.",
   "+2 models only":"Только для моделей +2",
   "1. Data Controller":"1. Ответственный за обработку данных",
-  "Golf Cart DR, based in Bayahibe, Dominicus, República Dominicana. Contact: info@taaac.solutions":"Golf Cart DR находится в Байяибе, Доминикус, Доминиканская Республика. Контакт: info@taaac.solutions",
+  "TAAAC Solutions is the commercial name used by Samuele Maggio for the activity. Samuele Maggio is the Data Controller responsible for the processing of personal data collected through taaac.solutions and TAAAC Solutions contact forms. Contact: info@taaac.solutions":"TAAAC Solutions — коммерческое название, используемое Samuele Maggio для ведения деятельности. Samuele Maggio является Оператором персональных данных, ответственным за обработку персональных данных, собираемых через taaac.solutions и контактные формы TAAAC Solutions. Контакт: info@taaac.solutions",
   "2. Data We Collect":"2. Какие данные мы собираем",
   "When you submit a quote request or collaboration request, we collect: first name, last name, phone number, email address, delivery address, and any notes you provide.":"Когда вы отправляете запрос на предложение цены или на сотрудничество, мы собираем: имя, фамилию, номер телефона, адрес электронной почты, адрес доставки и любые указанные вами примечания.",
   "3. How We Use Your Data":"3. Как мы используем ваши данные",
@@ -381,7 +383,7 @@ const RU_DICT = {
   "Can I use the golf cart in the rain?":"Могу ли я использовать гольф-кар под дождём?",
   "Yes, the golf cart can be used in the rain. For added protection, you can add rain covers from the optional accessories section.":"Да, гольф-кар можно использовать под дождём. Для дополнительной защиты вы можете добавить защиту от дождя из раздела дополнительных аксессуаров.",
   "Is the golf cart street legal? Do I need insurance?":"Разрешена ли эксплуатация гольф-кара на дорогах общего пользования? Нужна ли страховка?",
-  "The golf cart is approved for road use. However, Golf Cart DR declines all responsibility for use that does not comply with the laws and regulations of the Dominican Republic. It is the buyer's responsibility to ensure compliance with local regulations regarding insurance, licensing, and road use.":"Гольф-кар допущен к эксплуатации на дорогах. Однако Golf Cart DR снимает с себя всякую ответственность за использование, не соответствующее законам и нормам Доминиканской Республики. Покупатель несёт ответственность за соблюдение местных норм в отношении страхования, получения прав и использования на дорогах.",
+  "The golf cart is approved for road use. However, TAAAC Solutions declines all responsibility for use that does not comply with the laws and regulations of the Dominican Republic. It is the buyer's responsibility to ensure compliance with local regulations regarding insurance, licensing, and road use.":"Гольф-кар допущен к эксплуатации на дорогах. Однако TAAAC Solutions снимает с себя всякую ответственность за использование, не соответствующее законам и нормам Доминиканской Республики. Покупатель несёт ответственность за соблюдение местных норм в отношении страхования, получения прав и использования на дорогах.",
 
   // Home categories
   "For Golf":"Для гольфа",
@@ -550,17 +552,19 @@ const FR_DICT = {
   "Describe what you need...":"Décrivez ce dont vous avez besoin...",
   "Edit":"Modifier",
   "Estimated Delivery":"Délai de livraison estimé",
-  "Everything you need to know about Golf Cart DR":"Tout ce que vous devez savoir sur Golf Cart DR",
+  "Everything you need to know about TAAAC Solutions":"Tout ce que vous devez savoir sur TAAAC Solutions",
   "Fill in your details to receive the official quote":"Renseignez vos coordonnées pour recevoir le devis officiel",
   "For Sale":"À vendre",
   "Frequently Asked Questions":"Foire aux questions",
-  "Golf Cart DR declines all responsibility for use of the vehicle that does not comply with the laws, regulations, and requirements in force in the Dominican Republic or in any other country where the vehicle is used. It is the sole responsibility of the buyer to obtain any required insurance, licenses, or permits.":"Golf Cart DR décline toute responsabilité quant à l'utilisation du véhicule non conforme aux lois, règlements et exigences en vigueur en République Dominicaine ou dans tout autre pays où le véhicule est utilisé. Il incombe uniquement à l'acheteur d'obtenir toute assurance, licence ou permis requis.",
+  "TAAAC Solutions declines all responsibility for use of the vehicle that does not comply with the laws, regulations, and requirements in force in the Dominican Republic or in any other country where the vehicle is used. It is the sole responsibility of the buyer to obtain any required insurance, licenses, or permits.":"TAAAC Solutions décline toute responsabilité quant à l'utilisation du véhicule non conforme aux lois, règlements et exigences en vigueur en République Dominicaine ou dans tout autre pays où le véhicule est utilisé. Il incombe uniquement à l'acheteur d'obtenir toute assurance, licence ou permis requis.",
   "Golf Cart for every need":"Une voiturette de golf pour chaque besoin",
   "Grass tires":"Pneus pour gazon",
   "How would you like to proceed?":"Comment souhaitez-vous procéder ?",
   "Included":"Inclus",
   "Join Our Team":"Rejoignez notre équipe",
-  "Last updated: 2025":"Dernière mise à jour : 2025",
+  "Last updated: 2026":"Dernière mise à jour : 2026",
+  "When you submit a quote request or collaboration request, we collect: first name, last name, phone number, email address, delivery address, and any notes you provide. Data may also be collected through Facebook and Instagram lead forms, and may include your name, email address, phone or WhatsApp number, and any information you voluntarily provide.":"Lorsque vous soumettez une demande de devis ou de collaboration, nous collectons : prénom, nom, numéro de téléphone, adresse e-mail, adresse de livraison, et toute note que vous fournissez. Les données peuvent également être collectées via les formulaires de prospects Facebook et Instagram, et peuvent inclure votre nom, votre adresse e-mail, votre numéro de téléphone ou WhatsApp, et toute information que vous fournissez volontairement.",
+  "Your data is used to: respond to your request; contact you by email, phone, or WhatsApp when needed; prepare a quote; verify payments; and organize the delivery of your golf cart. We do not sell or rent your personal data. We only share it with third parties when necessary to provide the requested service, process payments or organize delivery, or when required by law.":"Vos données sont utilisées pour : répondre à votre demande ; vous contacter par e-mail, téléphone ou WhatsApp lorsque nécessaire ; préparer un devis ; vérifier les paiements ; et organiser la livraison de votre golf cart. Nous ne vendons ni ne louons vos données personnelles. Nous ne les partageons avec des tiers que lorsque cela est nécessaire pour fournir le service demandé, traiter les paiements ou organiser la livraison, ou lorsque la loi l'exige.",
   "Legal Disclaimer":"Avertissement légal",
   "Location":"Emplacement",
   "Model":"Modèle",
@@ -624,7 +628,7 @@ const FR_DICT = {
   "Total":"Total",
   "Trusted by Our Customers":"La confiance de nos clients",
   "Want to grow with us?":"Envie de grandir avec nous ?",
-  "We are Golf Cart DR, a premium golf cart sales company based in Bayahibe and Dominicus, Dominican Republic. We are looking for motivated partners and collaborators across the entire country to help us grow and bring premium golf carts to more communities, resorts, and residences.":"Nous sommes Golf Cart DR, une entreprise premium de vente de voiturettes de golf basée à Bayahibe et Dominicus, en République Dominicaine. Nous recherchons des partenaires et collaborateurs motivés dans tout le pays pour nous aider à grandir et à apporter des voiturettes de golf premium à davantage de communautés, resorts et résidences.",
+  "We are TAAAC Solutions, a premium golf cart sales company based in Bayahibe and Dominicus, Dominican Republic. We are looking for motivated partners and collaborators across the entire country to help us grow and bring premium golf carts to more communities, resorts, and residences.":"Nous sommes TAAAC Solutions, une entreprise premium de vente de voiturettes de golf basée à Bayahibe et Dominicus, en République Dominicaine. Nous recherchons des partenaires et collaborateurs motivés dans tout le pays pour nous aider à grandir et à apporter des voiturettes de golf premium à davantage de communautés, resorts et résidences.",
   "We recommend a lithium battery because it lasts much longer, with over 3,000 charge cycles. It also charges faster, requires less maintenance, and lithium loses very little charge if the golf car sits idle for weeks. Ideal where heat and humidity are high.":"Nous recommandons une batterie au lithium, car elle dure beaucoup plus longtemps, avec plus de 3 000 cycles de charge. Elle se recharge aussi plus rapidement, nécessite moins d'entretien, et perd très peu de charge si la voiturette reste inutilisée pendant plusieurs semaines. Idéale dans les zones à forte chaleur et humidité.",
   "We'll get back to you to schedule your free interview":"Nous vous recontacterons pour planifier votre entretien gratuit",
   "We're preparing a selection of ready-to-buy golf carts. Check back soon, or configure your own right now.":"Nous préparons une sélection de voiturettes de golf prêtes à l'achat. Revenez bientôt, ou configurez la vôtre dès maintenant.",
@@ -640,7 +644,7 @@ const FR_DICT = {
   "Error sending request. Please try again.":"Erreur lors de l'envoi de la demande. Veuillez réessayer.",
   "+2 models only":"Modèles +2 uniquement",
   "1. Data Controller":"1. Responsable du traitement",
-  "Golf Cart DR, based in Bayahibe, Dominicus, República Dominicana. Contact: info@taaac.solutions":"Golf Cart DR, basée à Bayahibe, Dominicus, République Dominicaine. Contact : info@taaac.solutions",
+  "TAAAC Solutions is the commercial name used by Samuele Maggio for the activity. Samuele Maggio is the Data Controller responsible for the processing of personal data collected through taaac.solutions and TAAAC Solutions contact forms. Contact: info@taaac.solutions":"TAAAC Solutions est le nom commercial utilisé par Samuele Maggio pour l'activité. Samuele Maggio est le Responsable du Traitement des données personnelles collectées via taaac.solutions et les formulaires de contact de TAAAC Solutions. Contact : info@taaac.solutions",
   "2. Data We Collect":"2. Données que nous collectons",
   "When you submit a quote request or collaboration request, we collect: first name, last name, phone number, email address, delivery address, and any notes you provide.":"Lorsque vous soumettez une demande de devis ou de collaboration, nous collectons : prénom, nom, numéro de téléphone, adresse email, adresse de livraison et toute remarque que vous fournissez.",
   "3. How We Use Your Data":"3. Comment nous utilisons vos données",
@@ -846,7 +850,7 @@ const FR_DICT = {
   "Can I use the golf cart in the rain?":"Puis-je utiliser la voiturette sous la pluie ?",
   "Yes, the golf cart can be used in the rain. For added protection, you can add rain covers from the optional accessories section.":"Oui, la voiturette peut être utilisée sous la pluie. Pour une protection supplémentaire, vous pouvez ajouter des housses anti-pluie depuis la section des accessoires en option.",
   "Is the golf cart street legal? Do I need insurance?":"La voiturette est-elle homologuée pour la route ? Ai-je besoin d'une assurance ?",
-  "The golf cart is approved for road use. However, Golf Cart DR declines all responsibility for use that does not comply with the laws and regulations of the Dominican Republic. It is the buyer's responsibility to ensure compliance with local regulations regarding insurance, licensing, and road use.":"La voiturette est homologuée pour un usage routier. Toutefois, Golf Cart DR décline toute responsabilité quant à une utilisation non conforme aux lois et règlements de la République Dominicaine. Il incombe à l'acheteur de veiller au respect des réglementations locales en matière d'assurance, de permis et d'usage routier.",
+  "The golf cart is approved for road use. However, TAAAC Solutions declines all responsibility for use that does not comply with the laws and regulations of the Dominican Republic. It is the buyer's responsibility to ensure compliance with local regulations regarding insurance, licensing, and road use.":"La voiturette est homologuée pour un usage routier. Toutefois, TAAAC Solutions décline toute responsabilité quant à une utilisation non conforme aux lois et règlements de la République Dominicaine. Il incombe à l'acheteur de veiller au respect des réglementations locales en matière d'assurance, de permis et d'usage routier.",
 
   // Home categories
   "For Golf":"Pour le golf",
@@ -1015,17 +1019,19 @@ const PL_DICT = {
   "Describe what you need...":"Opisz, czego potrzebujesz...",
   "Edit":"Edytuj",
   "Estimated Delivery":"Szacowany czas dostawy",
-  "Everything you need to know about Golf Cart DR":"Wszystko, co warto wiedzieć o Golf Cart DR",
+  "Everything you need to know about TAAAC Solutions":"Wszystko, co warto wiedzieć o TAAAC Solutions",
   "Fill in your details to receive the official quote":"Wypełnij swoje dane, aby otrzymać oficjalną wycenę",
   "For Sale":"Na sprzedaż",
   "Frequently Asked Questions":"Najczęściej zadawane pytania",
-  "Golf Cart DR declines all responsibility for use of the vehicle that does not comply with the laws, regulations, and requirements in force in the Dominican Republic or in any other country where the vehicle is used. It is the sole responsibility of the buyer to obtain any required insurance, licenses, or permits.":"Golf Cart DR nie ponosi żadnej odpowiedzialności za użytkowanie pojazdu niezgodne z przepisami, regulacjami i wymogami obowiązującymi w Dominikanie lub w jakimkolwiek innym kraju, w którym pojazd jest użytkowany. Wyłączną odpowiedzialnością kupującego jest uzyskanie wymaganych ubezpieczeń, licencji lub pozwoleń.",
+  "TAAAC Solutions declines all responsibility for use of the vehicle that does not comply with the laws, regulations, and requirements in force in the Dominican Republic or in any other country where the vehicle is used. It is the sole responsibility of the buyer to obtain any required insurance, licenses, or permits.":"TAAAC Solutions nie ponosi żadnej odpowiedzialności za użytkowanie pojazdu niezgodne z przepisami, regulacjami i wymogami obowiązującymi w Dominikanie lub w jakimkolwiek innym kraju, w którym pojazd jest użytkowany. Wyłączną odpowiedzialnością kupującego jest uzyskanie wymaganych ubezpieczeń, licencji lub pozwoleń.",
   "Golf Cart for every need":"Wózek golfowy na każdą potrzebę",
   "Grass tires":"Opony do trawy",
   "How would you like to proceed?":"Jak chcesz kontynuować?",
   "Included":"Wliczone",
   "Join Our Team":"Dołącz do naszego zespołu",
-  "Last updated: 2025":"Ostatnia aktualizacja: 2025",
+  "Last updated: 2026":"Ostatnia aktualizacja: 2026",
+  "When you submit a quote request or collaboration request, we collect: first name, last name, phone number, email address, delivery address, and any notes you provide. Data may also be collected through Facebook and Instagram lead forms, and may include your name, email address, phone or WhatsApp number, and any information you voluntarily provide.":"Gdy przesyłasz zapytanie o wycenę lub prośbę o współpracę, zbieramy: imię, nazwisko, numer telefonu, adres e-mail, adres dostawy oraz wszelkie uwagi, które podasz. Dane mogą być również zbierane za pośrednictwem formularzy kontaktowych na Facebooku i Instagramie i mogą obejmować imię i nazwisko, adres e-mail, numer telefonu lub WhatsApp oraz wszelkie informacje podane dobrowolnie.",
+  "Your data is used to: respond to your request; contact you by email, phone, or WhatsApp when needed; prepare a quote; verify payments; and organize the delivery of your golf cart. We do not sell or rent your personal data. We only share it with third parties when necessary to provide the requested service, process payments or organize delivery, or when required by law.":"Twoje dane są wykorzystywane do: odpowiedzi na Twoje zapytanie; kontaktu z Tobą e-mailem, telefonicznie lub przez WhatsApp w razie potrzeby; przygotowania wyceny; weryfikacji płatności; oraz organizacji dostawy Twojego wózka golfowego. Nie sprzedajemy ani nie wynajmujemy Twoich danych osobowych. Udostępniamy je stronom trzecim wyłącznie wtedy, gdy jest to konieczne do świadczenia żądanej usługi, przetwarzania płatności lub organizacji dostawy, albo gdy wymaga tego prawo.",
   "Legal Disclaimer":"Zastrzeżenie prawne",
   "Location":"Lokalizacja",
   "Model":"Model",
@@ -1089,7 +1095,7 @@ const PL_DICT = {
   "Total":"Suma",
   "Trusted by Our Customers":"Zaufali nam nasi klienci",
   "Want to grow with us?":"Chcesz rozwijać się razem z nami?",
-  "We are Golf Cart DR, a premium golf cart sales company based in Bayahibe and Dominicus, Dominican Republic. We are looking for motivated partners and collaborators across the entire country to help us grow and bring premium golf carts to more communities, resorts, and residences.":"Jesteśmy Golf Cart DR, firmą premium sprzedającą wózki golfowe z siedzibą w Bayahibe i Dominicus w Dominikanie. Szukamy zmotywowanych partnerów i współpracowników w całym kraju, którzy pomogą nam się rozwijać i dostarczać luksusowe wózki golfowe do kolejnych społeczności, ośrodków wypoczynkowych i rezydencji.",
+  "We are TAAAC Solutions, a premium golf cart sales company based in Bayahibe and Dominicus, Dominican Republic. We are looking for motivated partners and collaborators across the entire country to help us grow and bring premium golf carts to more communities, resorts, and residences.":"Jesteśmy TAAAC Solutions, firmą premium sprzedającą wózki golfowe z siedzibą w Bayahibe i Dominicus w Dominikanie. Szukamy zmotywowanych partnerów i współpracowników w całym kraju, którzy pomogą nam się rozwijać i dostarczać luksusowe wózki golfowe do kolejnych społeczności, ośrodków wypoczynkowych i rezydencji.",
   "We recommend a lithium battery because it lasts much longer, with over 3,000 charge cycles. It also charges faster, requires less maintenance, and lithium loses very little charge if the golf car sits idle for weeks. Ideal where heat and humidity are high.":"Zalecamy akumulator litowy, ponieważ wytrzymuje znacznie dłużej, ponad 3000 cykli ładowania. Ładuje się także szybciej, wymaga mniej konserwacji, a lit traci bardzo mało energii, jeśli wózek golfowy stoi nieużywany przez kilka tygodni. Idealny w miejscach o wysokiej temperaturze i wilgotności.",
   "We'll get back to you to schedule your free interview":"Skontaktujemy się z Tobą, aby umówić bezpłatną rozmowę",
   "We're preparing a selection of ready-to-buy golf carts. Check back soon, or configure your own right now.":"Przygotowujemy wybór wózków golfowych gotowych do zakupu. Zajrzyj ponownie wkrótce lub skonfiguruj swój już teraz.",
@@ -1105,7 +1111,7 @@ const PL_DICT = {
   "Error sending request. Please try again.":"Błąd wysyłania zapytania. Spróbuj ponownie.",
   "+2 models only":"Tylko dla modeli +2",
   "1. Data Controller":"1. Administrator danych",
-  "Golf Cart DR, based in Bayahibe, Dominicus, República Dominicana. Contact: info@taaac.solutions":"Golf Cart DR, z siedzibą w Bayahibe, Dominicus, Dominikana. Kontakt: info@taaac.solutions",
+  "TAAAC Solutions is the commercial name used by Samuele Maggio for the activity. Samuele Maggio is the Data Controller responsible for the processing of personal data collected through taaac.solutions and TAAAC Solutions contact forms. Contact: info@taaac.solutions":"TAAAC Solutions to nazwa handlowa używana przez Samuele Maggio do prowadzenia działalności. Samuele Maggio jest Administratorem Danych odpowiedzialnym za przetwarzanie danych osobowych zbieranych za pośrednictwem taaac.solutions oraz formularzy kontaktowych TAAAC Solutions. Kontakt: info@taaac.solutions",
   "2. Data We Collect":"2. Dane, które zbieramy",
   "When you submit a quote request or collaboration request, we collect: first name, last name, phone number, email address, delivery address, and any notes you provide.":"Kiedy przesyłasz zapytanie o wycenę lub o współpracę, zbieramy: imię, nazwisko, numer telefonu, adres e-mail, adres dostawy oraz wszelkie podane przez Ciebie uwagi.",
   "3. How We Use Your Data":"3. Jak wykorzystujemy Twoje dane",
@@ -1283,7 +1289,7 @@ const PL_DICT = {
   "Can I use the golf cart in the rain?":"Czy mogę używać wózka golfowego w deszczu?",
   "Yes, the golf cart can be used in the rain. For added protection, you can add rain covers from the optional accessories section.":"Tak, wózek golfowy można używać w deszczu. Dla dodatkowej ochrony możesz dodać osłony przeciwdeszczowe z sekcji akcesoriów dodatkowych.",
   "Is the golf cart street legal? Do I need insurance?":"Czy wózek golfowy jest dopuszczony do ruchu drogowego? Czy potrzebuję ubezpieczenia?",
-  "The golf cart is approved for road use. However, Golf Cart DR declines all responsibility for use that does not comply with the laws and regulations of the Dominican Republic. It is the buyer's responsibility to ensure compliance with local regulations regarding insurance, licensing, and road use.":"Wózek golfowy jest dopuszczony do użytku drogowego. Jednak Golf Cart DR nie ponosi żadnej odpowiedzialności za użytkowanie niezgodne z przepisami i regulacjami Dominikany. Obowiązkiem kupującego jest zapewnienie zgodności z lokalnymi przepisami dotyczącymi ubezpieczenia, uprawnień i użytkowania na drogach.",
+  "The golf cart is approved for road use. However, TAAAC Solutions declines all responsibility for use that does not comply with the laws and regulations of the Dominican Republic. It is the buyer's responsibility to ensure compliance with local regulations regarding insurance, licensing, and road use.":"Wózek golfowy jest dopuszczony do użytku drogowego. Jednak TAAAC Solutions nie ponosi żadnej odpowiedzialności za użytkowanie niezgodne z przepisami i regulacjami Dominikany. Obowiązkiem kupującego jest zapewnienie zgodności z lokalnymi przepisami dotyczącymi ubezpieczenia, uprawnień i użytkowania na drogach.",
   "For Golf":"Do gry w golfa",
   "Road Use":"Do jazdy drogowej",
   "Golf courses":"Pola golfowe",
@@ -3229,9 +3235,9 @@ export default function App() {
           <div style={{fontSize:36,marginBottom:16,textAlign:"center"}}>🏌️⛳🤝</div>
           <p style={{color:C.white,lineHeight:1.85,fontSize:14,textAlign:"center"}}>
             {t(
-              "We are Golf Cart DR, a premium golf cart sales company based in Bayahibe and Dominicus, Dominican Republic. We are looking for motivated partners and collaborators across the entire country to help us grow and bring premium golf carts to more communities, resorts, and residences.",
-              "Somos Golf Cart DR, una empresa de venta de golf carts premium con sede en Bayahibe y Dominicus, República Dominicana. Buscamos colaboradores motivados en todo el país para ayudarnos a crecer y llevar golf carts premium a más comunidades, resorts y residencias.",
-              "Siamo Golf Cart DR, un'azienda di vendita di golf cart premium con sede a Bayahibe e Dominicus, Repubblica Dominicana. Cerchiamo collaboratori motivati in tutto il paese per aiutarci a crescere e portare golf cart premium in più comunità, resort e residenze."
+              "We are TAAAC Solutions, a premium golf cart sales company based in Bayahibe and Dominicus, Dominican Republic. We are looking for motivated partners and collaborators across the entire country to help us grow and bring premium golf carts to more communities, resorts, and residences.",
+              "Somos TAAAC Solutions, una empresa de venta de golf carts premium con sede en Bayahibe y Dominicus, República Dominicana. Buscamos colaboradores motivados en todo el país para ayudarnos a crecer y llevar golf carts premium a más comunidades, resorts y residencias.",
+              "Siamo TAAAC Solutions, un'azienda di vendita di golf cart premium con sede a Bayahibe e Dominicus, Repubblica Dominicana. Cerchiamo collaboratori motivati in tutto il paese per aiutarci a crescere e portare golf cart premium in più comunità, resort e residenze."
             )}
           </p>
         </div>
@@ -3728,7 +3734,7 @@ export default function App() {
       )}
       <footer style={{borderTop:"1px solid #222",padding:"24px 20px",textAlign:"center"}}>
         <div style={{color:C.muted,fontSize:13}}>Premium Golf Cart · Bayahibe & Dominicus · República Dominicana</div>
-        <div style={{color:"#555",fontSize:11,marginTop:4}}>© 2025 Golf Cart DR. {t("All rights reserved","Todos los derechos reservados","Tutti i diritti riservati")}.</div>
+        <div style={{color:"#555",fontSize:11,marginTop:4}}>© 2025 TAAAC Solutions. {t("All rights reserved","Todos los derechos reservados","Tutti i diritti riservati")}.</div>
         <div style={{marginTop:8,display:"flex",gap:16,justifyContent:"center",alignItems:"center"}}>
           <span style={{color:"#555",fontSize:10,cursor:"pointer",textDecoration:"underline"}} onClick={()=>setPage("faq")}>
             FAQ
