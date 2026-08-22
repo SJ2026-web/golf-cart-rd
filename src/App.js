@@ -2502,7 +2502,12 @@ export default function App() {
                 borderRadius:20, overflow:"hidden", cursor:"pointer", background:C.card,
                 boxShadow:"0 12px 40px rgba(0,0,0,0.5)"
               }}>
-              <img src={IMGS.modC} alt="" style={{width:"100%",display:"block"}}/>
+              <img
+                src={IMGS.modC}
+                alt=""
+                fetchPriority="high"
+                style={{width:"100%",display:"block"}}
+              />
               <div style={{padding:"14px 16px"}}>
                 <div style={{...S.goldBtn,textAlign:"center"}}>{t("Configure your own","Configura el tuyo","Configura il tuo")}</div>
               </div>
