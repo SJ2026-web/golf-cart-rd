@@ -1594,7 +1594,7 @@ function Img({k, style={}, eager=false}) {
   const src = IMGS[k];
   const webpSrc = src.replace(/\.(jpe?g|png)(\?.*)?$/i, ".webp$2");
   return (
-    <picture>
+    <picture style={{display:"contents"}}>
       {webpSrc !== src && <source srcSet={webpSrc} type="image/webp" />}
       <img
         src={src}
