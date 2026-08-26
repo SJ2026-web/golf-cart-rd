@@ -56,17 +56,17 @@ function FAQPage({ t, S, C, setPage }) {
     {
       q: {en:"How long does the battery last over time?", es:"¿Cuánto dura la batería con el tiempo?", it:"Quanto dura la batteria nel tempo?"},
       a: {
-        en:"A lithium battery of this type lasts approximately 5–8 years, and even longer if you avoid fully discharging it regularly.",
-        es:"Una batería de litio de este tipo dura aproximadamente 5–8 años, e incluso más si evita descargarla por completo con regularidad.",
-        it:"Una batteria al litio di questo tipo dura circa 5–8 anni, anche di più se si evita di scaricarla completamente in modo regolare."
+        en:"A lithium battery of this type lasts approximately 5–8 years, and potentially even longer if you avoid fully discharging it regularly.",
+        es:"Una batería de litio de este tipo dura aproximadamente 5–8 años, y potencialmente incluso más si evita descargarla por completo con regularidad.",
+        it:"Una batteria al litio di questo tipo dura circa 5–8 anni, e potenzialmente anche di più se si evita di scaricarla completamente in modo regolare."
       }
     },
     {
       q: {en:"What is included in the base price?", es:"¿Qué incluye el precio base?", it:"Cosa è incluso nel prezzo base?"},
       a: {
-        en:"The base price includes the golf cart with standard options and the 500W solar panel on the roof. Delivery across the Dominican Republic is also included.",
-        es:"El precio base incluye el golf cart con las opciones estándar y el panel solar de 500W en el techo. La entrega en toda la República Dominicana también está incluida.",
-        it:"Il prezzo base include il golf cart con le opzioni standard e il pannello solare da 500W sul tetto. È inclusa anche la consegna in tutta la Repubblica Dominicana."
+        en:"The base price includes the golf cart with standard options and the 500W solar panel on the roof. Standard delivery across the Dominican Republic is also included; remote or difficult-access locations may require a delivery adjustment.",
+        es:"El precio base incluye el golf cart con las opciones estándar y el panel solar de 500W en el techo. También está incluida la entrega estándar en toda la República Dominicana; las zonas remotas o de difícil acceso pueden requerir un ajuste en el costo de entrega.",
+        it:"Il prezzo base include il golf cart con le opzioni standard e il pannello solare da 500W sul tetto. È inclusa anche la consegna standard in tutta la Repubblica Dominicana; le località remote o di difficile accesso possono richiedere un adeguamento del costo di consegna."
       }
     },
     {

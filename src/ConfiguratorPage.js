@@ -37,7 +37,7 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
       <p style={{color:"#888",fontSize:14,maxWidth:440,margin:"0 auto 24px",lineHeight:1.7}}>
         {t("Our team will contact you within 24 hours.","Le contactaremos en 24 horas.","Ti contatteremo entro 24 ore.")}
       </p>
-      <button style={gold} onClick={()=>onSubmit()}>🏠 Home</button>
+      <button style={gold} onClick={()=>onSubmit()}>🏠 {t("Home","Inicio","Home")}</button>
     </div>
   );
 
@@ -165,7 +165,7 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
       <div style={{background:"#161616",border:"1px solid #C9A84C",borderRadius:16,padding:20,marginBottom:8,textAlign:"center"}}>
         <div style={{color:"#888",fontSize:11,marginBottom:4}}>{t("Total","Total","Totale")}</div>
         <div style={{color:"#F5F0E8",fontWeight:900,fontSize:34}}>${totalPrice.toLocaleString()} <span style={{fontSize:14,fontWeight:700}}>USD</span></div>
-        <div style={{color:"#7ac47a",fontSize:11,marginTop:4}}>{t("Price includes taxes and transport","Precio incluye impuestos y transporte","Prezzo comprensivo di tasse e trasporto")}</div>
+        <div style={{color:"#7ac47a",fontSize:11,marginTop:4}}>{t("Price includes taxes and standard delivery in the Dominican Republic. Remote or difficult-access locations may require a delivery adjustment.","El precio incluye impuestos y entrega estándar en República Dominicana. Las zonas remotas o de difícil acceso pueden requerir un ajuste en el costo de entrega.","Il prezzo include tasse e consegna standard in Repubblica Dominicana. Le località remote o di difficile accesso possono richiedere un adeguamento del costo di consegna.")}</div>
       </div>
       <div style={{background:"#161616",border:"1px solid #333",borderRadius:16,padding:20,marginBottom:20,display:"flex",gap:16,flexWrap:"wrap",justifyContent:"center",textAlign:"center"}}>
         <div style={{flex:1,minWidth:110}}>
