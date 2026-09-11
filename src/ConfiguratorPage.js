@@ -320,7 +320,38 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
               <Img k={m.imgKey} style={{width:"100%",height:"100%",objectFit:"contain",objectPosition:"center"}}/>
             </div>
             <div style={{color:cfg.model===m.id?C.gold:C.white,fontWeight:700,fontSize:15,marginBottom:8}}>{t("Model","Modelo","Modello")} {m.id}</div>
-            <div style={{color:C.muted,fontSize:13,marginBottom:4,lineHeight:1.5}}>{t(m.desc.en, m.desc.es, m.desc.it)}</div>
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"6px 8px"}}>
+              <div style={{display:"flex",alignItems:"center",gap:5,fontSize:11,color:C.muted}}>
+                <span style={{fontSize:13,flexShrink:0}}>🛣️</span>
+                <span>{t("Range","Autonomía","Autonomia")}: {m.specs.en.Range}</span>
+              </div>
+              <div style={{display:"flex",alignItems:"center",gap:5,fontSize:11,color:C.muted}}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{flexShrink:0}}>
+                  <circle cx="12" cy="7" r="3" fill="#C9A84C"/>
+                  <g stroke="#C9A84C" strokeWidth="1.4" strokeLinecap="round">
+                    <line x1="12" y1="0.5" x2="12" y2="2.2"/>
+                    <line x1="5.5" y1="7" x2="7.2" y2="7"/>
+                    <line x1="7" y1="2" x2="8.2" y2="3.2"/>
+                    <line x1="17" y1="2" x2="15.8" y2="3.2"/>
+                  </g>
+                  <path d="M3 22L5 14H19L21 22H3Z" fill="#C9A84C" opacity="0.85"/>
+                  <g stroke="#0a0a0a" strokeWidth="0.6">
+                    <line x1="9" y1="14" x2="7.7" y2="22"/>
+                    <line x1="15" y1="14" x2="16.3" y2="22"/>
+                    <line x1="6" y1="18" x2="20" y2="18"/>
+                  </g>
+                </svg>
+                <span>{t("Extended range","Mayor autonomía","Maggiore autonomia")}</span>
+              </div>
+              <div style={{display:"flex",alignItems:"center",gap:5,fontSize:11,color:C.muted}}>
+                <span style={{fontSize:13,flexShrink:0}}>⚙️</span>
+                <span>{t("Optional","Opcional","Optional")}</span>
+              </div>
+              <div style={{display:"flex",alignItems:"center",gap:5,fontSize:11,color:C.muted}}>
+                <span style={{fontSize:13,flexShrink:0}}>🔧</span>
+                <span>{t("Maintenance","Mantenimiento","Manutenzione")}</span>
+              </div>
+            </div>
           </div>
         ))}
       </div>

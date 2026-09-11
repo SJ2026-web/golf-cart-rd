@@ -501,6 +501,10 @@ const RU_DICT = {
   "Buying & Maintenance":"Покупка и обслуживание",
   "What to Check Before Buying":"Что проверить перед покупкой",
   "Caring for It Near the Sea":"Уход за гольф-каром у моря",
+  "Range":"Запас хода",
+  "Extended range":"Увеличенный запас хода",
+  "Optional":"Опции",
+  "Maintenance":"Обслуживание",
 };
 function ru(en) { return RU_DICT[en] || en; }
 
@@ -962,6 +966,10 @@ const FR_DICT = {
   "Buying & Maintenance":"Achat et entretien",
   "What to Check Before Buying":"Que vérifier avant d'acheter",
   "Caring for It Near the Sea":"L'entretenir près de la mer",
+  "Range":"Autonomie",
+  "Extended range":"Autonomie accrue",
+  "Optional":"En option",
+  "Maintenance":"Entretien",
 };
 function fr(en) { return FR_DICT[en] || en; }
 
@@ -1393,6 +1401,10 @@ const PL_DICT = {
   "Buying & Maintenance":"Zakup i konserwacja",
   "What to Check Before Buying":"Co sprawdzić przed zakupem",
   "Caring for It Near the Sea":"Pielęgnacja wózka nad morzem",
+  "Range":"Zasięg",
+  "Extended range":"Większy zasięg",
+  "Optional":"Opcje",
+  "Maintenance":"Konserwacja",
 };
 function pl(en) { return PL_DICT[en] || en; }
 
@@ -2478,7 +2490,7 @@ export default function App() {
           </div>
           <div style={{color:C.goldLight,fontWeight:800,marginBottom:10}}>
             <span style={{fontSize:17}}>{t("Starting from","Desde","A partire da")} </span>
-            <span style={{fontSize:28}}>$8,990 USD</span>
+            <span style={{fontSize:28}}>${Math.min(...MODELS.map(m=>m.price)).toLocaleString('en-US')} USD</span>
           </div>
           <div style={{color:C.muted,fontSize:13.5,fontWeight:500,letterSpacing:0.2,marginBottom:24}}>
             {t6("Configure it your way. Clear pricing from the start.","Configúralo a tu manera. Precio claro desde el principio.","Configuralo a modo tuo. Prezzo chiaro fin dall'inizio.","Configurez-le à votre façon. Un prix clair dès le départ.","Skonfiguruj go po swojemu. Jasna cena od samego początku.","Настройте его по-своему. Понятная цена с самого начала.")}
