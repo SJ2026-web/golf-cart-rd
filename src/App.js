@@ -359,7 +359,7 @@ const RU_DICT = {
   "Can the solar panel fully charge the battery?":"Может ли солнечная панель полностью зарядить аккумулятор?",
   "The solar panel alone can fully recharge the battery in approximately 4 days of full sun without using the golf cart. It is designed to extend range and reduce consumption, not as the primary charging source.":"Одна только солнечная панель может полностью зарядить аккумулятор примерно за 4 дня полного солнца без использования гольф-кара. Она предназначена для увеличения запаса хода и снижения расхода энергии, а не как основной источник зарядки.",
   "How long does the battery last over time?":"Как долго служит аккумулятор?",
-  "A lithium battery of this type lasts approximately 5–8 years, and potentially even longer if you avoid fully discharging it regularly.":"Литиевый аккумулятор такого типа служит примерно 5–8 лет, а если избегать регулярной полной разрядки — потенциально ещё дольше.",
+  "A lithium battery of this type lasts approximately 5–8 years, and even longer if you avoid fully discharging it regularly.":"Литиевый аккумулятор такого типа служит примерно 5–8 лет, а если избегать регулярной полной разрядки — ещё дольше.",
   "What is included in the base price?":"Что входит в базовую цену?",
   "The base price includes the golf cart with standard options and the 500W solar panel on the roof. Standard delivery across the Dominican Republic is also included; remote or difficult-access locations may require a delivery adjustment.":"Базовая цена включает гольф-кар со стандартными опциями и солнечную панель 500Вт на крыше. Также включена стандартная доставка по всей Доминиканской Республике; отдалённые или труднодоступные места могут потребовать корректировки стоимости доставки.",
   "What is the warranty?":"Какая предоставляется гарантия?",
@@ -501,73 +501,6 @@ const RU_DICT = {
   "Buying & Maintenance":"Покупка и обслуживание",
   "What to Check Before Buying":"Что проверить перед покупкой",
   "Caring for It Near the Sea":"Уход за гольф-каром у моря",
-  "Fill in your details for the booking":"Заполните данные для бронирования",
-  "Premium Golf Cart · Bayahibe & Dominicus · Dominican Republic":"Premium Golf Cart · Bayahibe & Dominicus · Доминиканская Республика",
-  "Home":"Главная",
-  "We deliver electric golf carts across the whole country — see our ":"Мы доставляем электрические гольф-кары по всей стране — смотрите наши ",
-  "golf carts available across the Dominican Republic":"гольф-кары, доступные по всей Доминиканской Республике",
-  "Pure white":"Чисто-белый",
-  "Cream white":"Кремово-белый",
-  "Grey white":"Серо-белый",
-  "White":"Белый",
-  "Light grey":"Светло-серый",
-  "Silver grey":"Серебристо-серый",
-  "Anthracite grey":"Антрацитово-серый",
-  "Black grey":"Чёрно-серый",
-  "Black":"Чёрный",
-  "Jet black":"Глубокий чёрный",
-  "Graphite black":"Графитово-чёрный",
-  "Flame red":"Пламенно-красный",
-  "Carmine red":"Кармин",
-  "Red":"Красный",
-  "Orange":"Оранжевый",
-  "Yellow":"Жёлтый",
-  "Zinc yellow":"Цинково-жёлтый",
-  "Emerald green":"Изумрудно-зелёный",
-  "Grass green":"Травянисто-зелёный",
-  "Yellow-green":"Жёлто-зелёный",
-  "Green":"Зелёный",
-  "Ultramarine blue":"Ультрамариновый синий",
-  "Blue":"Синий",
-  "Sky blue":"Небесно-голубой",
-  "Pastel blue":"Пастельно-голубой",
-  "Purple":"Фиолетовый",
-  "Ochre brown":"Охристо-коричневый",
-  "Chocolate brown":"Шоколадно-коричневый",
-  "Sand beige":"Песочно-бежевый",
-  "Camel brown":"Верблюжий коричневый",
-  "Chocolate":"Шоколадный",
-  "Night blue":"Ночной синий",
-  "Bordeaux":"Бордовый",
-  "Grey":"Серый",
-  "Cognac":"Коньячный",
-  "Forest green":"Лесной зелёный",
-  "Sport red":"Спортивный красный",
-  "Not sure where to start? Let our virtual assistant guide you step by step to your ideal golf cart — answering a few simple questions, just like our full configurator, but at a relaxed pace.":"Не знаете, с чего начать? Позвольте нашему виртуальному ассистенту провести вас шаг за шагом к идеальному гольф-кару — ответив на несколько простых вопросов, как в полном конфигураторе, но в более спокойном темпе.",
-  "Welcome! Thank you for visiting our site. We sell golf carts for every need — let's find the right one for you together.":"Добро пожаловать! Спасибо, что посетили наш сайт. Мы продаём гольф-кары на любой случай — давайте вместе найдём подходящий именно вам.",
-  "About TAAAC Solutions – Electric Golf Carts in Bayahibe":"О компании TAAAC Solutions – электрические гольф-кары в Байяибе",
-  "Do you deliver golf carts throughout the Dominican Republic?":"Осуществляете ли вы доставку гольф-каров по всей Доминиканской Республике?",
-  "Yes. TAAAC Solutions is based in Bayahibe and delivers electric golf carts across the Dominican Republic.":"Да. TAAAC Solutions базируется в Байяибе и доставляет электрические гольф-кары по всей Доминиканской Республике.",
-  "Can I customize my golf cart?":"Могу ли я настроить свой гольф-кар по индивидуальным параметрам?",
-  "Yes. Our online configurator lets you choose colors, seats, wheels, steering wheel and accessories for your golf cart.":"Да. Наш онлайн-конфигуратор позволяет выбрать цвета, сиденья, колёса, руль и аксессуары для вашего гольф-кара.",
-  "Which golf cart model should I choose?":"Какую модель гольф-кара мне выбрать?",
-  "It depends on your needs: Model A is classic and elegant, Model B is built for off-road terrain, Model C is sporty, and Model D is designed for family comfort. Our guided assistant can help you decide.":"Это зависит от ваших потребностей: Модель A — классическая и элегантная, Модель B создана для бездорожья, Модель C — спортивная, а Модель D разработана для комфорта всей семьи. Наш виртуальный ассистент поможет вам определиться.",
-  "How can I request information or a quote?":"Как я могу запросить информацию или расчёт стоимости?",
-  "You can configure your golf cart online and submit a request, or contact us directly through our contact page.":"Вы можете настроить гольф-кар онлайн и отправить запрос, либо связаться с нами напрямую через страницу контактов.",
-  "Choose Your Golf Cart":"Выберите Свой Гольф-кар",
-  "Customize Your Golf Cart":"Настройте Свой Гольф-кар",
-  "Every TAAAC Solutions golf cart can be personalized through our online configurator — choose your model, colors, seats, wheels, steering wheel and accessories to build a golf cart that's truly yours.":"Каждый гольф-кар TAAAC Solutions можно персонализировать с помощью нашего онлайн-конфигуратора — выберите модель, цвета, сиденья, колёса, руль и аксессуары, чтобы создать гольф-кар, который по-настоящему ваш.",
-  "Start configuring your electric golf cart →":"Начните настройку своего электрического гольф-кара →",
-  "Delivery Across the Dominican Republic":"Доставка по Всей Доминиканской Республике",
-  "TAAAC Solutions delivers electric golf carts throughout the Dominican Republic. We regularly serve areas such as Bayahibe, Dominicus, La Romana, Punta Cana, Bávaro and Santo Domingo — but these are just examples: delivery is available nationwide.":"TAAAC Solutions доставляет электрические гольф-кары по всей Доминиканской Республике. Мы регулярно обслуживаем такие районы, как Байяибе, Доминикус, Ла-Романа, Пунта-Кана, Баваро и Санто-Доминго — но это лишь примеры: доставка доступна по всей стране.",
-  "Why Choose an Electric Golf Cart?":"Почему Стоит Выбрать Электрический Гольф-кар?",
-  "Electric golf carts are a practical, quiet and low-impact way to get around residences, villas, resorts, private communities and tourist properties in the Dominican Republic — as well as for local trips where their use is permitted.":"Электрические гольф-кары — это практичный, тихий и щадящий способ передвижения по жилым комплексам, виллам, курортам, закрытым посёлкам и туристическим объектам в Доминиканской Республике, а также для местных поездок там, где это разрешено.",
-  "Service & Support":"Сервис и Поддержка",
-  "TAAAC Solutions also offers maintenance, service and repairs for your golf cart, with local support in Bayahibe and La Romana.":"TAAAC Solutions также предлагает техническое обслуживание, сервис и ремонт вашего гольф-кара с локальной поддержкой в Байяибе и Ла-Романа.",
-  "Learn more about our service & repairs →":"Узнать больше о нашем сервисе и ремонте →",
-  "See all FAQs →":"Смотреть все вопросы и ответы →",
-  "Ready to Find Your Golf Cart?":"Готовы Найти Свой Гольф-кар?",
-  "Configure Now":"Настроить Сейчас",
 };
 function ru(en) { return RU_DICT[en] || en; }
 
@@ -887,7 +820,7 @@ const FR_DICT = {
   "Can the solar panel fully charge the battery?":"Le panneau solaire peut-il recharger complètement la batterie ?",
   "The solar panel alone can fully recharge the battery in approximately 4 days of full sun without using the golf cart. It is designed to extend range and reduce consumption, not as the primary charging source.":"Le panneau solaire seul peut recharger complètement la batterie en environ 4 jours de plein soleil sans utiliser la voiturette. Il est conçu pour prolonger l'autonomie et réduire la consommation, et non comme source de charge principale.",
   "How long does the battery last over time?":"Quelle est la durée de vie de la batterie ?",
-  "A lithium battery of this type lasts approximately 5–8 years, and potentially even longer if you avoid fully discharging it regularly.":"Une batterie au lithium de ce type dure environ 5 à 8 ans, voire potentiellement plus longtemps si vous évitez de la décharger complètement de façon régulière.",
+  "A lithium battery of this type lasts approximately 5–8 years, and even longer if you avoid fully discharging it regularly.":"Une batterie au lithium de ce type dure environ 5 à 8 ans, voire plus longtemps si vous évitez de la décharger complètement de façon régulière.",
   "What is included in the base price?":"Qu'est-ce qui est inclus dans le prix de base ?",
   "The base price includes the golf cart with standard options and the 500W solar panel on the roof. Standard delivery across the Dominican Republic is also included; remote or difficult-access locations may require a delivery adjustment.":"Le prix de base comprend la voiturette avec les options standard et le panneau solaire de 500W sur le toit. La livraison standard dans toute la République Dominicaine est également incluse ; les zones reculées ou difficiles d'accès peuvent nécessiter un ajustement du coût de livraison.",
   "What is the warranty?":"Quelle est la garantie ?",
@@ -1029,73 +962,6 @@ const FR_DICT = {
   "Buying & Maintenance":"Achat et entretien",
   "What to Check Before Buying":"Que vérifier avant d'acheter",
   "Caring for It Near the Sea":"L'entretenir près de la mer",
-  "Fill in your details for the booking":"Remplissez vos informations pour la réservation",
-  "Premium Golf Cart · Bayahibe & Dominicus · Dominican Republic":"Premium Golf Cart · Bayahibe & Dominicus · République Dominicaine",
-  "Home":"Accueil",
-  "We deliver electric golf carts across the whole country — see our ":"Nous livrons des voiturettes de golf électriques dans tout le pays — découvrez nos ",
-  "golf carts available across the Dominican Republic":"voiturettes de golf disponibles dans toute la République Dominicaine",
-  "Pure white":"Blanc pur",
-  "Cream white":"Blanc crème",
-  "Grey white":"Blanc grisâtre",
-  "White":"Blanc",
-  "Light grey":"Gris clair",
-  "Silver grey":"Gris argent",
-  "Anthracite grey":"Gris anthracite",
-  "Black grey":"Gris noir",
-  "Black":"Noir",
-  "Jet black":"Noir intense",
-  "Graphite black":"Noir graphite",
-  "Flame red":"Rouge flamme",
-  "Carmine red":"Rouge carmin",
-  "Red":"Rouge",
-  "Orange":"Orange",
-  "Yellow":"Jaune",
-  "Zinc yellow":"Jaune zinc",
-  "Emerald green":"Vert émeraude",
-  "Grass green":"Vert gazon",
-  "Yellow-green":"Jaune-vert",
-  "Green":"Vert",
-  "Ultramarine blue":"Bleu outremer",
-  "Blue":"Bleu",
-  "Sky blue":"Bleu ciel",
-  "Pastel blue":"Bleu pastel",
-  "Purple":"Violet",
-  "Ochre brown":"Brun ocre",
-  "Chocolate brown":"Brun chocolat",
-  "Sand beige":"Beige sable",
-  "Camel brown":"Brun camel",
-  "Chocolate":"Chocolat",
-  "Night blue":"Bleu nuit",
-  "Bordeaux":"Bordeaux",
-  "Grey":"Gris",
-  "Cognac":"Cognac",
-  "Forest green":"Vert forêt",
-  "Sport red":"Rouge sport",
-  "Not sure where to start? Let our virtual assistant guide you step by step to your ideal golf cart — answering a few simple questions, just like our full configurator, but at a relaxed pace.":"Vous ne savez pas par où commencer ? Laissez notre assistant virtuel vous guider pas à pas vers votre golf cart idéal — en répondant à quelques questions simples, comme notre configurateur complet, mais à un rythme plus détendu.",
-  "Welcome! Thank you for visiting our site. We sell golf carts for every need — let's find the right one for you together.":"Bienvenue ! Merci de votre visite sur notre site. Nous vendons des voiturettes de golf pour tous les besoins — trouvons ensemble celle qui vous convient.",
-  "About TAAAC Solutions – Electric Golf Carts in Bayahibe":"À propos de TAAAC Solutions – Voiturettes de Golf Électriques à Bayahibe",
-  "Do you deliver golf carts throughout the Dominican Republic?":"Livrez-vous des voiturettes de golf dans toute la République Dominicaine ?",
-  "Yes. TAAAC Solutions is based in Bayahibe and delivers electric golf carts across the Dominican Republic.":"Oui. TAAAC Solutions est basée à Bayahibe et livre des voiturettes de golf électriques dans toute la République Dominicaine.",
-  "Can I customize my golf cart?":"Puis-je personnaliser ma voiturette de golf ?",
-  "Yes. Our online configurator lets you choose colors, seats, wheels, steering wheel and accessories for your golf cart.":"Oui. Notre configurateur en ligne vous permet de choisir les couleurs, les sièges, les roues, le volant et les accessoires de votre voiturette de golf.",
-  "Which golf cart model should I choose?":"Quel modèle de voiturette de golf dois-je choisir ?",
-  "It depends on your needs: Model A is classic and elegant, Model B is built for off-road terrain, Model C is sporty, and Model D is designed for family comfort. Our guided assistant can help you decide.":"Cela dépend de vos besoins : le Modèle A est classique et élégant, le Modèle B est conçu pour les terrains tout-terrain, le Modèle C est sportif, et le Modèle D est pensé pour le confort familial. Notre assistant guidé peut vous aider à décider.",
-  "How can I request information or a quote?":"Comment puis-je demander des informations ou un devis ?",
-  "You can configure your golf cart online and submit a request, or contact us directly through our contact page.":"Vous pouvez configurer votre voiturette de golf en ligne et envoyer une demande, ou nous contacter directement via notre page de contact.",
-  "Choose Your Golf Cart":"Choisissez Votre Voiturette de Golf",
-  "Customize Your Golf Cart":"Personnalisez Votre Voiturette de Golf",
-  "Every TAAAC Solutions golf cart can be personalized through our online configurator — choose your model, colors, seats, wheels, steering wheel and accessories to build a golf cart that's truly yours.":"Chaque voiturette de golf TAAAC Solutions peut être personnalisée grâce à notre configurateur en ligne — choisissez votre modèle, les couleurs, les sièges, les roues, le volant et les accessoires pour créer une voiturette vraiment à votre image.",
-  "Start configuring your electric golf cart →":"Commencez à configurer votre voiturette de golf électrique →",
-  "Delivery Across the Dominican Republic":"Livraison dans Toute la République Dominicaine",
-  "TAAAC Solutions delivers electric golf carts throughout the Dominican Republic. We regularly serve areas such as Bayahibe, Dominicus, La Romana, Punta Cana, Bávaro and Santo Domingo — but these are just examples: delivery is available nationwide.":"TAAAC Solutions livre des voiturettes de golf électriques dans toute la République Dominicaine. Nous desservons régulièrement des zones telles que Bayahibe, Dominicus, La Romana, Punta Cana, Bávaro et Santo Domingo — mais ce ne sont que des exemples : la livraison est disponible dans tout le pays.",
-  "Why Choose an Electric Golf Cart?":"Pourquoi Choisir une Voiturette de Golf Électrique ?",
-  "Electric golf carts are a practical, quiet and low-impact way to get around residences, villas, resorts, private communities and tourist properties in the Dominican Republic — as well as for local trips where their use is permitted.":"Les voiturettes de golf électriques sont un moyen pratique, silencieux et à faible impact pour se déplacer dans les résidences, villas, resorts, communautés privées et propriétés touristiques de la République Dominicaine — ainsi que pour les trajets locaux où leur usage est autorisé.",
-  "Service & Support":"Service et Assistance",
-  "TAAAC Solutions also offers maintenance, service and repairs for your golf cart, with local support in Bayahibe and La Romana.":"TAAAC Solutions propose également l'entretien, le service et les réparations de votre voiturette de golf, avec une assistance locale à Bayahibe et La Romana.",
-  "Learn more about our service & repairs →":"En savoir plus sur notre service et nos réparations →",
-  "See all FAQs →":"Voir toutes les FAQ →",
-  "Ready to Find Your Golf Cart?":"Prêt à Trouver Votre Voiturette de Golf ?",
-  "Configure Now":"Configurer Maintenant",
 };
 function fr(en) { return FR_DICT[en] || en; }
 
@@ -1387,7 +1253,7 @@ const PL_DICT = {
   "Can the solar panel fully charge the battery?":"Czy panel słoneczny może w pełni naładować akumulator?",
   "The solar panel alone can fully recharge the battery in approximately 4 days of full sun without using the golf cart. It is designed to extend range and reduce consumption, not as the primary charging source.":"Sam panel słoneczny może w pełni naładować akumulator w ciągu około 4 dni pełnego słońca bez użytkowania wózka golfowego. Został zaprojektowany, aby zwiększyć zasięg i zmniejszyć zużycie energii, a nie jako główne źródło ładowania.",
   "How long does the battery last over time?":"Jak długo wytrzymuje akumulator?",
-  "A lithium battery of this type lasts approximately 5–8 years, and potentially even longer if you avoid fully discharging it regularly.":"Akumulator litowy tego typu wytrzymuje około 5–8 lat, a potencjalnie nawet dłużej, jeśli unikasz regularnego całkowitego rozładowywania.",
+  "A lithium battery of this type lasts approximately 5–8 years, and even longer if you avoid fully discharging it regularly.":"Akumulator litowy tego typu wytrzymuje około 5–8 lat, a nawet dłużej, jeśli unikasz regularnego całkowitego rozładowywania.",
   "What is included in the base price?":"Co jest wliczone w cenę podstawową?",
   "The base price includes the golf cart with standard options and the 500W solar panel on the roof. Standard delivery across the Dominican Republic is also included; remote or difficult-access locations may require a delivery adjustment.":"Cena podstawowa obejmuje wózek golfowy ze standardowymi opcjami oraz panel słoneczny 500W na dachu. Wliczona jest również standardowa dostawa na terenie całej Dominikany; odległe lub trudno dostępne lokalizacje mogą wymagać korekty kosztu dostawy.",
   "What is the warranty?":"Jaka jest gwarancja?",
@@ -1527,87 +1393,20 @@ const PL_DICT = {
   "Buying & Maintenance":"Zakup i konserwacja",
   "What to Check Before Buying":"Co sprawdzić przed zakupem",
   "Caring for It Near the Sea":"Pielęgnacja wózka nad morzem",
-  "Fill in your details for the booking":"Wypełnij swoje dane do rezerwacji",
-  "Premium Golf Cart · Bayahibe & Dominicus · Dominican Republic":"Premium Golf Cart · Bayahibe & Dominicus · Dominikana",
-  "Home":"Strona główna",
-  "We deliver electric golf carts across the whole country — see our ":"Dostarczamy elektryczne wózki golfowe na terenie całego kraju — zobacz nasze ",
-  "golf carts available across the Dominican Republic":"wózki golfowe dostępne na terenie całej Dominikany",
-  "Pure white":"Biel czysta",
-  "Cream white":"Biel kremowa",
-  "Grey white":"Biel szarawa",
-  "White":"Biały",
-  "Light grey":"Jasny szary",
-  "Silver grey":"Srebrny szary",
-  "Anthracite grey":"Antracytowy szary",
-  "Black grey":"Czarno-szary",
-  "Black":"Czarny",
-  "Jet black":"Głęboka czerń",
-  "Graphite black":"Grafitowa czerń",
-  "Flame red":"Płomienna czerwień",
-  "Carmine red":"Karminowa czerwień",
-  "Red":"Czerwony",
-  "Orange":"Pomarańczowy",
-  "Yellow":"Żółty",
-  "Zinc yellow":"Cynkowy żółty",
-  "Emerald green":"Szmaragdowa zieleń",
-  "Grass green":"Trawiasta zieleń",
-  "Yellow-green":"Żółto-zielony",
-  "Green":"Zielony",
-  "Ultramarine blue":"Ultramarynowy błękit",
-  "Blue":"Niebieski",
-  "Sky blue":"Błękit nieba",
-  "Pastel blue":"Pastelowy błękit",
-  "Purple":"Fioletowy",
-  "Ochre brown":"Ochrowy brąz",
-  "Chocolate brown":"Czekoladowy brąz",
-  "Sand beige":"Piaskowy beż",
-  "Camel brown":"Wielbłądzi brąz",
-  "Chocolate":"Czekoladowy",
-  "Night blue":"Nocny błękit",
-  "Bordeaux":"Bordowy",
-  "Grey":"Szary",
-  "Cognac":"Koniakowy",
-  "Forest green":"Leśna zieleń",
-  "Sport red":"Sportowa czerwień",
-  "Not sure where to start? Let our virtual assistant guide you step by step to your ideal golf cart — answering a few simple questions, just like our full configurator, but at a relaxed pace.":"Nie wiesz, od czego zacząć? Pozwól naszemu wirtualnemu asystentowi poprowadzić Cię krok po kroku do idealnego wózka golfowego — odpowiadając na kilka prostych pytań, podobnie jak w pełnym konfiguratorze, ale w spokojniejszym tempie.",
-  "Welcome! Thank you for visiting our site. We sell golf carts for every need — let's find the right one for you together.":"Witamy! Dziękujemy za odwiedzenie naszej strony. Sprzedajemy wózki golfowe do każdego zastosowania — znajdźmy razem ten odpowiedni dla Ciebie.",
-  "About TAAAC Solutions – Electric Golf Carts in Bayahibe":"O TAAAC Solutions – Elektryczne Wózki Golfowe w Bayahibe",
-  "Do you deliver golf carts throughout the Dominican Republic?":"Czy dostarczacie wózki golfowe na terenie całej Republiki Dominikańskiej?",
-  "Yes. TAAAC Solutions is based in Bayahibe and delivers electric golf carts across the Dominican Republic.":"Tak. TAAAC Solutions ma siedzibę w Bayahibe i dostarcza elektryczne wózki golfowe na terenie całej Republiki Dominikańskiej.",
-  "Can I customize my golf cart?":"Czy mogę spersonalizować swój wózek golfowy?",
-  "Yes. Our online configurator lets you choose colors, seats, wheels, steering wheel and accessories for your golf cart.":"Tak. Nasz konfigurator online pozwala wybrać kolory, siedzenia, koła, kierownicę i akcesoria do Twojego wózka golfowego.",
-  "Which golf cart model should I choose?":"Który model wózka golfowego powinienem wybrać?",
-  "It depends on your needs: Model A is classic and elegant, Model B is built for off-road terrain, Model C is sporty, and Model D is designed for family comfort. Our guided assistant can help you decide.":"Zależy to od Twoich potrzeb: Model A jest klasyczny i elegancki, Model B stworzony jest do terenów off-road, Model C jest sportowy, a Model D zaprojektowano z myślą o komforcie rodzinnym. Nasz asystent poprowadzi Cię przez wybór.",
-  "How can I request information or a quote?":"Jak mogę poprosić o informacje lub wycenę?",
-  "You can configure your golf cart online and submit a request, or contact us directly through our contact page.":"Możesz skonfigurować swój wózek golfowy online i wysłać zapytanie, lub skontaktować się z nami bezpośrednio przez naszą stronę kontaktową.",
-  "Choose Your Golf Cart":"Wybierz Swój Wózek Golfowy",
-  "Customize Your Golf Cart":"Spersonalizuj Swój Wózek Golfowy",
-  "Every TAAAC Solutions golf cart can be personalized through our online configurator — choose your model, colors, seats, wheels, steering wheel and accessories to build a golf cart that's truly yours.":"Każdy wózek golfowy TAAAC Solutions można spersonalizować za pomocą naszego konfiguratora online — wybierz model, kolory, siedzenia, koła, kierownicę i akcesoria, aby stworzyć wózek naprawdę Twój.",
-  "Start configuring your electric golf cart →":"Zacznij konfigurować swój elektryczny wózek golfowy →",
-  "Delivery Across the Dominican Republic":"Dostawa na Terenie Całej Republiki Dominikańskiej",
-  "TAAAC Solutions delivers electric golf carts throughout the Dominican Republic. We regularly serve areas such as Bayahibe, Dominicus, La Romana, Punta Cana, Bávaro and Santo Domingo — but these are just examples: delivery is available nationwide.":"TAAAC Solutions dostarcza elektryczne wózki golfowe na terenie całej Republiki Dominikańskiej. Regularnie obsługujemy takie obszary jak Bayahibe, Dominicus, La Romana, Punta Cana, Bávaro i Santo Domingo — to jednak tylko przykłady: dostawa jest dostępna w całym kraju.",
-  "Why Choose an Electric Golf Cart?":"Dlaczego Warto Wybrać Elektryczny Wózek Golfowy?",
-  "Electric golf carts are a practical, quiet and low-impact way to get around residences, villas, resorts, private communities and tourist properties in the Dominican Republic — as well as for local trips where their use is permitted.":"Elektryczne wózki golfowe to praktyczny, cichy i mało uciążliwy sposób poruszania się po osiedlach, willach, ośrodkach wypoczynkowych, zamkniętych społecznościach i obiektach turystycznych w Republice Dominikańskiej — a także do lokalnych przejazdów tam, gdzie jest to dozwolone.",
-  "Service & Support":"Serwis i Wsparcie",
-  "TAAAC Solutions also offers maintenance, service and repairs for your golf cart, with local support in Bayahibe and La Romana.":"TAAAC Solutions oferuje również konserwację, serwis i naprawy Twojego wózka golfowego, z lokalnym wsparciem w Bayahibe i La Romana.",
-  "Learn more about our service & repairs →":"Dowiedz się więcej o naszym serwisie i naprawach →",
-  "See all FAQs →":"Zobacz wszystkie FAQ →",
-  "Ready to Find Your Golf Cart?":"Gotowy, aby Znaleźć Swój Wózek Golfowy?",
-  "Configure Now":"Konfiguruj Teraz",
 };
 function pl(en) { return PL_DICT[en] || en; }
 
 const MODELS = [
-  { id:"A", name:"Model A / Modelo A / Modello A", price:8990, tag:"Classic",imgKey:"modA",
+  { id:"A", name:"Model A / Modelo A / Modello A", price:10060, tag:"Classic",imgKey:"modA",
     desc:{it:"Classico ed elegante. Perfetto per campi da golf, resort e hotel.",es:"Clásico y elegante. Perfecto para campos de golf, resorts y hoteles.",en:"Classic and elegant. Perfect for golf courses, resorts and hotels."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"3.5kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"3.5kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"3.5kW AC"}}},
-  { id:"B", name:"Model B / Modelo B / Modello B", price:9506, tag:"Off-Road",imgKey:"modB",
+  { id:"B", name:"Model B / Modelo B / Modello B", price:10896, tag:"Off-Road",imgKey:"modB",
     desc:{it:"Off-road potente. Conquista ogni terreno.",es:"Todoterreno potente. Conquista cualquier terreno.",en:"Powerful off-road. Conquers any terrain."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"4kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"4kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"4kW AC"}}},
-  { id:"C", name:"Model C / Modelo C / Modello C", price:9588, tag:"Sport",imgKey:"modC",
+  { id:"C", name:"Model C / Modelo C / Modello C", price:11037, tag:"Sport",imgKey:"modC",
     desc:{it:"Sportivo e raffinato. Sedili in pelle e cerchi premium.",es:"Deportivo y refinado. Asientos de cuero y llantas premium.",en:"Sporty and refined. Leather seats and premium wheels."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"4kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"4kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"4kW AC"}}},
-  { id:"D", name:"Model D / Modelo D / Modello D", price:9672, tag:"Family",imgKey:"modD",
+  { id:"D", name:"Model D / Modelo D / Modello D", price:11147, tag:"Family",imgKey:"modD",
     desc:{it:"Massimo comfort per famiglie e gruppi.",es:"Máximo confort familiar. Espacio extra con portapalos de golf.",en:"Maximum family comfort. Extra space with golf bag holder."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"4kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"4kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"4kW AC"}}},
 ];
@@ -1620,10 +1419,10 @@ const SEATS_OPTIONS = [
   {id:"other",it:"Altre sedute",es:"Otras plazas",en:"Other Seats",imgKey:null,descIt:"Su richiesta",descEs:"Bajo pedido",descEn:"On request"},
 ];
 const SEAT_PRICE_EXTRA = {
-  A: {"2":0, "2+2":1169, "4":226, "4+2":610},
-  B: {"2":0, "2+2":1265, "4":279, "4+2":782},
-  C: {"2":0, "2+2":1250, "4":280, "4+2":783},
-  D: {"2":0, "2+2":1249, "4":278, "4+2":699},
+  A: {"2":0, "2+2":216, "4":245, "4+2":559},
+  B: {"2":0, "2+2":487, "4":358, "4+2":761},
+  C: {"2":0, "2+2":375, "4":363, "4+2":865},
+  D: {"2":0, "2+2":420, "4":594, "4+2":870},
 };
 
 const TIRE_PRICE_EXTRA = {
@@ -1852,7 +1651,7 @@ function ServiceConfirm({serviceNote, goBack, goHome, lang="en"}) {
       <p style={{color:"#888",fontSize:14,maxWidth:440,margin:"0 auto 24px",lineHeight:1.7}}>
         {t("Our team will contact you within 24 hours.","Le contactaremos en 24 horas.","Ti contatteremo entro 24 ore.")}
       </p>
-      <button style={gold} onClick={goHome}>🏠 {t("Home","Inicio","Home")}</button>
+      <button style={gold} onClick={goHome}>🏠 Home</button>
     </div>
   );
 
@@ -1935,7 +1734,7 @@ function ServiceConfirm({serviceNote, goBack, goHome, lang="en"}) {
       <h2 style={{fontSize:"clamp(1.4rem,4vw,2rem)",fontWeight:800,color:"#F5F0E8",marginBottom:4}}>
         {t("Book a Service","Reservar un Servicio","Prenota un Servizio")}
       </h2>
-      <div style={{color:"#888",fontSize:12,marginBottom:16}}>{t("Fill in your details for the booking","Completa los datos para la reserva","Compila i dati per la prenotazione")}</div>
+      <div style={{color:"#888",fontSize:12,marginBottom:16}}>Compila i dati per la prenotazione</div>
 
       <div style={{background:"#161616",border:"1px solid #C9A84C22",borderRadius:12,padding:14,marginBottom:20}}>
         {serviceNote.split("\n").filter(l=>l.startsWith("-")).map((l,i)=>(
@@ -2568,9 +2367,15 @@ export default function App() {
       if(o && o.price) total += o.price;
     });
     const seatT = SEAT_TYPES.find(s => s.id === cfg.seatType);
-    if(seatT && seatT.price) total += seatT.price;
+    // Il sedile Sport è incluso di serie (gratis) sui Modelli B/C/D: il
+    // sovrapprezzo va sommato solo se scelto come upgrade sul Modello A.
+    const seatSportIncluded = cfg.seatType === "sport" && ["B","C","D"].includes(cfg.model);
+    if(seatT && seatT.price && !seatSportIncluded) total += seatT.price;
     const steerT = STEERING.find(s => s.id === cfg.steering);
-    if(steerT && steerT.price) total += steerT.price;
+    // Il volante Sport è incluso di serie (gratis) sui Modelli B/C/D (unici
+    // modelli per cui è selezionabile).
+    const steerSportIncluded = cfg.steering === "sport" && ["B","C","D"].includes(cfg.model);
+    if(steerT && steerT.price && !steerSportIncluded) total += steerT.price;
     const windT = WINDSHIELDS.find(w => w.id === cfg.windshield);
     if(windT && windT.price) total += windT.price;
     if(cfg.model && cfg.tire && TIRE_PRICE_EXTRA[cfg.model] && TIRE_PRICE_EXTRA[cfg.model][cfg.tire] !== undefined) {
@@ -2621,7 +2426,7 @@ export default function App() {
         </div>
         <div style={{textAlign:"right"}}>
           <div style={{color:"#888",fontSize:8,fontWeight:600,letterSpacing:1,textTransform:"uppercase"}}>{t("Total","Total","Totale")}</div>
-          <div style={{color:C.goldLight,fontWeight:900,fontSize:22,lineHeight:1.1}}>${totalPrice().toLocaleString()} <span style={{fontSize:10,fontWeight:700}}>USD</span></div>
+          <div style={{color:C.goldLight,fontWeight:900,fontSize:22,lineHeight:1.1}}>${totalPrice().toLocaleString('en-US')} <span style={{fontSize:10,fontWeight:700}}>USD</span></div>
         </div>
       </div>
     );
@@ -2817,7 +2622,7 @@ export default function App() {
                     <Img k={m.imgKey} style={{maxHeight:"100%",maxWidth:"100%",objectFit:"contain"}}/>
                   </div>
                   <div style={{color:C.gold,fontWeight:700,fontSize:13}}>{t(m.name.split(" / ")[0], m.name.split(" / ")[1], m.name.split(" / ")[2])}</div>
-                  <div style={{color:C.muted,fontSize:12,marginTop:2}}>{t("from","desde","da")} ${m.price.toLocaleString()}</div>
+                  <div style={{color:C.muted,fontSize:12,marginTop:2}}>{t("from","desde","da")} ${m.price.toLocaleString('en-US')}</div>
                 </div>
               ))}
             </div>
@@ -3296,7 +3101,7 @@ export default function App() {
         </div>
 
         <div style={{color:C.goldLight,fontWeight:800,fontSize:22,textAlign:"center",marginBottom:6}}>
-          {t("Starting from","Desde","A partire da")} ${model.price.toLocaleString()} USD
+          {t("Starting from","Desde","A partire da")} ${model.price.toLocaleString('en-US')} USD
         </div>
         <div style={{color:C.muted,fontSize:13.5,fontWeight:500,textAlign:"center",marginBottom:20}}>
           {t6("Configure it your way. Clear pricing from the start.","Configúralo a tu manera. Precio claro desde el principio.","Configuralo a modo tuo. Prezzo chiaro fin dall'inizio.","Configurez-le à votre façon. Un prix clair dès le départ.","Skonfiguruj go po swojemu. Jasna cena od samego początku.","Настройте его по-своему. Понятная цена с самого начала.")}
@@ -3534,7 +3339,7 @@ export default function App() {
           <p style={{color:C.muted,fontSize:14,maxWidth:440,margin:"0 auto 24px",lineHeight:1.7}}>
             {t("Our team will contact you within 24 hours to schedule your interview.","Le contactaremos en 24 horas para programar su entrevista.","Ti contatteremo entro 24 ore per programmare il colloquio.")}
           </p>
-          <button style={S.goldBtn} onClick={()=>setPage("home")}>🏠 {t("Home","Inicio","Home")}</button>
+          <button style={S.goldBtn} onClick={()=>setPage("home")}>🏠 Home</button>
         </div>
       </div>
     );
@@ -3921,7 +3726,7 @@ export default function App() {
         </div>
       )}
       <footer style={{borderTop:"1px solid #222",padding:"24px 20px",textAlign:"center"}}>
-        <div style={{color:C.muted,fontSize:13}}>{t("Premium Golf Cart · Bayahibe & Dominicus · Dominican Republic","Premium Golf Cart · Bayahibe & Dominicus · República Dominicana","Premium Golf Cart · Bayahibe & Dominicus · Repubblica Dominicana")}</div>
+        <div style={{color:C.muted,fontSize:13}}>Premium Golf Cart · Bayahibe & Dominicus · República Dominicana</div>
         <div style={{color:"#555",fontSize:11,marginTop:4}}>© 2025 TAAAC Solutions. {t("All rights reserved","Todos los derechos reservados","Tutti i diritti riservati")}.</div>
         <div style={{marginTop:8,display:"flex",gap:16,justifyContent:"center",alignItems:"center"}}>
           <span style={{color:"#555",fontSize:10,cursor:"pointer",textDecoration:"underline"}} onClick={()=>setPage("faq")}>

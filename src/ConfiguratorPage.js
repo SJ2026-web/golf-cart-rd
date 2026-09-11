@@ -94,11 +94,11 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
       ...opts.map(o=>"- "+o.en+": "+(o.always?"Included":"$"+o.price)),
       "",
       "PRICING:",
-      "Base price: $"+(model?.price?.toLocaleString()||""),
-      "Total: $"+totalPrice.toLocaleString(),
-      "35% on order: $"+payment1.toLocaleString(),
-      "35% on completion: $"+payment2.toLocaleString(),
-      "30% on delivery: $"+payment3.toLocaleString(),
+      "Base price: $"+(model?.price?.toLocaleString('en-US')||""),
+      "Total: $"+totalPrice.toLocaleString('en-US'),
+      "35% on order: $"+payment1.toLocaleString('en-US'),
+      "35% on completion: $"+payment2.toLocaleString('en-US'),
+      "30% on delivery: $"+payment3.toLocaleString('en-US'),
     ].join("\n");
 
     setIsSending(true);
@@ -164,25 +164,25 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
 
       <div style={{background:"#161616",border:"1px solid #C9A84C",borderRadius:16,padding:20,marginBottom:8,textAlign:"center"}}>
         <div style={{color:"#888",fontSize:11,marginBottom:4}}>{t("Total","Total","Totale")}</div>
-        <div style={{color:"#F5F0E8",fontWeight:900,fontSize:34}}>${totalPrice.toLocaleString()} <span style={{fontSize:14,fontWeight:700}}>USD</span></div>
+        <div style={{color:"#F5F0E8",fontWeight:900,fontSize:34}}>${totalPrice.toLocaleString('en-US')} <span style={{fontSize:14,fontWeight:700}}>USD</span></div>
         <div style={{color:"#7ac47a",fontSize:11,marginTop:4}}>{t("Price includes taxes and standard delivery in the Dominican Republic. Remote or difficult-access locations may require a delivery adjustment.","El precio incluye impuestos y entrega estándar en República Dominicana. Las zonas remotas o de difícil acceso pueden requerir un ajuste en el costo de entrega.","Il prezzo include tasse e consegna standard in Repubblica Dominicana. Le località remote o di difficile accesso possono richiedere un adeguamento del costo di consegna.")}</div>
       </div>
       <div style={{background:"#161616",border:"1px solid #333",borderRadius:16,padding:20,marginBottom:20,display:"flex",gap:16,flexWrap:"wrap",justifyContent:"center",textAlign:"center"}}>
         <div style={{flex:1,minWidth:110}}>
           <div style={{color:"#C9A84C",fontSize:11,fontWeight:700,marginBottom:4}}>35% {t("On Order","Al Pedido","All'Ordine")}</div>
-          <div style={{color:"#E2C07A",fontWeight:900,fontSize:20}}>${payment1.toLocaleString()} <span style={{fontSize:10}}>USD</span></div>
+          <div style={{color:"#E2C07A",fontWeight:900,fontSize:20}}>${payment1.toLocaleString('en-US')} <span style={{fontSize:10}}>USD</span></div>
           <div style={{color:"#888",fontSize:9,marginTop:4}}>{t("To start building your golf cart","Para iniciar la construcción","Per avviare la costruzione")}</div>
         </div>
         <div style={{width:1,background:"#222"}}/>
         <div style={{flex:1,minWidth:110}}>
           <div style={{color:"#C9A84C",fontSize:11,fontWeight:700,marginBottom:4}}>35% {t("On Completion","Al Finalizar","Al Completamento")}</div>
-          <div style={{color:"#E2C07A",fontWeight:900,fontSize:20}}>${payment2.toLocaleString()} <span style={{fontSize:10}}>USD</span></div>
+          <div style={{color:"#E2C07A",fontWeight:900,fontSize:20}}>${payment2.toLocaleString('en-US')} <span style={{fontSize:10}}>USD</span></div>
           <div style={{color:"#888",fontSize:9,marginTop:4}}>{t("Verified by photo, video or video call","Verificado con foto, video o videollamada","Verificato con foto, video o videochiamata")}</div>
         </div>
         <div style={{width:1,background:"#222"}}/>
         <div style={{flex:1,minWidth:110}}>
           <div style={{color:"#C9A84C",fontSize:11,fontWeight:700,marginBottom:4}}>30% {t("On Delivery","A la Entrega","Alla Consegna")}</div>
-          <div style={{color:"#E2C07A",fontWeight:900,fontSize:20}}>${payment3.toLocaleString()} <span style={{fontSize:10}}>USD</span></div>
+          <div style={{color:"#E2C07A",fontWeight:900,fontSize:20}}>${payment3.toLocaleString('en-US')} <span style={{fontSize:10}}>USD</span></div>
           <div style={{color:"#888",fontSize:9,marginTop:4}}>{t("Turnkey delivery","Entrega llave en mano","Consegna chiavi in mano")}</div>
         </div>
       </div>
@@ -311,10 +311,10 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
       )}</h1>
       <div style={S.grid2}>
         {MODELS.map(m=>(
-          <div key={m.id} style={S.card(cfg.model===m.id)} onClick={()=>{upd("model",m.id);upd("motor",defaultMotorFor(m.id,"2"));upd("battery",defaultBatteryFor("2"));upd("seats","2");upd("bodyColor",{code:"RAL 9010",hex:"#FFFFFF",it:"Bianco puro",es:"Blanco puro",en:"Pure white"});upd("seatType","standard");upd("steering","standard");upd("tire","offroad-12");}}>
+          <div key={m.id} style={S.card(cfg.model===m.id)} onClick={()=>{upd("model",m.id);upd("motor",defaultMotorFor(m.id,"2"));upd("battery",defaultBatteryFor("2"));upd("seats","2");upd("bodyColor",{code:"RAL 9010",hex:"#FFFFFF",it:"Bianco puro",es:"Blanco puro",en:"Pure white"});upd("seatType",m.id==="A"?"standard":"sport");upd("steering",m.id==="A"?"standard":"sport");upd("tire","offroad-12");}}>
             <div style={{display:"flex",justifyContent:"space-between",marginBottom:10}}>
               <span style={{background:"#C9A84C22",color:C.gold,padding:"3px 10px",borderRadius:20,fontSize:11,fontWeight:700}}>{m.tag}</span>
-              <span style={{color:C.goldLight,fontWeight:800,fontSize:14}}>{t("from","desde","da")} ${m.price.toLocaleString()} USD</span>
+              <span style={{color:C.goldLight,fontWeight:800,fontSize:14}}>{t("from","desde","da")} ${m.price.toLocaleString('en-US')} USD</span>
             </div>
             <div style={{background:"transparent",borderRadius:12,marginBottom:10,display:"flex",justifyContent:"center",alignItems:"center",height:170,overflow:"hidden"}}>
               <Img k={m.imgKey} style={{width:"100%",height:"100%",objectFit:"contain",objectPosition:"center"}}/>
@@ -409,7 +409,7 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
             </div>
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
               <div style={{color:cfg.seats===s.id?C.gold:C.white,fontWeight:700,fontSize:14}}>{t(s.en, s.es, s.it)}</div>
-              {extra>0 && s.id!=="other" && <span style={{color:C.goldLight,fontWeight:800,fontSize:13}}>+${extra.toLocaleString()}</span>}
+              {extra>0 && s.id!=="other" && <span style={{color:C.goldLight,fontWeight:800,fontSize:13}}>+${extra.toLocaleString('en-US')}</span>}
             </div>
             <div style={{color:C.muted,fontSize:12,marginTop:4}}>{t(s.descEn, s.descEs, s.descIt)}</div>
           </div>
@@ -426,7 +426,11 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
 
       // Step 3 — Seat Type + Seat Color
   if(step===3) {
-    const stdSeat = SEAT_TYPES.find(s=>s.id==="standard");
+    // Sul Modello A il default è il sedile Standard (upgrade Sport a pagamento
+    // disponibile). Sui Modelli B/C/D il sedile Sport è incluso di serie: non
+    // è più un upgrade a pagamento, quindi diventa lui il default mostrato qui.
+    const defaultSeatId = cfg.model==="A" ? "standard" : "sport";
+    const stdSeat = SEAT_TYPES.find(s=>s.id===defaultSeatId);
     const stdWind2 = WINDSHIELDS.find(w=>w.id==="standard");
     return (
       <div>
@@ -440,15 +444,15 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
           "В каком стиле будут сиденья {name}?"
         )}</h1>
         {stdSeat && (
-          <div onClick={()=>upd("seatType","standard")} style={{background:cfg.seatType==="standard"?"linear-gradient(135deg,#C9A84C20,#C9A84C08)":"#1a1a1a",border:cfg.seatType==="standard"?"2px solid #C9A84C":"1.5px solid #333",borderRadius:16,padding:20,marginBottom:20,display:"flex",gap:16,alignItems:"center",cursor:"pointer"}}>
+          <div onClick={()=>upd("seatType",defaultSeatId)} style={{background:cfg.seatType===defaultSeatId?"linear-gradient(135deg,#C9A84C20,#C9A84C08)":"#1a1a1a",border:cfg.seatType===defaultSeatId?"2px solid #C9A84C":"1.5px solid #333",borderRadius:16,padding:20,marginBottom:20,display:"flex",gap:16,alignItems:"center",cursor:"pointer"}}>
             <div style={{background:"#070707",borderRadius:12,minWidth:90,minHeight:90,display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden",flexShrink:0}}>
               <Img k={stdSeat.imgKey} style={{width:"100%",maxHeight:100}}/>
             </div>
             <div style={{flex:1}}>
               <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
-                <div style={{color:cfg.seatType==="standard"?C.gold:C.white,fontWeight:800,fontSize:15}}>{t(stdSeat.en, stdSeat.es, stdSeat.it)}</div>
-                {cfg.seatType==="standard" && <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>✓ {t("Selected","Seleccionado","Selezionato")}</span>}
-                {cfg.seatType!=="standard" && <span style={{background:"#22222244",color:"#666",fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>{t("Default","Por defecto","Predefinito")}</span>}
+                <div style={{color:cfg.seatType===defaultSeatId?C.gold:C.white,fontWeight:800,fontSize:15}}>{t(stdSeat.en, stdSeat.es, stdSeat.it)}</div>
+                {cfg.seatType===defaultSeatId && <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>✓ {t("Selected","Seleccionado","Selezionato")}</span>}
+                {cfg.seatType!==defaultSeatId && <span style={{background:"#22222244",color:"#666",fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>{t("Default","Por defecto","Predefinito")}</span>}
               </div>
               <div style={{color:C.muted,fontSize:13,lineHeight:1.6}}>{t(stdSeat.descEn, stdSeat.descEs, stdSeat.descIt)}</div>
             </div>
@@ -467,7 +471,7 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
               <button style={S.outBtn} onClick={()=>setShowSeatOpts(false)}>✕ {t("Close","Cerrar","Chiudi")}</button>
             </div>
             <div style={{...S.grid2,marginBottom:20}}>
-              {SEAT_TYPES.filter(s=>s.id!=="standard").map(s=>(
+              {SEAT_TYPES.filter(s=>s.id!=="standard" && s.id!==defaultSeatId).map(s=>(
                 <div key={s.id} style={S.card(cfg.seatType===s.id)} onClick={()=>upd("seatType",s.id)}>
                   <div style={{background:"#070707",borderRadius:10,marginBottom:10,display:"flex",justifyContent:"center",alignItems:"center",minHeight:100,overflow:"hidden"}}>
                     <Img k={s.imgKey} style={{width:"100%",maxHeight:120}}/>
@@ -544,7 +548,11 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
 
   // Step 4 — Steering + Wheels + Windshield
   if(step===4) {
-    const stdSteer = STEERING.find(s=>s.id==="standard");
+    // Sul Modello A il volante resta solo Standard (nessun upgrade disponibile,
+    // come oggi). Sui Modelli B/C/D il volante Sport è incluso di serie: non è
+    // più un upgrade a pagamento, quindi diventa lui il default mostrato qui.
+    const defaultSteerId = cfg.model==="A" ? "standard" : "sport";
+    const stdSteer = STEERING.find(s=>s.id===defaultSteerId);
     const stdTire = TIRES.find(tire=>tire.id==="offroad-12");
     const stdWind = WINDSHIELDS.find(w=>w.id==="standard");
     return (
@@ -571,15 +579,15 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
           )}
         </div>
         {stdSteer && (
-          <div onClick={()=>upd("steering","standard")} style={{background:cfg.steering==="standard"?"linear-gradient(135deg,#C9A84C20,#C9A84C08)":"#1a1a1a",border:cfg.steering==="standard"?"2px solid #C9A84C":"1.5px solid #333",borderRadius:16,padding:20,marginBottom:16,display:"flex",gap:16,alignItems:"center",cursor:"pointer"}}>
+          <div onClick={()=>upd("steering",defaultSteerId)} style={{background:cfg.steering===defaultSteerId?"linear-gradient(135deg,#C9A84C20,#C9A84C08)":"#1a1a1a",border:cfg.steering===defaultSteerId?"2px solid #C9A84C":"1.5px solid #333",borderRadius:16,padding:20,marginBottom:16,display:"flex",gap:16,alignItems:"center",cursor:"pointer"}}>
             <div style={{background:"#070707",borderRadius:12,minWidth:90,minHeight:90,display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden",flexShrink:0}}>
               <Img k={stdSteer.imgKey} style={{width:"100%",maxHeight:100}}/>
             </div>
             <div style={{flex:1}}>
               <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
-                <div style={{color:cfg.steering==="standard"?C.gold:C.white,fontWeight:800,fontSize:15}}>{t(stdSteer.en, stdSteer.es, stdSteer.it)}</div>
-                {cfg.steering==="standard" && <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>✓ {t("Selected","Seleccionado","Selezionato")}</span>}
-                {cfg.steering!=="standard" && <span style={{background:"#22222244",color:"#666",fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>{t("Default","Por defecto","Predefinito")}</span>}
+                <div style={{color:cfg.steering===defaultSteerId?C.gold:C.white,fontWeight:800,fontSize:15}}>{t(stdSteer.en, stdSteer.es, stdSteer.it)}</div>
+                {cfg.steering===defaultSteerId && <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>✓ {t("Selected","Seleccionado","Selezionato")}</span>}
+                {cfg.steering!==defaultSteerId && <span style={{background:"#22222244",color:"#666",fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:6}}>{t("Default","Por defecto","Predefinito")}</span>}
               </div>
               <div style={{color:C.muted,fontSize:13,lineHeight:1.6}}>{t(stdSteer.descEn, stdSteer.descEs, stdSteer.descIt)}</div>
             </div>
@@ -598,7 +606,7 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
               <button style={S.outBtn} onClick={()=>setShowSteerOpts(false)}>✕ {t("Close","Cerrar","Chiudi")}</button>
             </div>
             <div style={{...S.grid3,marginBottom:16}}>
-              {STEERING.filter(s=>s.id!=="standard").map(s=>(
+              {STEERING.filter(s=>s.id!=="standard" && s.id!==defaultSteerId).map(s=>(
                 <div key={s.id} style={S.card(cfg.steering===s.id)} onClick={()=>upd("steering",s.id)}>
                   <div style={{background:"#070707",borderRadius:10,marginBottom:10,display:"flex",justifyContent:"center",alignItems:"center",minHeight:100,overflow:"hidden"}}>
                     <Img k={s.imgKey} style={{width:"100%",maxHeight:120}}/>

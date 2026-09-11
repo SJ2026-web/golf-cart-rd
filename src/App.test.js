@@ -131,7 +131,7 @@ test('3. il bottone Indietro dal configuratore riporta alla Home (fix bug prevPa
   expect(screen.queryByText(/Name your Golf Cart/i)).not.toBeInTheDocument();
 });
 
-test('4. il prezzo base del Modello A ($8,990) viene mostrato correttamente nel configuratore', async () => {
+test('4. il prezzo base del Modello A ($10,060) viene mostrato correttamente nel configuratore', async () => {
   render(<App />);
   fireEvent.click(screen.getByText(/Configure your own/i));
 
@@ -144,13 +144,13 @@ test('4. il prezzo base del Modello A ($8,990) viene mostrato correttamente nel 
 
   // Il formato del separatore delle migliaia (virgola, punto, spazio o nessuno) dipende
   // dall'ambiente in cui gira il test (m.price.toLocaleString() non specifica una lingua fissa).
-  // Cerchiamo la sequenza di cifre "8990" ignorando qualsiasi carattere di separazione,
+  // Cerchiamo la sequenza di cifre "10060" ignorando qualsiasi carattere di separazione,
   // e verifichiamo che compaia accanto a "USD" per evitare falsi positivi.
   await waitFor(() => {
     const matches = screen.getAllByText((_, element) => {
       if (!element || !element.textContent) return false;
       const digitsOnly = element.textContent.replace(/[^0-9]/g, '');
-      return digitsOnly.includes('8990') && element.textContent.includes('USD');
+      return digitsOnly.includes('10060') && element.textContent.includes('USD');
     });
     expect(matches.length).toBeGreaterThan(0);
   }, { timeout: 15000 });
@@ -176,7 +176,7 @@ test('5. i prezzi base dei 4 modelli (A/B/C/D) sono mostrati correttamente', asy
   // div contenitore diretto del nome modello ("Model A" ecc.): nome e prezzo
   // sono figli diretti dello stesso div, quindi risalendo di un livello dal
   // nome si ottiene esattamente la card corretta da cui scopare la ricerca.
-  const expectedPrices = { A: '8990', B: '9506', C: '9588', D: '9672' };
+  const expectedPrices = { A: '10060', B: '10896', C: '11037', D: '11147' };
   await waitFor(() => {
     for (const [letter, price] of Object.entries(expectedPrices)) {
       const modelNameEl = screen.getByText(new RegExp(`^Model ${letter}$`, 'i'));
@@ -201,8 +201,8 @@ test('6. il supplemento posti (2+2) viene sommato correttamente al totale', asyn
   }, { timeout: 15000 });
   fireEvent.click(screen.getByText(/2\+2 Seats/i));
 
-  // Modello A (8990) + supplemento 2+2 posti (1169) = 10159
-  await expectLiveTotal('10159');
+  // Modello A (10060) + supplemento 2+2 posti (216) = 10276
+  await expectLiveTotal('10276');
 });
 
 test('7. il supplemento pneumatici (Off-Road 14") viene sommato correttamente al totale', async () => {
@@ -221,8 +221,8 @@ test('7. il supplemento pneumatici (Off-Road 14") viene sommato correttamente al
   }, { timeout: 15000 });
   fireEvent.click(screen.getByText(tireCard));
 
-  // Modello A (8990) + supplemento pneumatici Off-Road 14" (205) = 9195
-  await expectLiveTotal('9195');
+  // Modello A (10060) + supplemento pneumatici Off-Road 14" (205) = 10265
+  await expectLiveTotal('10265');
 });
 
 test('8. i supplementi di batteria e motore vengono sommati correttamente al totale', async () => {
@@ -236,7 +236,7 @@ test('8. i supplementi di batteria e motore vengono sommati correttamente al tot
     expect(screen.getByText(/60V 150A/i)).toBeInTheDocument();
   }, { timeout: 15000 });
   fireEvent.click(screen.getByText(/60V 150A/i));
-  await expectLiveTotal('9651'); // 8990 + 661
+  await expectLiveTotal('10721'); // 10060 + 661
 
   // Motore: 5 kW (+270 per Modello A con 2 posti)
   await clickText(/Other motor options/i);
@@ -244,7 +244,7 @@ test('8. i supplementi di batteria e motore vengono sommati correttamente al tot
     expect(screen.getByText(/^5 kW$/i)).toBeInTheDocument();
   }, { timeout: 15000 });
   fireEvent.click(screen.getByText(/^5 kW$/i));
-  await expectLiveTotal('9921'); // 8990 + 661 + 270
+  await expectLiveTotal('10991'); // 10060 + 661 + 270
 
   // Batteria "On Request": 72V 100A — Lead-acid, con seats !== "other" (qui "2"),
   // batteryPrice() restituisce la stringa "onrequest" invece di un numero:
@@ -258,8 +258,8 @@ test('8. i supplementi di batteria e motore vengono sommati correttamente al tot
     expect(within(batteryRow).getByText(/On Request/i)).toBeInTheDocument();
     expect(within(batteryRow).queryByText(/\+\$/)).not.toBeInTheDocument();
   }, { timeout: 15000 });
-  // Totale: 8990 (base) + 270 (motore 5kW ancora selezionato) + 0 (batteria on request) = 9260
-  await expectLiveTotal('9260');
+  // Totale: 10060 (base) + 270 (motore 5kW ancora selezionato) + 0 (batteria on request) = 10330
+  await expectLiveTotal('10330');
 });
 
 test('9. il pannello solare è sempre incluso a $0 e non è disattivabile', async () => {
@@ -282,7 +282,7 @@ test('9. il pannello solare è sempre incluso a $0 e non è disattivabile', asyn
 
   // Senza alcun supplemento selezionato, il totale resta esattamente il prezzo
   // base del modello: conferma che il pannello solare contribuisce $0.
-  await expectLiveTotal('8990');
+  await expectLiveTotal('10060');
 });
 
 test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configurato', async () => {
@@ -292,23 +292,23 @@ test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configu
   await waitFor(() => {
     expect(screen.getByText(/2\+2 Seats/i)).toBeInTheDocument();
   }, { timeout: 15000 });
-  fireEvent.click(screen.getByText(/2\+2 Seats/i)); // totale atteso: 8990 + 1169 = 10159
+  fireEvent.click(screen.getByText(/2\+2 Seats/i)); // totale atteso: 10060 + 216 = 10276
   await advanceFromStep(2, 9); // step 2 -> ... -> step 9 (Confirm & Details)
 
   await waitFor(() => {
     expect(screen.getByText(/Confirm & Details/i)).toBeInTheDocument();
   }, { timeout: 15000 });
 
-  // Verifica indipendente che il totale mostrato sia esattamente 10159
-  // (8990 di base + 1169 di supplemento posti), senza cifre estranee.
+  // Verifica indipendente che il totale mostrato sia esattamente 10276
+  // (10060 di base + 216 di supplemento posti), senza cifre estranee.
   await waitFor(() => {
     const matches = screen.getAllByText((_, element) => {
       if (!element || !element.textContent) return false;
-      return digitsOf(element.textContent) === '10159' && element.textContent.includes('USD');
+      return digitsOf(element.textContent) === '10276' && element.textContent.includes('USD');
     });
     expect(matches.length).toBeGreaterThan(0);
   }, { timeout: 15000 });
-  const total = 10159;
+  const total = 10276;
 
   // Leggiamo i tre importi (35% On Order, 35% On Completion, 30% On Delivery)
   // e verifichiamo che sommino esattamente al totale mostrato, senza scarti
@@ -332,7 +332,7 @@ test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configu
   const payment3 = readAmountNear(onDeliveryLabel);
 
   expect(payment1 + payment2 + payment3).toBe(total);
-  expect(total).toBe(10159);
+  expect(total).toBe(10276);
 });
 
 test('11. la navigazione base del configuratore rispetta le regole di step (Next disabilitato senza modello, stato preservato col Back)', async () => {
@@ -434,7 +434,7 @@ test('14. l\'invio del form finale chiama EmailJS (mockato) due volte e il messa
   window.emailjs = { send: sendMock };
 
   await openConfigurator();
-  await selectModel('A'); // nessun extra: totale atteso 8990
+  await selectModel('A'); // nessun extra: totale atteso 10060
   await advanceFromStep(0, 9); // step 0 -> ... -> step 9 (Confirm & Details)
 
   await waitFor(() => {
@@ -479,17 +479,18 @@ test('14. l\'invio del form finale chiama EmailJS (mockato) due volte e il messa
 
   const msg = firstPayload.message;
 
-  // Totale e prezzo base: Modello A senza extra = 8990.
-  expect(msg).toMatch(/Total: \$[\d.,\s]*8[.,\s]?990/);
+  // Totale e prezzo base: Modello A senza extra = 10060.
+  expect(msg).toMatch(/Total: \$[\d.,\s]*10[.,\s]?060/);
   // Schema di pagamento presente ed etichettato correttamente.
   expect(msg).toContain('35% on order:');
   expect(msg).toContain('35% on completion:');
   expect(msg).toContain('30% on delivery:');
-  // Importi coerenti: 35% di 8990 = 3146.5 -> arrotondato a 3147 (x2);
-  // il restante (30%) è per differenza: 8990 - 3147 - 3147 = 2696.
-  expect(msg).toMatch(/35% on order: \$[\d.,\s]*3[.,\s]?147/);
-  expect(msg).toMatch(/35% on completion: \$[\d.,\s]*3[.,\s]?147/);
-  expect(msg).toMatch(/30% on delivery: \$[\d.,\s]*2[.,\s]?696/);
+  // Importi coerenti: 35% di 10060 = 3521 esatto (10060*35=352100, /100=3521,
+  // nessun problema di arrotondamento in questo caso) (x2);
+  // il restante (30%) è per differenza: 10060 - 3521 - 3521 = 3018.
+  expect(msg).toMatch(/35% on order: \$[\d.,\s]*3[.,\s]?521/);
+  expect(msg).toMatch(/35% on completion: \$[\d.,\s]*3[.,\s]?521/);
+  expect(msg).toMatch(/30% on delivery: \$[\d.,\s]*3[.,\s]?018/);
 });
 
 test('15. una bozza salvata più vecchia di 5 giorni non viene proposta per la ripresa', async () => {
