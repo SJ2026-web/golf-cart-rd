@@ -505,6 +505,79 @@ const RU_DICT = {
   "Extended range":"Увеличенный запас хода",
   "Optional":"Опции",
   "Maintenance":"Обслуживание",
+  "Home":"Главная",
+  "Premium Golf Cart · Bayahibe & Dominicus · Dominican Republic":"Premium Golf Cart · Bayahibe & Dominicus · Доминиканская Республика",
+  "We deliver electric golf carts across the whole country — see our ":"Мы доставляем электрические гольф-кары по всей стране — смотрите наши ",
+  "golf carts available across the Dominican Republic":"гольф-кары, доступные по всей Доминиканской Республике",
+  "Pure white":"Чисто-белый",
+  "Cream white":"Кремово-белый",
+  "Grey white":"Серо-белый",
+  "White":"Белый",
+  "Light grey":"Светло-серый",
+  "Silver grey":"Серебристо-серый",
+  "Anthracite grey":"Антрацитово-серый",
+  "Black grey":"Чёрно-серый",
+  "Black":"Чёрный",
+  "Jet black":"Глубокий чёрный",
+  "Graphite black":"Графитово-чёрный",
+  "Flame red":"Пламенно-красный",
+  "Carmine red":"Кармин",
+  "Red":"Красный",
+  "Orange":"Оранжевый",
+  "Yellow":"Жёлтый",
+  "Zinc yellow":"Цинково-жёлтый",
+  "Emerald green":"Изумрудно-зелёный",
+  "Grass green":"Травянисто-зелёный",
+  "Yellow-green":"Жёлто-зелёный",
+  "Green":"Зелёный",
+  "Ultramarine blue":"Ультрамариновый синий",
+  "Blue":"Синий",
+  "Sky blue":"Небесно-голубой",
+  "Pastel blue":"Пастельно-голубой",
+  "Purple":"Фиолетовый",
+  "Ochre brown":"Охристо-коричневый",
+  "Chocolate brown":"Шоколадно-коричневый",
+  "Sand beige":"Песочно-бежевый",
+  "Camel brown":"Верблюжий коричневый",
+  "Chocolate":"Шоколадный",
+  "Night blue":"Ночной синий",
+  "Bordeaux":"Бордовый",
+  "Grey":"Серый",
+  "Cognac":"Коньячный",
+  "Forest green":"Лесной зелёный",
+  "Sport red":"Спортивный красный",
+  "Not sure where to start? Let our virtual assistant guide you step by step to your ideal golf cart — answering a few simple questions, just like our full configurator, but at a relaxed pace.":"Не знаете, с чего начать? Позвольте нашему виртуальному ассистенту провести вас шаг за шагом к идеальному гольф-кару — ответив на несколько простых вопросов, как в полном конфигураторе, но в более спокойном темпе.",
+  "Welcome! Thank you for visiting our site. We sell golf carts for every need — let's find the right one for you together.":"Добро пожаловать! Спасибо, что посетили наш сайт. Мы продаём гольф-кары на любой случай — давайте вместе найдём подходящий именно вам.",
+  "About TAAAC Solutions – Electric Golf Carts in Bayahibe":"О компании TAAAC Solutions – электрические гольф-кары в Байяибе",
+  "Do you deliver golf carts throughout the Dominican Republic?":"Осуществляете ли вы доставку гольф-каров по всей Доминиканской Республике?",
+  "Yes. TAAAC Solutions is based in Bayahibe and delivers electric golf carts across the Dominican Republic.":"Да. TAAAC Solutions базируется в Байяибе и доставляет электрические гольф-кары по всей Доминиканской Республике.",
+  "Can I customize my golf cart?":"Могу ли я настроить свой гольф-кар по индивидуальным параметрам?",
+  "Yes. Our online configurator lets you choose colors, seats, wheels, steering wheel and accessories for your golf cart.":"Да. Наш онлайн-конфигуратор позволяет выбрать цвета, сиденья, колёса, руль и аксессуары для вашего гольф-кара.",
+  "Which golf cart model should I choose?":"Какую модель гольф-кара мне выбрать?",
+  "It depends on your needs: Model A is classic and elegant, Model B is built for off-road terrain, Model C is sporty, and Model D is designed for family comfort. Our guided assistant can help you decide.":"Это зависит от ваших потребностей: Модель A — классическая и элегантная, Модель B создана для бездорожья, Модель C — спортивная, а Модель D разработана для комфорта всей семьи. Наш виртуальный ассистент поможет вам определиться.",
+  "How can I request information or a quote?":"Как я могу запросить информацию или расчёт стоимости?",
+  "You can configure your golf cart online and submit a request, or contact us directly through our contact page.":"Вы можете настроить гольф-кар онлайн и отправить запрос, либо связаться с нами напрямую через страницу контактов.",
+  "Choose Your Golf Cart":"Выберите Свой Гольф-кар",
+  "Customize Your Golf Cart":"Настройте Свой Гольф-кар",
+  "Every TAAAC Solutions golf cart can be personalized through our online configurator — choose your model, colors, seats, wheels, steering wheel and accessories to build a golf cart that's truly yours.":"Каждый гольф-кар TAAAC Solutions можно персонализировать с помощью нашего онлайн-конфигуратора — выберите модель, цвета, сиденья, колёса, руль и аксессуары, чтобы создать гольф-кар, который по-настоящему ваш.",
+  "Start configuring your electric golf cart →":"Начните настройку своего электрического гольф-кара →",
+  "Delivery Across the Dominican Republic":"Доставка по Всей Доминиканской Республике",
+  "TAAAC Solutions delivers electric golf carts throughout the Dominican Republic. We regularly serve areas such as Bayahibe, Dominicus, La Romana, Punta Cana, Bávaro and Santo Domingo — but these are just examples: delivery is available nationwide.":"TAAAC Solutions доставляет электрические гольф-кары по всей Доминиканской Республике. Мы регулярно обслуживаем такие районы, как Байяибе, Доминикус, Ла-Романа, Пунта-Кана, Баваро и Санто-Доминго — но это лишь примеры: доставка доступна по всей стране.",
+  "Why Choose an Electric Golf Cart?":"Почему Стоит Выбрать Электрический Гольф-кар?",
+  "Electric golf carts are a practical, quiet and low-impact way to get around residences, villas, resorts, private communities and tourist properties in the Dominican Republic — as well as for local trips where their use is permitted.":"Электрические гольф-кары — это практичный, тихий и щадящий способ передвижения по жилым комплексам, виллам, курортам, закрытым посёлкам и туристическим объектам в Доминиканской Республике, а также для местных поездок там, где это разрешено.",
+  "Service & Support":"Сервис и Поддержка",
+  "TAAAC Solutions also offers maintenance, service and repairs for your golf cart, with local support in Bayahibe and La Romana.":"TAAAC Solutions также предлагает техническое обслуживание, сервис и ремонт вашего гольф-кара с локальной поддержкой в Байяибе и Ла-Романа.",
+  "Learn more about our service & repairs →":"Узнать больше о нашем сервисе и ремонте →",
+  "See all FAQs →":"Смотреть все вопросы и ответы →",
+  "Ready to Find Your Golf Cart?":"Готовы Найти Свой Гольф-кар?",
+  "Configure Now":"Настроить Сейчас",
+  "A lithium battery of this type lasts approximately 5–8 years, and potentially even longer if you avoid fully discharging it regularly.":"Литиевый аккумулятор такого типа служит примерно 5–8 лет, а если избегать регулярной полной разрядки — потенциально ещё дольше.",
+  "Required":"Обязательно",
+  "Please fill in all required fields":"Пожалуйста, заполните все обязательные поля",
+  "Review your configuration and request your personalized quote":"Проверьте свою конфигурацию и запросите персональное предложение",
+  "Request a personalized quote":"Запросить персональное предложение",
+  "Address *":"Адрес *",
+  "Delivery location *":"Место доставки *",
 };
 function ru(en) { return RU_DICT[en] || en; }
 
@@ -970,6 +1043,79 @@ const FR_DICT = {
   "Extended range":"Autonomie accrue",
   "Optional":"En option",
   "Maintenance":"Entretien",
+  "Home":"Accueil",
+  "Premium Golf Cart · Bayahibe & Dominicus · Dominican Republic":"Premium Golf Cart · Bayahibe & Dominicus · République Dominicaine",
+  "We deliver electric golf carts across the whole country — see our ":"Nous livrons des voiturettes de golf électriques dans tout le pays — découvrez nos ",
+  "golf carts available across the Dominican Republic":"voiturettes de golf disponibles dans toute la République Dominicaine",
+  "Pure white":"Blanc pur",
+  "Cream white":"Blanc crème",
+  "Grey white":"Blanc grisâtre",
+  "White":"Blanc",
+  "Light grey":"Gris clair",
+  "Silver grey":"Gris argent",
+  "Anthracite grey":"Gris anthracite",
+  "Black grey":"Gris noir",
+  "Black":"Noir",
+  "Jet black":"Noir intense",
+  "Graphite black":"Noir graphite",
+  "Flame red":"Rouge flamme",
+  "Carmine red":"Rouge carmin",
+  "Red":"Rouge",
+  "Orange":"Orange",
+  "Yellow":"Jaune",
+  "Zinc yellow":"Jaune zinc",
+  "Emerald green":"Vert émeraude",
+  "Grass green":"Vert gazon",
+  "Yellow-green":"Jaune-vert",
+  "Green":"Vert",
+  "Ultramarine blue":"Bleu outremer",
+  "Blue":"Bleu",
+  "Sky blue":"Bleu ciel",
+  "Pastel blue":"Bleu pastel",
+  "Purple":"Violet",
+  "Ochre brown":"Brun ocre",
+  "Chocolate brown":"Brun chocolat",
+  "Sand beige":"Beige sable",
+  "Camel brown":"Brun camel",
+  "Chocolate":"Chocolat",
+  "Night blue":"Bleu nuit",
+  "Bordeaux":"Bordeaux",
+  "Grey":"Gris",
+  "Cognac":"Cognac",
+  "Forest green":"Vert forêt",
+  "Sport red":"Rouge sport",
+  "Not sure where to start? Let our virtual assistant guide you step by step to your ideal golf cart — answering a few simple questions, just like our full configurator, but at a relaxed pace.":"Vous ne savez pas par où commencer ? Laissez notre assistant virtuel vous guider pas à pas vers votre golf cart idéal — en répondant à quelques questions simples, comme notre configurateur complet, mais à un rythme plus détendu.",
+  "Welcome! Thank you for visiting our site. We sell golf carts for every need — let's find the right one for you together.":"Bienvenue ! Merci de votre visite sur notre site. Nous vendons des voiturettes de golf pour tous les besoins — trouvons ensemble celle qui vous convient.",
+  "About TAAAC Solutions – Electric Golf Carts in Bayahibe":"À propos de TAAAC Solutions – Voiturettes de Golf Électriques à Bayahibe",
+  "Do you deliver golf carts throughout the Dominican Republic?":"Livrez-vous des voiturettes de golf dans toute la République Dominicaine ?",
+  "Yes. TAAAC Solutions is based in Bayahibe and delivers electric golf carts across the Dominican Republic.":"Oui. TAAAC Solutions est basée à Bayahibe et livre des voiturettes de golf électriques dans toute la République Dominicaine.",
+  "Can I customize my golf cart?":"Puis-je personnaliser ma voiturette de golf ?",
+  "Yes. Our online configurator lets you choose colors, seats, wheels, steering wheel and accessories for your golf cart.":"Oui. Notre configurateur en ligne vous permet de choisir les couleurs, les sièges, les roues, le volant et les accessoires de votre voiturette de golf.",
+  "Which golf cart model should I choose?":"Quel modèle de voiturette de golf dois-je choisir ?",
+  "It depends on your needs: Model A is classic and elegant, Model B is built for off-road terrain, Model C is sporty, and Model D is designed for family comfort. Our guided assistant can help you decide.":"Cela dépend de vos besoins : le Modèle A est classique et élégant, le Modèle B est conçu pour les terrains tout-terrain, le Modèle C est sportif, et le Modèle D est pensé pour le confort familial. Notre assistant guidé peut vous aider à décider.",
+  "How can I request information or a quote?":"Comment puis-je demander des informations ou un devis ?",
+  "You can configure your golf cart online and submit a request, or contact us directly through our contact page.":"Vous pouvez configurer votre voiturette de golf en ligne et envoyer une demande, ou nous contacter directement via notre page de contact.",
+  "Choose Your Golf Cart":"Choisissez Votre Voiturette de Golf",
+  "Customize Your Golf Cart":"Personnalisez Votre Voiturette de Golf",
+  "Every TAAAC Solutions golf cart can be personalized through our online configurator — choose your model, colors, seats, wheels, steering wheel and accessories to build a golf cart that's truly yours.":"Chaque voiturette de golf TAAAC Solutions peut être personnalisée grâce à notre configurateur en ligne — choisissez votre modèle, les couleurs, les sièges, les roues, le volant et les accessoires pour créer une voiturette vraiment à votre image.",
+  "Start configuring your electric golf cart →":"Commencez à configurer votre voiturette de golf électrique →",
+  "Delivery Across the Dominican Republic":"Livraison dans Toute la République Dominicaine",
+  "TAAAC Solutions delivers electric golf carts throughout the Dominican Republic. We regularly serve areas such as Bayahibe, Dominicus, La Romana, Punta Cana, Bávaro and Santo Domingo — but these are just examples: delivery is available nationwide.":"TAAAC Solutions livre des voiturettes de golf électriques dans toute la République Dominicaine. Nous desservons régulièrement des zones telles que Bayahibe, Dominicus, La Romana, Punta Cana, Bávaro et Santo Domingo — mais ce ne sont que des exemples : la livraison est disponible dans tout le pays.",
+  "Why Choose an Electric Golf Cart?":"Pourquoi Choisir une Voiturette de Golf Électrique ?",
+  "Electric golf carts are a practical, quiet and low-impact way to get around residences, villas, resorts, private communities and tourist properties in the Dominican Republic — as well as for local trips where their use is permitted.":"Les voiturettes de golf électriques sont un moyen pratique, silencieux et à faible impact pour se déplacer dans les résidences, villas, resorts, communautés privées et propriétés touristiques de la République Dominicaine — ainsi que pour les trajets locaux où leur usage est autorisé.",
+  "Service & Support":"Service et Assistance",
+  "TAAAC Solutions also offers maintenance, service and repairs for your golf cart, with local support in Bayahibe and La Romana.":"TAAAC Solutions propose également l'entretien, le service et les réparations de votre voiturette de golf, avec une assistance locale à Bayahibe et La Romana.",
+  "Learn more about our service & repairs →":"En savoir plus sur notre service et nos réparations →",
+  "See all FAQs →":"Voir toutes les FAQ →",
+  "Ready to Find Your Golf Cart?":"Prêt à Trouver Votre Voiturette de Golf ?",
+  "Configure Now":"Configurer Maintenant",
+  "A lithium battery of this type lasts approximately 5–8 years, and potentially even longer if you avoid fully discharging it regularly.":"Une batterie au lithium de ce type dure environ 5 à 8 ans, voire potentiellement plus longtemps si vous évitez de la décharger complètement de façon régulière.",
+  "Required":"Obligatoire",
+  "Please fill in all required fields":"Veuillez remplir tous les champs obligatoires",
+  "Review your configuration and request your personalized quote":"Vérifiez votre configuration et demandez votre devis personnalisé",
+  "Request a personalized quote":"Demander un devis personnalisé",
+  "Address *":"Adresse *",
+  "Delivery location *":"Lieu de livraison *",
 };
 function fr(en) { return FR_DICT[en] || en; }
 
@@ -1405,6 +1551,79 @@ const PL_DICT = {
   "Extended range":"Większy zasięg",
   "Optional":"Opcje",
   "Maintenance":"Konserwacja",
+  "Home":"Strona główna",
+  "Premium Golf Cart · Bayahibe & Dominicus · Dominican Republic":"Premium Golf Cart · Bayahibe & Dominicus · Dominikana",
+  "We deliver electric golf carts across the whole country — see our ":"Dostarczamy elektryczne wózki golfowe na terenie całego kraju — zobacz nasze ",
+  "golf carts available across the Dominican Republic":"wózki golfowe dostępne na terenie całej Dominikany",
+  "Pure white":"Biel czysta",
+  "Cream white":"Biel kremowa",
+  "Grey white":"Biel szarawa",
+  "White":"Biały",
+  "Light grey":"Jasny szary",
+  "Silver grey":"Srebrny szary",
+  "Anthracite grey":"Antracytowy szary",
+  "Black grey":"Czarno-szary",
+  "Black":"Czarny",
+  "Jet black":"Głęboka czerń",
+  "Graphite black":"Grafitowa czerń",
+  "Flame red":"Płomienna czerwień",
+  "Carmine red":"Karminowa czerwień",
+  "Red":"Czerwony",
+  "Orange":"Pomarańczowy",
+  "Yellow":"Żółty",
+  "Zinc yellow":"Cynkowy żółty",
+  "Emerald green":"Szmaragdowa zieleń",
+  "Grass green":"Trawiasta zieleń",
+  "Yellow-green":"Żółto-zielony",
+  "Green":"Zielony",
+  "Ultramarine blue":"Ultramarynowy błękit",
+  "Blue":"Niebieski",
+  "Sky blue":"Błękit nieba",
+  "Pastel blue":"Pastelowy błękit",
+  "Purple":"Fioletowy",
+  "Ochre brown":"Ochrowy brąz",
+  "Chocolate brown":"Czekoladowy brąz",
+  "Sand beige":"Piaskowy beż",
+  "Camel brown":"Wielbłądzi brąz",
+  "Chocolate":"Czekoladowy",
+  "Night blue":"Nocny błękit",
+  "Bordeaux":"Bordowy",
+  "Grey":"Szary",
+  "Cognac":"Koniakowy",
+  "Forest green":"Leśna zieleń",
+  "Sport red":"Sportowa czerwień",
+  "Not sure where to start? Let our virtual assistant guide you step by step to your ideal golf cart — answering a few simple questions, just like our full configurator, but at a relaxed pace.":"Nie wiesz, od czego zacząć? Pozwól naszemu wirtualnemu asystentowi poprowadzić Cię krok po kroku do idealnego wózka golfowego — odpowiadając na kilka prostych pytań, podobnie jak w pełnym konfiguratorze, ale w spokojniejszym tempie.",
+  "Welcome! Thank you for visiting our site. We sell golf carts for every need — let's find the right one for you together.":"Witamy! Dziękujemy za odwiedzenie naszej strony. Sprzedajemy wózki golfowe do każdego zastosowania — znajdźmy razem ten odpowiedni dla Ciebie.",
+  "About TAAAC Solutions – Electric Golf Carts in Bayahibe":"O TAAAC Solutions – Elektryczne Wózki Golfowe w Bayahibe",
+  "Do you deliver golf carts throughout the Dominican Republic?":"Czy dostarczacie wózki golfowe na terenie całej Republiki Dominikańskiej?",
+  "Yes. TAAAC Solutions is based in Bayahibe and delivers electric golf carts across the Dominican Republic.":"Tak. TAAAC Solutions ma siedzibę w Bayahibe i dostarcza elektryczne wózki golfowe na terenie całej Republiki Dominikańskiej.",
+  "Can I customize my golf cart?":"Czy mogę spersonalizować swój wózek golfowy?",
+  "Yes. Our online configurator lets you choose colors, seats, wheels, steering wheel and accessories for your golf cart.":"Tak. Nasz konfigurator online pozwala wybrać kolory, siedzenia, koła, kierownicę i akcesoria do Twojego wózka golfowego.",
+  "Which golf cart model should I choose?":"Który model wózka golfowego powinienem wybrać?",
+  "It depends on your needs: Model A is classic and elegant, Model B is built for off-road terrain, Model C is sporty, and Model D is designed for family comfort. Our guided assistant can help you decide.":"Zależy to od Twoich potrzeb: Model A jest klasyczny i elegancki, Model B stworzony jest do terenów off-road, Model C jest sportowy, a Model D zaprojektowano z myślą o komforcie rodzinnym. Nasz asystent poprowadzi Cię przez wybór.",
+  "How can I request information or a quote?":"Jak mogę poprosić o informacje lub wycenę?",
+  "You can configure your golf cart online and submit a request, or contact us directly through our contact page.":"Możesz skonfigurować swój wózek golfowy online i wysłać zapytanie, lub skontaktować się z nami bezpośrednio przez naszą stronę kontaktową.",
+  "Choose Your Golf Cart":"Wybierz Swój Wózek Golfowy",
+  "Customize Your Golf Cart":"Spersonalizuj Swój Wózek Golfowy",
+  "Every TAAAC Solutions golf cart can be personalized through our online configurator — choose your model, colors, seats, wheels, steering wheel and accessories to build a golf cart that's truly yours.":"Każdy wózek golfowy TAAAC Solutions można spersonalizować za pomocą naszego konfiguratora online — wybierz model, kolory, siedzenia, koła, kierownicę i akcesoria, aby stworzyć wózek naprawdę Twój.",
+  "Start configuring your electric golf cart →":"Zacznij konfigurować swój elektryczny wózek golfowy →",
+  "Delivery Across the Dominican Republic":"Dostawa na Terenie Całej Republiki Dominikańskiej",
+  "TAAAC Solutions delivers electric golf carts throughout the Dominican Republic. We regularly serve areas such as Bayahibe, Dominicus, La Romana, Punta Cana, Bávaro and Santo Domingo — but these are just examples: delivery is available nationwide.":"TAAAC Solutions dostarcza elektryczne wózki golfowe na terenie całej Republiki Dominikańskiej. Regularnie obsługujemy takie obszary jak Bayahibe, Dominicus, La Romana, Punta Cana, Bávaro i Santo Domingo — to jednak tylko przykłady: dostawa jest dostępna w całym kraju.",
+  "Why Choose an Electric Golf Cart?":"Dlaczego Warto Wybrać Elektryczny Wózek Golfowy?",
+  "Electric golf carts are a practical, quiet and low-impact way to get around residences, villas, resorts, private communities and tourist properties in the Dominican Republic — as well as for local trips where their use is permitted.":"Elektryczne wózki golfowe to praktyczny, cichy i mało uciążliwy sposób poruszania się po osiedlach, willach, ośrodkach wypoczynkowych, zamkniętych społecznościach i obiektach turystycznych w Republice Dominikańskiej — a także do lokalnych przejazdów tam, gdzie jest to dozwolone.",
+  "Service & Support":"Serwis i Wsparcie",
+  "TAAAC Solutions also offers maintenance, service and repairs for your golf cart, with local support in Bayahibe and La Romana.":"TAAAC Solutions oferuje również konserwację, serwis i naprawy Twojego wózka golfowego, z lokalnym wsparciem w Bayahibe i La Romana.",
+  "Learn more about our service & repairs →":"Dowiedz się więcej o naszym serwisie i naprawach →",
+  "See all FAQs →":"Zobacz wszystkie FAQ →",
+  "Ready to Find Your Golf Cart?":"Gotowy, aby Znaleźć Swój Wózek Golfowy?",
+  "Configure Now":"Konfiguruj Teraz",
+  "A lithium battery of this type lasts approximately 5–8 years, and potentially even longer if you avoid fully discharging it regularly.":"Akumulator litowy tego typu wytrzymuje około 5–8 lat, a potencjalnie nawet dłużej, jeśli unikasz regularnego całkowitego rozładowywania.",
+  "Required":"Wymagane",
+  "Please fill in all required fields":"Wypełnij wszystkie wymagane pola",
+  "Review your configuration and request your personalized quote":"Sprawdź swoją konfigurację i poproś o spersonalizowaną wycenę",
+  "Request a personalized quote":"Poproś o spersonalizowaną wycenę",
+  "Address *":"Adres *",
+  "Delivery location *":"Miejsce dostawy *",
 };
 function pl(en) { return PL_DICT[en] || en; }
 
@@ -1580,7 +1799,6 @@ const STEPS = [
   {it:"Optional",es:"Opcionales",en:"Options"},
   {it:"Creazione",es:"Creación",en:"Creation"},
   {it:"Riepilogo",es:"Resumen",en:"Summary"},
-  {it:"Conferma",es:"Confirmar",en:"Confirm"},
 ];
 
 function Img({k, style={}, eager=false}) {
@@ -1663,7 +1881,7 @@ function ServiceConfirm({serviceNote, goBack, goHome, lang="en"}) {
       <p style={{color:"#888",fontSize:14,maxWidth:440,margin:"0 auto 24px",lineHeight:1.7}}>
         {t("Our team will contact you within 24 hours.","Le contactaremos en 24 horas.","Ti contatteremo entro 24 ore.")}
       </p>
-      <button style={gold} onClick={goHome}>🏠 Home</button>
+      <button style={gold} onClick={goHome}>🏠 {t("Home","Inicio","Home")}</button>
     </div>
   );
 
@@ -2012,7 +2230,7 @@ export default function App() {
         "name": "TAAAC Solutions",
         "description": description,
         "url": url,
-        "telephone": "+41764372290",
+        "telephone": "+18494100261",
         "areaServed": areaServed
       };
       let el = document.getElementById("localbusiness-structured-data");
@@ -2923,7 +3141,7 @@ export default function App() {
                   {t6("TAAAC Care members may request a Courtesy Golf Cart at an additional cost when available.","Los miembros de TAAAC Care pueden solicitar un Golf Cart de Cortesía con un coste adicional cuando esté disponible.","I clienti TAAAC Care possono richiedere un Golf Cart di Cortesia a pagamento, quando disponibile.","Les membres TAAAC Care peuvent demander un Golf Cart de Courtoisie moyennant un coût supplémentaire, selon disponibilité.","Członkowie TAAAC Care mogą odpłatnie poprosić o zastępczy Golf Cart, jeśli jest dostępny.","Участники TAAAC Care могут запросить подменный гольф-кар за дополнительную плату при его наличии.")}
                 </p>
 
-                <a href={"https://wa.me/41764372290?text="+encodeURIComponent(t6("Hi, I'm interested in TAAAC Care.","Hola, me interesa TAAAC Care.","Ciao, sono interessato a TAAAC Care.","Bonjour, je suis intéressé par TAAAC Care.","Cześć, jestem zainteresowany/a TAAAC Care.","Здравствуйте, меня интересует TAAAC Care."))} target="_blank" rel="noopener noreferrer" style={{...S.outBtn,display:"block",textAlign:"center",textDecoration:"none",width:"100%",boxSizing:"border-box"}}>
+                <a href={"https://wa.me/18494100261?text="+encodeURIComponent(t6("Hi, I'm interested in TAAAC Care.","Hola, me interesa TAAAC Care.","Ciao, sono interessato a TAAAC Care.","Bonjour, je suis intéressé par TAAAC Care.","Cześć, jestem zainteresowany/a TAAAC Care.","Здравствуйте, меня интересует TAAAC Care."))} target="_blank" rel="noopener noreferrer" style={{...S.outBtn,display:"block",textAlign:"center",textDecoration:"none",width:"100%",boxSizing:"border-box"}}>
                   {t6("Choose TAAAC Care","Elige TAAAC Care","Scegli TAAAC Care","Choisissez TAAAC Care","Wybierz TAAAC Care","Выберите TAAAC Care")}
                 </a>
               </div>
@@ -2967,7 +3185,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <a href={"https://wa.me/41764372290?text="+encodeURIComponent(t6("Hi, I'm interested in TAAAC Care+.","Hola, me interesa TAAAC Care+.","Ciao, sono interessato a TAAAC Care+.","Bonjour, je suis intéressé par TAAAC Care+.","Cześć, jestem zainteresowany/a TAAAC Care+.","Здравствуйте, меня интересует TAAAC Care+."))} target="_blank" rel="noopener noreferrer" style={{...S.goldBtn,display:"block",textAlign:"center",textDecoration:"none",width:"100%",boxSizing:"border-box"}}>
+                <a href={"https://wa.me/18494100261?text="+encodeURIComponent(t6("Hi, I'm interested in TAAAC Care+.","Hola, me interesa TAAAC Care+.","Ciao, sono interessato a TAAAC Care+.","Bonjour, je suis intéressé par TAAAC Care+.","Cześć, jestem zainteresowany/a TAAAC Care+.","Здравствуйте, меня интересует TAAAC Care+."))} target="_blank" rel="noopener noreferrer" style={{...S.goldBtn,display:"block",textAlign:"center",textDecoration:"none",width:"100%",boxSizing:"border-box"}}>
                   {t6("Choose TAAAC Care+","Elige TAAAC Care+","Scegli TAAAC Care+","Choisissez TAAAC Care+","Wybierz TAAAC Care+","Выберите TAAAC Care+")}
                 </a>
               </div>
@@ -2989,7 +3207,7 @@ export default function App() {
             </div>
           </div>
 
-          <a href="https://wa.me/41764372290" target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",justifyContent:"center",gap:8,background:"transparent",color:"#25D366",border:"1.5px solid #25D366",borderRadius:14,padding:"14px 20px",fontSize:14,fontWeight:700,textDecoration:"none",marginBottom:12}}>
+          <a href="https://wa.me/18494100261" target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",justifyContent:"center",gap:8,background:"transparent",color:"#25D366",border:"1.5px solid #25D366",borderRadius:14,padding:"14px 20px",fontSize:14,fontWeight:700,textDecoration:"none",marginBottom:12}}>
             <svg viewBox="0 0 32 32" width="18" height="18" fill="#25D366"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.625.86 5.055 2.312 7.031L4 29l7.157-2.281A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.96 9.96 0 0 1-5.086-1.398l-.365-.217-3.789 1.207 1.229-3.693-.239-.38A9.96 9.96 0 0 1 6 15c0-5.523 4.478-10 10.001-10zm-3.61 5.06c-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.075.148.198 2.057 3.278 5.076 4.462 2.516.988 3.028.792 3.575.743.546-.05 1.762-.72 2.01-1.414.247-.694.247-1.29.173-1.414-.074-.124-.271-.198-.568-.347-.297-.148-1.762-.87-2.036-.968-.273-.099-.472-.148-.67.148-.198.297-.767.968-.94 1.166-.173.198-.347.223-.644.074-.297-.148-1.253-.462-2.387-1.472-.883-.788-1.48-1.762-1.653-2.06-.173-.297-.019-.457.13-.605.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.67-1.613-.918-2.208-.242-.583-.487-.504-.67-.513-.173-.008-.371-.01-.57-.01z"/></svg>
             {t6("Need assistance? Contact us on WhatsApp","¿Necesitas asistencia? Contáctanos por WhatsApp","Hai bisogno di assistenza? Contattaci su WhatsApp","Besoin d'assistance ? Contactez-nous sur WhatsApp","Potrzebujesz pomocy? Skontaktuj się z nami przez WhatsApp","Нужна помощь? Свяжитесь с нами в WhatsApp")}
           </a>
@@ -3165,7 +3383,7 @@ export default function App() {
           <button onClick={handleConfigureThis} style={{flex:1,minWidth:200,background:"linear-gradient(135deg,#C9A84C,#E2C07A)",color:"#000",border:"none",borderRadius:14,padding:"16px 20px",fontSize:15,fontWeight:800,cursor:"pointer"}}>
             🚗 {t("Configure this Model","Configurar este Modelo","Configura questo Modello")}
           </button>
-          <a href="https://wa.me/41764372290" target="_blank" rel="noopener noreferrer" style={{flex:1,minWidth:200,background:"transparent",color:"#25D366",border:"1.5px solid #25D366",borderRadius:14,padding:"16px 20px",fontSize:15,fontWeight:700,cursor:"pointer",textDecoration:"none",display:"flex",alignItems:"center",justifyContent:"center",gap:8}}>
+          <a href="https://wa.me/18494100261" target="_blank" rel="noopener noreferrer" style={{flex:1,minWidth:200,background:"transparent",color:"#25D366",border:"1.5px solid #25D366",borderRadius:14,padding:"16px 20px",fontSize:15,fontWeight:700,cursor:"pointer",textDecoration:"none",display:"flex",alignItems:"center",justifyContent:"center",gap:8}}>
             <svg viewBox="0 0 32 32" width="18" height="18" fill="#25D366"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.625.86 5.055 2.312 7.031L4 29l7.157-2.281A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.96 9.96 0 0 1-5.086-1.398l-.365-.217-3.789 1.207 1.229-3.693-.239-.38A9.96 9.96 0 0 1 6 15c0-5.523 4.478-10 10.001-10zm-3.61 5.06c-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.075.148.198 2.057 3.278 5.076 4.462 2.516.988 3.028.792 3.575.743.546-.05 1.762-.72 2.01-1.414.247-.694.247-1.29.173-1.414-.074-.124-.271-.198-.568-.347-.297-.148-1.762-.87-2.036-.968-.273-.099-.472-.148-.67.148-.198.297-.767.968-.94 1.166-.173.198-.347.223-.644.074-.297-.148-1.253-.462-2.387-1.472-.883-.788-1.48-1.762-1.653-2.06-.173-.297-.019-.457.13-.605.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.67-1.613-.918-2.208-.242-.583-.487-.504-.67-.513-.173-.008-.371-.01-.57-.01z"/></svg>
             WhatsApp
           </a>
@@ -3351,7 +3569,7 @@ export default function App() {
           <p style={{color:C.muted,fontSize:14,maxWidth:440,margin:"0 auto 24px",lineHeight:1.7}}>
             {t("Our team will contact you within 24 hours to schedule your interview.","Le contactaremos en 24 horas para programar su entrevista.","Ti contatteremo entro 24 ore per programmare il colloquio.")}
           </p>
-          <button style={S.goldBtn} onClick={()=>setPage("home")}>🏠 Home</button>
+          <button style={S.goldBtn} onClick={()=>setPage("home")}>🏠 {t("Home","Inicio","Home")}</button>
         </div>
       </div>
     );
@@ -3738,7 +3956,7 @@ export default function App() {
         </div>
       )}
       <footer style={{borderTop:"1px solid #222",padding:"24px 20px",textAlign:"center"}}>
-        <div style={{color:C.muted,fontSize:13}}>Premium Golf Cart · Bayahibe & Dominicus · República Dominicana</div>
+        <div style={{color:C.muted,fontSize:13}}>{t("Premium Golf Cart · Bayahibe & Dominicus · Dominican Republic","Premium Golf Cart · Bayahibe & Dominicus · República Dominicana","Premium Golf Cart · Bayahibe & Dominicus · Repubblica Dominicana")}</div>
         <div style={{color:"#555",fontSize:11,marginTop:4}}>© 2025 TAAAC Solutions. {t("All rights reserved","Todos los derechos reservados","Tutti i diritti riservati")}.</div>
         <div style={{marginTop:8,display:"flex",gap:16,justifyContent:"center",alignItems:"center"}}>
           <span style={{color:"#555",fontSize:10,cursor:"pointer",textDecoration:"underline"}} onClick={()=>setPage("faq")}>
@@ -3788,7 +4006,7 @@ export default function App() {
           </div>
         </>
       )}
-      <a href="https://wa.me/41764372290" target="_blank" rel="noopener noreferrer"
+      <a href="https://wa.me/18494100261" target="_blank" rel="noopener noreferrer"
         style={{position:"fixed",bottom:20,right:20,zIndex:300,width:56,height:56,borderRadius:"50%",background:"#25D366",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 16px rgba(0,0,0,0.4)",textDecoration:"none"}}
         title="WhatsApp">
         <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.625.86 5.055 2.312 7.031L4 29l7.157-2.281A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.96 9.96 0 0 1-5.086-1.398l-.365-.217-3.789 1.207 1.229-3.693-.239-.38A9.96 9.96 0 0 1 6 15c0-5.523 4.478-10 10.001-10zm-3.61 5.06c-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.075.148.198 2.057 3.278 5.076 4.462 2.516.988 3.028.792 3.575.743.546-.05 1.762-.72 2.01-1.414.247-.694.247-1.29.173-1.414-.074-.124-.271-.198-.568-.347-.297-.148-1.762-.87-2.036-.968-.273-.099-.472-.148-.67.148-.198.297-.767.968-.94 1.166-.173.198-.347.223-.644.074-.297-.148-1.253-.462-2.387-1.472-.883-.788-1.48-1.762-1.653-2.06-.173-.297-.019-.457.13-.605.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.67-1.613-.918-2.208-.242-.583-.487-.504-.67-.513-.173-.008-.371-.01-.57-.01z"/></svg>

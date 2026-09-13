@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState, useRef } from "react";
 
-function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, MOTORS, SEAT_TYPES, TIRES, STEERING, WINDSHIELDS, OPTIONAL_ITEMS, ru, fr, pl}) {
+function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, MOTORS, SEAT_TYPES, TIRES, STEERING, WINDSHIELDS, OPTIONAL_ITEMS, ru, fr, pl, Img}) {
   const t = (en,es,it) => lang==="ru"?ru(en):lang==="fr"?fr(en):lang==="pl"?pl(en):lang==="es"?es:lang==="it"?it:en;
   const [sent, setSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
@@ -11,19 +11,24 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
   const payment3 = totalPrice - payment1 - payment2;
   const nomeRef = useRef();
   const cognomeRef = useRef();
-  const telefonoRef = useRef();
   const emailRef = useRef();
   const indirizzoRef = useRef();
   const consegnaRef = useRef();
-  const noteRef = useRef();
+  const bat = BATTERIES.find(b=>b.id===cfg.battery);
+  const mot = MOTORS.find(m=>m.id===cfg.motor);
+  const st = SEAT_TYPES.find(s=>s.id===cfg.seatType);
+  const ti = TIRES.find(tire=>tire.id===cfg.tire);
+  const sw = STEERING.find(s=>s.id===cfg.steering);
+  const ws = WINDSHIELDS.find(w=>w.id===cfg.windshield);
   const inp = {width:"100%",background:"#111",border:"1px solid #333",borderRadius:10,padding:"11px 14px",color:"#F5F0E8",fontSize:14,outline:"none",boxSizing:"border-box",fontFamily:"inherit"};
   const inpErr = {...inp, border:"1px solid #e05555"};
   const errText = {color:"#e05555",fontSize:11,marginTop:4};
-  const validateFields = (nome, telefono, email) => {
+  const validateFields = (nome, cognome, indirizzo, consegna, email) => {
     const errs = {};
     if(!nome.trim() || !/^[A-Za-zÀ-ÿ\s]+$/.test(nome.trim())) errs.nome = t("Letters only","Solo letras","Solo lettere");
-    const digitCount = (telefono.match(/\d/g)||[]).length;
-    if(!telefono.trim().startsWith("+") || digitCount < 11) errs.telefono = t("Must start with + and have at least 11 digits","Debe empezar con + y tener al menos 11 dígitos","Deve iniziare con + e avere almeno 11 cifre");
+    if(!cognome.trim() || !/^[A-Za-zÀ-ÿ\s]+$/.test(cognome.trim())) errs.cognome = t("Letters only","Solo letras","Solo lettere");
+    if(!indirizzo.trim()) errs.indirizzo = t("Required","Obligatorio","Obbligatorio");
+    if(!consegna.trim()) errs.consegna = t("Required","Obligatorio","Obbligatorio");
     if(!email.includes("@")) errs.email = t("Must contain @","Debe contener @","Deve contenere @");
     return errs;
   };
@@ -45,39 +50,19 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
     if(isSending) return;
     const nome = nomeRef.current?.value || "";
     const cognome = cognomeRef.current?.value || "";
-    const telefono = telefonoRef.current?.value || "";
     const email = emailRef.current?.value || "";
     const indirizzo = indirizzoRef.current?.value || "";
     const consegna = consegnaRef.current?.value || "";
-    const note = noteRef.current?.value || "";
-    if(!nome || !email || !telefono) { alert(t("Please fill Name, Email and Phone","Completa Nombre, Email y Teléfono","Compila Nome, Email e Telefono")); return; }
-    const errs = validateFields(nome, telefono, email);
+    if(!nome || !cognome || !email || !indirizzo || !consegna) { alert(t("Please fill in all required fields","Completa todos los campos obligatorios","Compila tutti i campi obbligatori")); return; }
+    const errs = validateFields(nome, cognome, indirizzo, consegna, email);
     setFieldErrors(errs);
     if(Object.keys(errs).length > 0) return;
 
-    const bat = BATTERIES.find(b=>b.id===cfg.battery);
-    const mot = MOTORS.find(m=>m.id===cfg.motor);
-    const st = SEAT_TYPES.find(s=>s.id===cfg.seatType);
-    const ti = TIRES.find(tire=>tire.id===cfg.tire);
-    const sw = STEERING.find(s=>s.id===cfg.steering);
-    const ws = WINDSHIELDS.find(w=>w.id===cfg.windshield);
     const opts = cfg.optionals.map(id=>OPTIONAL_ITEMS.find(x=>x.id===id)).filter(Boolean);
 
     const cartName = (cfg.cartName && cfg.cartName.trim()) ? cfg.cartName.trim() : "Golf Cart";
 
-    const msg = [
-      "NEW GOLF CART QUOTE REQUEST",
-      "=====================================",
-      "GOLF CART NAME (chosen by customer): "+cartName,
-      "",
-      "CUSTOMER INFO:",
-      "Name: "+nome+" "+cognome,
-      "Phone: "+telefono,
-      "Email: "+email,
-      "Address: "+indirizzo,
-      "Delivery location: "+consegna,
-      "Notes: "+note,
-      "",
+    const configLines = [
       "CONFIGURATION:",
       "Model: "+cfg.model,
       "Seats: "+cfg.seats,
@@ -92,6 +77,21 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
       "",
       "OPTIONS:",
       ...opts.map(o=>"- "+o.en+": "+(o.always?"Included":"$"+o.price)),
+    ];
+
+    // Email interna: mantiene la suddivisione 35/35/30 come riferimento per il team.
+    const msg = [
+      "NEW GOLF CART QUOTE REQUEST",
+      "=====================================",
+      "GOLF CART NAME (chosen by customer): "+cartName,
+      "",
+      "CUSTOMER INFO:",
+      "Name: "+nome+" "+cognome,
+      "Email: "+email,
+      "Address: "+indirizzo,
+      "Delivery location: "+consegna,
+      "",
+      ...configLines,
       "",
       "PRICING:",
       "Base price: $"+(model?.price?.toLocaleString('en-US')||""),
@@ -100,6 +100,26 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
       "35% on completion: $"+payment2.toLocaleString('en-US'),
       "30% on delivery: $"+payment3.toLocaleString('en-US'),
     ].join("\n");
+
+    // Messaggio WhatsApp: stesso riepilogo, ma solo il totale (nessuna rata),
+    // così il cliente può discutere le condizioni di pagamento direttamente.
+    const waMsg = [
+      "Hi, I'd like a personalized quote for \""+cartName+"\".",
+      "",
+      "Name: "+nome+" "+cognome,
+      "Email: "+email,
+      "Address: "+indirizzo,
+      "Delivery location: "+consegna,
+      "",
+      ...configLines,
+      "",
+      "Total: $"+totalPrice.toLocaleString('en-US'),
+    ].join("\n");
+
+    // Apriamo subito WhatsApp, nello stesso istante del click: alcuni browser
+    // mobile bloccano l'apertura se avviene dopo un'attesa (es. una chiamata
+    // di rete come l'invio email), quindi non aspettiamo nulla prima di questo.
+    window.open("https://wa.me/18494100261?text="+encodeURIComponent(waMsg), "_blank");
 
     setIsSending(true);
     try {
@@ -111,7 +131,7 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
         from_name:nome+" "+cognome,
         from_email:email,
         email:email,
-        phone:telefono,
+        phone:"",
       },"G_ndpmoIfpB6oi8pP");
 
       // Email di conferma automatica al cliente
@@ -159,47 +179,98 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
 
   return (
     <div>
-      <h2 style={{fontSize:"clamp(1.4rem,4vw,2rem)",fontWeight:800,color:"#F5F0E8",marginBottom:4}}>{t("Confirm & Details","Confirmar y Datos","Conferma e Dati")}</h2>
-      <div style={{color:"#888",fontSize:12,marginBottom:20}}>{t("Fill in your details to receive the official quote","Rellena tus datos para recibir el presupuesto oficial","Compila i dati per ricevere il preventivo ufficiale")}</div>
+      <h1 style={{fontSize:"clamp(1.6rem,4.5vw,2.2rem)",fontWeight:800,color:"#F5F0E8",marginBottom:4}}>{t("Summary","Resumen","Riepilogo")}</h1>
+      <div style={{color:"#888",fontSize:12,marginBottom:20}}>{t("Review your configuration and request your personalized quote","Revisa tu configuración y solicita tu presupuesto personalizado","Controlla la configurazione e richiedi il tuo preventivo personalizzato")}</div>
 
-      <div style={{background:"#161616",border:"1px solid #C9A84C",borderRadius:16,padding:20,marginBottom:8,textAlign:"center"}}>
+      <div style={{background:"#161616",border:"1px solid #222",borderRadius:18,padding:20,marginBottom:20}}>
+        <div style={{display:"flex",justifyContent:"center",marginBottom:14}}>
+          <Img k={model?.imgKey} style={{maxHeight:180,maxWidth:"100%",objectFit:"contain"}}/>
+        </div>
+        <div style={{textAlign:"center"}}>
+          <div style={{color:"#C9A84C",fontWeight:800,fontSize:20}}>{t("Model","Modelo","Modello")} {cfg.model}</div>
+          <div style={{color:"#888",marginTop:4,fontSize:13,display:"flex",alignItems:"center",justifyContent:"center",gap:6,flexWrap:"wrap"}}>
+            <span>{cfg.seats} {t("seats","plazas","posti")} ·</span>
+            <span style={{display:"inline-flex",alignItems:"center",gap:5}}>
+              <span style={{display:"inline-block",width:14,height:14,borderRadius:"50%",background:cfg.bodyColor.hex,border:"1px solid #555"}}/>
+              {cfg.bodyColor.code} {t(cfg.bodyColor.en,cfg.bodyColor.es,cfg.bodyColor.it)}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(180px,1fr))",gap:10,marginBottom:20}}>
+        {[
+          {it:"Batteria",es:"Batería",en:"Battery",v:`${bat?.it}`},
+          {it:"Motore",es:"Motor",en:"Motor",v:`${mot?.it}`},
+          {it:"Sedile",es:"Asiento",en:"Seat",v:t(st?.en,st?.es,st?.it)},
+          {it:"Col. Sedile",es:"Col. Asiento",en:"Seat Color",v:t(cfg.seatColor.en,cfg.seatColor.es,cfg.seatColor.it)},
+          {it:"Pneumatici",es:"Neumáticos",en:"Tires",v:t(ti?.en,ti?.es,ti?.it)},
+          {it:"Volante",es:"Volante",en:"Steering",v:t(sw?.en,sw?.es,sw?.it)},
+          {it:"Parabrezza",es:"Parabrisas",en:"Windshield",v:t(ws?.en,ws?.es,ws?.it)},
+        ].map(r=>(
+          <div key={r.it} style={{background:"#1a1a1a",borderRadius:10,padding:12}}>
+            <div style={{color:"#888",fontSize:11,marginBottom:3}}>{t(r.en, r.es, r.it)}</div>
+            <div style={{color:"#F5F0E8",fontWeight:600,fontSize:12,display:"flex",alignItems:"center",gap:6}}>
+              {r.it==="Col. Sedile" && <span style={{display:"inline-block",width:12,height:12,borderRadius:"50%",background:cfg.seatColor.hex,border:"1px solid #555",flexShrink:0}}/>}
+              {r.v}
+            </div>
+          </div>
+        ))}
+      </div>
+      <h3 style={{color:"#C9A84C",marginBottom:12}}>{t("Options","Opcionales","Optional")}</h3>
+      <div style={{background:"#161616",borderRadius:14,padding:16,marginBottom:20}}>
+        {cfg.optionals.map(id=>{
+          const o=OPTIONAL_ITEMS.find(x=>x.id===id);
+          return o?(<div key={id} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 0",borderBottom:"1px solid #222",gap:10}}>
+            <div style={{display:"flex",alignItems:"center",gap:10,flex:1}}>
+              {o.imgKey && <div style={{width:36,height:36,borderRadius:8,background:"#070707",overflow:"hidden",flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center"}}><Img k={o.imgKey} style={{width:"100%",height:"100%",objectFit:"cover"}}/></div>}
+              <div>
+                <span style={{color:"#F5F0E8",fontSize:12}}>{t(o.en,o.es,o.it)}</span>
+              </div>
+            </div>
+            {o.always
+              ? <span style={{background:"linear-gradient(135deg,#C9A84C,#3a7d44)",color:"#fff",fontWeight:700,fontSize:10,padding:"3px 8px",borderRadius:8,display:"inline-block",whiteSpace:"nowrap"}}>☀️ {t("Included","Incluido","Incluso")}</span>
+              : <span style={{color:"#E2C07A",fontWeight:800,fontSize:12,whiteSpace:"nowrap"}}>+${o.price}</span>
+            }
+          </div>):null;
+        })}
+        <div style={{paddingTop:12,marginTop:8,borderTop:"1px solid #222"}}>
+          <div style={{color:"#888",fontSize:12}}>* {t("The official quote will be calculated by our team, including any discounts.","El presupuesto será calculado por nuestro equipo, incluyendo posibles descuentos.","Il preventivo ufficiale verrà calcolato dal nostro team, includendo eventuali scontistiche.")}</div>
+        </div>
+      </div>
+      {/* Delivery time */}
+      <div style={{background:"#0d1f0d",border:"1px solid #2a4a2a",borderRadius:12,padding:14,marginBottom:16,display:"flex",alignItems:"center",gap:12}}>
+        <span style={{fontSize:24}}>🚚</span>
+        <div>
+          <div style={{color:"#5a9a5a",fontWeight:700,fontSize:13}}>{t("Estimated Delivery","Entrega estimada","Consegna stimata")}</div>
+          <div style={{color:"#7ac47a",fontSize:12,marginTop:2}}>~90 {t("days from deposit confirmation","días desde la confirmación del depósito","giorni dalla conferma del deposito")}</div>
+        </div>
+      </div>
+      {/* Warranty */}
+      <div style={{background:"#1a1608",border:"1px solid #4a3f2a",borderRadius:12,padding:14,marginBottom:20,display:"flex",alignItems:"center",gap:12}}>
+        <span style={{fontSize:24}}>🛡️</span>
+        <div>
+          <div style={{color:"#E2C07A",fontWeight:700,fontSize:13}}>{t("12-Month Warranty Included","Garantía de 12 Meses Incluida","Garanzia 12 Mesi Inclusa")}</div>
+          <div style={{color:"#888",fontSize:13,marginTop:2}}>{t("See details in the FAQ","Ver detalles en las FAQ","Dettagli nelle FAQ")}</div>
+        </div>
+      </div>
+
+      <div style={{background:"#161616",border:"1px solid #C9A84C",borderRadius:16,padding:20,marginBottom:20,textAlign:"center"}}>
         <div style={{color:"#888",fontSize:11,marginBottom:4}}>{t("Total","Total","Totale")}</div>
         <div style={{color:"#F5F0E8",fontWeight:900,fontSize:34}}>${totalPrice.toLocaleString('en-US')} <span style={{fontSize:14,fontWeight:700}}>USD</span></div>
         <div style={{color:"#7ac47a",fontSize:11,marginTop:4}}>{t("Price includes taxes and standard delivery in the Dominican Republic. Remote or difficult-access locations may require a delivery adjustment.","El precio incluye impuestos y entrega estándar en República Dominicana. Las zonas remotas o de difícil acceso pueden requerir un ajuste en el costo de entrega.","Il prezzo include tasse e consegna standard in Repubblica Dominicana. Le località remote o di difficile accesso possono richiedere un adeguamento del costo di consegna.")}</div>
       </div>
-      <div style={{background:"#161616",border:"1px solid #333",borderRadius:16,padding:20,marginBottom:20,display:"flex",gap:16,flexWrap:"wrap",justifyContent:"center",textAlign:"center"}}>
-        <div style={{flex:1,minWidth:110}}>
-          <div style={{color:"#C9A84C",fontSize:11,fontWeight:700,marginBottom:4}}>35% {t("On Order","Al Pedido","All'Ordine")}</div>
-          <div style={{color:"#E2C07A",fontWeight:900,fontSize:20}}>${payment1.toLocaleString('en-US')} <span style={{fontSize:10}}>USD</span></div>
-          <div style={{color:"#888",fontSize:9,marginTop:4}}>{t("To start building your golf cart","Para iniciar la construcción","Per avviare la costruzione")}</div>
-        </div>
-        <div style={{width:1,background:"#222"}}/>
-        <div style={{flex:1,minWidth:110}}>
-          <div style={{color:"#C9A84C",fontSize:11,fontWeight:700,marginBottom:4}}>35% {t("On Completion","Al Finalizar","Al Completamento")}</div>
-          <div style={{color:"#E2C07A",fontWeight:900,fontSize:20}}>${payment2.toLocaleString('en-US')} <span style={{fontSize:10}}>USD</span></div>
-          <div style={{color:"#888",fontSize:9,marginTop:4}}>{t("Verified by photo, video or video call","Verificado con foto, video o videollamada","Verificato con foto, video o videochiamata")}</div>
-        </div>
-        <div style={{width:1,background:"#222"}}/>
-        <div style={{flex:1,minWidth:110}}>
-          <div style={{color:"#C9A84C",fontSize:11,fontWeight:700,marginBottom:4}}>30% {t("On Delivery","A la Entrega","Alla Consegna")}</div>
-          <div style={{color:"#E2C07A",fontWeight:900,fontSize:20}}>${payment3.toLocaleString('en-US')} <span style={{fontSize:10}}>USD</span></div>
-          <div style={{color:"#888",fontSize:9,marginTop:4}}>{t("Turnkey delivery","Entrega llave en mano","Consegna chiavi in mano")}</div>
-        </div>
-      </div>
 
       <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:16,marginBottom:20}}>
         <div><div style={{fontSize:11,color:"#888",marginBottom:4}}>{t("Name *","Nombre *","Nome *")}</div><input ref={nomeRef} style={fieldErrors.nome?inpErr:inp} placeholder="Mario"/>{fieldErrors.nome&&<div style={errText}>{fieldErrors.nome}</div>}</div>
-        <div><div style={{fontSize:11,color:"#888",marginBottom:4}}>{t("Surname *","Apellido *","Cognome *")}</div><input ref={cognomeRef} style={inp} placeholder="Rossi"/></div>
-        <div><div style={{fontSize:11,color:"#888",marginBottom:4}}>{t("Phone *","Teléfono *","Telefono *")}</div><input ref={telefonoRef} defaultValue="+" style={fieldErrors.telefono?inpErr:inp} placeholder="+1 809 000 0000"/>{fieldErrors.telefono&&<div style={errText}>{fieldErrors.telefono}</div>}</div>
+        <div><div style={{fontSize:11,color:"#888",marginBottom:4}}>{t("Surname *","Apellido *","Cognome *")}</div><input ref={cognomeRef} style={fieldErrors.cognome?inpErr:inp} placeholder="Rossi"/>{fieldErrors.cognome&&<div style={errText}>{fieldErrors.cognome}</div>}</div>
         <div><div style={{fontSize:11,color:"#888",marginBottom:4}}>Email *</div><input ref={emailRef} style={fieldErrors.email?inpErr:inp} placeholder="email@example.com"/>{fieldErrors.email&&<div style={errText}>{fieldErrors.email}</div>}</div>
-        <div><div style={{fontSize:11,color:"#888",marginBottom:4}}>{t("Address","Dirección","Indirizzo")}</div><input ref={indirizzoRef} style={inp} placeholder="Bayahibe, Dominicus"/></div>
-        <div><div style={{fontSize:11,color:"#888",marginBottom:4}}>{t("Delivery location","Lugar de entrega","Luogo consegna")}</div><input ref={consegnaRef} style={inp} placeholder="Hotel, Villa..."/></div>
-        <div style={{gridColumn:"1 / -1"}}><div style={{fontSize:11,color:"#888",marginBottom:4}}>{t("Notes","Notas","Note")}</div><textarea ref={noteRef} style={{...inp,minHeight:80,resize:"vertical"}} placeholder="Additional notes..."/></div>
+        <div><div style={{fontSize:11,color:"#888",marginBottom:4}}>{t("Address *","Dirección *","Indirizzo *")}</div><input ref={indirizzoRef} style={fieldErrors.indirizzo?inpErr:inp} placeholder="Bayahibe, Dominicus"/>{fieldErrors.indirizzo&&<div style={errText}>{fieldErrors.indirizzo}</div>}</div>
+        <div><div style={{fontSize:11,color:"#888",marginBottom:4}}>{t("Delivery location *","Lugar de entrega *","Luogo consegna *")}</div><input ref={consegnaRef} style={fieldErrors.consegna?inpErr:inp} placeholder="Hotel, Villa..."/>{fieldErrors.consegna&&<div style={errText}>{fieldErrors.consegna}</div>}</div>
       </div>
       <div style={{display:"flex",justifyContent:"space-between"}}>
         <button style={out} onClick={()=>onSubmit("back")}>← {t("Back","Atrás","Indietro")}</button>
         <button style={{...gold, opacity:isSending?0.6:1, cursor:isSending?"not-allowed":"pointer"}} onClick={handleSend} disabled={isSending}>
-          {isSending ? "…" : "📩"} {isSending ? t("Sending...","Enviando...","Invio...") : t("Send","Enviar","Invia")}
+          {isSending ? "…" : "📩"} {isSending ? t("Sending...","Enviando...","Invio...") : t("Request a personalized quote","Solicita tu presupuesto personalizado","Richiedi un preventivo personalizzato")}
         </button>
       </div>
     </div>
@@ -1074,102 +1145,12 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
   }
 
   // Step 8 — Technical Summary
+  // Step 8 — Summary & Request Quote (riepilogo unificato con richiesta preventivo)
   if(step===8) {
-    const bat=BATTERIES.find(b=>b.id===cfg.battery);
-    const mot=MOTORS.find(m=>m.id===cfg.motor);
-    const st=SEAT_TYPES.find(s=>s.id===cfg.seatType);
-    const ti=TIRES.find(t=>t.id===cfg.tire);
-    const sw=STEERING.find(s=>s.id===cfg.steering);
-    const ws=WINDSHIELDS.find(w=>w.id===cfg.windshield);
-    return (
-      <div>
-        <h1 style={S.title}>{t("Summary","Resumen","Riepilogo")}</h1>
-        <div style={{color:C.muted,fontSize:13,marginBottom:20}}>{t("Review your configuration","Revisa la configuración","Controlla la configurazione")}</div>
-        <div style={{background:C.card,border:"1px solid #222",borderRadius:18,padding:20,marginBottom:20}}>
-          <div style={{display:"flex",justifyContent:"center",marginBottom:14}}>
-            <Img k={model?.imgKey} style={{maxHeight:180,maxWidth:"100%",objectFit:"contain"}}/>
-          </div>
-          <div style={{textAlign:"center"}}>
-            <div style={{color:C.gold,fontWeight:800,fontSize:20}}>{t("Model","Modelo","Modello")} {cfg.model}</div>
-            <div style={{color:C.muted,marginTop:4,fontSize:13,display:"flex",alignItems:"center",justifyContent:"center",gap:6,flexWrap:"wrap"}}>
-              <span>{cfg.seats} {t("seats","plazas","posti")} ·</span>
-              <span style={{display:"inline-flex",alignItems:"center",gap:5}}>
-                <span style={{display:"inline-block",width:14,height:14,borderRadius:"50%",background:cfg.bodyColor.hex,border:"1px solid #555"}}/>
-                {cfg.bodyColor.code} {t(cfg.bodyColor.en,cfg.bodyColor.es,cfg.bodyColor.it)}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(180px,1fr))",gap:10,marginBottom:20}}>
-          {[
-            {it:"Batteria",es:"Batería",en:"Battery",v:`${bat?.it}`},
-            {it:"Motore",es:"Motor",en:"Motor",v:`${mot?.it}`},
-            {it:"Sedile",es:"Asiento",en:"Seat",v:t(st?.en,st?.es,st?.it)},
-            {it:"Col. Sedile",es:"Col. Asiento",en:"Seat Color",v:t(cfg.seatColor.en,cfg.seatColor.es,cfg.seatColor.it)},
-            {it:"Pneumatici",es:"Neumáticos",en:"Tires",v:t(ti?.en,ti?.es,ti?.it)},
-            {it:"Volante",es:"Volante",en:"Steering",v:t(sw?.en,sw?.es,sw?.it)},
-            {it:"Parabrezza",es:"Parabrisas",en:"Windshield",v:t(ws?.en,ws?.es,ws?.it)},
-          ].map(r=>(
-            <div key={r.it} style={{background:C.surface,borderRadius:10,padding:12}}>
-              <div style={{color:C.muted,fontSize:11,marginBottom:3}}>{t(r.en, r.es, r.it)}</div>
-              <div style={{color:C.white,fontWeight:600,fontSize:12,display:"flex",alignItems:"center",gap:6}}>
-                {r.it==="Col. Sedile" && <span style={{display:"inline-block",width:12,height:12,borderRadius:"50%",background:cfg.seatColor.hex,border:"1px solid #555",flexShrink:0}}/>}
-                {r.v}
-              </div>
-            </div>
-          ))}
-        </div>
-        <h3 style={{color:C.gold,marginBottom:12}}>{t("Options","Opcionales","Optional")}</h3>
-        <div style={{background:C.card,borderRadius:14,padding:16,marginBottom:20}}>
-          {cfg.optionals.map(id=>{
-            const o=OPTIONAL_ITEMS.find(x=>x.id===id);
-            return o?(<div key={id} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 0",borderBottom:"1px solid #222",gap:10}}>
-              <div style={{display:"flex",alignItems:"center",gap:10,flex:1}}>
-                {o.imgKey && <div style={{width:36,height:36,borderRadius:8,background:"#070707",overflow:"hidden",flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center"}}><Img k={o.imgKey} style={{width:"100%",height:"100%",objectFit:"cover"}}/></div>}
-                <div>
-                  <span style={{color:C.white,fontSize:12}}>{t(o.en,o.es,o.it)}</span>
-                </div>
-              </div>
-              {o.always
-                ? <span style={{background:"linear-gradient(135deg,#C9A84C,#3a7d44)",color:"#fff",fontWeight:700,fontSize:10,padding:"3px 8px",borderRadius:8,display:"inline-block",whiteSpace:"nowrap"}}>☀️ {t("Included","Incluido","Incluso")}</span>
-                : <span style={{color:C.goldLight,fontWeight:800,fontSize:12,whiteSpace:"nowrap"}}>+${o.price}</span>
-              }
-            </div>):null;
-          })}
-          <div style={{paddingTop:12,marginTop:8,borderTop:"1px solid #222"}}>
-            <div style={{color:C.muted,fontSize:12}}>* {t("The official quote will be calculated by our team, including any discounts.","El presupuesto será calculado por nuestro equipo, incluyendo posibles descuentos.","Il preventivo ufficiale verrà calcolato dal nostro team, includendo eventuali scontistiche.")}</div>
-          </div>
-        </div>
-        {/* Delivery time */}
-        <div style={{background:"#0d1f0d",border:"1px solid #2a4a2a",borderRadius:12,padding:14,marginBottom:16,display:"flex",alignItems:"center",gap:12}}>
-          <span style={{fontSize:24}}>🚚</span>
-          <div>
-            <div style={{color:"#5a9a5a",fontWeight:700,fontSize:13}}>{t("Estimated Delivery","Entrega estimada","Consegna stimata")}</div>
-            <div style={{color:"#7ac47a",fontSize:12,marginTop:2}}>~90 {t("days from deposit confirmation","días desde la confirmación del depósito","giorni dalla conferma del deposito")}</div>
-          </div>
-        </div>
-        {/* Warranty */}
-        <div style={{background:"#1a1608",border:"1px solid #4a3f2a",borderRadius:12,padding:14,marginBottom:16,display:"flex",alignItems:"center",gap:12}}>
-          <span style={{fontSize:24}}>🛡️</span>
-          <div>
-            <div style={{color:C.goldLight,fontWeight:700,fontSize:13}}>{t("12-Month Warranty Included","Garantía de 12 Meses Incluida","Garanzia 12 Mesi Inclusa")}</div>
-            <div style={{color:C.muted,fontSize:13,marginTop:2}}>{t("See details in the FAQ","Ver detalles en las FAQ","Dettagli nelle FAQ")}</div>
-          </div>
-        </div>
-        <div style={{display:"flex",justifyContent:"space-between"}}>
-          <button style={S.outBtn} onClick={()=>{setStep(7);window.scrollTo({top:0,behavior:"smooth"});}}>← {t("Back","Atrás","Indietro")}</button>
-          <button style={S.goldBtn} onClick={()=>{setStep(9);window.scrollTo({top:0,behavior:"smooth"});}}>📩 {t("Last Step","Último Paso","Ultimo Passaggio")} →</button>
-        </div>
-      </div>
-    );
-  }
-
-  // Step 9 — Confirm
-  if(step===9) {
     return (
       <CustomerForm
         onSubmit={(action)=>{
-          if(action==="back") setStep(8);
+          if(action==="back") setStep(7);
           else { setPage("home"); setStep(0); setShowOptionals(false); }
         }}
         totalPrice={totalPrice()}
@@ -1186,13 +1167,13 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
         ru={ru}
         fr={fr}
         pl={pl}
+        Img={Img}
       />
     );
   }
 
   return null;
 }
-
 ConfiguratorPage.propTypes = {
   t: PropTypes.func.isRequired,
   tName: PropTypes.func.isRequired,

@@ -51,7 +51,7 @@ async function selectModel(letter) {
 }
 
 // Sequenza esatta delle etichette dei pulsanti "avanti" da step 0 a step 9.
-const FORWARD_LABELS = [/Next/i, /Next/i, /Next/i, /Next/i, /Next/i, /Next/i, /Continue/i, /Next/i, /Last Step/i];
+const FORWARD_LABELS = [/Next/i, /Next/i, /Next/i, /Next/i, /Next/i, /Next/i, /Continue/i, /Next/i];
 
 // Avanza dallo step "fromStep" (incluso) allo step "toStep" (escluso),
 // cliccando in sequenza i pulsanti corretti. FORWARD_LABELS è indicizzato
@@ -286,6 +286,10 @@ test('9. il pannello solare è sempre incluso a $0 e non è disattivabile', asyn
 });
 
 test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configurato', async () => {
+  const sendMock = jest.fn().mockResolvedValue({ status: 200, text: 'OK' });
+  window.emailjs = { send: sendMock };
+  const openMock = jest.spyOn(window, 'open').mockImplementation(() => {});
+
   await openConfigurator();
   await selectModel('A');
   await advanceFromStep(0, 2); // step 0 -> step 1 -> step 2 (posti)
@@ -293,14 +297,15 @@ test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configu
     expect(screen.getByText(/2\+2 Seats/i)).toBeInTheDocument();
   }, { timeout: 15000 });
   fireEvent.click(screen.getByText(/2\+2 Seats/i)); // totale atteso: 10060 + 216 = 10276
-  await advanceFromStep(2, 9); // step 2 -> ... -> step 9 (Confirm & Details)
+  await advanceFromStep(2, 8); // step 2 -> ... -> step 8 (Riepilogo unificato)
 
   await waitFor(() => {
-    expect(screen.getByText(/Confirm & Details/i)).toBeInTheDocument();
+    expect(screen.getByText(/Request a personalized quote/i)).toBeInTheDocument();
   }, { timeout: 15000 });
 
-  // Verifica indipendente che il totale mostrato sia esattamente 10276
-  // (10060 di base + 216 di supplemento posti), senza cifre estranee.
+  // Verifica indipendente che il totale mostrato sulla pagina sia esattamente
+  // 10276 (10060 di base + 216 di supplemento posti), senza cifre estranee.
+  // La pagina unificata mostra solo il totale, non più i tre box 35/35/30.
   await waitFor(() => {
     const matches = screen.getAllByText((_, element) => {
       if (!element || !element.textContent) return false;
@@ -310,29 +315,39 @@ test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configu
   }, { timeout: 15000 });
   const total = 10276;
 
-  // Leggiamo i tre importi (35% On Order, 35% On Completion, 30% On Delivery)
-  // e verifichiamo che sommino esattamente al totale mostrato, senza scarti
-  // di arrotondamento (payment3 in ConfiguratorPage.js è calcolato come
-  // resto, non come totale*0.30, proprio per garantire questa proprietà).
-  const onOrderLabel = screen.getByText(/On Order/i);
-  const onCompletionLabel = screen.getByText(/On Completion/i);
-  const onDeliveryLabel = screen.getByText(/On Delivery/i);
+  // Compiliamo il form e inviamo: la suddivisione 35/35/30 non è più visibile
+  // sulla pagina, ma resta nell'email interna come riferimento per il team.
+  fireEvent.change(screen.getByPlaceholderText('Mario'), { target: { value: 'Mario' } });
+  fireEvent.change(screen.getByPlaceholderText('Rossi'), { target: { value: 'Rossi' } });
+  fireEvent.change(screen.getByPlaceholderText('email@example.com'), { target: { value: 'mario.rossi@example.com' } });
+  fireEvent.change(screen.getByPlaceholderText('Bayahibe, Dominicus'), { target: { value: 'Calle Principale 1' } });
+  fireEvent.change(screen.getByPlaceholderText('Hotel, Villa...'), { target: { value: 'Hotel Test' } });
+  fireEvent.click(screen.getByText(/Request a personalized quote/i));
 
-  const readAmountNear = (labelEl) => {
-    // labelEl è il div "35% On Order" (o simile); il suo genitore diretto
-    // contiene come fratelli anche il div con l'importo in USD.
-    const container = labelEl.parentElement;
-    const amountEl = Array.from(container.querySelectorAll('div')).find(d => d.textContent.includes('USD') && /\$[\d.,\s]+/.test(d.textContent));
-    expect(amountEl).toBeTruthy();
-    return parseInt(digitsOf(amountEl.textContent), 10);
+  await waitFor(() => {
+    expect(sendMock).toHaveBeenCalled();
+  }, { timeout: 15000 });
+
+  // Leggiamo i tre importi (35% on order, 35% on completion, 30% on delivery)
+  // direttamente dal testo dell'email interna (prima chiamata a emailjs.send)
+  // e verifichiamo che sommino esattamente al totale, senza scarti di
+  // arrotondamento (payment3 in ConfiguratorPage.js è calcolato come resto,
+  // non come totale*0.30, proprio per garantire questa proprietà).
+  const msg = sendMock.mock.calls[0][2].message;
+  const extractAmount = (label) => {
+    const re = new RegExp(label + ': \\$([\\d.,]+)');
+    const m = msg.match(re);
+    expect(m).toBeTruthy();
+    return parseInt(m[1].replace(/[^0-9]/g, ''), 10);
   };
-
-  const payment1 = readAmountNear(onOrderLabel);
-  const payment2 = readAmountNear(onCompletionLabel);
-  const payment3 = readAmountNear(onDeliveryLabel);
+  const payment1 = extractAmount('35% on order');
+  const payment2 = extractAmount('35% on completion');
+  const payment3 = extractAmount('30% on delivery');
 
   expect(payment1 + payment2 + payment3).toBe(total);
   expect(total).toBe(10276);
+
+  openMock.mockRestore();
 });
 
 test('11. la navigazione base del configuratore rispetta le regole di step (Next disabilitato senza modello, stato preservato col Back)', async () => {
@@ -429,16 +444,17 @@ test('13. il cambio lingua (EN -> FR) aggiorna il testo dell\'interfaccia', asyn
   expect(screen.queryByText(/Configure your own/i)).not.toBeInTheDocument();
 });
 
-test('14. l\'invio del form finale chiama EmailJS (mockato) due volte e il messaggio interno riporta correttamente totale e schema di pagamento 35/35/30', async () => {
+test('14. l\'invio del form finale chiama EmailJS (mockato) due volte, apre WhatsApp con il numero e il totale corretti, e il messaggio email interno riporta totale e schema di pagamento 35/35/30', async () => {
   const sendMock = jest.fn().mockResolvedValue({ status: 200, text: 'OK' });
   window.emailjs = { send: sendMock };
+  const openMock = jest.spyOn(window, 'open').mockImplementation(() => {});
 
   await openConfigurator();
   await selectModel('A'); // nessun extra: totale atteso 10060
-  await advanceFromStep(0, 9); // step 0 -> ... -> step 9 (Confirm & Details)
+  await advanceFromStep(0, 8); // step 0 -> ... -> step 8 (Riepilogo unificato)
 
   await waitFor(() => {
-    expect(screen.getByText(/Confirm & Details/i)).toBeInTheDocument();
+    expect(screen.getByText(/Request a personalized quote/i)).toBeInTheDocument();
   }, { timeout: 15000 });
 
   // Prima dell'invio: la bozza deve esistere in localStorage (salvata
@@ -449,14 +465,11 @@ test('14. l\'invio del form finale chiama EmailJS (mockato) due volte e il messa
 
   fireEvent.change(screen.getByPlaceholderText('Mario'), { target: { value: 'Mario' } });
   fireEvent.change(screen.getByPlaceholderText('Rossi'), { target: { value: 'Rossi' } });
-  fireEvent.change(screen.getByPlaceholderText('+1 809 000 0000'), { target: { value: '+18095551234' } });
   fireEvent.change(screen.getByPlaceholderText('email@example.com'), { target: { value: 'mario.rossi@example.com' } });
+  fireEvent.change(screen.getByPlaceholderText('Bayahibe, Dominicus'), { target: { value: 'Calle Principale 1' } });
+  fireEvent.change(screen.getByPlaceholderText('Hotel, Villa...'), { target: { value: 'Hotel Test' } });
 
-  // NB: il bottone contiene "📩 Send" (l'emoji è testo nello stesso elemento,
-  // non in un elemento separato): un match esatto su "Send" da solo fallirebbe.
-  // Il confine di parola \b esclude "Sending..." (stato transitorio di invio)
-  // senza richiedere il match sull'intero testo del bottone.
-  fireEvent.click(screen.getByText(/\bSend\b/i));
+  fireEvent.click(screen.getByText(/Request a personalized quote/i));
 
   await waitFor(() => {
     expect(screen.getByText(/Request Sent!/i)).toBeInTheDocument();
@@ -467,6 +480,21 @@ test('14. l\'invio del form finale chiama EmailJS (mockato) due volte e il messa
   await waitFor(() => {
     expect(localStorage.getItem('golfcart_draft')).toBeNull();
   }, { timeout: 15000 });
+
+  // WhatsApp deve essere stato aperto (in una nuova scheda) con il numero
+  // corretto e un messaggio contenente il totale, MA senza la suddivisione
+  // 35/35/30 (che deve restare riservata all'email interna, non al cliente).
+  expect(openMock).toHaveBeenCalledTimes(1);
+  const [waUrl, waTarget] = openMock.mock.calls[0];
+  expect(waUrl).toContain('https://wa.me/18494100261?text=');
+  expect(waTarget).toBe('_blank');
+  const waMsg = decodeURIComponent(waUrl.split('?text=')[1]);
+  expect(waMsg).toMatch(/Total: \$[\d.,\s]*10[.,\s]?060/);
+  expect(waMsg).not.toContain('35% on order');
+  expect(waMsg).not.toContain('35% on completion');
+  expect(waMsg).not.toContain('30% on delivery');
+  expect(waMsg).toContain('Mario Rossi');
+  expect(waMsg).toContain('mario.rossi@example.com');
 
   // EmailJS deve essere stato chiamato esattamente 2 volte: notifica interna
   // a TAAAC Solutions + email di conferma automatica al cliente.
@@ -481,7 +509,7 @@ test('14. l\'invio del form finale chiama EmailJS (mockato) due volte e il messa
 
   // Totale e prezzo base: Modello A senza extra = 10060.
   expect(msg).toMatch(/Total: \$[\d.,\s]*10[.,\s]?060/);
-  // Schema di pagamento presente ed etichettato correttamente.
+  // Schema di pagamento presente ed etichettato correttamente (solo nell'email interna).
   expect(msg).toContain('35% on order:');
   expect(msg).toContain('35% on completion:');
   expect(msg).toContain('30% on delivery:');
@@ -491,6 +519,8 @@ test('14. l\'invio del form finale chiama EmailJS (mockato) due volte e il messa
   expect(msg).toMatch(/35% on order: \$[\d.,\s]*3[.,\s]?521/);
   expect(msg).toMatch(/35% on completion: \$[\d.,\s]*3[.,\s]?521/);
   expect(msg).toMatch(/30% on delivery: \$[\d.,\s]*3[.,\s]?018/);
+
+  openMock.mockRestore();
 });
 
 test('15. una bozza salvata più vecchia di 5 giorni non viene proposta per la ripresa', async () => {
