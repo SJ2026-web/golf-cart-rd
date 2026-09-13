@@ -101,19 +101,39 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
       "30% on delivery: $"+payment3.toLocaleString('en-US'),
     ].join("\n");
 
+    // Righe di configurazione tradotte nella lingua del cliente, per il solo
+    // messaggio WhatsApp (l'email interna resta in inglese, invariata sopra).
+    const waConfigLines = [
+      t("CONFIGURATION:","CONFIGURACIÓN:","CONFIGURAZIONE:"),
+      t("Model","Modelo","Modello")+": "+cfg.model,
+      t("Seats","Plazas","Posti")+": "+cfg.seats,
+      t("Body color","Color de carrocería","Colore carrozzeria")+": "+cfg.bodyColor.code+" "+t(cfg.bodyColor.en,cfg.bodyColor.es,cfg.bodyColor.it),
+      t("Battery","Batería","Batteria")+": "+(bat?t(bat.en,bat.es,bat.it):""),
+      t("Motor","Motor","Motore")+": "+(mot?t(mot.en,mot.es,mot.it):""),
+      t("Seat type","Tipo de asiento","Tipo di sedile")+": "+(st?t(st.en,st.es,st.it):""),
+      t("Seat color","Color de asiento","Colore sedile")+": "+t(cfg.seatColor.en,cfg.seatColor.es,cfg.seatColor.it),
+      t("Tires","Neumáticos","Pneumatici")+": "+(ti?t(ti.en,ti.es,ti.it):""),
+      t("Steering","Volante","Sterzo")+": "+(sw?t(sw.en,sw.es,sw.it):""),
+      t("Windshield","Parabrisas","Parabrezza")+": "+(ws?t(ws.en,ws.es,ws.it):""),
+      "",
+      t("OPTIONS:","OPCIONALES:","OPTIONAL:"),
+      ...opts.map(o=>"- "+t(o.en,o.es,o.it)+": "+(o.always?t("Included","Incluido","Incluso"):"$"+o.price)),
+    ];
+
     // Messaggio WhatsApp: stesso riepilogo, ma solo il totale (nessuna rata),
     // così il cliente può discutere le condizioni di pagamento direttamente.
+    // Tradotto nella lingua di navigazione attiva sul sito in quel momento.
     const waMsg = [
-      "Hi, I'd like a personalized quote for \""+cartName+"\".",
+      t("Hi, I'd like a personalized quote for","Hola, me gustaría un presupuesto personalizado para","Ciao, vorrei un preventivo personalizzato per")+" \""+cartName+"\".",
       "",
-      "Name: "+nome+" "+cognome,
+      t("Name","Nombre","Nome")+": "+nome+" "+cognome,
       "Email: "+email,
-      "Address: "+indirizzo,
-      "Delivery location: "+consegna,
+      t("Address","Dirección","Indirizzo")+": "+indirizzo,
+      t("Delivery location","Lugar de entrega","Luogo consegna")+": "+consegna,
       "",
-      ...configLines,
+      ...waConfigLines,
       "",
-      "Total: $"+totalPrice.toLocaleString('en-US'),
+      t("Total","Total","Totale")+": $"+totalPrice.toLocaleString('en-US'),
     ].join("\n");
 
     // Apriamo subito WhatsApp, nello stesso istante del click: alcuni browser

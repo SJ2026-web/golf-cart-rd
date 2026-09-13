@@ -578,6 +578,13 @@ const RU_DICT = {
   "Request a personalized quote":"Запросить персональное предложение",
   "Address *":"Адрес *",
   "Delivery location *":"Место доставки *",
+  "Hi, I'd like a personalized quote for":"Здравствуйте, я хотел(а) бы получить персональное предложение для",
+  "Name":"Имя",
+  "Body color":"Цвет кузова",
+  "Seat type":"Тип сиденья",
+  "Seat color":"Цвет сиденья",
+  "CONFIGURATION:":"КОНФИГУРАЦИЯ:",
+  "OPTIONS:":"ОПЦИИ:",
 };
 function ru(en) { return RU_DICT[en] || en; }
 
@@ -1116,6 +1123,13 @@ const FR_DICT = {
   "Request a personalized quote":"Demander un devis personnalisé",
   "Address *":"Adresse *",
   "Delivery location *":"Lieu de livraison *",
+  "Hi, I'd like a personalized quote for":"Bonjour, je souhaiterais un devis personnalisé pour",
+  "Name":"Nom",
+  "Body color":"Couleur de la carrosserie",
+  "Seat type":"Type de siège",
+  "Seat color":"Couleur du siège",
+  "CONFIGURATION:":"CONFIGURATION :",
+  "OPTIONS:":"OPTIONS :",
 };
 function fr(en) { return FR_DICT[en] || en; }
 
@@ -1624,6 +1638,13 @@ const PL_DICT = {
   "Request a personalized quote":"Poproś o spersonalizowaną wycenę",
   "Address *":"Adres *",
   "Delivery location *":"Miejsce dostawy *",
+  "Hi, I'd like a personalized quote for":"Cześć, chciałbym/chciałabym otrzymać spersonalizowaną wycenę dla",
+  "Name":"Imię i nazwisko",
+  "Body color":"Kolor karoserii",
+  "Seat type":"Typ siedzenia",
+  "Seat color":"Kolor siedzenia",
+  "CONFIGURATION:":"KONFIGURACJA:",
+  "OPTIONS:":"OPCJE:",
 };
 function pl(en) { return PL_DICT[en] || en; }
 
