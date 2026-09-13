@@ -585,6 +585,8 @@ const RU_DICT = {
   "Seat color":"Цвет сиденья",
   "CONFIGURATION:":"КОНФИГУРАЦИЯ:",
   "OPTIONS:":"ОПЦИИ:",
+  "Assistance & Repairs":"Помощь и Ремонт",
+  "Maintenance Plans":"Планы Обслуживания",
 };
 function ru(en) { return RU_DICT[en] || en; }
 
@@ -1130,6 +1132,8 @@ const FR_DICT = {
   "Seat color":"Couleur du siège",
   "CONFIGURATION:":"CONFIGURATION :",
   "OPTIONS:":"OPTIONS :",
+  "Assistance & Repairs":"Assistance et Réparations",
+  "Maintenance Plans":"Programmes d'Entretien",
 };
 function fr(en) { return FR_DICT[en] || en; }
 
@@ -1645,6 +1649,8 @@ const PL_DICT = {
   "Seat color":"Kolor siedzenia",
   "CONFIGURATION:":"KONFIGURACJA:",
   "OPTIONS:":"OPCJE:",
+  "Assistance & Repairs":"Pomoc i Naprawy",
+  "Maintenance Plans":"Plany Konserwacji",
 };
 function pl(en) { return PL_DICT[en] || en; }
 
@@ -2014,7 +2020,7 @@ function ServiceConfirm({serviceNote, goBack, goHome, lang="en"}) {
 
 // ── CUSTOMER FORM COMPONENT (inline) ──
 export default function App() {
-  const VALID_PAGES = ["home","about","configurator","service","contact","faq","privacy","model-a","model-b","model-c","model-d","choose-your-golf-cart","golf-carts-dominican-republic","golf-carts-bayahibe","guias","como-elegir-carrito-de-golf-republica-dominicana","bateria-litio-vs-plomo-carrito-de-golf","48v-vs-72v-carrito-de-golf","carrito-de-golf-2-4-o-6-plazas","que-revisar-antes-de-comprar-carrito-de-golf","mantenimiento-carrito-de-golf-cerca-del-mar"];
+  const VALID_PAGES = ["home","about","configurator","service","maintenance","contact","faq","privacy","model-a","model-b","model-c","model-d","choose-your-golf-cart","golf-carts-dominican-republic","golf-carts-bayahibe","guias","como-elegir-carrito-de-golf-republica-dominicana","bateria-litio-vs-plomo-carrito-de-golf","48v-vs-72v-carrito-de-golf","carrito-de-golf-2-4-o-6-plazas","que-revisar-antes-de-comprar-carrito-de-golf","mantenimiento-carrito-de-golf-cerca-del-mar"];
   const pathToPage = (pathname) => {
     const clean = pathname.replace(/^\/+|\/+$/g, "");
     if (!clean) return "home";
@@ -2281,6 +2287,10 @@ export default function App() {
       service: {
         title: t("Golf Cart Service & Repairs in Bayahibe | TAAAC Solutions","Servicio y Reparación de Golf Carts en Bayahibe | TAAAC Solutions","Assistenza e Riparazione Golf Cart a Bayahibe | TAAAC Solutions"),
         description: t("Golf cart maintenance, service and repairs in Bayahibe and La Romana, Dominican Republic. Contact TAAAC Solutions for assistance.","Mantenimiento, servicio técnico y reparación de golf carts en Bayahibe y La Romana, República Dominicana. Contáctanos para recibir asistencia.","Manutenzione, assistenza e riparazione golf cart a Bayahibe e La Romana, Repubblica Dominicana. Contattaci per richiedere assistenza tecnica."),
+      },
+      maintenance: {
+        title: t("TAAAC Care Maintenance Plans in Bayahibe | TAAAC Solutions","Planes de Mantenimiento TAAAC Care en Bayahibe | TAAAC Solutions","Piani di Manutenzione TAAAC Care a Bayahibe | TAAAC Solutions"),
+        description: t("Annual maintenance plans for electric golf carts in Bayahibe and La Romana, Dominican Republic. Discover TAAAC Care and TAAAC Care+.","Planes de mantenimiento anual para golf carts eléctricos en Bayahibe y La Romana, República Dominicana. Descubre TAAAC Care y TAAAC Care+.","Piani di manutenzione annuale per golf cart elettrici a Bayahibe e La Romana, Repubblica Dominicana. Scopri TAAAC Care e TAAAC Care+."),
       },
       contact: {
         title: t("Contact TAAAC Solutions | Golf Carts in Bayahibe","Contacta a TAAAC Solutions | Golf Carts en Bayahibe","Contatta TAAAC Solutions | Golf Cart a Bayahibe"),
@@ -2688,6 +2698,7 @@ export default function App() {
     {id:"about",it:"Chi Siamo",es:"Quiénes Somos",en:"About Us"},
     {id:"choose-your-golf-cart",it:"Fatti Guidare",es:"Déjate Guiar",en:"Get Guided"},
     {id:"service",it:"Assistenza",es:"Asistencia",en:"Service"},
+    {id:"maintenance",it:"Manutenzione",es:"Mantenimiento",en:"Maintenance"},
     {id:"contact",it:"Contatti",es:"Contacto",en:"Contact"},
   ];
 
@@ -2973,7 +2984,7 @@ export default function App() {
               ))}
             </div>
             <div style={{marginTop:20}}>
-              <span onClick={()=>setPage("service")} style={{color:C.muted,fontSize:12.5,textDecoration:"underline",cursor:"pointer"}}>
+              <span onClick={()=>setPage("maintenance")} style={{color:C.muted,fontSize:12.5,textDecoration:"underline",cursor:"pointer"}}>
                 {t6("Want even more peace of mind? Discover TAAAC Care →","¿Quieres aún más tranquilidad? Descubre TAAAC Care →","Vuoi ancora più tranquillità? Scopri TAAAC Care →","Vous voulez encore plus de tranquillité d'esprit ? Découvrez TAAAC Care →","Chcesz jeszcze więcej spokoju ducha? Poznaj TAAAC Care →","Хотите ещё больше спокойствия? Узнайте о TAAAC Care →")}
               </span>
             </div>
@@ -3052,7 +3063,7 @@ export default function App() {
     return (
       <div style={S.sec}>
         <div style={{color:C.gold,fontSize:10,letterSpacing:4,fontWeight:700,marginBottom:14,textTransform:"uppercase"}}>{t("Service & Repairs","Asistencia y Reparaciones","Assistenza & Riparazioni")}</div>
-        <h1 style={S.title}>{t("Maintenance & Repairs","Mantenimiento y Reparaciones","Manutenzione & Riparazioni")}</h1>
+        <h1 style={S.title}>{t("Assistance & Repairs","Asistencia y Reparaciones","Assistenza e Riparazioni")}</h1>
         <div style={S.goldLine}/>
 
         <div style={{marginBottom:40}}>
@@ -3117,118 +3128,8 @@ export default function App() {
             </div>
           </div>
 
-          <div style={{marginBottom:40}}>
-            <h2 style={{...S.title,fontSize:"clamp(1.3rem,3.4vw,1.8rem)",marginBottom:10}}>
-              {t6("Care for your TAAAC. Keep it ready for every journey.","Cuida tu TAAAC. Mantenlo listo para cada recorrido.","Prenditi cura del tuo TAAAC. Mantienilo pronto per ogni viaggio.","Prenez soin de votre TAAAC. Gardez-le prêt pour chaque trajet.","Dbaj o swojego TAAAC. Utrzymuj go w gotowości do każdej podróży.","Заботьтесь о своём TAAAC. Поддерживайте его готовым к каждой поездке.")}
-            </h2>
-            <p style={{color:C.muted,fontSize:14,lineHeight:1.7,maxWidth:640,marginBottom:24}}>
-              {t6("Two preventive inspections per year, direct support and a maintenance plan designed around the systems that matter most.","Dos revisiones preventivas al año, atención directa y un plan de mantenimiento centrado en los sistemas que más importan.","Due controlli preventivi all'anno, assistenza diretta e un piano di manutenzione dedicato ai sistemi più importanti.","Deux contrôles préventifs par an, une assistance directe et un programme d'entretien axé sur les systèmes les plus importants.","Dwa przeglądy prewencyjne rocznie, bezpośrednie wsparcie i plan konserwacji skoncentrowany na najważniejszych systemach.","Два профилактических осмотра в год, прямая поддержка и план обслуживания, ориентированный на наиболее важные системы.")}
-            </p>
 
-            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:18,marginBottom:20}}>
-
-              {/* TAAAC Care */}
-              <div style={{...S.card(false),padding:24}}>
-                <div style={{color:C.gold,fontWeight:800,fontSize:18,marginBottom:4}}>TAAAC Care</div>
-                <div style={{marginBottom:14}}>
-                  <span style={{color:C.white,fontWeight:900,fontSize:28}}>$199</span>{" "}
-                  <span style={{color:C.muted,fontSize:13}}>{t6("per year","al año","all'anno","par an","rocznie","в год")}</span>
-                </div>
-                <p style={{color:C.muted,fontSize:13,lineHeight:1.6,marginBottom:16}}>
-                  {t6("Preventive maintenance and direct support for your TAAAC.","Mantenimiento preventivo y atención directa para tu TAAAC.","Manutenzione preventiva e assistenza diretta per il tuo TAAAC.","Entretien préventif et assistance directe pour votre TAAAC.","Konserwacja prewencyjna i bezpośrednie wsparcie dla Twojego TAAAC.","Профилактическое обслуживание и прямая поддержка вашего TAAAC.")}
-                </p>
-
-                <div style={{color:C.muted,fontSize:13.5,lineHeight:1.8,marginBottom:14}}>
-                  ✓ {t6("Two preventive inspections per year, usually scheduled about six months apart.","Dos revisiones preventivas al año, normalmente programadas con unos seis meses de diferencia.","Due controlli preventivi all'anno, normalmente programmati a circa sei mesi di distanza.","Deux contrôles préventifs par an, généralement programmés à environ six mois d'intervalle.","Dwa przeglądy prewencyjne rocznie, zwykle planowane w odstępie około sześciu miesięcy.","Два профилактических осмотра в год, обычно с интервалом около шести месяцев.")}<br/>
-                  ✓ {t6("Labor for the two scheduled inspections is included.","La mano de obra de las dos revisiones programadas está incluida.","La manodopera dei due controlli programmati è inclusa.","La main-d'œuvre des deux contrôles programmés est incluse.","Robocizna podczas dwóch zaplanowanych przeglądów jest wliczona w cenę.","Работа по двум плановым осмотрам включена в стоимость.")}<br/>
-                  ✓ {t6("We keep track of your maintenance schedule and contact you when it's time to plan your next inspection.","Seguimos tu calendario de mantenimiento y te contactamos cuando llega el momento de programar la próxima revisión.","Teniamo sotto controllo il calendario di manutenzione e ti contattiamo quando è il momento di programmare il controllo successivo.","Nous suivons votre calendrier d'entretien et vous contactons lorsqu'il est temps de planifier votre prochain contrôle.","Monitorujemy harmonogram serwisowy i kontaktujemy się z Tobą, gdy nadejdzie czas na zaplanowanie kolejnego przeglądu.","Мы отслеживаем график обслуживания и связываемся с вами, когда приходит время запланировать следующий осмотр.")}
-                </div>
-
-                <div style={{color:C.muted,fontSize:13.5,lineHeight:2,marginBottom:14}}>
-                  🛑 {t6("Brakes","Frenos","Freni","Freins","Hamulce","Тормоза")} ·{" "}
-                  🔧 {t6("Suspension & shock absorbers","Suspensión y amortiguadores","Sospensioni e ammortizzatori","Suspension et amortisseurs","Zawieszenie i amortyzatory","Подвеска и амортизаторы")}<br/>
-                  🔋 {t6("Lithium battery & BMS","Batería de litio y BMS","Batteria al litio e BMS","Batterie au lithium et BMS","Bateria litowa i BMS","Литиевая батарея и BMS")}<br/>
-                  ☀️ {t6("Solar panel & charging system","Panel solar y sistema de carga","Pannello solare e sistema di ricarica","Panneau solaire et système de charge","Panel słoneczny i system ładowania","Солнечная панель и система зарядки")}<br/>
-                  ⚡ {t6("Electrical components","Componentes eléctricos","Componenti elettrici","Composants électriques","Podzespoły elektryczne","Электрические компоненты")} ·{" "}
-                  💡 {t6("Lighting","Iluminación","Illuminazione","Éclairage","Oświetlenie","Освещение")}<br/>
-                  🧰 {t6("Support identifying and sourcing parts","Apoyo para identificar y conseguir repuestos","Supporto per identificare e reperire ricambi","Aide pour identifier et obtenir les pièces","Pomoc w identyfikacji i pozyskiwaniu części","Помощь в определении и поиске запчастей")}<br/>
-                  📞 {t6("Direct post-sale support","Atención posventa directa","Assistenza post-vendita diretta","Assistance après-vente directe","Bezpośrednie wsparcie posprzedażowe","Прямая послепродажная поддержка")}
-                </div>
-
-                <p style={{color:C.muted,fontSize:12.5,lineHeight:1.6,fontStyle:"italic",marginBottom:12}}>
-                  {t6("Replacement parts and repairs outside warranty coverage are not included and are quoted separately when required.","Los repuestos y las reparaciones fuera de la cobertura de garantía no están incluidos y se cotizan por separado cuando sea necesario.","I ricambi e le riparazioni fuori dalla copertura della garanzia non sono inclusi e vengono quotati separatamente quando necessario.","Les pièces de rechange et les réparations hors garantie ne sont pas incluses et font l'objet d'un devis séparé si nécessaire.","Części zamienne i naprawy poza zakresem gwarancji nie są wliczone i w razie potrzeby są wyceniane osobno.","Запасные части и ремонт вне гарантийного покрытия не включены и при необходимости рассчитываются отдельно.")}
-                </p>
-                <p style={{color:C.muted,fontSize:12.5,lineHeight:1.6,fontStyle:"italic",marginBottom:18}}>
-                  {t6("TAAAC Care members may request a Courtesy Golf Cart at an additional cost when available.","Los miembros de TAAAC Care pueden solicitar un Golf Cart de Cortesía con un coste adicional cuando esté disponible.","I clienti TAAAC Care possono richiedere un Golf Cart di Cortesia a pagamento, quando disponibile.","Les membres TAAAC Care peuvent demander un Golf Cart de Courtoisie moyennant un coût supplémentaire, selon disponibilité.","Członkowie TAAAC Care mogą odpłatnie poprosić o zastępczy Golf Cart, jeśli jest dostępny.","Участники TAAAC Care могут запросить подменный гольф-кар за дополнительную плату при его наличии.")}
-                </p>
-
-                <a href={"https://wa.me/18494100261?text="+encodeURIComponent(t6("Hi, I'm interested in TAAAC Care.","Hola, me interesa TAAAC Care.","Ciao, sono interessato a TAAAC Care.","Bonjour, je suis intéressé par TAAAC Care.","Cześć, jestem zainteresowany/a TAAAC Care.","Здравствуйте, меня интересует TAAAC Care."))} target="_blank" rel="noopener noreferrer" style={{...S.outBtn,display:"block",textAlign:"center",textDecoration:"none",width:"100%",boxSizing:"border-box"}}>
-                  {t6("Choose TAAAC Care","Elige TAAAC Care","Scegli TAAAC Care","Choisissez TAAAC Care","Wybierz TAAAC Care","Выберите TAAAC Care")}
-                </a>
-              </div>
-
-              {/* TAAAC Care+ */}
-              <div style={{...S.card(false),padding:24,border:"1.5px solid #C9A84C"}}>
-                <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
-                  <div style={{color:C.gold,fontWeight:800,fontSize:18}}>TAAAC Care+</div>
-                  <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"3px 8px",borderRadius:8,textTransform:"uppercase",letterSpacing:0.5}}>
-                    {t6("Enhanced Care","Protección ampliada","Assistenza avanzata","Assistance renforcée","Rozszerzona opieka","Расширенная поддержка")}
-                  </span>
-                </div>
-                <div style={{marginBottom:14}}>
-                  <span style={{color:C.white,fontWeight:900,fontSize:28}}>$399</span>{" "}
-                  <span style={{color:C.muted,fontSize:13}}>{t6("per year","al año","all'anno","par an","rocznie","в год")}</span>
-                </div>
-                <p style={{color:C.muted,fontSize:13,lineHeight:1.6,marginBottom:16}}>
-                  {t6("Everything in TAAAC Care, plus priority assistance and access to a Courtesy Golf Cart.","Todo lo incluido en TAAAC Care, más asistencia prioritaria y acceso a un Golf Cart de Cortesía.","Tutto ciò che è incluso in TAAAC Care, più assistenza prioritaria e accesso a un Golf Cart di Cortesia.","Tout ce qui est inclus dans TAAAC Care, plus une assistance prioritaire et l'accès à un Golf Cart de Courtoisie.","Wszystko, co obejmuje TAAAC Care, plus priorytetowa obsługa i dostęp do zastępczego Golf Carta.","Всё, что входит в TAAAC Care, плюс приоритетное обслуживание и доступ к подменному гольф-кару.")}
-                </p>
-
-                <div style={{color:C.muted,fontSize:13.5,lineHeight:1.8,marginBottom:14}}>
-                  ⭐ {t6("Priority assistance when your TAAAC requires service.","Atención prioritaria cuando tu TAAAC necesita asistencia.","Assistenza prioritaria quando il tuo TAAAC necessita di un intervento.","Assistance prioritaire lorsque votre TAAAC nécessite une intervention.","Priorytetowa obsługa, gdy Twój TAAAC wymaga serwisu.","Приоритетное обслуживание, когда вашему TAAAC требуется сервис.")}
-                </div>
-
-                <div style={{background:"#0000002a",border:"1px solid #C9A84C33",borderRadius:12,padding:14,marginBottom:16}}>
-                  <div style={{color:C.gold,fontWeight:700,fontSize:12.5,marginBottom:8}}>
-                    🚗 {t6("Courtesy Golf Cart","Golf Cart de Cortesía","Golf Cart di Cortesia","Golf Cart de Courtoisie","Zastępczy Golf Cart","Подменный гольф-кар")}
-                  </div>
-                  <div style={{color:C.muted,fontSize:12.5,lineHeight:1.7}}>
-                    {t6("If TAAAC determines that an eligible repair is expected to require 24 hours or more, Care+ members can access a Courtesy Golf Cart, subject to availability and service area.","Si TAAAC determina que una reparación requiere previsiblemente 24 horas o más, los miembros Care+ pueden acceder a un Golf Cart de Cortesía, sujeto a disponibilidad y zona de servicio.","Se TAAAC determina che una riparazione richiede prevedibilmente almeno 24 ore, i clienti Care+ possono accedere a un Golf Cart di Cortesia, soggetto a disponibilità e area di servizio.","Si TAAAC estime qu'une réparation devrait nécessiter au moins 24 heures, les membres Care+ peuvent accéder à un Golf Cart de Courtoisie, sous réserve de disponibilité et de la zone de service.","Jeśli TAAAC oceni, że naprawa będzie wymagała co najmniej 24 godzin, członkowie Care+ mogą skorzystać z zastępczego Golf Carta, zależnie od dostępności i obszaru serwisu.","Если TAAAC определит, что ремонт предположительно займёт не менее 24 часов, участники Care+ могут получить подменный гольф-кар при наличии и в пределах зоны обслуживания.")}
-                    <br/><br/>
-                    {t6("Up to 2 days included per eligible repair. Additional days may be available depending on availability and applicable conditions.","Hasta 2 días incluidos por reparación elegible. Los días adicionales pueden estar disponibles según disponibilidad y condiciones aplicables.","Fino a 2 giorni inclusi per ogni riparazione idonea. Eventuali giorni aggiuntivi possono essere disponibili in base alla disponibilità e alle condizioni applicabili.","Jusqu'à 2 jours inclus par réparation éligible. Des jours supplémentaires peuvent être disponibles selon la disponibilité et les conditions applicables.","Do 2 dni w cenie na każdą kwalifikującą się naprawę. Dodatkowe dni mogą być dostępne zależnie od dostępności i obowiązujących warunków.","До 2 дней включено для каждого подходящего случая ремонта. Дополнительные дни могут быть доступны при наличии и на применимых условиях.")}
-                    <br/><br/>
-                    {t6("Courtesy Golf Cart service is currently available in Bayahibe, Dominicus and Casa de Campo.","El servicio de Golf Cart de Cortesía está disponible actualmente en Bayahibe, Dominicus y Casa de Campo.","Il servizio Golf Cart di Cortesia è attualmente disponibile a Bayahibe, Dominicus e Casa de Campo.","Le service Golf Cart de Courtoisie est actuellement disponible à Bayahibe, Dominicus et Casa de Campo.","Usługa zastępczego Golf Carta jest obecnie dostępna w Bayahibe, Dominicus i Casa de Campo.","Услуга подменного гольф-кара в настоящее время доступна в Байяибе, Доминикус и Casa de Campo.")}
-                    <br/><br/>
-                    {t6("Normal charging during use is the customer's responsibility. Damage caused by improper use may be charged to the customer.","La recarga normal durante el uso es responsabilidad del cliente. Los daños causados por un uso inadecuado pueden ser cargados al cliente.","La normale ricarica durante l'utilizzo è a carico del cliente. Eventuali danni causati da un uso improprio possono essere addebitati al cliente.","La recharge normale pendant l'utilisation est à la charge du client. Les dommages causés par une utilisation inappropriée peuvent être facturés au client.","Standardowe ładowanie podczas użytkowania leży po stronie klienta. Koszty szkód spowodowanych niewłaściwym użytkowaniem mogą zostać obciążone klientowi.","Обычная зарядка во время использования осуществляется за счёт клиента. Ущерб, вызванный неправильным использованием, может быть возложен на клиента.")}
-                    <br/><br/>
-                    {t6("The Courtesy Golf Cart is checked together with the customer at handover and return.","El Golf Cart de Cortesía se revisa junto con el cliente en la entrega y en la devolución.","Il Golf Cart di Cortesia viene controllato insieme al cliente alla consegna e alla restituzione.","Le Golf Cart de Courtoisie est contrôlé avec le client lors de la remise et du retour.","Stan zastępczego Golf Carta jest sprawdzany wspólnie z klientem przy wydaniu i zwrocie.","Состояние подменного гольф-кара проверяется вместе с клиентом при выдаче и возврате.")}
-                    <br/><br/>
-                    {t6("Courtesy Golf Cart access is linked to the Care+ plan and repair duration, not to warranty coverage.","El acceso al Golf Cart de Cortesía depende del plan Care+ y de la duración de la reparación, no de la cobertura de garantía.","L'accesso al Golf Cart di Cortesia dipende dal piano Care+ e dalla durata della riparazione, non dalla copertura della garanzia.","L'accès au Golf Cart de Courtoisie dépend du plan Care+ et de la durée de la réparation, et non de la couverture de garantie.","Dostęp do zastępczego Golf Carta zależy od planu Care+ i czasu naprawy, a nie od zakresu gwarancji.","Доступ к подменному гольф-кару зависит от плана Care+ и продолжительности ремонта, а не от гарантийного покрытия.")}
-                  </div>
-                </div>
-
-                <a href={"https://wa.me/18494100261?text="+encodeURIComponent(t6("Hi, I'm interested in TAAAC Care+.","Hola, me interesa TAAAC Care+.","Ciao, sono interessato a TAAAC Care+.","Bonjour, je suis intéressé par TAAAC Care+.","Cześć, jestem zainteresowany/a TAAAC Care+.","Здравствуйте, меня интересует TAAAC Care+."))} target="_blank" rel="noopener noreferrer" style={{...S.goldBtn,display:"block",textAlign:"center",textDecoration:"none",width:"100%",boxSizing:"border-box"}}>
-                  {t6("Choose TAAAC Care+","Elige TAAAC Care+","Scegli TAAAC Care+","Choisissez TAAAC Care+","Wybierz TAAAC Care+","Выберите TAAAC Care+")}
-                </a>
-              </div>
-            </div>
-
-            <div style={{background:C.card,border:"1px solid #222",borderRadius:14,padding:"18px 20px"}}>
-              <div style={{color:C.gold,fontWeight:700,fontSize:11,letterSpacing:1,textTransform:"uppercase",marginBottom:10}}>
-                {t6("Plan terms","Condiciones del plan","Condizioni del piano","Conditions du programme","Warunki planu","Условия плана")}
-              </div>
-              <div style={{color:C.muted,fontSize:12.5,lineHeight:1.9}}>
-                • {t6("Scheduled home service visits included in Bayahibe, Dominicus and Casa de Campo.","Las visitas programadas a domicilio están incluidas en Bayahibe, Dominicus y Casa de Campo.","Le visite programmate a domicilio sono incluse a Bayahibe, Dominicus e Casa de Campo.","Les visites d'entretien programmées à domicile sont incluses à Bayahibe, Dominicus et Casa de Campo.","Zaplanowane wizyty serwisowe u klienta są wliczone w cenę w Bayahibe, Dominicus i Casa de Campo.","Плановые выездные сервисные визиты включены в Байяибе, Доминикус и Casa de Campo.")}<br/>
-                • {t6("Service conditions for other locations are evaluated according to distance and location.","Las condiciones del servicio para otras localidades se evalúan según la distancia y la ubicación.","Le condizioni del servizio per le altre località vengono valutate in base alla distanza e alla zona.","Les conditions de service pour les autres localités sont évaluées selon la distance et la zone.","Warunki serwisu w innych lokalizacjach są ustalane w zależności od odległości i miejsca.","Условия обслуживания в других регионах определяются в зависимости от расстояния и местоположения.")}<br/>
-                • {t6("12-month plan from activation date.","Plan de 12 meses desde la fecha de activación.","Piano di 12 mesi dalla data di attivazione.","Programme de 12 mois à compter de la date d'activation.","Plan na 12 miesięcy od daty aktywacji.","План на 12 месяцев с даты активации.")}<br/>
-                • {t6("TAAAC Care is designed for TAAAC golf carts. Other golf carts may be accepted after an individual assessment.","TAAAC Care está diseñado para golf carts TAAAC. Otros golf carts pueden ser aceptados después de una evaluación individual.","TAAAC Care è pensato per i golf cart TAAAC. Altri golf cart possono essere accettati previa valutazione individuale.","TAAAC Care est conçu pour les golf carts TAAAC. D'autres golf carts peuvent être acceptés après une évaluation individuelle.","TAAAC Care został stworzony dla golf cartów TAAAC. Inne pojazdy mogą zostać przyjęte po indywidualnej ocenie.","TAAAC Care предназначен для гольф-каров TAAAC. Другие гольф-кары могут быть приняты после индивидуальной оценки.")}<br/>
-                • {t6("Annual payment in advance.","Pago anual por adelantado.","Pagamento annuale anticipato.","Paiement annuel à l'avance.","Roczna płatność z góry.","Ежегодная предоплата.")}<br/>
-                • {t6("Pay 3 years in advance and receive 5% off each year.","Paga 3 años por adelantado y recibe un 5% de descuento cada año.","Paga 3 anni in anticipo e ricevi il 5% di sconto su ogni anno.","Payez 3 ans à l'avance et bénéficiez de 5 % de réduction chaque année.","Zapłać z góry za 3 lata i otrzymaj 5% zniżki na każdy rok.","Оплатите 3 года заранее и получите скидку 5% на каждый год.")}<br/>
-                • {t6("Unused annual inspections do not carry over to the next plan year. Renewal conditions may be evaluated individually.","Las revisiones anuales no utilizadas no se acumulan para el año siguiente. Las condiciones de renovación pueden evaluarse individualmente.","I controlli annuali non utilizzati non si accumulano nell'anno successivo. Eventuali condizioni di rinnovo possono essere valutate individualmente.","Les contrôles annuels non utilisés ne sont pas reportés sur l'année suivante. Les conditions de renouvellement peuvent être évaluées individuellement.","Niewykorzystane przeglądy roczne nie przechodzą na kolejny rok. Warunki odnowienia mogą być oceniane indywidualnie.","Неиспользованные ежегодные осмотры не переносятся на следующий год. Условия продления могут рассматриваться индивидуально.")}
-              </div>
-            </div>
-          </div>
-
-          <a href={"https://wa.me/18494100261?text="+encodeURIComponent(t6("Hi, I need assistance with my golf cart.","Hola, necesito asistencia con mi golf cart.","Ciao, ho bisogno di assistenza per il mio golf cart.","Bonjour, j'ai besoin d'assistance pour ma voiturette de golf.","Cześć, potrzebuję pomocy z moim wózkiem golfowym.","Здравствуйте, мне нужна помощь с моим гольф-каром."))} target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",justifyContent:"center",gap:8,background:"transparent",color:"#25D366",border:"1.5px solid #25D366",borderRadius:14,padding:"14px 20px",fontSize:14,fontWeight:700,textDecoration:"none",marginBottom:12}}>
+          <a href={"https://wa.me/18494100261?text="+encodeURIComponent(t6("Good morning, I have a question about assistance.","Buenos días, tengo una pregunta sobre la asistencia.","Buongiorno, ho una domanda sull'assistenza.","Bonjour, j'ai une question sur l'assistance.","Dzień dobry, mam pytanie dotyczące pomocy technicznej.","Здравствуйте, у меня вопрос по поводу поддержки."))} target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",justifyContent:"center",gap:8,background:"transparent",color:"#25D366",border:"1.5px solid #25D366",borderRadius:14,padding:"14px 20px",fontSize:14,fontWeight:700,textDecoration:"none",marginBottom:12}}>
             <svg viewBox="0 0 32 32" width="18" height="18" fill="#25D366"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.625.86 5.055 2.312 7.031L4 29l7.157-2.281A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.96 9.96 0 0 1-5.086-1.398l-.365-.217-3.789 1.207 1.229-3.693-.239-.38A9.96 9.96 0 0 1 6 15c0-5.523 4.478-10 10.001-10zm-3.61 5.06c-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.075.148.198 2.057 3.278 5.076 4.462 2.516.988 3.028.792 3.575.743.546-.05 1.762-.72 2.01-1.414.247-.694.247-1.29.173-1.414-.074-.124-.271-.198-.568-.347-.297-.148-1.762-.87-2.036-.968-.273-.099-.472-.148-.67.148-.198.297-.767.968-.94 1.166-.173.198-.347.223-.644.074-.297-.148-1.253-.462-2.387-1.472-.883-.788-1.48-1.762-1.653-2.06-.173-.297-.019-.457.13-.605.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.67-1.613-.918-2.208-.242-.583-.487-.504-.67-.513-.173-.008-.371-.01-.57-.01z"/></svg>
             {t6("Need assistance? Contact us on WhatsApp","¿Necesitas asistencia? Contáctanos por WhatsApp","Hai bisogno di assistenza? Contattaci su WhatsApp","Besoin d'assistance ? Contactez-nous sur WhatsApp","Potrzebujesz pomocy? Skontaktuj się z nami przez WhatsApp","Нужна помощь? Свяжитесь с нами в WhatsApp")}
           </a>
@@ -3290,6 +3191,131 @@ export default function App() {
             📞 {t("Contact Us","Contáctanos","Contattaci")}
           </button>
         </div>
+        <div style={{marginTop:12}}>
+          <button style={S.outBtn} onClick={()=>setPage(prevPage)}>← {t("Back","Atrás","Indietro")}</button>
+        </div>
+      </div>
+    );
+  }
+
+  function Maintenance() {
+    return (
+      <div style={S.sec}>
+        <div style={{color:C.gold,fontSize:10,letterSpacing:4,fontWeight:700,marginBottom:14,textTransform:"uppercase"}}>{t("Maintenance Plans","Planes de Mantenimiento","Piani di Manutenzione")}</div>
+        <h1 style={S.title}>TAAAC Care</h1>
+        <div style={S.goldLine}/>
+
+          <div style={{marginBottom:40}}>
+            <h2 style={{...S.title,fontSize:"clamp(1.3rem,3.4vw,1.8rem)",marginBottom:10}}>
+              {t6("Care for your TAAAC. Keep it ready for every journey.","Cuida tu TAAAC. Mantenlo listo para cada recorrido.","Prenditi cura del tuo TAAAC. Mantienilo pronto per ogni viaggio.","Prenez soin de votre TAAAC. Gardez-le prêt pour chaque trajet.","Dbaj o swojego TAAAC. Utrzymuj go w gotowości do każdej podróży.","Заботьтесь о своём TAAAC. Поддерживайте его готовым к каждой поездке.")}
+            </h2>
+            <p style={{color:C.muted,fontSize:14,lineHeight:1.7,maxWidth:640,marginBottom:24}}>
+              {t6("Two preventive inspections per year, direct support and a maintenance plan designed around the systems that matter most.","Dos revisiones preventivas al año, atención directa y un plan de mantenimiento centrado en los sistemas que más importan.","Due controlli preventivi all'anno, assistenza diretta e un piano di manutenzione dedicato ai sistemi più importanti.","Deux contrôles préventifs par an, une assistance directe et un programme d'entretien axé sur les systèmes les plus importants.","Dwa przeglądy prewencyjne rocznie, bezpośrednie wsparcie i plan konserwacji skoncentrowany na najważniejszych systemach.","Два профилактических осмотра в год, прямая поддержка и план обслуживания, ориентированный на наиболее важные системы.")}
+            </p>
+
+            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:18,marginBottom:20}}>
+
+              {/* TAAAC Care */}
+              <div style={{...S.card(false),padding:24}}>
+                <div style={{color:C.gold,fontWeight:800,fontSize:18,marginBottom:4}}>TAAAC Care</div>
+                <div style={{marginBottom:14}}>
+                  <span style={{color:C.white,fontWeight:900,fontSize:28}}>$199</span>{" "}
+                  <span style={{color:C.muted,fontSize:13}}>{t6("per year","al año","all'anno","par an","rocznie","в год")}</span>
+                </div>
+                <p style={{color:C.muted,fontSize:13,lineHeight:1.6,marginBottom:16}}>
+                  {t6("Preventive maintenance and direct support for your TAAAC.","Mantenimiento preventivo y atención directa para tu TAAAC.","Manutenzione preventiva e assistenza diretta per il tuo TAAAC.","Entretien préventif et assistance directe pour votre TAAAC.","Konserwacja prewencyjna i bezpośrednie wsparcie dla Twojego TAAAC.","Профилактическое обслуживание и прямая поддержка вашего TAAAC.")}
+                </p>
+
+                <div style={{color:C.muted,fontSize:13.5,lineHeight:1.8,marginBottom:14}}>
+                  ✓ {t6("Two preventive inspections per year, usually scheduled about six months apart.","Dos revisiones preventivas al año, normalmente programadas con unos seis meses de diferencia.","Due controlli preventivi all'anno, normalmente programmati a circa sei mesi di distanza.","Deux contrôles préventifs par an, généralement programmés à environ six mois d'intervalle.","Dwa przeglądy prewencyjne rocznie, zwykle planowane w odstępie około sześciu miesięcy.","Два профилактических осмотра в год, обычно с интервалом около шести месяцев.")}<br/>
+                  ✓ {t6("Labor for the two scheduled inspections is included.","La mano de obra de las dos revisiones programadas está incluida.","La manodopera dei due controlli programmati è inclusa.","La main-d'œuvre des deux contrôles programmés est incluse.","Robocizna podczas dwóch zaplanowanych przeglądów jest wliczona w cenę.","Работа по двум плановым осмотрам включена в стоимость.")}<br/>
+                  ✓ {t6("We keep track of your maintenance schedule and contact you when it's time to plan your next inspection.","Seguimos tu calendario de mantenimiento y te contactamos cuando llega el momento de programar la próxima revisión.","Teniamo sotto controllo il calendario di manutenzione e ti contattiamo quando è il momento di programmare il controllo successivo.","Nous suivons votre calendrier d'entretien et vous contactons lorsqu'il est temps de planifier votre prochain contrôle.","Monitorujemy harmonogram serwisowy i kontaktujemy się z Tobą, gdy nadejdzie czas na zaplanowanie kolejnego przeglądu.","Мы отслеживаем график обслуживания и связываемся с вами, когда приходит время запланировать следующий осмотр.")}
+                </div>
+
+                <div style={{color:C.muted,fontSize:13.5,lineHeight:2,marginBottom:14}}>
+                  🛑 {t6("Brakes","Frenos","Freni","Freins","Hamulce","Тормоза")} ·{" "}
+                  🔧 {t6("Suspension & shock absorbers","Suspensión y amortiguadores","Sospensioni e ammortizzatori","Suspension et amortisseurs","Zawieszenie i amortyzatory","Подвеска и амортизаторы")}<br/>
+                  🔋 {t6("Lithium battery & BMS","Batería de litio y BMS","Batteria al litio e BMS","Batterie au lithium et BMS","Bateria litowa i BMS","Литиевая батарея и BMS")}<br/>
+                  ☀️ {t6("Solar panel & charging system","Panel solar y sistema de carga","Pannello solare e sistema di ricarica","Panneau solaire et système de charge","Panel słoneczny i system ładowania","Солнечная панель и система зарядки")}<br/>
+                  ⚡ {t6("Electrical components","Componentes eléctricos","Componenti elettrici","Composants électriques","Podzespoły elektryczne","Электрические компоненты")} ·{" "}
+                  💡 {t6("Lighting","Iluminación","Illuminazione","Éclairage","Oświetlenie","Освещение")}<br/>
+                  🧰 {t6("Support identifying and sourcing parts","Apoyo para identificar y conseguir repuestos","Supporto per identificare e reperire ricambi","Aide pour identifier et obtenir les pièces","Pomoc w identyfikacji i pozyskiwaniu części","Помощь в определении и поиске запчастей")}<br/>
+                  📞 {t6("Direct post-sale support","Atención posventa directa","Assistenza post-vendita diretta","Assistance après-vente directe","Bezpośrednie wsparcie posprzedażowe","Прямая послепродажная поддержка")}
+                </div>
+
+                <p style={{color:C.muted,fontSize:12.5,lineHeight:1.6,fontStyle:"italic",marginBottom:12}}>
+                  {t6("Replacement parts and repairs outside warranty coverage are not included and are quoted separately when required.","Los repuestos y las reparaciones fuera de la cobertura de garantía no están incluidos y se cotizan por separado cuando sea necesario.","I ricambi e le riparazioni fuori dalla copertura della garanzia non sono inclusi e vengono quotati separatamente quando necessario.","Les pièces de rechange et les réparations hors garantie ne sont pas incluses et font l'objet d'un devis séparé si nécessaire.","Części zamienne i naprawy poza zakresem gwarancji nie są wliczone i w razie potrzeby są wyceniane osobno.","Запасные части и ремонт вне гарантийного покрытия не включены и при необходимости рассчитываются отдельно.")}
+                </p>
+                <p style={{color:C.muted,fontSize:12.5,lineHeight:1.6,fontStyle:"italic",marginBottom:18}}>
+                  {t6("TAAAC Care members may request a Courtesy Golf Cart at an additional cost when available.","Los miembros de TAAAC Care pueden solicitar un Golf Cart de Cortesía con un coste adicional cuando esté disponible.","I clienti TAAAC Care possono richiedere un Golf Cart di Cortesia a pagamento, quando disponibile.","Les membres TAAAC Care peuvent demander un Golf Cart de Courtoisie moyennant un coût supplémentaire, selon disponibilité.","Członkowie TAAAC Care mogą odpłatnie poprosić o zastępczy Golf Cart, jeśli jest dostępny.","Участники TAAAC Care могут запросить подменный гольф-кар за дополнительную плату при его наличии.")}
+                </p>
+
+                <a href={"https://wa.me/18494100261?text="+encodeURIComponent(t6("Hi, I'm interested in TAAAC Care, I'd like some additional information.","Hola, me interesa TAAAC Care, me gustaría más información.","Ciao, sono interessato a TAAAC Care, vorrei un'informazione in più.","Bonjour, je suis intéressé par TAAAC Care, je voudrais quelques informations supplémentaires.","Cześć, jestem zainteresowany/a TAAAC Care, chciałbym/chciałabym dodatkowych informacji.","Здравствуйте, меня интересует TAAAC Care, хотел(а) бы получить дополнительную информацию."))} target="_blank" rel="noopener noreferrer" style={{...S.outBtn,display:"block",textAlign:"center",textDecoration:"none",width:"100%",boxSizing:"border-box"}}>
+                  {t6("Choose TAAAC Care","Elige TAAAC Care","Scegli TAAAC Care","Choisissez TAAAC Care","Wybierz TAAAC Care","Выберите TAAAC Care")}
+                </a>
+              </div>
+
+              {/* TAAAC Care+ */}
+              <div style={{...S.card(false),padding:24,border:"1.5px solid #C9A84C"}}>
+                <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
+                  <div style={{color:C.gold,fontWeight:800,fontSize:18}}>TAAAC Care+</div>
+                  <span style={{background:"#C9A84C22",color:C.gold,fontSize:10,fontWeight:700,padding:"3px 8px",borderRadius:8,textTransform:"uppercase",letterSpacing:0.5}}>
+                    {t6("Enhanced Care","Protección ampliada","Assistenza avanzata","Assistance renforcée","Rozszerzona opieka","Расширенная поддержка")}
+                  </span>
+                </div>
+                <div style={{marginBottom:14}}>
+                  <span style={{color:C.white,fontWeight:900,fontSize:28}}>$399</span>{" "}
+                  <span style={{color:C.muted,fontSize:13}}>{t6("per year","al año","all'anno","par an","rocznie","в год")}</span>
+                </div>
+                <p style={{color:C.muted,fontSize:13,lineHeight:1.6,marginBottom:16}}>
+                  {t6("Everything in TAAAC Care, plus priority assistance and access to a Courtesy Golf Cart.","Todo lo incluido en TAAAC Care, más asistencia prioritaria y acceso a un Golf Cart de Cortesía.","Tutto ciò che è incluso in TAAAC Care, più assistenza prioritaria e accesso a un Golf Cart di Cortesia.","Tout ce qui est inclus dans TAAAC Care, plus une assistance prioritaire et l'accès à un Golf Cart de Courtoisie.","Wszystko, co obejmuje TAAAC Care, plus priorytetowa obsługa i dostęp do zastępczego Golf Carta.","Всё, что входит в TAAAC Care, плюс приоритетное обслуживание и доступ к подменному гольф-кару.")}
+                </p>
+
+                <div style={{color:C.muted,fontSize:13.5,lineHeight:1.8,marginBottom:14}}>
+                  ⭐ {t6("Priority assistance when your TAAAC requires service.","Atención prioritaria cuando tu TAAAC necesita asistencia.","Assistenza prioritaria quando il tuo TAAAC necessita di un intervento.","Assistance prioritaire lorsque votre TAAAC nécessite une intervention.","Priorytetowa obsługa, gdy Twój TAAAC wymaga serwisu.","Приоритетное обслуживание, когда вашему TAAAC требуется сервис.")}
+                </div>
+
+                <div style={{background:"#0000002a",border:"1px solid #C9A84C33",borderRadius:12,padding:14,marginBottom:16}}>
+                  <div style={{color:C.gold,fontWeight:700,fontSize:12.5,marginBottom:8}}>
+                    🚗 {t6("Courtesy Golf Cart","Golf Cart de Cortesía","Golf Cart di Cortesia","Golf Cart de Courtoisie","Zastępczy Golf Cart","Подменный гольф-кар")}
+                  </div>
+                  <div style={{color:C.muted,fontSize:12.5,lineHeight:1.7}}>
+                    {t6("If TAAAC determines that an eligible repair is expected to require 24 hours or more, Care+ members can access a Courtesy Golf Cart, subject to availability and service area.","Si TAAAC determina que una reparación requiere previsiblemente 24 horas o más, los miembros Care+ pueden acceder a un Golf Cart de Cortesía, sujeto a disponibilidad y zona de servicio.","Se TAAAC determina che una riparazione richiede prevedibilmente almeno 24 ore, i clienti Care+ possono accedere a un Golf Cart di Cortesia, soggetto a disponibilità e area di servizio.","Si TAAAC estime qu'une réparation devrait nécessiter au moins 24 heures, les membres Care+ peuvent accéder à un Golf Cart de Courtoisie, sous réserve de disponibilité et de la zone de service.","Jeśli TAAAC oceni, że naprawa będzie wymagała co najmniej 24 godzin, członkowie Care+ mogą skorzystać z zastępczego Golf Carta, zależnie od dostępności i obszaru serwisu.","Если TAAAC определит, что ремонт предположительно займёт не менее 24 часов, участники Care+ могут получить подменный гольф-кар при наличии и в пределах зоны обслуживания.")}
+                    <br/><br/>
+                    {t6("Up to 2 days included per eligible repair. Additional days may be available depending on availability and applicable conditions.","Hasta 2 días incluidos por reparación elegible. Los días adicionales pueden estar disponibles según disponibilidad y condiciones aplicables.","Fino a 2 giorni inclusi per ogni riparazione idonea. Eventuali giorni aggiuntivi possono essere disponibili in base alla disponibilità e alle condizioni applicabili.","Jusqu'à 2 jours inclus par réparation éligible. Des jours supplémentaires peuvent être disponibles selon la disponibilité et les conditions applicables.","Do 2 dni w cenie na każdą kwalifikującą się naprawę. Dodatkowe dni mogą być dostępne zależnie od dostępności i obowiązujących warunków.","До 2 дней включено для каждого подходящего случая ремонта. Дополнительные дни могут быть доступны при наличии и на применимых условиях.")}
+                    <br/><br/>
+                    {t6("Courtesy Golf Cart service is currently available in Bayahibe, Dominicus and Casa de Campo.","El servicio de Golf Cart de Cortesía está disponible actualmente en Bayahibe, Dominicus y Casa de Campo.","Il servizio Golf Cart di Cortesia è attualmente disponibile a Bayahibe, Dominicus e Casa de Campo.","Le service Golf Cart de Courtoisie est actuellement disponible à Bayahibe, Dominicus et Casa de Campo.","Usługa zastępczego Golf Carta jest obecnie dostępna w Bayahibe, Dominicus i Casa de Campo.","Услуга подменного гольф-кара в настоящее время доступна в Байяибе, Доминикус и Casa de Campo.")}
+                    <br/><br/>
+                    {t6("Normal charging during use is the customer's responsibility. Damage caused by improper use may be charged to the customer.","La recarga normal durante el uso es responsabilidad del cliente. Los daños causados por un uso inadecuado pueden ser cargados al cliente.","La normale ricarica durante l'utilizzo è a carico del cliente. Eventuali danni causati da un uso improprio possono essere addebitati al cliente.","La recharge normale pendant l'utilisation est à la charge du client. Les dommages causés par une utilisation inappropriée peuvent être facturés au client.","Standardowe ładowanie podczas użytkowania leży po stronie klienta. Koszty szkód spowodowanych niewłaściwym użytkowaniem mogą zostać obciążone klientowi.","Обычная зарядка во время использования осуществляется за счёт клиента. Ущерб, вызванный неправильным использованием, может быть возложен на клиента.")}
+                    <br/><br/>
+                    {t6("The Courtesy Golf Cart is checked together with the customer at handover and return.","El Golf Cart de Cortesía se revisa junto con el cliente en la entrega y en la devolución.","Il Golf Cart di Cortesia viene controllato insieme al cliente alla consegna e alla restituzione.","Le Golf Cart de Courtoisie est contrôlé avec le client lors de la remise et du retour.","Stan zastępczego Golf Carta jest sprawdzany wspólnie z klientem przy wydaniu i zwrocie.","Состояние подменного гольф-кара проверяется вместе с клиентом при выдаче и возврате.")}
+                    <br/><br/>
+                    {t6("Courtesy Golf Cart access is linked to the Care+ plan and repair duration, not to warranty coverage.","El acceso al Golf Cart de Cortesía depende del plan Care+ y de la duración de la reparación, no de la cobertura de garantía.","L'accesso al Golf Cart di Cortesia dipende dal piano Care+ e dalla durata della riparazione, non dalla copertura della garanzia.","L'accès au Golf Cart de Courtoisie dépend du plan Care+ et de la durée de la réparation, et non de la couverture de garantie.","Dostęp do zastępczego Golf Carta zależy od planu Care+ i czasu naprawy, a nie od zakresu gwarancji.","Доступ к подменному гольф-кару зависит от плана Care+ и продолжительности ремонта, а не от гарантийного покрытия.")}
+                  </div>
+                </div>
+
+                <a href={"https://wa.me/18494100261?text="+encodeURIComponent(t6("Hi, I'm interested in TAAAC Care+, I'd like some additional information.","Hola, me interesa TAAAC Care+, me gustaría más información.","Ciao, sono interessato a TAAAC Care+, vorrei un'informazione in più.","Bonjour, je suis intéressé par TAAAC Care+, je voudrais quelques informations supplémentaires.","Cześć, jestem zainteresowany/a TAAAC Care+, chciałbym/chciałabym dodatkowych informacji.","Здравствуйте, меня интересует TAAAC Care+, хотел(а) бы получить дополнительную информацию."))} target="_blank" rel="noopener noreferrer" style={{...S.goldBtn,display:"block",textAlign:"center",textDecoration:"none",width:"100%",boxSizing:"border-box"}}>
+                  {t6("Choose TAAAC Care+","Elige TAAAC Care+","Scegli TAAAC Care+","Choisissez TAAAC Care+","Wybierz TAAAC Care+","Выберите TAAAC Care+")}
+                </a>
+              </div>
+            </div>
+
+            <div style={{background:C.card,border:"1px solid #222",borderRadius:14,padding:"18px 20px"}}>
+              <div style={{color:C.gold,fontWeight:700,fontSize:11,letterSpacing:1,textTransform:"uppercase",marginBottom:10}}>
+                {t6("Plan terms","Condiciones del plan","Condizioni del piano","Conditions du programme","Warunki planu","Условия плана")}
+              </div>
+              <div style={{color:C.muted,fontSize:12.5,lineHeight:1.9}}>
+                • {t6("Scheduled home service visits included in Bayahibe, Dominicus and Casa de Campo.","Las visitas programadas a domicilio están incluidas en Bayahibe, Dominicus y Casa de Campo.","Le visite programmate a domicilio sono incluse a Bayahibe, Dominicus e Casa de Campo.","Les visites d'entretien programmées à domicile sont incluses à Bayahibe, Dominicus et Casa de Campo.","Zaplanowane wizyty serwisowe u klienta są wliczone w cenę w Bayahibe, Dominicus i Casa de Campo.","Плановые выездные сервисные визиты включены в Байяибе, Доминикус и Casa de Campo.")}<br/>
+                • {t6("Service conditions for other locations are evaluated according to distance and location.","Las condiciones del servicio para otras localidades se evalúan según la distancia y la ubicación.","Le condizioni del servizio per le altre località vengono valutate in base alla distanza e alla zona.","Les conditions de service pour les autres localités sont évaluées selon la distance et la zone.","Warunki serwisu w innych lokalizacjach są ustalane w zależności od odległości i miejsca.","Условия обслуживания в других регионах определяются в зависимости от расстояния и местоположения.")}<br/>
+                • {t6("12-month plan from activation date.","Plan de 12 meses desde la fecha de activación.","Piano di 12 mesi dalla data di attivazione.","Programme de 12 mois à compter de la date d'activation.","Plan na 12 miesięcy od daty aktywacji.","План на 12 месяцев с даты активации.")}<br/>
+                • {t6("TAAAC Care is designed for TAAAC golf carts. Other golf carts may be accepted after an individual assessment.","TAAAC Care está diseñado para golf carts TAAAC. Otros golf carts pueden ser aceptados después de una evaluación individual.","TAAAC Care è pensato per i golf cart TAAAC. Altri golf cart possono essere accettati previa valutazione individuale.","TAAAC Care est conçu pour les golf carts TAAAC. D'autres golf carts peuvent être acceptés après une évaluation individuelle.","TAAAC Care został stworzony dla golf cartów TAAAC. Inne pojazdy mogą zostać przyjęte po indywidualnej ocenie.","TAAAC Care предназначен для гольф-каров TAAAC. Другие гольф-кары могут быть приняты после индивидуальной оценки.")}<br/>
+                • {t6("Annual payment in advance.","Pago anual por adelantado.","Pagamento annuale anticipato.","Paiement annuel à l'avance.","Roczna płatność z góry.","Ежегодная предоплата.")}<br/>
+                • {t6("Pay 3 years in advance and receive 5% off each year.","Paga 3 años por adelantado y recibe un 5% de descuento cada año.","Paga 3 anni in anticipo e ricevi il 5% di sconto su ogni anno.","Payez 3 ans à l'avance et bénéficiez de 5 % de réduction chaque année.","Zapłać z góry za 3 lata i otrzymaj 5% zniżki na każdy rok.","Оплатите 3 года заранее и получите скидку 5% на каждый год.")}<br/>
+                • {t6("Unused annual inspections do not carry over to the next plan year. Renewal conditions may be evaluated individually.","Las revisiones anuales no utilizadas no se acumulan para el año siguiente. Las condiciones de renovación pueden evaluarse individualmente.","I controlli annuali non utilizzati non si accumulano nell'anno successivo. Eventuali condizioni di rinnovo possono essere valutate individualmente.","Les contrôles annuels non utilisés ne sont pas reportés sur l'année suivante. Les conditions de renouvellement peuvent être évaluées individuellement.","Niewykorzystane przeglądy roczne nie przechodzą na kolejny rok. Warunki odnowienia mogą być oceniane indywidualnie.","Неиспользованные ежегодные осмотры не переносятся на следующий год. Условия продления могут рассматриваться индивидуально.")}
+              </div>
+            </div>
+          </div>
+
         <div style={{marginTop:12}}>
           <button style={S.outBtn} onClick={()=>setPage(prevPage)}>← {t("Back","Atrás","Indietro")}</button>
         </div>
