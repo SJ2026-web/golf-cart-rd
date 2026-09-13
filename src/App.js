@@ -587,6 +587,7 @@ const RU_DICT = {
   "OPTIONS:":"ОПЦИИ:",
   "Assistance & Repairs":"Помощь и Ремонт",
   "Maintenance Plans":"Планы Обслуживания",
+  "Good morning, I would like more information.":"Здравствуйте, я хотел(а) бы получить дополнительную информацию.",
 };
 function ru(en) { return RU_DICT[en] || en; }
 
@@ -1134,6 +1135,7 @@ const FR_DICT = {
   "OPTIONS:":"OPTIONS :",
   "Assistance & Repairs":"Assistance et Réparations",
   "Maintenance Plans":"Programmes d'Entretien",
+  "Good morning, I would like more information.":"Bonjour, je souhaiterais obtenir plus d'informations.",
 };
 function fr(en) { return FR_DICT[en] || en; }
 
@@ -1651,6 +1653,7 @@ const PL_DICT = {
   "OPTIONS:":"OPCJE:",
   "Assistance & Repairs":"Pomoc i Naprawy",
   "Maintenance Plans":"Plany Konserwacji",
+  "Good morning, I would like more information.":"Dzień dobry, chciałbym/chciałabym uzyskać więcej informacji.",
 };
 function pl(en) { return PL_DICT[en] || en; }
 
@@ -3835,6 +3838,7 @@ export default function App() {
         </Suspense>
       )}
       {page==="service"&&<Service/>}
+      {page==="maintenance"&&<Maintenance/>}
       {page==="contact"&&(
         <Suspense fallback={
           <div style={{minHeight:"40vh",display:"flex",alignItems:"center",justifyContent:"center",color:"#888"}}>
@@ -4053,7 +4057,11 @@ export default function App() {
           </div>
         </>
       )}
-      <a href={"https://wa.me/18494100261?text="+encodeURIComponent(t6("Hi, I have a question about TAAAC Solutions golf carts.","Hola, tengo una pregunta sobre los golf carts de TAAAC Solutions.","Ciao, ho una domanda sui golf cart TAAAC Solutions.","Bonjour, j'ai une question sur les voiturettes de golf TAAAC Solutions.","Cześć, mam pytanie dotyczące wózków golfowych TAAAC Solutions.","Здравствуйте, у меня вопрос о гольф-карах TAAAC Solutions."))} target="_blank" rel="noopener noreferrer"
+      <a href={"https://wa.me/18494100261?text="+encodeURIComponent(
+          (page==="configurator" && cfg.model)
+            ? t6("Hi, I have a question about the Model "+cfg.model+" golf cart.","Hola, tengo una pregunta sobre el golf cart Modelo "+cfg.model+".","Ciao, ho una domanda sui golf cart modello "+cfg.model+".","Bonjour, j'ai une question sur la voiturette de golf Modèle "+cfg.model+".","Cześć, mam pytanie dotyczące wózka golfowego Model "+cfg.model+".","Здравствуйте, у меня вопрос о гольф-каре Модель "+cfg.model+".")
+            : t6("Hi, I have a question about TAAAC Solutions golf carts.","Hola, tengo una pregunta sobre los golf carts de TAAAC Solutions.","Ciao, ho una domanda sui golf cart TAAAC Solutions.","Bonjour, j'ai une question sur les voiturettes de golf TAAAC Solutions.","Cześć, mam pytanie dotyczące wózków golfowych TAAAC Solutions.","Здравствуйте, у меня вопрос о гольф-карах TAAAC Solutions.")
+        )} target="_blank" rel="noopener noreferrer"
         style={{position:"fixed",bottom:20,right:20,zIndex:300,width:56,height:56,borderRadius:"50%",background:"#25D366",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 16px rgba(0,0,0,0.4)",textDecoration:"none"}}
         title="WhatsApp">
         <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.625.86 5.055 2.312 7.031L4 29l7.157-2.281A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.96 9.96 0 0 1-5.086-1.398l-.365-.217-3.789 1.207 1.229-3.693-.239-.38A9.96 9.96 0 0 1 6 15c0-5.523 4.478-10 10.001-10zm-3.61 5.06c-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.075.148.198 2.057 3.278 5.076 4.462 2.516.988 3.028.792 3.575.743.546-.05 1.762-.72 2.01-1.414.247-.694.247-1.29.173-1.414-.074-.124-.271-.198-.568-.347-.297-.148-1.762-.87-2.036-.968-.273-.099-.472-.148-.67.148-.198.297-.767.968-.94 1.166-.173.198-.347.223-.644.074-.297-.148-1.253-.462-2.387-1.472-.883-.788-1.48-1.762-1.653-2.06-.173-.297-.019-.457.13-.605.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.67-1.613-.918-2.208-.242-.583-.487-.504-.67-.513-.173-.008-.371-.01-.57-.01z"/></svg>
