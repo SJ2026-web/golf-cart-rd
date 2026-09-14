@@ -47,11 +47,14 @@ async function openConfigurator() {
 async function selectModel(letter) {
   await clickText(/Next/i); // step -1 -> step 0
   const modelMatcher = new RegExp(`Model ${letter}\\b`, 'i');
-  await clickText(modelMatcher); // seleziona il modello sulla card
+  await clickText(modelMatcher); // seleziona il modello: avanza automaticamente allo step 1 (Colore), nessun click su "Next" necessario
 }
 
-// Sequenza esatta delle etichette dei pulsanti "avanti" da step 0 a step 9.
-const FORWARD_LABELS = [/Next/i, /Next/i, /Next/i, /Next/i, /Next/i, /Next/i, /Continue/i, /Next/i];
+// Sequenza esatta delle etichette dei pulsanti "avanti" da step 1 a step 7.
+// L'indice 0 non è usato: lo step 0 (Modello) avanza automaticamente allo
+// step 1 subito dopo la selezione (vedi selectModel), quindi advanceFromStep
+// parte sempre da 1 in poi in questa suite.
+const FORWARD_LABELS = [null, /Next/i, /Next/i, /Next/i, /Next/i, /Next/i, /Continue/i];
 
 // Avanza dallo step "fromStep" (incluso) allo step "toStep" (escluso),
 // cliccando in sequenza i pulsanti corretti. FORWARD_LABELS è indicizzato
@@ -194,7 +197,7 @@ test('5. i prezzi base dei 4 modelli (A/B/C/D) sono mostrati correttamente', asy
 test('6. il supplemento posti (2+2) viene sommato correttamente al totale', async () => {
   await openConfigurator();
   await selectModel('A');
-  await advanceFromStep(0, 2); // step 0 -> step 1 (colore) -> step 2 (posti)
+  await advanceFromStep(1, 2); // step 1 (colore) -> step 2 (posti); lo step 0->1 è già avvenuto in selectModel
 
   await waitFor(() => {
     expect(screen.getByText(/2\+2 Seats/i)).toBeInTheDocument();
@@ -208,7 +211,7 @@ test('6. il supplemento posti (2+2) viene sommato correttamente al totale', asyn
 test('7. il supplemento pneumatici (Off-Road 14") viene sommato correttamente al totale', async () => {
   await openConfigurator();
   await selectModel('A');
-  await advanceFromStep(0, 4); // step 0 -> ... -> step 4 (sterzo/pneumatici/parabrezza)
+  await advanceFromStep(1, 4); // step 1 -> ... -> step 4 (sterzo/pneumatici/parabrezza)
 
   await clickText(/Other inches/i);
   // NB: dopo l'apertura del pannello sono presenti due elementi contenenti
@@ -228,7 +231,7 @@ test('7. il supplemento pneumatici (Off-Road 14") viene sommato correttamente al
 test('8. i supplementi di batteria e motore vengono sommati correttamente al totale', async () => {
   await openConfigurator();
   await selectModel('A');
-  await advanceFromStep(0, 5); // step 0 -> ... -> step 5 (batteria/motore)
+  await advanceFromStep(1, 5); // step 1 -> ... -> step 5 (batteria/motore)
 
   // Batteria: 60V 150A Litio (+661)
   await clickText(/Other battery options/i);
@@ -265,7 +268,7 @@ test('8. i supplementi di batteria e motore vengono sommati correttamente al tot
 test('9. il pannello solare è sempre incluso a $0 e non è disattivabile', async () => {
   await openConfigurator();
   await selectModel('A');
-  await advanceFromStep(0, 6); // step 0 -> ... -> step 6 (optional)
+  await advanceFromStep(1, 6); // step 1 -> ... -> step 6 (optional)
 
   // Il pannello solare è mostrato nel banner "Always Included", non come
   // opzione selezionabile/deselezionabile nella lista degli optional.
@@ -292,12 +295,12 @@ test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configu
 
   await openConfigurator();
   await selectModel('A');
-  await advanceFromStep(0, 2); // step 0 -> step 1 -> step 2 (posti)
+  await advanceFromStep(1, 2); // step 1 (colore) -> step 2 (posti)
   await waitFor(() => {
     expect(screen.getByText(/2\+2 Seats/i)).toBeInTheDocument();
   }, { timeout: 15000 });
   fireEvent.click(screen.getByText(/2\+2 Seats/i)); // totale atteso: 10060 + 216 = 10276
-  await advanceFromStep(2, 8); // step 2 -> ... -> step 8 (Riepilogo unificato)
+  await advanceFromStep(2, 7); // step 2 -> ... -> step 7 (Riepilogo unificato)
 
   await waitFor(() => {
     expect(screen.getByText(/Request a personalized quote/i)).toBeInTheDocument();
@@ -364,9 +367,8 @@ test('11. la navigazione base del configuratore rispetta le regole di step (Next
   fireEvent.click(nextBtn);
   expect(screen.getByText(/Model A/i)).toBeInTheDocument(); // ancora sullo step 0
 
-  // Selezioniamo il modello: ora Next funziona e ci porta allo step 1.
+  // Selezioniamo il modello: ora avanza automaticamente allo step 1, senza bisogno di cliccare "Next".
   fireEvent.click(screen.getByText(/Model A/i));
-  await clickText(/Next/i); // step 0 -> step 1
   // NB: "Model A" resta legittimamente visibile anche allo step 1, perché la
   // SummaryBar (presente sugli step 1-6) mostra sempre un riepilogo live con
   // "Model {cfg.model}". Usiamo quindi l'assenza di "Model B" come prova che
@@ -451,7 +453,7 @@ test('14. l\'invio del form finale chiama EmailJS (mockato) due volte, apre What
 
   await openConfigurator();
   await selectModel('A'); // nessun extra: totale atteso 10060
-  await advanceFromStep(0, 8); // step 0 -> ... -> step 8 (Riepilogo unificato)
+  await advanceFromStep(1, 7); // step 1 -> ... -> step 7 (Riepilogo unificato)
 
   await waitFor(() => {
     expect(screen.getByText(/Request a personalized quote/i)).toBeInTheDocument();

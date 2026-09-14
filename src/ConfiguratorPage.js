@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState, useRef } from "react";
 
-function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, MOTORS, SEAT_TYPES, TIRES, STEERING, WINDSHIELDS, OPTIONAL_ITEMS, ru, fr, pl, Img}) {
+function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, MOTORS, SEAT_TYPES, TIRES, STEERING, WINDSHIELDS, OPTIONAL_ITEMS, ru, fr, pl, Img, cartDisplayName}) {
   const t = (en,es,it) => lang==="ru"?ru(en):lang==="fr"?fr(en):lang==="pl"?pl(en):lang==="es"?es:lang==="it"?it:en;
   const [sent, setSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
@@ -20,6 +20,7 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
   const ti = TIRES.find(tire=>tire.id===cfg.tire);
   const sw = STEERING.find(s=>s.id===cfg.steering);
   const ws = WINDSHIELDS.find(w=>w.id===cfg.windshield);
+  const cartName = (cfg.cartName && cfg.cartName.trim()) ? cfg.cartName.trim() : "Golf Cart";
   const inp = {width:"100%",background:"#111",border:"1px solid #333",borderRadius:10,padding:"11px 14px",color:"#F5F0E8",fontSize:14,outline:"none",boxSizing:"border-box",fontFamily:"inherit"};
   const inpErr = {...inp, border:"1px solid #e05555"};
   const errText = {color:"#e05555",fontSize:11,marginTop:4};
@@ -59,8 +60,6 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
     if(Object.keys(errs).length > 0) return;
 
     const opts = cfg.optionals.map(id=>OPTIONAL_ITEMS.find(x=>x.id===id)).filter(Boolean);
-
-    const cartName = (cfg.cartName && cfg.cartName.trim()) ? cfg.cartName.trim() : "Golf Cart";
 
     const configLines = [
       "CONFIGURATION:",
@@ -199,13 +198,24 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
 
   return (
     <div>
+      <div style={{textAlign:"center",padding:"32px 0 40px",display:"flex",flexDirection:"column",alignItems:"center"}}>
+        <div style={{color:"#F5F0E8",fontWeight:800,fontSize:"clamp(1.4rem,4.2vw,2rem)",lineHeight:1.4}}>
+          {t("You've made every choice.","Has hecho cada elección.","Hai fatto ogni scelta.")}
+        </div>
+        <div style={{height:20}}/>
+        <div style={{color:"#F5F0E8",fontWeight:800,fontSize:"clamp(1.4rem,4.2vw,2rem)",lineHeight:1.4,marginBottom:28}}>
+          {t("Every detail carries your signature.","Cada detalle lleva tu firma.","Ogni dettaglio porta la tua firma.")}
+        </div>
+        <Img k={model?.imgKey} style={{maxHeight:200,maxWidth:"100%",objectFit:"contain"}}/>
+        <div style={{color:"#666",fontSize:11,marginTop:6,marginBottom:18}}>{t("Demo photo","Foto ilustrativa","Foto dimostrativa")}</div>
+        <div style={{color:"#C9A84C",fontWeight:900,fontSize:"clamp(1.5rem,5vw,2.1rem)",marginBottom:12}}>🚗 {cartName}</div>
+        <div style={{color:"#E2C07A",fontWeight:800,fontSize:26,letterSpacing:2,textTransform:"uppercase"}}>{t("Your Creation","Tu Creación","La Tua Creazione")}</div>
+      </div>
+
       <h1 style={{fontSize:"clamp(1.6rem,4.5vw,2.2rem)",fontWeight:800,color:"#F5F0E8",marginBottom:4}}>{t("Summary","Resumen","Riepilogo")}</h1>
       <div style={{color:"#888",fontSize:12,marginBottom:20}}>{t("Review your configuration and request your personalized quote","Revisa tu configuración y solicita tu presupuesto personalizado","Controlla la configurazione e richiedi il tuo preventivo personalizzato")}</div>
 
       <div style={{background:"#161616",border:"1px solid #222",borderRadius:18,padding:20,marginBottom:20}}>
-        <div style={{display:"flex",justifyContent:"center",marginBottom:14}}>
-          <Img k={model?.imgKey} style={{maxHeight:180,maxWidth:"100%",objectFit:"contain"}}/>
-        </div>
         <div style={{textAlign:"center"}}>
           <div style={{color:"#C9A84C",fontWeight:800,fontSize:20}}>{t("Model","Modelo","Modello")} {cfg.model}</div>
           <div style={{color:"#888",marginTop:4,fontSize:13,display:"flex",alignItems:"center",justifyContent:"center",gap:6,flexWrap:"wrap"}}>
@@ -290,7 +300,7 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
       <div style={{display:"flex",justifyContent:"space-between"}}>
         <button style={out} onClick={()=>onSubmit("back")}>← {t("Back","Atrás","Indietro")}</button>
         <button style={{...gold, opacity:isSending?0.6:1, cursor:isSending?"not-allowed":"pointer"}} onClick={handleSend} disabled={isSending}>
-          {isSending ? "…" : "📩"} {isSending ? t("Sending...","Enviando...","Invio...") : t("Request a personalized quote","Solicita tu presupuesto personalizado","Richiedi un preventivo personalizzato")}
+          {isSending ? "…" : <svg viewBox="0 0 32 32" width="16" height="16" style={{verticalAlign:"middle",marginRight:2}} fill="#000"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.625.86 5.055 2.312 7.031L4 29l7.157-2.281A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.96 9.96 0 0 1-5.086-1.398l-.365-.217-3.789 1.207 1.229-3.693-.239-.38A9.96 9.96 0 0 1 6 15c0-5.523 4.478-10 10.001-10zm-3.61 5.06c-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.075.148.198 2.057 3.278 5.076 4.462 2.516.988 3.028.792 3.575.743.546-.05 1.762-.72 2.01-1.414.247-.694.247-1.29.173-1.414-.074-.124-.271-.198-.568-.347-.297-.148-1.762-.87-2.036-.968-.273-.099-.472-.148-.67.148-.198.297-.767.968-.94 1.166-.173.198-.347.223-.644.074-.297-.148-1.253-.462-2.387-1.472-.883-.788-1.48-1.762-1.653-2.06-.173-.297-.019-.457.13-.605.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.67-1.613-.918-2.208-.242-.583-.487-.504-.67-.513-.173-.008-.371-.01-.57-.01z"/></svg>} {isSending ? t("Sending...","Enviando...","Invio...") : t("Request a personalized quote","Solicita tu presupuesto personalizado","Richiedi un preventivo personalizzato")}
         </button>
       </div>
     </div>
@@ -402,7 +412,7 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
       )}</h1>
       <div style={S.grid2}>
         {MODELS.map(m=>(
-          <div key={m.id} style={S.card(cfg.model===m.id)} onClick={()=>{upd("model",m.id);upd("motor",defaultMotorFor(m.id,"2"));upd("battery",defaultBatteryFor("2"));upd("seats","2");upd("bodyColor",{code:"RAL 9010",hex:"#FFFFFF",it:"Bianco puro",es:"Blanco puro",en:"Pure white"});upd("seatType",m.id==="A"?"standard":"sport");upd("steering",m.id==="A"?"standard":"sport");upd("tire","offroad-12");}}>
+          <div key={m.id} style={S.card(cfg.model===m.id)} onClick={()=>{upd("model",m.id);upd("motor",defaultMotorFor(m.id,"2"));upd("battery",defaultBatteryFor("2"));upd("seats","2");upd("bodyColor",{code:"RAL 9010",hex:"#FFFFFF",it:"Bianco puro",es:"Blanco puro",en:"Pure white"});upd("seatType",m.id==="A"?"standard":"sport");upd("steering",m.id==="A"?"standard":"sport");upd("tire","offroad-12");setStep(1);window.scrollTo({top:0,behavior:"smooth"});}}>
             <div style={{display:"flex",justifyContent:"space-between",marginBottom:10}}>
               <span style={{background:"#C9A84C22",color:C.gold,padding:"3px 10px",borderRadius:20,fontSize:11,fontWeight:700}}>{m.tag}</span>
               <span style={{color:C.goldLight,fontWeight:800,fontSize:14}}>{t("from","desde","da")} ${m.price.toLocaleString('en-US')} USD</span>
@@ -1139,38 +1149,12 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
   }
 
   // Step 7 — Summary
+  // Step 7 — Summary & Request Quote (riepilogo unificato con richiesta preventivo, include l'apertura celebrativa)
   if(step===7) {
-    return (
-      <div>
-        <div style={{textAlign:"center",padding:"40px 0",minHeight:"50vh",display:"flex",flexDirection:"column",justifyContent:"center"}}>
-          <div style={{color:C.white,fontWeight:800,fontSize:"clamp(1.6rem,5vw,2.4rem)",lineHeight:1.4}}>
-            {t("You've made every choice.","Has hecho cada elección.","Hai fatto ogni scelta.")}
-          </div>
-          <div style={{height:28}}/>
-          <div style={{color:C.white,fontWeight:800,fontSize:"clamp(1.6rem,5vw,2.4rem)",lineHeight:1.4,marginBottom:36}}>
-            {t("Every detail carries your signature.","Cada detalle lleva tu firma.","Ogni dettaglio porta la tua firma.")}
-          </div>
-          <div style={{display:"flex",justifyContent:"center",marginBottom:20}}>
-            <Img k={model?.imgKey} style={{maxHeight:220,maxWidth:"100%",objectFit:"contain"}}/>
-          </div>
-          <div style={{color:C.gold,fontWeight:900,fontSize:"clamp(1.8rem,6vw,2.6rem)",marginBottom:16}}>🚗 {cartDisplayName}</div>
-          <div style={{color:C.goldLight,fontWeight:800,fontSize:33,letterSpacing:2,textTransform:"uppercase"}}>{t("Your Creation","Tu Creación","La Tua Creazione")}</div>
-        </div>
-        <div style={{display:"flex",justifyContent:"space-between"}}>
-          <button style={S.outBtn} onClick={()=>{setStep(6);window.scrollTo({top:0,behavior:"smooth"});}}>← {t("Edit","Editar","Modifica")}</button>
-          <button style={S.goldBtn} onClick={()=>{setStep(8);window.scrollTo({top:0,behavior:"smooth"});}}>{t("Next","Siguiente","Avanti")} →</button>
-        </div>
-      </div>
-    );
-  }
-
-  // Step 8 — Technical Summary
-  // Step 8 — Summary & Request Quote (riepilogo unificato con richiesta preventivo)
-  if(step===8) {
     return (
       <CustomerForm
         onSubmit={(action)=>{
-          if(action==="back") setStep(7);
+          if(action==="back") setStep(6);
           else { setPage("home"); setStep(0); setShowOptionals(false); }
         }}
         totalPrice={totalPrice()}
@@ -1188,6 +1172,7 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
         fr={fr}
         pl={pl}
         Img={Img}
+        cartDisplayName={cartDisplayName}
       />
     );
   }

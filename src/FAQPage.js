@@ -80,9 +80,9 @@ function FAQPage({ t, S, C, setPage }) {
     {
       q: {en:"Can I request maintenance for my golf cart?", es:"¿Puedo solicitar mantenimiento para mi golf cart?", it:"Posso richiedere manutenzione per il mio golf cart?"},
       a: {
-        en:"Yes, you can request maintenance through the website under the 'Service' section. We also offer repair services for golf carts not purchased from us, subject to prior assessment.",
-        es:"Sí, puede solicitar mantenimiento a través del sitio web en la sección 'Servicio'. También ofrecemos servicios de reparación para golf carts no adquiridos con nosotros, previa evaluación.",
-        it:"Sì, puoi richiedere manutenzione tramite il sito nella sezione 'Assistenza'. Offriamo anche riparazioni per golf cart non acquistati da noi, previa valutazione."
+        en:"Yes, you can choose one of our maintenance plans in the 'Maintenance' section. We also accept golf carts not purchased from us, subject to a free technical assessment.",
+        es:"Sí, puedes elegir uno de nuestros planes de mantenimiento en la sección 'Mantenimiento'. También aceptamos golf carts no adquiridos con nosotros, previa una evaluación técnica gratuita.",
+        it:"Sì, puoi scegliere uno dei nostri piani di manutenzione nella sezione 'Manutenzione'. Accettiamo anche golf cart non acquistati da noi, previa una valutazione tecnica gratuita."
       }
     },
     {
