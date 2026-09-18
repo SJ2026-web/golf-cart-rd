@@ -3756,7 +3756,7 @@ export default function App() {
         </div>
 
         <div style={{marginTop:8,textAlign:"center"}}>
-          <button style={S.outBtn} onClick={()=>setPage("chooseMode")}>← {t("Back","Atrás","Indietro")}</button>
+          <button style={S.outBtn} onClick={()=>setPage("home")}>← {t("Back","Atrás","Indietro")}</button>
         </div>
       </div>
     );
