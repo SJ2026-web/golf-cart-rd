@@ -16,7 +16,7 @@ const GuidedAssistantPage = lazy(() => import("./GuidedAssistantPage"));
 const ConfiguratorPage = lazy(() => import("./ConfiguratorPage"));
 
 
-const IMGS = {"modA": "/images/foto-modello-a1.jpg", "modB": "/images/foto-modello-b1.jpg", "homeImg": "/images/foto-home-page.jpg", "modC": "/images/foto-modello-c1.jpg", "modD": "/images/foto-modello-d1.jpg", "mod2p": "/images/foto-2-posti.jpg", "mod2p2": "/images/foto-2-2-posti.jpg", "mod4p2": "/images/foto-4-2-posti.jpg", "solar": "/images/Pannello%20Fotovoltaico.jpg", "opt_rain": "/images/Copertura%20Anti-Pioggia.jpg", "opt_cover": "/images/Cover%20di%20Protezione.jpg", "opt_sun": "/images/Tende%20Parasole.jpg", "opt_mirror": "/images/Specchietti%20con%20LED.jpg", "opt_spots": "/images/Faretti%20LED%20sul%20Tetto.jpg", "opt_led": "/images/Strisicia%20LED%20Sottotetto.jpg", "opt_emerg": "/images/Kit%20Luci%20Emergenza.jpg", "opt_disp": "/images/Display%20Touch%20Screen.jpg", "opt_stereo": "/images/Stereo%20Bluetooth.jpg", "opt_table": "/images/Tavolino%20Posteriore.jpg", "opt_frtlt": "/images/Faro%20LED%20Frontale.jpg", "opt_rearlt": "/images/Luci%20Targa%20%2B%20Stop%20LED.jpg", "opt_rseat": "/images/Sedile%20con%20Cintura.jpg", "opt_rplat": "/images/Pianale%20Ribaltabile.jpg", "opt_storecov": "/images/Vano%20Bagagli.jpg", "opt_ball": "/images/Porta%20Palline%20Golf.jpg", "opt_fbask": "/images/Cestello%20Frontale.jpg", "opt_trunk": "/images/Baule%20Posteriore.jpg", "opt_wiper": "/images/Tergicristallo.jpg", "opt_steps": "/images/Pedana%20in%20Alluminio.jpg", "opt_tow": "/images/Gancio%20Traino.jpg", "opt_water": "/images/Porta%20Bottiglie.jpg", "opt_pedals": "/images/Pedane%20Posteriori.jpg", "opt_cargo": "/images/Cassone%20da%20lavoro.jpg", "opt_ropen": "/images/Pianale%20con%20Corrimano.jpg", "opt_bull": "/images/Bull%20Bar%20Frontale.jpg", "opt_speak": "/images/Speaker%20Marino%20LED.jpg", "opt_cdash": "/images/Pannello%20Carbon%20Fiber.jpg", "opt_vdisp": "/images/Display%20Touch%20Verticale.jpg", "seat_std": "/images/Sedile%20Standard.jpg", "seat_sport": "/images/Sedile%20Sport.jpg", "seat_prem": "/images/Sedile%20Premium%20Imbottito.jpg", "seat_head": "/images/Premium%20con%20Poggiatesta.jpg", "tire_g10": "/images/PneumaticiDaErba10pollici.jpeg", "tire_g12": "/images/Da%20Erba%2012%27%27.jpg", "tire_g14": "/images/Da%20Erba%2014%27%27.jpg", "tire_or12": "/images/Off-Road%2012%27%27.jpg", "tire_or14": "/images/Off-Road%2014%27%27.jpg", "steer_std": "/images/Volante%20Standard.jpg", "steer_sp": "/images/Volante%20Sportivo.jpg", "steer_cf": "/images/Volante%20Carbon%20Fiber.jpg", "wind_std": "/images/Parabrezza%20Standard.jpg", "wind_ft": "/images/Pieghevole%20Trasparente.jpg", "wind_fb": "/images/Pieghevole%20Marrone.jpg", "wind_tmp": "/images/Parabrezza%20Temprato.jpg", "seat4p": "/images/foto-4-posti.jpg", };
+const IMGS = {"modA": "/images/foto-modello-a1.jpg", "modB": "/images/foto-modello-b1.jpg", "homeImg": "/images/foto-home-page.jpg", "modC": "/images/foto-modello-c1.jpg", "modD": "/images/foto-modello-d1.jpg", "mod2p": "/images/foto-2-posti.jpg", "mod2p2": "/images/foto-2-2-posti.jpg", "mod4p2": "/images/foto-4-2-posti.jpg", "solar": "/images/Pannello%20Fotovoltaico.jpg", "opt_rain": "/images/Copertura%20Anti-Pioggia.jpg", "opt_cover": "/images/Cover%20di%20Protezione.jpg", "opt_sun": "/images/Tende%20Parasole.jpg", "opt_mirror": "/images/Specchietti%20con%20LED.jpg", "opt_spots": "/images/Faretti%20LED%20sul%20Tetto.jpg", "opt_led": "/images/Strisicia%20LED%20Sottotetto.jpg", "opt_emerg": "/images/Kit%20Luci%20Emergenza.jpg", "opt_disp": "/images/Display%20Touch%20Screen.jpg", "opt_stereo": "/images/Stereo%20Bluetooth.jpg", "opt_table": "/images/Tavolino%20Posteriore.jpg", "opt_frtlt": "/images/Faro%20LED%20Frontale.jpg", "opt_rearlt": "/images/Luci%20Targa%20%2B%20Stop%20LED.jpg", "opt_rseat": "/images/Sedile%20con%20Cintura.jpg", "opt_rplat": "/images/Pianale%20Ribaltabile.jpg", "opt_storecov": "/images/Vano%20Bagagli.jpg", "opt_ball": "/images/Porta%20Palline%20Golf.jpg", "opt_fbask": "/images/Cestello%20Frontale.jpg", "opt_trunk": "/images/Baule%20Posteriore.jpg", "opt_wiper": "/images/Tergicristallo.jpg", "opt_steps": "/images/Pedana%20in%20Alluminio.jpg", "opt_tow": "/images/Gancio%20Traino.jpg", "opt_water": "/images/Porta%20Bottiglie.jpg", "opt_pedals": "/images/Pedane%20Posteriori.jpg", "opt_cargo": "/images/Cassone%20da%20lavoro.jpg", "opt_ropen": "/images/Pianale%20con%20Corrimano.jpg", "opt_bull": "/images/Bull%20Bar%20Frontale.jpg", "opt_speak": "/images/Speaker%20Marino%20LED.jpg", "opt_cdash": "/images/Pannello%20Carbon%20Fiber.jpg", "opt_vdisp": "/images/Display%20Touch%20Verticale.jpg", "seat_std": "/images/Sedile%20Standard.jpg", "seat_sport": "/images/Sedile%20Sport.jpg", "seat_prem": "/images/Sedile%20Premium%20Imbottito.jpg", "seat_head": "/images/Premium%20con%20Poggiatesta.jpg", "tire_g10": "/images/PneumaticiDaErba10pollici.jpeg", "tire_g12": "/images/Da%20Erba%2012%27%27.jpg", "tire_g14": "/images/Da%20Erba%2014%27%27.jpg", "tire_or12": "/images/Off-Road%2012%27%27.jpg", "tire_or14": "/images/Off-Road%2014%27%27.jpg", "steer_std": "/images/Volante%20Standard.jpg", "steer_sp": "/images/Volante%20Sportivo.jpg", "steer_cf": "/images/Volante%20Carbon%20Fiber.jpg", "wind_std": "/images/Parabrezza%20Standard.jpg", "wind_ft": "/images/Pieghevole%20Trasparente.jpg", "wind_fb": "/images/Pieghevole%20Marrone.jpg", "wind_tmp": "/images/Parabrezza%20Temprato.jpg", "seat4p": "/images/foto-4-posti.jpg", "readyVYC1a": "/images/golf%20cart%20rosso/golf%20cart%20rosso%201a.jpg", "readyVYC1": "/images/golf%20cart%20rosso/golf%20cart%20rosso1.jpg", };
 
 const C = {
   bg:"#0a0a0a",surface:"#111111",card:"#161616",border:"#222222",
@@ -3652,23 +3652,135 @@ export default function App() {
   }
 
   function ReadyModels() {
+    const readyPrice = 10900;
+    const handleConfigureOwn = () => {
+      upd("model", null);
+      setPrevPage(page);
+      setPage("configurator");
+      setStep(-1);
+    };
     return (
       <div style={S.sec}>
         <div style={{color:C.gold,fontSize:10,letterSpacing:4,fontWeight:700,marginBottom:14,textTransform:"uppercase"}}>{t("Pre-configured models","Modelos preconfigurados","Modelli già configurati")}</div>
         <h2 style={S.title}>{t("Ready to Buy","Listos para comprar","Pronti all'acquisto")}</h2>
         <div style={S.goldLine}/>
 
-        <div style={{background:C.card,border:"1px solid #222",borderRadius:18,padding:40,textAlign:"center"}}>
-          <div style={{fontSize:44,marginBottom:14}}>🏌️</div>
-          <div style={{color:C.white,fontWeight:700,fontSize:16,marginBottom:12}}>{t("Coming soon","Próximamente","Prossimamente")}</div>
-          <div style={{color:C.muted,fontSize:13,lineHeight:1.7,maxWidth:480,margin:"0 auto"}}>
-            {t("We're preparing a selection of ready-to-buy golf carts. Check back soon, or configure your own right now.",
-               "Estamos preparando una selección de golf carts listos para comprar. Vuelve pronto, o configura el tuyo ahora.",
-               "Stiamo preparando una selezione di golf cart pronti all'acquisto. Torna presto, o configura il tuo adesso.")}
+        <div style={{background:C.card,border:"1px solid #222",borderRadius:18,padding:"28px 24px",marginBottom:24}}>
+          <div style={{display:"flex",gap:12,flexWrap:"wrap",justifyContent:"center",marginBottom:22}}>
+            <div style={{flex:"1 1 220px",maxWidth:280,borderRadius:14,overflow:"hidden",background:C.surface}}>
+              <Img k="readyVYC1a" eager={true} style={{width:"100%",height:200,objectFit:"cover"}}/>
+            </div>
+            <div style={{flex:"1 1 220px",maxWidth:280,borderRadius:14,overflow:"hidden",background:C.surface}}>
+              <Img k="readyVYC1" style={{width:"100%",height:200,objectFit:"cover"}}/>
+            </div>
+          </div>
+
+          <div style={{textAlign:"center",marginBottom:10}}>
+            <span style={{background:"#C9A84C22",color:C.gold,padding:"4px 12px",borderRadius:20,fontSize:11,fontWeight:700,textTransform:"uppercase",letterSpacing:1}}>
+              {t6("Special price","Precio especial","Prezzo speciale","Prix spécial","Cena specjalna","Специальная цена")}
+            </span>
+          </div>
+
+          <h3 style={{color:C.white,fontWeight:800,fontSize:"clamp(1.2rem,3.4vw,1.6rem)",textAlign:"center",marginBottom:6}}>
+            {t6("VY-C2+2 Electric Golf Cart – 4 Seats","Golf Cart Eléctrico VY-C2+2 – 4 Plazas","Golf Cart Elettrico VY-C2+2 – 4 Posti","Voiturette de Golf Électrique VY-C2+2 – 4 Places","Elektryczny Wózek Golfowy VY-C2+2 – 4 Miejsca","Электрический Гольф-кар VY-C2+2 – 4 Места")}
+          </h3>
+
+          <div style={{color:C.goldLight,fontWeight:800,fontSize:24,textAlign:"center",marginBottom:20}}>
+            ${readyPrice.toLocaleString('en-US')} USD
+          </div>
+
+          <p style={{color:C.muted,fontSize:14,lineHeight:1.8,marginBottom:14,maxWidth:640,marginLeft:"auto",marginRight:"auto",textAlign:"center"}}>
+            {t6(
+              "A 4-seat electric golf cart with a modern, sporty and robust design, ideal for private use, villas, residential complexes, resorts, hotels and tourist areas.",
+              "Golf cart eléctrico de 4 plazas, con un diseño moderno, deportivo y robusto, ideal para uso privado, villas, residenciales, resorts, hoteles y zonas turísticas.",
+              "Golf cart elettrico da 4 posti, con un design moderno, sportivo e robusto, ideale per uso privato, ville, residence, resort, hotel e zone turistiche.",
+              "Voiturette de golf électrique 4 places, au design moderne, sportif et robuste, idéale pour un usage privé, villas, résidences, resorts, hôtels et zones touristiques.",
+              "Elektryczny wózek golfowy na 4 miejsca, o nowoczesnym, sportowym i solidnym designie, idealny do użytku prywatnego, willi, osiedli, resortów, hoteli i stref turystycznych.",
+              "Электрический гольф-кар на 4 места с современным, спортивным и надёжным дизайном, идеально подходящий для частного использования, вилл, жилых комплексов, курортов, отелей и туристических зон."
+            )}
+          </p>
+
+          <p style={{color:C.muted,fontSize:14,lineHeight:1.8,marginBottom:14,maxWidth:640,marginLeft:"auto",marginRight:"auto",textAlign:"center"}}>
+            {t6(
+              "It is equipped with a 48V 150Ah lithium battery and a 4 kW electric motor, offering a combination of efficiency, range and low maintenance.",
+              "Está equipado con una batería de litio de 48V 150Ah y un motor eléctrico de 4 kW, ofreciendo una combinación de eficiencia, autonomía y bajo mantenimiento.",
+              "È dotato di una batteria al litio da 48V 150Ah e di un motore elettrico da 4 kW, offrendo un mix di efficienza, autonomia e bassa manutenzione.",
+              "Elle est équipée d'une batterie au lithium 48V 150Ah et d'un moteur électrique de 4 kW, offrant un équilibre entre efficacité, autonomie et faible entretien.",
+              "Wyposażony jest w baterię litową 48V 150Ah oraz silnik elektryczny 4 kW, oferując połączenie wydajności, zasięgu i niskich kosztów konserwacji.",
+              "Он оснащён литиевой батареей 48В 150Ач и электродвигателем мощностью 4 кВт, что обеспечивает сочетание эффективности, запаса хода и низких затрат на обслуживание."
+            )}
+          </p>
+
+          <p style={{color:C.muted,fontSize:14,lineHeight:1.8,marginBottom:14,maxWidth:640,marginLeft:"auto",marginRight:"auto",textAlign:"center"}}>
+            {t6(
+              "It features 14\" off-road tires, a windshield, a roof, padded seats and a 4-seat (2+2) configuration, providing comfort and versatility for different types of trips.",
+              "Cuenta con neumáticos off-road de 14\" pulgadas, parabrisas, techo, asientos acolchados y una configuración de 4 plazas (2+2), proporcionando comodidad y versatilidad para diferentes tipos de desplazamientos.",
+              "Dispone di pneumatici off-road da 14\" pollici, parabrezza, tetto, sedili imbottiti e una configurazione a 4 posti (2+2), garantendo comfort e versatilità per diversi tipi di spostamento.",
+              "Elle dispose de pneus tout-terrain de 14 pouces, d'un pare-brise, d'un toit, de sièges rembourrés et d'une configuration 4 places (2+2), offrant confort et polyvalence pour différents types de déplacements.",
+              "Posiada opony terenowe 14 cali, przednią szybę, dach, tapicerowane siedzenia oraz konfigurację na 4 miejsca (2+2), zapewniając komfort i wszechstronność w różnych rodzajach przejazdów.",
+              "Оснащён внедорожными шинами 14 дюймов, лобовым стеклом, крышей, мягкими сиденьями и конфигурацией на 4 места (2+2), обеспечивая комфорт и универсальность для разных видов поездок."
+            )}
+          </p>
+
+          <p style={{color:C.muted,fontSize:14,lineHeight:1.8,marginBottom:14,maxWidth:640,marginLeft:"auto",marginRight:"auto",textAlign:"center"}}>
+            {t6(
+              "The unit also includes an additional reinforced front bumper for extra protection at the front, and a Car Cover to protect the vehicle from sun, dust and weather when not in use.",
+              "La unidad incluye además un parachoques delantero reforzado adicional, que aporta mayor protección a la parte frontal, y una Car Cover para proteger el vehículo del sol, polvo y agentes atmosféricos cuando no está en uso.",
+              "L'unità include inoltre un paraurti anteriore rinforzato aggiuntivo, che offre una maggiore protezione alla parte frontale, e una Car Cover per proteggere il veicolo da sole, polvere e agenti atmosferici quando non è in uso.",
+              "L'unité comprend également un pare-chocs avant renforcé supplémentaire, offrant une meilleure protection à l'avant, ainsi qu'une housse de protection (Car Cover) pour protéger le véhicule du soleil, de la poussière et des intempéries lorsqu'il n'est pas utilisé.",
+              "Pojazd zawiera także dodatkowy wzmocniony przedni zderzak, zapewniający większą ochronę przodu, oraz pokrowiec (Car Cover) chroniący pojazd przed słońcem, kurzem i warunkami atmosferycznymi, gdy nie jest używany.",
+              "Модель также включает дополнительный усиленный передний бампер для повышенной защиты передней части, а также чехол (Car Cover) для защиты автомобиля от солнца, пыли и погодных воздействий, когда он не используется."
+            )}
+          </p>
+
+          <p style={{color:C.muted,fontSize:14,lineHeight:1.8,marginBottom:22,maxWidth:640,marginLeft:"auto",marginRight:"auto",textAlign:"center"}}>
+            {t6(
+              "It also incorporates a 500 W solar panel, which helps recharge the battery during the day and reduces power consumption from the grid.",
+              "También incorpora un panel solar de 500 W, que contribuye a la recarga de la batería durante el día y ayuda a reducir el consumo de energía de la red.",
+              "Integra inoltre un pannello solare da 500 W, che contribuisce alla ricarica della batteria durante il giorno e aiuta a ridurre il consumo di energia dalla rete.",
+              "Elle intègre également un panneau solaire de 500 W, qui contribue à la recharge de la batterie pendant la journée et aide à réduire la consommation d'énergie du réseau.",
+              "Zawiera również panel słoneczny 500 W, który wspomaga ładowanie baterii w ciągu dnia i pomaga zmniejszyć zużycie energii z sieci.",
+              "Также имеется солнечная панель мощностью 500 Вт, которая помогает подзаряжать батарею в течение дня и снижает потребление энергии из сети."
+            )}
+          </p>
+
+          <div style={{background:C.surface,borderRadius:14,padding:18,marginBottom:4}}>
+            <div style={{color:C.gold,fontSize:10,letterSpacing:1.5,fontWeight:700,textTransform:"uppercase",marginBottom:10,textAlign:"center"}}>
+              {t6("Main features","Características principales","Caratteristiche principali","Caractéristiques principales","Główne cechy","Основные характеристики")}
+            </div>
+            <div style={{color:C.muted,fontSize:13,lineHeight:2}}>
+              🪑 {t6("4 seats","4 plazas","4 posti","4 places","4 miejsca","4 места")}<br/>
+              🔋 {t6("48V 150Ah lithium battery","Batería de litio 48V 150Ah","Batteria al litio 48V 150Ah","Batterie lithium 48V 150Ah","Bateria litowa 48V 150Ah","Литиевая батарея 48В 150Ач")}<br/>
+              ⚡ {t6("4 kW electric motor","Motor eléctrico de 4 kW","Motore elettrico da 4 kW","Moteur électrique de 4 kW","Silnik elektryczny 4 kW","Электродвигатель 4 кВт")}<br/>
+              🏔️ {t6("14\" off-road tires","Neumáticos off-road de 14\"","Pneumatici off-road da 14\"","Pneus tout-terrain de 14 pouces","Opony terenowe 14 cali","Внедорожные шины 14\"")}<br/>
+              ☀️ {t6("500W solar panel","Panel solar de 500 W","Pannello solare da 500 W","Panneau solaire de 500 W","Panel słoneczny 500 W","Солнечная панель 500 Вт")}<br/>
+              🛡️ {t6("Additional reinforced front bumper & Car Cover included","Parachoques delantero reforzado adicional y Car Cover incluida","Paraurti anteriore rinforzato aggiuntivo e Car Cover inclusa","Pare-chocs avant renforcé supplémentaire et housse de protection incluse","Dodatkowy wzmocniony przedni zderzak i pokrowiec w zestawie","Дополнительный усиленный передний бампер и чехол в комплекте")}
+            </div>
           </div>
         </div>
 
-        <div style={{marginTop:24,textAlign:"center"}}>
+        <div style={{display:"flex",gap:12,flexWrap:"wrap",marginBottom:12}}>
+          <a href={"https://wa.me/18494100261?text="+encodeURIComponent(t6(
+              "Hello, I'm interested in this golf cart model.",
+              "Hola, estoy interesado en este modelo de golf cart.",
+              "Salve, sono interessato a questo modello di golf cart.",
+              "Bonjour, je suis intéressé par ce modèle de golf cart.",
+              "Dzień dobry, jestem zainteresowany/a tym modelem wózka golfowego.",
+              "Здравствуйте, меня интересует эта модель гольф-кара."
+            ))} target="_blank" rel="noopener noreferrer"
+            style={{flex:1,minWidth:220,background:"linear-gradient(135deg,#C9A84C,#E2C07A)",color:"#000",border:"none",borderRadius:14,padding:"16px 20px",fontSize:15,fontWeight:800,cursor:"pointer",textDecoration:"none",display:"flex",alignItems:"center",justifyContent:"center",gap:8}}>
+            <svg viewBox="0 0 32 32" width="18" height="18" fill="#000"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.625.86 5.055 2.312 7.031L4 29l7.157-2.281A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.96 9.96 0 0 1-5.086-1.398l-.365-.217-3.789 1.207 1.229-3.693-.239-.38A9.96 9.96 0 0 1 6 15c0-5.523 4.478-10 10.001-10zm-3.61 5.06c-.198 0-.52.074-.792.372-.271.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.075.148.198 2.057 3.278 5.076 4.462 2.516.988 3.028.792 3.575.743.546-.05 1.762-.72 2.01-1.414.247-.694.247-1.29.173-1.414-.074-.124-.271-.198-.568-.347-.297-.148-1.762-.87-2.036-.968-.273-.099-.472-.148-.67.148-.198.297-.767.968-.94 1.166-.173.198-.347.223-.644.074-.297-.148-1.253-.462-2.387-1.472-.883-.788-1.48-1.762-1.653-2.06-.173-.297-.019-.457.13-.605.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.67-1.613-.918-2.208-.242-.583-.487-.504-.67-.513-.173-.008-.371-.01-.57-.01z"/></svg>
+            {t6("Contact us for a personalized quote","Contáctanos para un presupuesto personalizado","Contattaci per un preventivo personalizzato","Contactez-nous pour un devis personnalisé","Skontaktuj się z nami po indywidualną wycenę","Свяжитесь с нами для индивидуального расчёта стоимости")}
+          </a>
+        </div>
+
+        <div style={{display:"flex",gap:12,flexWrap:"wrap",marginBottom:12}}>
+          <button onClick={handleConfigureOwn} style={{...S.outBtn,flex:1,minWidth:220,textAlign:"center"}}>
+            🚗 {t6("Configure your own personal model","Configura tu propio modelo personal","Configura il tuo modello personale","Configurez votre propre modèle personnel","Skonfiguruj swój własny model","Настройте свою личную модель")}
+          </button>
+        </div>
+
+        <div style={{marginTop:8,textAlign:"center"}}>
           <button style={S.outBtn} onClick={()=>setPage("chooseMode")}>← {t("Back","Atrás","Indietro")}</button>
         </div>
       </div>
