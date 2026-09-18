@@ -2031,13 +2031,18 @@ function ServiceConfirm({serviceNote, goBack, goHome, lang="en"}) {
 
 // ── CUSTOMER FORM COMPONENT (inline) ──
 export default function App() {
-  const VALID_PAGES = ["home","about","configurator","service","maintenance","contact","faq","privacy","model-a","model-b","model-c","model-d","choose-your-golf-cart","golf-carts-dominican-republic","golf-carts-bayahibe","guias","como-elegir-carrito-de-golf-republica-dominicana","bateria-litio-vs-plomo-carrito-de-golf","48v-vs-72v-carrito-de-golf","carrito-de-golf-2-4-o-6-plazas","que-revisar-antes-de-comprar-carrito-de-golf","mantenimiento-carrito-de-golf-cerca-del-mar"];
+  const VALID_PAGES = ["home","about","configurator","service","maintenance","contact","faq","privacy","model-a","model-b","model-c","model-d","choose-your-golf-cart","golf-carts-dominican-republic","golf-carts-bayahibe","guias","como-elegir-carrito-de-golf-republica-dominicana","bateria-litio-vs-plomo-carrito-de-golf","48v-vs-72v-carrito-de-golf","carrito-de-golf-2-4-o-6-plazas","que-revisar-antes-de-comprar-carrito-de-golf","mantenimiento-carrito-de-golf-cerca-del-mar","chooseMode","readyModels"];
   const pathToPage = (pathname) => {
     const clean = pathname.replace(/^\/+|\/+$/g, "");
     if (!clean) return "home";
+    if (clean === "modelli-configurati") return "readyModels";
     return VALID_PAGES.includes(clean) ? clean : "home";
   };
-  const pageToPath = (p) => p === "home" ? "/" : "/" + p;
+  const pageToPath = (p) => {
+    if (p === "home") return "/";
+    if (p === "readyModels") return "/modelli-configurati";
+    return "/" + p;
+  };
 
   // Helper riutilizzabile per link interni realmente crawlable (<a href> vero + navigazione SPA)
   // Mantiene: href reale (crawling, copia link, apertura in nuova scheda), click normale = navigazione SPA senza reload,
