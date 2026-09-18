@@ -3668,10 +3668,10 @@ export default function App() {
         <div style={{background:C.card,border:"1px solid #222",borderRadius:18,padding:"28px 24px",marginBottom:24}}>
           <div style={{display:"flex",gap:12,flexWrap:"wrap",justifyContent:"center",marginBottom:22}}>
             <div style={{flex:"1 1 220px",maxWidth:280,borderRadius:14,overflow:"hidden",background:C.surface}}>
-              <Img k="readyVYC1a" eager={true} style={{width:"100%",height:200,objectFit:"cover"}}/>
+              <img src={IMGS.readyVYC1a} alt="" loading="eager" decoding="async" style={{width:"100%",height:200,objectFit:"cover",display:"block"}}/>
             </div>
             <div style={{flex:"1 1 220px",maxWidth:280,borderRadius:14,overflow:"hidden",background:C.surface}}>
-              <Img k="readyVYC1" style={{width:"100%",height:200,objectFit:"cover"}}/>
+              <img src={IMGS.readyVYC1} alt="" loading="lazy" decoding="async" style={{width:"100%",height:200,objectFit:"cover",display:"block"}}/>
             </div>
           </div>
 
