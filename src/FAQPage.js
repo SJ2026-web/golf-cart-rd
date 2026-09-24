@@ -24,9 +24,9 @@ function FAQPage({ t, S, C, setPage }) {
     {
       q: {en:"Do you deliver across the Dominican Republic?", es:"¿Entregan en toda la República Dominicana?", it:"Consegnate in tutta la Repubblica Dominicana?"},
       a: {
-        en:"Yes, we deliver across the entire Dominican Republic. However, we reserve the right to adjust the price for deliveries to particularly difficult or remote locations.",
-        es:"Sí, entregamos en toda la República Dominicana. Sin embargo, nos reservamos el derecho de ajustar el precio para entregas en lugares especialmente difíciles o remotos.",
-        it:"Sì, consegniamo in tutta la Repubblica Dominicana. Ci riserviamo tuttavia il diritto di adeguare il prezzo in caso di consegne in luoghi particolarmente difficili o remoti."
+        en:"Yes, we deliver across the entire Dominican Republic. Standard delivery included in the price covers the Bayahibe and Dominicus area; for other locations, the delivery cost is calculated separately based on distance.",
+        es:"Sí, entregamos en toda la República Dominicana. La entrega estándar incluida en el precio cubre el área de Bayahibe y Dominicus; para otras zonas, el costo de entrega se calcula aparte según la distancia.",
+        it:"Sì, consegniamo in tutta la Repubblica Dominicana. La consegna standard inclusa nel prezzo copre l'area di Bayahibe e Dominicus; per le altre zone il costo di consegna viene calcolato a parte in base alla distanza."
       }
     },
     {
@@ -56,17 +56,17 @@ function FAQPage({ t, S, C, setPage }) {
     {
       q: {en:"How long does the battery last over time?", es:"¿Cuánto dura la batería con el tiempo?", it:"Quanto dura la batteria nel tempo?"},
       a: {
-        en:"A lithium battery of this type lasts approximately 5–8 years, and potentially even longer if you avoid fully discharging it regularly.",
-        es:"Una batería de litio de este tipo dura aproximadamente 5–8 años, y potencialmente incluso más si evita descargarla por completo con regularidad.",
-        it:"Una batteria al litio di questo tipo dura circa 5–8 anni, e potenzialmente anche di più se si evita di scaricarla completamente in modo regolare."
+        en:"A lithium battery of this type lasts approximately 5–8 years, and even longer if you avoid fully discharging it regularly.",
+        es:"Una batería de litio de este tipo dura aproximadamente 5–8 años, e incluso más si evita descargarla por completo con regularidad.",
+        it:"Una batteria al litio di questo tipo dura circa 5–8 anni, anche di più se si evita di scaricarla completamente in modo regolare."
       }
     },
     {
       q: {en:"What is included in the base price?", es:"¿Qué incluye el precio base?", it:"Cosa è incluso nel prezzo base?"},
       a: {
-        en:"The base price includes the golf cart with standard options and the 500W solar panel on the roof. Standard delivery across the Dominican Republic is also included; remote or difficult-access locations may require a delivery adjustment.",
-        es:"El precio base incluye el golf cart con las opciones estándar y el panel solar de 500W en el techo. También está incluida la entrega estándar en toda la República Dominicana; las zonas remotas o de difícil acceso pueden requerir un ajuste en el costo de entrega.",
-        it:"Il prezzo base include il golf cart con le opzioni standard e il pannello solare da 500W sul tetto. È inclusa anche la consegna standard in tutta la Repubblica Dominicana; le località remote o di difficile accesso possono richiedere un adeguamento del costo di consegna."
+        en:"The base price includes the golf cart with standard options and the 500W solar panel on the roof. Standard delivery for the Bayahibe and Dominicus area is also included; for other areas of the Dominican Republic, the delivery cost is calculated separately.",
+        es:"El precio base incluye el golf cart con las opciones estándar y el panel solar de 500W en el techo. También está incluida la entrega estándar para el área de Bayahibe y Dominicus; para otras zonas de la República Dominicana, el costo de entrega se calcula aparte.",
+        it:"Il prezzo base include il golf cart con le opzioni standard e il pannello solare da 500W sul tetto. È inclusa anche la consegna standard per l'area di Bayahibe e Dominicus; per le altre zone della Repubblica Dominicana il costo di consegna viene calcolato a parte."
       }
     },
     {
@@ -80,9 +80,9 @@ function FAQPage({ t, S, C, setPage }) {
     {
       q: {en:"Can I request maintenance for my golf cart?", es:"¿Puedo solicitar mantenimiento para mi golf cart?", it:"Posso richiedere manutenzione per il mio golf cart?"},
       a: {
-        en:"Yes, you can choose one of our maintenance plans in the 'Maintenance' section. We also accept golf carts not purchased from us, subject to a free technical assessment.",
-        es:"Sí, puedes elegir uno de nuestros planes de mantenimiento en la sección 'Mantenimiento'. También aceptamos golf carts no adquiridos con nosotros, previa una evaluación técnica gratuita.",
-        it:"Sì, puoi scegliere uno dei nostri piani di manutenzione nella sezione 'Manutenzione'. Accettiamo anche golf cart non acquistati da noi, previa una valutazione tecnica gratuita."
+        en:"Yes, you can request maintenance through the website under the 'Service' section. We also offer repair services for golf carts not purchased from us, subject to prior assessment.",
+        es:"Sí, puede solicitar mantenimiento a través del sitio web en la sección 'Servicio'. También ofrecemos servicios de reparación para golf carts no adquiridos con nosotros, previa evaluación.",
+        it:"Sì, puoi richiedere manutenzione tramite il sito nella sezione 'Assistenza'. Offriamo anche riparazioni per golf cart non acquistati da noi, previa valutazione."
       }
     },
     {

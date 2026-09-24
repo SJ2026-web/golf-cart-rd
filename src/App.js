@@ -1667,16 +1667,16 @@ const PL_DICT = {
 function pl(en) { return PL_DICT[en] || en; }
 
 const MODELS = [
-  { id:"A", name:"Model A / Modelo A / Modello A", price:10060, tag:"Classic",imgKey:"modA",
+  { id:"A", name:"Model A / Modelo A / Modello A", price:10350, tag:"Classic",imgKey:"modA",
     desc:{it:"Classico ed elegante. Perfetto per campi da golf, resort e hotel.",es:"Clásico y elegante. Perfecto para campos de golf, resorts y hoteles.",en:"Classic and elegant. Perfect for golf courses, resorts and hotels."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"3.5kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"3.5kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"3.5kW AC"}}},
-  { id:"B", name:"Model B / Modelo B / Modello B", price:10896, tag:"Off-Road",imgKey:"modB",
+  { id:"B", name:"Model B / Modelo B / Modello B", price:10575, tag:"Off-Road",imgKey:"modB",
     desc:{it:"Off-road potente. Conquista ogni terreno.",es:"Todoterreno potente. Conquista cualquier terreno.",en:"Powerful off-road. Conquers any terrain."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"4kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"4kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"4kW AC"}}},
-  { id:"C", name:"Model C / Modelo C / Modello C", price:11037, tag:"Sport",imgKey:"modC",
+  { id:"C", name:"Model C / Modelo C / Modello C", price:10682, tag:"Sport",imgKey:"modC",
     desc:{it:"Sportivo e raffinato. Sedili in pelle e cerchi premium.",es:"Deportivo y refinado. Asientos de cuero y llantas premium.",en:"Sporty and refined. Leather seats and premium wheels."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"4kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"4kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"4kW AC"}}},
-  { id:"D", name:"Model D / Modelo D / Modello D", price:11147, tag:"Family",imgKey:"modD",
+  { id:"D", name:"Model D / Modelo D / Modello D", price:10793, tag:"Family",imgKey:"modD",
     desc:{it:"Massimo comfort per famiglie e gruppi.",es:"Máximo confort familiar. Espacio extra con portapalos de golf.",en:"Maximum family comfort. Extra space with golf bag holder."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"4kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"4kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"4kW AC"}}},
 ];
@@ -1689,10 +1689,10 @@ const SEATS_OPTIONS = [
   {id:"other",it:"Altre sedute",es:"Otras plazas",en:"Other Seats",imgKey:null,descIt:"Su richiesta",descEs:"Bajo pedido",descEn:"On request"},
 ];
 const SEAT_PRICE_EXTRA = {
-  A: {"2":0, "2+2":216, "4":245, "4+2":559},
-  B: {"2":0, "2+2":487, "4":358, "4+2":761},
-  C: {"2":0, "2+2":375, "4":363, "4+2":865},
-  D: {"2":0, "2+2":420, "4":594, "4+2":870},
+  A: {"2":0, "2+2":225, "4":551, "4+2":1365},
+  B: {"2":0, "2+2":243, "4":604, "4+2":1438},
+  C: {"2":0, "2+2":213, "4":497, "4+2":1331},
+  D: {"2":0, "2+2":219, "4":553, "4+2":1328},
 };
 
 const TIRE_PRICE_EXTRA = {
@@ -1753,11 +1753,9 @@ const SEAT_COLORS = [
 ];
 
 const BATTERIES = [
-  {id:"48v150a-piombo",it:"48V 150A — Batteria al piombo-acido",es:"48V 150A — Batería de plomo-ácido",en:"48V 150A — Lead-acid battery",recommended:false},
-    {id:"48v150a-litio",it:"48V 150A — Batteria al litio",es:"48V 150A — Batería de litio",en:"48V 150A — Lithium battery",recommended:true},
-  {id:"60v100a-piombo",it:"60V 100A — Piombo-acido",es:"60V 100A — Plomo-ácido",en:"60V 100A — Lead-acid",recommended:false},
-  {id:"72v100a-piombo",it:"72V 100A — Piombo-acido",es:"72V 100A — Plomo-ácido",en:"72V 100A — Lead-acid",recommended:false},
-  {id:"60v150a-litio",it:"60V 150A — Batteria al litio",es:"60V 150A — Batería de litio",en:"60V 150A — Lithium battery",recommended:false},
+  {id:"48v150a-litio",it:"48V 150Ah — Batteria Elite al Litio",es:"48V 150Ah — Batería Elite de Litio",en:"48V 150Ah — Elite Lithium Battery",recommended:true},
+  {id:"60v150a-litio",it:"60V 150Ah — Batteria Elite al Litio",es:"60V 150Ah — Batería Elite de Litio",en:"60V 150Ah — Elite Lithium Battery",recommended:false},
+  {id:"72v120a-litio",it:"72V 120Ah — Batteria Elite al Litio",es:"72V 120Ah — Batería Elite de Litio",en:"72V 120Ah — Elite Lithium Battery",recommended:false},
 ];
 
 const MOTORS = [
@@ -1769,8 +1767,8 @@ const MOTORS = [
 const SEAT_TYPES = [
   {id:"standard",it:"Sedile Standard",es:"Asiento Estándar",en:"Standard Seat",imgKey:"seat_std",descIt:"Ergonomico e confortevole. Default.",descEs:"Ergonómico y confortable. Por defecto.",descEn:"Ergonomic and comfortable. Default."},
   {id:"sport",it:"Sedile Sport",es:"Asiento Sport",en:"Sport Seat",imgKey:"seat_sport",price:68,descIt:"Pelle nera con cuciture rosse.",descEs:"Cuero negro con costuras rojas.",descEn:"Black leather with red stitching."},
-  {id:"premium",it:"Sedile Premium Imbottito",es:"Asiento Premium Acolchado",en:"Premium Padded Seat",imgKey:"seat_prem",price:104,descIt:"Ispessito con cintura integrata.",descEs:"Reforzado con cinturón integrado.",descEn:"Thickened with integrated seatbelt."},
-  {id:"premium-headrest",it:"Premium con Poggiatesta",es:"Premium con Reposacabezas",en:"Premium with Headrest",imgKey:"seat_head",price:117,descIt:"Massimo comfort con poggiatesta.",descEs:"Máximo confort con reposacabezas.",descEn:"Maximum comfort with headrests."},
+  {id:"premium",it:"Sedile Premium Imbottito",es:"Asiento Premium Acolchado",en:"Premium Padded Seat",imgKey:"seat_prem",price:60,priceA:104,descIt:"Ispessito con cintura integrata.",descEs:"Reforzado con cinturón integrado.",descEn:"Thickened with integrated seatbelt."},
+  {id:"premium-headrest",it:"Premium con Poggiatesta",es:"Premium con Reposacabezas",en:"Premium with Headrest",imgKey:"seat_head",price:105,priceA:117,descIt:"Massimo comfort con poggiatesta.",descEs:"Máximo confort con reposacabezas.",descEn:"Maximum comfort with headrests."},
 ];
 
 const TIRES = [
@@ -2625,12 +2623,20 @@ export default function App() {
     if(motorId === "5kw") return seatsId==="other" ? 0 : 270;
     return 0;
   };
-  const defaultBatteryFor = (seatsId) => seatsId==="other" ? "72v100a-piombo" : "48v150a-litio";
+  const defaultBatteryFor = (seatsId) => "48v150a-litio";
   // returns a number (extra $) or the string "onrequest"
   const batteryPrice = (seatsId, batteryId) => {
-    if(batteryId === "60v150a-litio") return 661;
-    if(batteryId === "72v100a-piombo") return seatsId==="other" ? 0 : "onrequest";
-    return 0; // 48v150a-piombo, 48v150a-litio, 60v100a-piombo always free
+    if(batteryId === "72v120a-litio") return 490;
+    if(batteryId === "60v150a-litio") return 520;
+    return 0; // 48v150a-litio (default) — costo interno $450, non mostrato come sovrapprezzo nel configuratore
+  };
+  // Prezzo del sedile in base al modello: su B/C/D si applica lo sconto (SEAT_TYPES.price),
+  // sul Modello A resta il prezzo pieno (SEAT_TYPES.priceA), quando presente.
+  const seatTypePrice = (modelId, seatId) => {
+    const s = SEAT_TYPES.find(x => x.id === seatId);
+    if(!s) return 0;
+    if(modelId === "A" && typeof s.priceA === "number") return s.priceA;
+    return s.price || 0;
   };
   const model = MODELS.find(m=>m.id===cfg.model);
   const totalPrice = () => {
@@ -2647,7 +2653,10 @@ export default function App() {
     // Il sedile Sport è incluso di serie (gratis) sui Modelli B/C/D: il
     // sovrapprezzo va sommato solo se scelto come upgrade sul Modello A.
     const seatSportIncluded = cfg.seatType === "sport" && ["B","C","D"].includes(cfg.model);
-    if(seatT && seatT.price && !seatSportIncluded) total += seatT.price;
+    if(seatT && !seatSportIncluded) {
+      const sp = seatTypePrice(cfg.model, cfg.seatType);
+      if(sp) total += sp;
+    }
     const steerT = STEERING.find(s => s.id === cfg.steering);
     // Il volante Sport è incluso di serie (gratis) sui Modelli B/C/D (unici
     // modelli per cui è selezionabile).
@@ -2987,7 +2996,7 @@ export default function App() {
                   desc:t6("Clear coverage from delivery.","Cobertura clara desde la entrega.","Copertura chiara dalla consegna.","Une couverture claire dès la livraison.","Jasne warunki ochrony od momentu dostawy.","Понятные условия гарантии с момента доставки.")},
                 {icon:"🚚",
                   title:t6("Standard Delivery","Entrega estándar","Consegna standard","Livraison standard","Standardowa dostawa","Стандартная доставка"),
-                  desc:t6("Standard delivery in the Dominican Republic included.","Entrega estándar en República Dominicana incluida.","Consegna standard in Repubblica Dominicana inclusa.","Livraison standard en République dominicaine incluse.","Standardowa dostawa na terenie Dominikany w cenie.","Стандартная доставка по Доминиканской Республике включена.")},
+                  desc:t6("Standard delivery included for Bayahibe and Dominicus; other areas are quoted separately.","Entrega estándar incluida para Bayahibe y Dominicus; otras zonas se cotizan aparte.","Consegna standard inclusa per Bayahibe e Dominicus; per le altre zone il costo va calcolato a parte.","Livraison standard incluse pour Bayahibe et Dominicus ; les autres zones sont calculées séparément.","Standardowa dostawa wliczona dla Bayahibe i Dominicus; inne strefy są wyceniane osobno.","Стандартная доставка включена для Баяибе и Доминикуса; другие зоны рассчитываются отдельно.")},
                 {icon:"🤝",
                   title:t6("Direct Support","Atención directa","Assistenza diretta","Assistance directe","Bezpośrednie wsparcie","Прямая поддержка"),
                   desc:t6("One direct point of contact from configuration to delivery.","Un contacto directo desde la configuración hasta la entrega.","Un contatto diretto dalla configurazione fino alla consegna.","Un contact direct de la configuration jusqu'à la livraison.","Jeden bezpośredni kontakt od konfiguracji aż po dostawę.","Один прямой контакт от конфигурации до доставки.")},
@@ -3503,7 +3512,7 @@ export default function App() {
             ⚙️ {t6("Standard model configuration included.","Configuración estándar del modelo incluida.","Configurazione standard del modello inclusa.","Configuration standard du modèle incluse.","Standardowa konfiguracja modelu w cenie.","Стандартная комплектация модели включена.")}<br/>
             ☀️ {t("Solar panel included on every unit","Panel solar incluido en cada unidad","Pannello solare incluso su ogni unità")}<br/>
             🛡️ {t("12-month warranty included","Garantía de 12 meses incluida","Garanzia 12 mesi inclusa")}<br/>
-            🚚 {t6("Standard delivery in the Dominican Republic included.","Entrega estándar en República Dominicana incluida.","Consegna standard in Repubblica Dominicana inclusa.","Livraison standard en République dominicaine incluse.","Standardowa dostawa na terenie Dominikany w cenie.","Стандартная доставка по Доминиканской Республике включена.")}
+            🚚 {t6("Standard delivery included for Bayahibe and Dominicus; other areas are quoted separately.","Entrega estándar incluida para Bayahibe y Dominicus; otras zonas se cotizan aparte.","Consegna standard inclusa per Bayahibe e Dominicus; per le altre zone il costo va calcolato a parte.","Livraison standard incluse pour Bayahibe et Dominicus ; les autres zones sont calculées séparément.","Standardowa dostawa wliczona dla Bayahibe i Dominicus; inne strefy są wyceniane osobno.","Стандартная доставка включена для Баяибе и Доминикуса; другие зоны рассчитываются отдельно.")}
           </div>
 
           <div style={{color:C.gold,fontSize:10,letterSpacing:1.5,fontWeight:700,textTransform:"uppercase",marginBottom:6}}>
@@ -4178,7 +4187,7 @@ export default function App() {
                 Loading...
               </div>
             }>
-              <ConfiguratorPage t={t} tName={tName} S={S} C={C} setPage={setPage} step={step} setStep={setStep} cfg={cfg} setCfg={setCfg} upd={upd} lang={lang} totalPrice={totalPrice} showOptionals={showOptionals} setShowOptionals={setShowOptionals} MODELS={MODELS} SEATS_OPTIONS={SEATS_OPTIONS} SEAT_PRICE_EXTRA={SEAT_PRICE_EXTRA} TIRE_PRICE_EXTRA={TIRE_PRICE_EXTRA} BATTERIES={BATTERIES} MOTORS={MOTORS} SEAT_TYPES={SEAT_TYPES} TIRES={TIRES} STEERING={STEERING} WINDSHIELDS={WINDSHIELDS} OPTIONAL_ITEMS={OPTIONAL_ITEMS} RAL_COLORS={RAL_COLORS} SEAT_COLORS={SEAT_COLORS} Img={Img} GolfCartPreview={GolfCartPreview} defaultMotorFor={defaultMotorFor} defaultBatteryFor={defaultBatteryFor} motorPrice={motorPrice} batteryPrice={batteryPrice} toggleOpt={toggleOpt} ru={ru} fr={fr} pl={pl} tNamePrefix={tNamePrefix} cartDisplayName={cartDisplayName} showRobotHint={showRobotHint} SummaryBar={SummaryBar} showSeatOpts={showSeatOpts} setShowSeatOpts={setShowSeatOpts} showSteerOpts={showSteerOpts} setShowSteerOpts={setShowSteerOpts} showOtherInch={showOtherInch} setShowOtherInch={setShowOtherInch} showGrass={showGrass} setShowGrass={setShowGrass} showWindOpts={showWindOpts} setShowWindOpts={setShowWindOpts} showTip={showTip} setShowTip={setShowTip} showBattOpts={showBattOpts} setShowBattOpts={setShowBattOpts} showMotorOpts={showMotorOpts} setShowMotorOpts={setShowMotorOpts} prevPage={prevPage} />
+              <ConfiguratorPage t={t} tName={tName} S={S} C={C} setPage={setPage} step={step} setStep={setStep} cfg={cfg} setCfg={setCfg} upd={upd} lang={lang} totalPrice={totalPrice} showOptionals={showOptionals} setShowOptionals={setShowOptionals} MODELS={MODELS} SEATS_OPTIONS={SEATS_OPTIONS} SEAT_PRICE_EXTRA={SEAT_PRICE_EXTRA} TIRE_PRICE_EXTRA={TIRE_PRICE_EXTRA} BATTERIES={BATTERIES} MOTORS={MOTORS} SEAT_TYPES={SEAT_TYPES} TIRES={TIRES} STEERING={STEERING} WINDSHIELDS={WINDSHIELDS} OPTIONAL_ITEMS={OPTIONAL_ITEMS} RAL_COLORS={RAL_COLORS} SEAT_COLORS={SEAT_COLORS} Img={Img} GolfCartPreview={GolfCartPreview} defaultMotorFor={defaultMotorFor} defaultBatteryFor={defaultBatteryFor} motorPrice={motorPrice} batteryPrice={batteryPrice} seatTypePrice={seatTypePrice} toggleOpt={toggleOpt} ru={ru} fr={fr} pl={pl} tNamePrefix={tNamePrefix} cartDisplayName={cartDisplayName} showRobotHint={showRobotHint} SummaryBar={SummaryBar} showSeatOpts={showSeatOpts} setShowSeatOpts={setShowSeatOpts} showSteerOpts={showSteerOpts} setShowSteerOpts={setShowSteerOpts} showOtherInch={showOtherInch} setShowOtherInch={setShowOtherInch} showGrass={showGrass} setShowGrass={setShowGrass} showWindOpts={showWindOpts} setShowWindOpts={setShowWindOpts} showTip={showTip} setShowTip={setShowTip} showBattOpts={showBattOpts} setShowBattOpts={setShowBattOpts} showMotorOpts={showMotorOpts} setShowMotorOpts={setShowMotorOpts} prevPage={prevPage} />
             </Suspense>
           </div>
         </div>

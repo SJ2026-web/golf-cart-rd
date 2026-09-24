@@ -307,7 +307,7 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
   );
 }
 
-function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg, upd, lang, totalPrice, showOptionals, setShowOptionals, MODELS, SEATS_OPTIONS, SEAT_PRICE_EXTRA, TIRE_PRICE_EXTRA, BATTERIES, MOTORS, SEAT_TYPES, TIRES, STEERING, WINDSHIELDS, OPTIONAL_ITEMS, RAL_COLORS, SEAT_COLORS, Img, GolfCartPreview, defaultMotorFor, defaultBatteryFor, motorPrice, batteryPrice, toggleOpt, ru, fr, pl, tNamePrefix, cartDisplayName, showRobotHint, SummaryBar, showSeatOpts, setShowSeatOpts, showSteerOpts, setShowSteerOpts, showOtherInch, setShowOtherInch, showGrass, setShowGrass, showWindOpts, setShowWindOpts, showTip, setShowTip, showBattOpts, setShowBattOpts, showMotorOpts, setShowMotorOpts, prevPage }) {
+function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg, upd, lang, totalPrice, showOptionals, setShowOptionals, MODELS, SEATS_OPTIONS, SEAT_PRICE_EXTRA, TIRE_PRICE_EXTRA, BATTERIES, MOTORS, SEAT_TYPES, TIRES, STEERING, WINDSHIELDS, OPTIONAL_ITEMS, RAL_COLORS, SEAT_COLORS, Img, GolfCartPreview, defaultMotorFor, defaultBatteryFor, motorPrice, batteryPrice, seatTypePrice, toggleOpt, ru, fr, pl, tNamePrefix, cartDisplayName, showRobotHint, SummaryBar, showSeatOpts, setShowSeatOpts, showSteerOpts, setShowSteerOpts, showOtherInch, setShowOtherInch, showGrass, setShowGrass, showWindOpts, setShowWindOpts, showTip, setShowTip, showBattOpts, setShowBattOpts, showMotorOpts, setShowMotorOpts, prevPage }) {
   const model = MODELS.find(m=>m.id===cfg.model);
   const cartNameRef = useRef();
   const previewNameRef = useRef();
@@ -603,18 +603,21 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
               <button style={S.outBtn} onClick={()=>setShowSeatOpts(false)}>✕ {t("Close","Cerrar","Chiudi")}</button>
             </div>
             <div style={{...S.grid2,marginBottom:20}}>
-              {SEAT_TYPES.filter(s=>s.id!=="standard" && s.id!==defaultSeatId).map(s=>(
+              {SEAT_TYPES.filter(s=>s.id!=="standard" && s.id!==defaultSeatId).map(s=>{
+                const sp = seatTypePrice(cfg.model, s.id);
+                return (
                 <div key={s.id} style={S.card(cfg.seatType===s.id)} onClick={()=>upd("seatType",s.id)}>
                   <div style={{background:"#070707",borderRadius:10,marginBottom:10,display:"flex",justifyContent:"center",alignItems:"center",minHeight:100,overflow:"hidden"}}>
                     <Img k={s.imgKey} style={{width:"100%",maxHeight:120}}/>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:2}}>
                     <div style={{color:cfg.seatType===s.id?C.gold:C.white,fontWeight:700,fontSize:13}}>{t(s.en, s.es, s.it)}</div>
-                    {s.price&&<span style={{color:C.goldLight,fontSize:12,fontWeight:800,marginLeft:8}}>+${s.price}</span>}
+                    {sp>0&&<span style={{color:C.goldLight,fontSize:12,fontWeight:800,marginLeft:8}}>+${sp}</span>}
                   </div>
                   <div style={{color:C.muted,fontSize:12}}>{t(s.descEn, s.descEs, s.descIt)}</div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
@@ -1213,6 +1216,7 @@ ConfiguratorPage.propTypes = {
   defaultBatteryFor: PropTypes.func.isRequired,
   motorPrice: PropTypes.func.isRequired,
   batteryPrice: PropTypes.func.isRequired,
+  seatTypePrice: PropTypes.func.isRequired,
   toggleOpt: PropTypes.func.isRequired,
   ru: PropTypes.func.isRequired,
   fr: PropTypes.func.isRequired,
