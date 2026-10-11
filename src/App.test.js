@@ -134,7 +134,7 @@ test('3. il bottone Indietro dal configuratore riporta alla Home (fix bug prevPa
   expect(screen.queryByText(/Name your Golf Cart/i)).not.toBeInTheDocument();
 });
 
-test('4. il prezzo base del Modello A ($10,350) viene mostrato correttamente nel configuratore', async () => {
+test('4. il prezzo base del Modello A ($10,950) viene mostrato correttamente nel configuratore', async () => {
   render(<App />);
   fireEvent.click(screen.getByText(/Configure your own/i));
 
@@ -147,13 +147,13 @@ test('4. il prezzo base del Modello A ($10,350) viene mostrato correttamente nel
 
   // Il formato del separatore delle migliaia (virgola, punto, spazio o nessuno) dipende
   // dall'ambiente in cui gira il test (m.price.toLocaleString() non specifica una lingua fissa).
-  // Cerchiamo la sequenza di cifre "10350" ignorando qualsiasi carattere di separazione,
+  // Cerchiamo la sequenza di cifre "11080" ignorando qualsiasi carattere di separazione,
   // e verifichiamo che compaia accanto a "USD" per evitare falsi positivi.
   await waitFor(() => {
     const matches = screen.getAllByText((_, element) => {
       if (!element || !element.textContent) return false;
       const digitsOnly = element.textContent.replace(/[^0-9]/g, '');
-      return digitsOnly.includes('10350') && element.textContent.includes('USD');
+      return digitsOnly.includes('11080') && element.textContent.includes('USD');
     });
     expect(matches.length).toBeGreaterThan(0);
   }, { timeout: 15000 });
@@ -179,7 +179,7 @@ test('5. i prezzi base dei 4 modelli (A/B/C/D) sono mostrati correttamente', asy
   // div contenitore diretto del nome modello ("Model A" ecc.): nome e prezzo
   // sono figli diretti dello stesso div, quindi risalendo di un livello dal
   // nome si ottiene esattamente la card corretta da cui scopare la ricerca.
-  const expectedPrices = { A: '10350', B: '10575', C: '10682', D: '10793' };
+  const expectedPrices = { A: '11080', B: '11305', C: '11412', D: '11523' };
   await waitFor(() => {
     for (const [letter, price] of Object.entries(expectedPrices)) {
       const modelNameEl = screen.getByText(new RegExp(`^Model ${letter}$`, 'i'));
@@ -204,8 +204,8 @@ test('6. il supplemento posti (2+2) viene sommato correttamente al totale', asyn
   }, { timeout: 15000 });
   fireEvent.click(screen.getByText(/2\+2 Seats/i));
 
-  // Modello A (10350) + supplemento 2+2 posti (225) = 10575
-  await expectLiveTotal('10575');
+  // Modello A (11080) + supplemento 2+2 posti (225) = 11305
+  await expectLiveTotal('11305');
 });
 
 test('7. il supplemento pneumatici (Off-Road 14") viene sommato correttamente al totale', async () => {
@@ -224,8 +224,8 @@ test('7. il supplemento pneumatici (Off-Road 14") viene sommato correttamente al
   }, { timeout: 15000 });
   fireEvent.click(screen.getByText(tireCard));
 
-  // Modello A (10350) + supplemento pneumatici Off-Road 14" (205) = 10555
-  await expectLiveTotal('10555');
+  // Modello A (11080) + supplemento pneumatici Off-Road 14" (205) = 11285
+  await expectLiveTotal('11285');
 });
 
 test('8. i supplementi di batteria e motore vengono sommati correttamente al totale', async () => {
@@ -239,15 +239,15 @@ test('8. i supplementi di batteria e motore vengono sommati correttamente al tot
     expect(screen.getByText(/60V 150Ah/i)).toBeInTheDocument();
   }, { timeout: 15000 });
   fireEvent.click(screen.getByText(/60V 150Ah/i));
-  await expectLiveTotal('10870'); // 10350 + 520
+  await expectLiveTotal('11600'); // 11080 + 520
 
-  // Motore: 5 kW (+270 per Modello A con 2 posti)
+  // Motore: 5 kW (+250 per Modello A con 2 posti, non incluso di serie a quel posto)
   await clickText(/Other motor options/i);
   await waitFor(() => {
     expect(screen.getByText(/^5 kW$/i)).toBeInTheDocument();
   }, { timeout: 15000 });
   fireEvent.click(screen.getByText(/^5 kW$/i));
-  await expectLiveTotal('11140'); // 10350 + 520 + 270
+  await expectLiveTotal('11850'); // 11080 + 520 + 250
 
   // Batteria: 72V 120Ah Elite al Litio (+490), sostituisce la precedente 60V 150Ah
   // (il pannello batteria è ancora aperto da sopra, non serve riaprirlo). Verifichiamo
@@ -258,8 +258,8 @@ test('8. i supplementi di batteria e motore vengono sommati correttamente al tot
     const batteryRow = batteryNameEl.parentElement;
     expect(within(batteryRow).getByText(/\+\$490/)).toBeInTheDocument();
   }, { timeout: 15000 });
-  // Totale: 10350 (base) + 270 (motore 5kW ancora selezionato) + 490 (batteria 72V 120Ah) = 11110
-  await expectLiveTotal('11110');
+  // Totale: 11080 (base) + 250 (motore 5kW ancora selezionato) + 490 (batteria 72V 120Ah) = 11820
+  await expectLiveTotal('11820');
 });
 
 test('9. il pannello solare è sempre incluso a $0 e non è disattivabile', async () => {
@@ -282,10 +282,10 @@ test('9. il pannello solare è sempre incluso a $0 e non è disattivabile', asyn
 
   // Senza alcun supplemento selezionato, il totale resta esattamente il prezzo
   // base del modello: conferma che il pannello solare contribuisce $0.
-  await expectLiveTotal('10350');
+  await expectLiveTotal('11080');
 });
 
-test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configurato', async () => {
+test('10. lo schema di pagamento 40%-40%-20% somma esattamente al totale configurato', async () => {
   const sendMock = jest.fn().mockResolvedValue({ status: 200, text: 'OK' });
   window.emailjs = { send: sendMock };
   const openMock = jest.spyOn(window, 'open').mockImplementation(() => {});
@@ -296,7 +296,7 @@ test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configu
   await waitFor(() => {
     expect(screen.getByText(/2\+2 Seats/i)).toBeInTheDocument();
   }, { timeout: 15000 });
-  fireEvent.click(screen.getByText(/2\+2 Seats/i)); // totale atteso: 10350 + 225 = 10575
+  fireEvent.click(screen.getByText(/2\+2 Seats/i)); // totale atteso: 11080 + 225 = 11305
   await advanceFromStep(2, 7); // step 2 -> ... -> step 7 (Riepilogo unificato)
 
   await waitFor(() => {
@@ -304,18 +304,18 @@ test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configu
   }, { timeout: 15000 });
 
   // Verifica indipendente che il totale mostrato sulla pagina sia esattamente
-  // 10575 (10350 di base + 225 di supplemento posti), senza cifre estranee.
-  // La pagina unificata mostra solo il totale, non più i tre box 35/35/30.
+  // 11305 (11080 di base + 225 di supplemento posti), senza cifre estranee.
+  // La pagina unificata mostra solo il totale, non più i tre box 40/40/20.
   await waitFor(() => {
     const matches = screen.getAllByText((_, element) => {
       if (!element || !element.textContent) return false;
-      return digitsOf(element.textContent) === '10575' && element.textContent.includes('USD');
+      return digitsOf(element.textContent) === '11305' && element.textContent.includes('USD');
     });
     expect(matches.length).toBeGreaterThan(0);
   }, { timeout: 15000 });
-  const total = 10575;
+  const total = 11305;
 
-  // Compiliamo il form e inviamo: la suddivisione 35/35/30 non è più visibile
+  // Compiliamo il form e inviamo: la suddivisione 40/40/20 non è più visibile
   // sulla pagina, ma resta nell'email interna come riferimento per il team.
   fireEvent.change(screen.getByPlaceholderText('Mario'), { target: { value: 'Mario' } });
   fireEvent.change(screen.getByPlaceholderText('Rossi'), { target: { value: 'Rossi' } });
@@ -328,7 +328,7 @@ test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configu
     expect(sendMock).toHaveBeenCalled();
   }, { timeout: 15000 });
 
-  // Leggiamo i tre importi (35% on order, 35% on completion, 30% on delivery)
+  // Leggiamo i tre importi (40% on order, 40% on completion, 20% on delivery)
   // direttamente dal testo dell'email interna (prima chiamata a emailjs.send)
   // e verifichiamo che sommino esattamente al totale, senza scarti di
   // arrotondamento (payment3 in ConfiguratorPage.js è calcolato come resto,
@@ -340,12 +340,12 @@ test('10. lo schema di pagamento 35%-35%-30% somma esattamente al totale configu
     expect(m).toBeTruthy();
     return parseInt(m[1].replace(/[^0-9]/g, ''), 10);
   };
-  const payment1 = extractAmount('35% on order');
-  const payment2 = extractAmount('35% on completion');
-  const payment3 = extractAmount('30% on delivery');
+  const payment1 = extractAmount('40% on order');
+  const payment2 = extractAmount('40% on completion');
+  const payment3 = extractAmount('20% on delivery');
 
   expect(payment1 + payment2 + payment3).toBe(total);
-  expect(total).toBe(10575);
+  expect(total).toBe(11305);
 
   openMock.mockRestore();
 });
@@ -443,13 +443,13 @@ test('13. il cambio lingua (EN -> FR) aggiorna il testo dell\'interfaccia', asyn
   expect(screen.queryByText(/Configure your own/i)).not.toBeInTheDocument();
 });
 
-test('14. l\'invio del form finale chiama EmailJS (mockato) due volte, apre WhatsApp con il numero e il totale corretti, e il messaggio email interno riporta totale e schema di pagamento 35/35/30', async () => {
+test('14. l\'invio del form finale chiama EmailJS (mockato) due volte, apre WhatsApp con il numero e il totale corretti, e il messaggio email interno riporta totale e schema di pagamento 40/40/20', async () => {
   const sendMock = jest.fn().mockResolvedValue({ status: 200, text: 'OK' });
   window.emailjs = { send: sendMock };
   const openMock = jest.spyOn(window, 'open').mockImplementation(() => {});
 
   await openConfigurator();
-  await selectModel('A'); // nessun extra: totale atteso 10350
+  await selectModel('A'); // nessun extra: totale atteso 11080
   await advanceFromStep(1, 7); // step 1 -> ... -> step 7 (Riepilogo unificato)
 
   await waitFor(() => {
@@ -482,16 +482,16 @@ test('14. l\'invio del form finale chiama EmailJS (mockato) due volte, apre What
 
   // WhatsApp deve essere stato aperto (in una nuova scheda) con il numero
   // corretto e un messaggio contenente il totale, MA senza la suddivisione
-  // 35/35/30 (che deve restare riservata all'email interna, non al cliente).
+  // 40/40/20 (che deve restare riservata all'email interna, non al cliente).
   expect(openMock).toHaveBeenCalledTimes(1);
   const [waUrl, waTarget] = openMock.mock.calls[0];
   expect(waUrl).toContain('https://wa.me/18494100261?text=');
   expect(waTarget).toBe('_blank');
   const waMsg = decodeURIComponent(waUrl.split('?text=')[1]);
-  expect(waMsg).toMatch(/Total: \$[\d.,\s]*10[.,\s]?350/);
-  expect(waMsg).not.toContain('35% on order');
-  expect(waMsg).not.toContain('35% on completion');
-  expect(waMsg).not.toContain('30% on delivery');
+  expect(waMsg).toMatch(/Total: \$[\d.,\s]*11[.,\s]?080/);
+  expect(waMsg).not.toContain('40% on order');
+  expect(waMsg).not.toContain('40% on completion');
+  expect(waMsg).not.toContain('20% on delivery');
   expect(waMsg).toContain('Mario Rossi');
   expect(waMsg).toContain('mario.rossi@example.com');
 
@@ -506,18 +506,17 @@ test('14. l\'invio del form finale chiama EmailJS (mockato) due volte, apre What
 
   const msg = firstPayload.message;
 
-  // Totale e prezzo base: Modello A senza extra = 10350.
-  expect(msg).toMatch(/Total: \$[\d.,\s]*10[.,\s]?350/);
+  // Totale e prezzo base: Modello A senza extra = 11080.
+  expect(msg).toMatch(/Total: \$[\d.,\s]*11[.,\s]?080/);
   // Schema di pagamento presente ed etichettato correttamente (solo nell'email interna).
-  expect(msg).toContain('35% on order:');
-  expect(msg).toContain('35% on completion:');
-  expect(msg).toContain('30% on delivery:');
-  // Importi coerenti: 35% di 10350 = 3622.5, che per via dell'arrotondamento
-  // in virgola mobile di JS (Math.round) risulta 3622 (x2);
-  // il restante (30%) è per differenza: 10350 - 3622 - 3622 = 3106.
-  expect(msg).toMatch(/35% on order: \$[\d.,\s]*3[.,\s]?622/);
-  expect(msg).toMatch(/35% on completion: \$[\d.,\s]*3[.,\s]?622/);
-  expect(msg).toMatch(/30% on delivery: \$[\d.,\s]*3[.,\s]?106/);
+  expect(msg).toContain('40% on order:');
+  expect(msg).toContain('40% on completion:');
+  expect(msg).toContain('20% on delivery:');
+  // Importi coerenti: 40% di 11080 = 4432 (x2);
+  // il restante (20%) è per differenza: 11080 - 4432 - 4432 = 2216.
+  expect(msg).toMatch(/40% on order: \$[\d.,\s]*4[.,\s]?432/);
+  expect(msg).toMatch(/40% on completion: \$[\d.,\s]*4[.,\s]?432/);
+  expect(msg).toMatch(/20% on delivery: \$[\d.,\s]*2[.,\s]?216/);
 
   openMock.mockRestore();
 });

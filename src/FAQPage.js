@@ -16,9 +16,9 @@ function FAQPage({ t, S, C, setPage }) {
     {
       q: {en:"How long does delivery take?", es:"¿Cuánto tiempo tarda la entrega?", it:"Quanto tempo richiede la consegna?"},
       a: {
-        en:"Delivery takes approximately 90 days after the initial 35% payment. This is because each golf cart is custom-built according to your configuration.",
-        es:"La entrega tarda aproximadamente 90 días tras el primer pago del 35%. Esto se debe a que cada golf cart se construye según su configuración personalizada.",
-        it:"La consegna richiede circa 90 giorni dal primo pagamento del 35%. Questo perché ogni golf cart viene costruito su misura in base alla tua configurazione."
+        en:"Delivery takes approximately 90 days after the initial 40% payment. This is because each golf cart is custom-built according to your configuration.",
+        es:"La entrega tarda aproximadamente 90 días tras el primer pago del 40%. Esto se debe a que cada golf cart se construye según su configuración personalizada.",
+        it:"La consegna richiede circa 90 giorni dal primo pagamento del 40%. Questo perché ogni golf cart viene costruito su misura in base alla tua configurazione."
       }
     },
     {
@@ -88,9 +88,9 @@ function FAQPage({ t, S, C, setPage }) {
     {
       q: {en:"Can I modify my configuration after ordering?", es:"¿Puedo modificar mi configuración tras el pedido?", it:"Posso modificare la configurazione dopo l'ordine?"},
       a: {
-        en:"Yes, modifications can be requested up to 7 days after the initial 35% payment.",
-        es:"Sí, se pueden solicitar modificaciones hasta 7 días después del primer pago del 35%.",
-        it:"Sì, è possibile richiedere modifiche fino a 7 giorni dopo il primo pagamento del 35%."
+        en:"Yes, modifications can be requested up to 7 days after the initial 40% payment.",
+        es:"Sí, se pueden solicitar modificaciones hasta 7 días después del primer pago del 40%.",
+        it:"Sì, è possibile richiedere modifiche fino a 7 giorni dopo il primo pagamento del 40%."
       }
     },
     {
@@ -104,17 +104,17 @@ function FAQPage({ t, S, C, setPage }) {
     {
       q: {en:"Is the quote binding?", es:"¿El presupuesto es vinculante?", it:"Il preventivo è vincolante?"},
       a: {
-        en:"No, the quote itself is not binding. After placing your order, you have a 14-day window before the initial 35% payment becomes binding, giving you time to confirm every detail of your custom golf cart.",
-        es:"No, el presupuesto en sí no es vinculante. Tras realizar el pedido, dispone de 14 días antes de que el primer pago del 35% se vuelva vinculante, lo que le da tiempo para confirmar cada detalle de su golf cart personalizado.",
-        it:"No, il preventivo in sé non è vincolante. Dopo aver effettuato l'ordine, hai 14 giorni prima che il primo pagamento del 35% diventi vincolante, così hai il tempo di confermare ogni dettaglio del tuo golf cart personalizzato."
+        en:"No, the quote itself is not binding. After placing your order, you have a 14-day window before the initial 40% payment becomes binding, giving you time to confirm every detail of your custom golf cart.",
+        es:"No, el presupuesto en sí no es vinculante. Tras realizar el pedido, dispone de 14 días antes de que el primer pago del 40% se vuelva vinculante, lo que le da tiempo para confirmar cada detalle de su golf cart personalizado.",
+        it:"No, il preventivo in sé non è vincolante. Dopo aver effettuato l'ordine, hai 14 giorni prima che il primo pagamento del 40% diventi vincolante, così hai il tempo di confermare ogni dettaglio del tuo golf cart personalizzato."
       }
     },
     {
       q: {en:"What happens if I cancel my order?", es:"¿Qué pasa si cancelo mi pedido?", it:"Cosa succede se annullo il mio ordine?"},
       a: {
-        en:"If you cancel within 14 days of placing your order, no fee applies. After that period, once the initial 35% payment is binding, cancelling will retain 50% of that first payment as a cancellation fee.",
-        es:"Si cancela dentro de los 14 días posteriores al pedido, no se aplica ningún cargo. Pasado ese período, una vez que el primer pago del 35% es vinculante, la cancelación retendrá el 50% de ese primer pago como penalización.",
-        it:"Se annulli entro 14 giorni dall'ordine, non viene applicata alcuna penale. Trascorso questo periodo, una volta che il primo pagamento del 35% è vincolante, l'annullamento comporterà la trattenuta del 50% di quel primo pagamento come penale di cancellazione."
+        en:"If you cancel within 14 days of placing your order, no fee applies. After that period, once the initial 40% payment is binding, cancelling will retain 50% of that first payment as a cancellation fee.",
+        es:"Si cancela dentro de los 14 días posteriores al pedido, no se aplica ningún cargo. Pasado ese período, una vez que el primer pago del 40% es vinculante, la cancelación retendrá el 50% de ese primer pago como penalización.",
+        it:"Se annulli entro 14 giorni dall'ordine, non viene applicata alcuna penale. Trascorso questo periodo, una volta che il primo pagamento del 40% è vincolante, l'annullamento comporterà la trattenuta del 50% di quel primo pagamento come penale di cancellazione."
       }
     },
     {

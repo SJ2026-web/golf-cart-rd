@@ -6,8 +6,8 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
   const [sent, setSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [fieldErrors, setFieldErrors] = useState({});
-  const payment1 = Math.round(totalPrice * 0.35);
-  const payment2 = Math.round(totalPrice * 0.35);
+  const payment1 = Math.round(totalPrice * 0.40);
+  const payment2 = Math.round(totalPrice * 0.40);
   const payment3 = totalPrice - payment1 - payment2;
   const nomeRef = useRef();
   const cognomeRef = useRef();
@@ -78,7 +78,7 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
       ...opts.map(o=>"- "+o.en+": "+(o.always?"Included":"$"+o.price)),
     ];
 
-    // Email interna: mantiene la suddivisione 35/35/30 come riferimento per il team.
+    // Email interna: mantiene la suddivisione 40/40/20 come riferimento per il team.
     const msg = [
       "NEW GOLF CART QUOTE REQUEST",
       "=====================================",
@@ -95,9 +95,9 @@ function CustomerForm({onSubmit, totalPrice, model, cfg, lang="en", BATTERIES, M
       "PRICING:",
       "Base price: $"+(model?.price?.toLocaleString('en-US')||""),
       "Total: $"+totalPrice.toLocaleString('en-US'),
-      "35% on order: $"+payment1.toLocaleString('en-US'),
-      "35% on completion: $"+payment2.toLocaleString('en-US'),
-      "30% on delivery: $"+payment3.toLocaleString('en-US'),
+      "40% on order: $"+payment1.toLocaleString('en-US'),
+      "40% on completion: $"+payment2.toLocaleString('en-US'),
+      "20% on delivery: $"+payment3.toLocaleString('en-US'),
     ].join("\n");
 
     // Righe di configurazione tradotte nella lingua del cliente, per il solo
@@ -526,7 +526,8 @@ function ConfiguratorPage({ t, tName, S, C, setPage, step, setStep, cfg, setCfg,
         "Сколько мест будет у {name}?"
       )}</h1>
       <div style={S.grid3}>
-        {SEATS_OPTIONS.map(s=>{
+        {/* 12 posti disponibile solo sul Modello A; su B/C/D il massimo è 10 */}
+        {SEATS_OPTIONS.filter(s=>s.id!=="12" || cfg.model==="A").map(s=>{
           const extra = (cfg.model && SEAT_PRICE_EXTRA[cfg.model] && SEAT_PRICE_EXTRA[cfg.model][s.id]) || 0;
           return (
           <div key={s.id} style={S.card(cfg.seats===s.id)} onClick={()=>{upd("seats",s.id);upd("motor",defaultMotorFor(cfg.model,s.id));upd("battery",defaultBatteryFor(s.id));if(s.id!=="2+2"&&s.id!=="4+2"){setCfg(p=>({...p,optionals:p.optionals.filter(id=>id!=="rear-platform")}));}}}>

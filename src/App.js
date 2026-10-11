@@ -396,11 +396,11 @@ const RU_DICT = {
   "With your consent, our website uses Google Analytics to collect anonymous statistics on site usage, such as the pages visited, time spent on the site, and the general geographic location of visitors (country/region). This data is collected exclusively to understand how our website is used and to improve it, and is not sold, rented, or shared with third parties for marketing purposes. You can accept or decline this data collection at any time via the cookie banner shown on the site.":"С вашего согласия наш сайт использует Google Analytics для сбора анонимной статистики об использовании сайта, такой как посещённые страницы, время, проведённое на сайте, и общее географическое местоположение посетителей (страна/регион). Эти данные собираются исключительно для понимания того, как используется наш сайт, и для его улучшения; они не продаются, не сдаются в аренду и не передаются третьим лицам в маркетинговых целях. Вы можете в любой момент принять или отклонить сбор этих данных через баннер cookie, отображаемый на сайте.",
   "60V 100A — Lead-acid":"60В 100А — свинцово-кислотный",
   "72V 100A — Lead-acid":"72В 100А — свинцово-кислотный",
-  "Delivery takes approximately 90 days after the initial 35% payment. This is because each golf cart is custom-built according to your configuration.":"Доставка занимает примерно 90 дней после первого платежа в размере 35%. Это связано с тем, что каждый гольф-кар изготавливается индивидуально по вашей конфигурации.",
-  "Yes, modifications can be requested up to 7 days after the initial 35% payment.":"Да, изменения можно запросить в течение 7 дней после первого платежа в размере 35%.",
-  "No, the quote itself is not binding. After placing your order, you have a 14-day window before the initial 35% payment becomes binding, giving you time to confirm every detail of your custom golf cart.":"Нет, само предложение цены не является обязывающим. После оформления заказа у вас есть 14 дней, прежде чем первый платёж в размере 35% станет обязательным — это даёт время подтвердить все детали вашего индивидуального гольф-кара.",
+  "Delivery takes approximately 90 days after the initial 40% payment. This is because each golf cart is custom-built according to your configuration.":"Доставка занимает примерно 90 дней после первого платежа в размере 40%. Это связано с тем, что каждый гольф-кар изготавливается индивидуально по вашей конфигурации.",
+  "Yes, modifications can be requested up to 7 days after the initial 40% payment.":"Да, изменения можно запросить в течение 7 дней после первого платежа в размере 40%.",
+  "No, the quote itself is not binding. After placing your order, you have a 14-day window before the initial 40% payment becomes binding, giving you time to confirm every detail of your custom golf cart.":"Нет, само предложение цены не является обязывающим. После оформления заказа у вас есть 14 дней, прежде чем первый платёж в размере 40% станет обязательным — это даёт время подтвердить все детали вашего индивидуального гольф-кара.",
   "What happens if I cancel my order?":"Что произойдёт, если я отменю заказ?",
-  "If you cancel within 14 days of placing your order, no fee applies. After that period, once the initial 35% payment is binding, cancelling will retain 50% of that first payment as a cancellation fee.":"Если вы отмените заказ в течение 14 дней с момента оформления, штраф не взимается. По истечении этого срока, когда первый платёж в размере 35% становится обязательным, при отмене будет удержано 50% этого первого платежа в качестве штрафа за отмену.",
+  "If you cancel within 14 days of placing your order, no fee applies. After that period, once the initial 40% payment is binding, cancelling will retain 50% of that first payment as a cancellation fee.":"Если вы отмените заказ в течение 14 дней с момента оформления, штраф не взимается. По истечении этого срока, когда первый платёж в размере 40% становится обязательным, при отмене будет удержано 50% этого первого платежа в качестве штрафа за отмену.",
   "Price includes taxes and standard delivery in the Dominican Republic. Remote or difficult-access locations may require a delivery adjustment.":"Цена включает налоги и стандартную доставку по Доминиканской Республике. Отдалённые или труднодоступные места могут потребовать корректировки стоимости доставки.",
   "On Order":"При заказе",
   "On Completion":"При завершении",
@@ -947,11 +947,11 @@ const FR_DICT = {
   "With your consent, our website uses Google Analytics to collect anonymous statistics on site usage, such as the pages visited, time spent on the site, and the general geographic location of visitors (country/region). This data is collected exclusively to understand how our website is used and to improve it, and is not sold, rented, or shared with third parties for marketing purposes. You can accept or decline this data collection at any time via the cookie banner shown on the site.":"Avec votre consentement, notre site utilise Google Analytics pour collecter des statistiques anonymes sur l'utilisation du site, telles que les pages visitées, le temps passé sur le site et la localisation géographique générale des visiteurs (pays/région). Ces données sont collectées exclusivement pour comprendre comment notre site est utilisé et pour l'améliorer ; elles ne sont ni vendues, ni louées, ni partagées avec des tiers à des fins marketing. Vous pouvez accepter ou refuser cette collecte de données à tout moment via la bannière de cookies affichée sur le site.",
   "60V 100A — Lead-acid":"60V 100A — Plomb-acide",
   "72V 100A — Lead-acid":"72V 100A — Plomb-acide",
-  "Delivery takes approximately 90 days after the initial 35% payment. This is because each golf cart is custom-built according to your configuration.":"La livraison prend environ 90 jours après le premier paiement de 35 %. Cela s'explique par le fait que chaque voiturette est fabriquée sur mesure selon votre configuration.",
-  "Yes, modifications can be requested up to 7 days after the initial 35% payment.":"Oui, des modifications peuvent être demandées jusqu'à 7 jours après le premier paiement de 35 %.",
-  "No, the quote itself is not binding. After placing your order, you have a 14-day window before the initial 35% payment becomes binding, giving you time to confirm every detail of your custom golf cart.":"Non, le devis en lui-même n'est pas contraignant. Après avoir passé votre commande, vous disposez de 14 jours avant que le premier paiement de 35 % ne devienne contraignant, ce qui vous laisse le temps de confirmer chaque détail de votre voiturette personnalisée.",
+  "Delivery takes approximately 90 days after the initial 40% payment. This is because each golf cart is custom-built according to your configuration.":"La livraison prend environ 90 jours après le premier paiement de 40 %. Cela s'explique par le fait que chaque voiturette est fabriquée sur mesure selon votre configuration.",
+  "Yes, modifications can be requested up to 7 days after the initial 40% payment.":"Oui, des modifications peuvent être demandées jusqu'à 7 jours après le premier paiement de 40 %.",
+  "No, the quote itself is not binding. After placing your order, you have a 14-day window before the initial 40% payment becomes binding, giving you time to confirm every detail of your custom golf cart.":"Non, le devis en lui-même n'est pas contraignant. Après avoir passé votre commande, vous disposez de 14 jours avant que le premier paiement de 40 % ne devienne contraignant, ce qui vous laisse le temps de confirmer chaque détail de votre voiturette personnalisée.",
   "What happens if I cancel my order?":"Que se passe-t-il si j'annule ma commande ?",
-  "If you cancel within 14 days of placing your order, no fee applies. After that period, once the initial 35% payment is binding, cancelling will retain 50% of that first payment as a cancellation fee.":"Si vous annulez dans les 14 jours suivant votre commande, aucuns frais ne s'appliquent. Passé ce délai, une fois le premier paiement de 35 % devenu contraignant, l'annulation entraînera la retenue de 50 % de ce premier paiement à titre de frais d'annulation.",
+  "If you cancel within 14 days of placing your order, no fee applies. After that period, once the initial 40% payment is binding, cancelling will retain 50% of that first payment as a cancellation fee.":"Si vous annulez dans les 14 jours suivant votre commande, aucuns frais ne s'appliquent. Passé ce délai, une fois le premier paiement de 40 % devenu contraignant, l'annulation entraînera la retenue de 50 % de ce premier paiement à titre de frais d'annulation.",
   "Price includes taxes and standard delivery in the Dominican Republic. Remote or difficult-access locations may require a delivery adjustment.":"Le prix inclut les taxes et la livraison standard en République Dominicaine. Les zones reculées ou difficiles d'accès peuvent nécessiter un ajustement du coût de livraison.",
   "On Order":"À la commande",
   "On Completion":"À la finalisation",
@@ -1468,11 +1468,11 @@ const PL_DICT = {
   "With your consent, our website uses Google Analytics to collect anonymous statistics on site usage, such as the pages visited, time spent on the site, and the general geographic location of visitors (country/region). This data is collected exclusively to understand how our website is used and to improve it, and is not sold, rented, or shared with third parties for marketing purposes. You can accept or decline this data collection at any time via the cookie banner shown on the site.":"Za Twoją zgodą nasza strona korzysta z Google Analytics w celu zbierania anonimowych statystyk dotyczących korzystania ze strony, takich jak odwiedzone strony, czas spędzony na stronie oraz ogólna lokalizacja geograficzna odwiedzających (kraj/region). Dane te są zbierane wyłącznie w celu zrozumienia, jak korzysta się z naszej strony, i jej ulepszenia, i nie są sprzedawane, wynajmowane ani udostępniane osobom trzecim w celach marketingowych. Możesz zaakceptować lub odrzucić zbieranie tych danych w dowolnym momencie za pomocą banera cookie wyświetlanego na stronie.",
   "60V 100A — Lead-acid":"60V 100A — kwasowo-ołowiowy",
   "72V 100A — Lead-acid":"72V 100A — kwasowo-ołowiowy",
-  "Delivery takes approximately 90 days after the initial 35% payment. This is because each golf cart is custom-built according to your configuration.":"Dostawa trwa około 90 dni od pierwszej wpłaty w wysokości 35%. Wynika to z faktu, że każdy wózek golfowy jest budowany na zamówienie zgodnie z Twoją konfiguracją.",
-  "Yes, modifications can be requested up to 7 days after the initial 35% payment.":"Tak, zmiany można zgłaszać do 7 dni po pierwszej wpłacie w wysokości 35%.",
-  "No, the quote itself is not binding. After placing your order, you have a 14-day window before the initial 35% payment becomes binding, giving you time to confirm every detail of your custom golf cart.":"Nie, sama wycena nie jest wiążąca. Po złożeniu zamówienia masz 14 dni, zanim pierwsza wpłata w wysokości 35% stanie się wiążąca, co daje czas na potwierdzenie każdego szczegółu Twojego spersonalizowanego wózka golfowego.",
+  "Delivery takes approximately 90 days after the initial 40% payment. This is because each golf cart is custom-built according to your configuration.":"Dostawa trwa około 90 dni od pierwszej wpłaty w wysokości 40%. Wynika to z faktu, że każdy wózek golfowy jest budowany na zamówienie zgodnie z Twoją konfiguracją.",
+  "Yes, modifications can be requested up to 7 days after the initial 40% payment.":"Tak, zmiany można zgłaszać do 7 dni po pierwszej wpłacie w wysokości 40%.",
+  "No, the quote itself is not binding. After placing your order, you have a 14-day window before the initial 40% payment becomes binding, giving you time to confirm every detail of your custom golf cart.":"Nie, sama wycena nie jest wiążąca. Po złożeniu zamówienia masz 14 dni, zanim pierwsza wpłata w wysokości 40% stanie się wiążąca, co daje czas na potwierdzenie każdego szczegółu Twojego spersonalizowanego wózka golfowego.",
   "What happens if I cancel my order?":"Co się stanie, jeśli anuluję zamówienie?",
-  "If you cancel within 14 days of placing your order, no fee applies. After that period, once the initial 35% payment is binding, cancelling will retain 50% of that first payment as a cancellation fee.":"Jeśli anulujesz zamówienie w ciągu 14 dni od jego złożenia, nie zostanie naliczona żadna opłata. Po tym okresie, gdy pierwsza wpłata w wysokości 35% staje się wiążąca, anulowanie spowoduje zatrzymanie 50% tej pierwszej wpłaty jako opłaty za anulowanie.",
+  "If you cancel within 14 days of placing your order, no fee applies. After that period, once the initial 40% payment is binding, cancelling will retain 50% of that first payment as a cancellation fee.":"Jeśli anulujesz zamówienie w ciągu 14 dni od jego złożenia, nie zostanie naliczona żadna opłata. Po tym okresie, gdy pierwsza wpłata w wysokości 40% staje się wiążąca, anulowanie spowoduje zatrzymanie 50% tej pierwszej wpłaty jako opłaty za anulowanie.",
   "Price includes taxes and standard delivery in the Dominican Republic. Remote or difficult-access locations may require a delivery adjustment.":"Cena obejmuje podatki i standardową dostawę na terenie Dominikany. Odległe lub trudno dostępne lokalizacje mogą wymagać korekty kosztu dostawy.",
   "On Order":"Przy zamówieniu",
   "On Completion":"Po zakończeniu",
@@ -1667,16 +1667,16 @@ const PL_DICT = {
 function pl(en) { return PL_DICT[en] || en; }
 
 const MODELS = [
-  { id:"A", name:"Model A / Modelo A / Modello A", price:10350, tag:"Classic",imgKey:"modA",
+  { id:"A", name:"Model A / Modelo A / Modello A", price:11080, tag:"Classic",imgKey:"modA",
     desc:{it:"Classico ed elegante. Perfetto per campi da golf, resort e hotel.",es:"Clásico y elegante. Perfecto para campos de golf, resorts y hoteles.",en:"Classic and elegant. Perfect for golf courses, resorts and hotels."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"3.5kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"3.5kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"3.5kW AC"}}},
-  { id:"B", name:"Model B / Modelo B / Modello B", price:10575, tag:"Off-Road",imgKey:"modB",
+  { id:"B", name:"Model B / Modelo B / Modello B", price:11305, tag:"Off-Road",imgKey:"modB",
     desc:{it:"Off-road potente. Conquista ogni terreno.",es:"Todoterreno potente. Conquista cualquier terreno.",en:"Powerful off-road. Conquers any terrain."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"4kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"4kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"4kW AC"}}},
-  { id:"C", name:"Model C / Modelo C / Modello C", price:10682, tag:"Sport",imgKey:"modC",
+  { id:"C", name:"Model C / Modelo C / Modello C", price:11412, tag:"Sport",imgKey:"modC",
     desc:{it:"Sportivo e raffinato. Sedili in pelle e cerchi premium.",es:"Deportivo y refinado. Asientos de cuero y llantas premium.",en:"Sporty and refined. Leather seats and premium wheels."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"4kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"4kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"4kW AC"}}},
-  { id:"D", name:"Model D / Modelo D / Modello D", price:10793, tag:"Family",imgKey:"modD",
+  { id:"D", name:"Model D / Modelo D / Modello D", price:11523, tag:"Family",imgKey:"modD",
     desc:{it:"Massimo comfort per famiglie e gruppi.",es:"Máximo confort familiar. Espacio extra con portapalos de golf.",en:"Maximum family comfort. Extra space with golf bag holder."},
     specs:{it:{"Velocità":"30 km/h","Autonomia":"80-100 km","Pendenza":"25%","Motore":"4kW AC"},es:{"Velocidad":"30 km/h","Autonomía":"80-100 km","Pendiente":"25%","Motor":"4kW AC"},en:{"Speed":"30 km/h","Range":"80-100 km","Slope":"25%","Motor":"4kW AC"}}},
 ];
@@ -1686,6 +1686,10 @@ const SEATS_OPTIONS = [
   {id:"2+2",it:"2+2 Posti",es:"2+2 Plazas",en:"2+2 Seats",imgKey:"mod2p2",descIt:"Con sedile posteriore",descEs:"Con asiento trasero",descEn:"With rear seat"},
   {id:"4",it:"4 Posti",es:"4 Plazas",en:"4 Seats",imgKey:"seat4p",descIt:"Ideale per famiglie",descEs:"Ideal para familias",descEn:"Ideal for families"},
   {id:"4+2",it:"4+2 Posti",es:"4+2 Plazas",en:"4+2 Seats",imgKey:"mod4p2",descIt:"Spazio extra posteriore",descEs:"Espacio extra trasero",descEn:"Extra rear space"},
+  {id:"6",it:"6 Posti",es:"6 Plazas",en:"6 Seats",imgKey:null,descIt:"Su richiesta",descEs:"Bajo pedido",descEn:"On request"},
+  {id:"8",it:"8 Posti",es:"8 Plazas",en:"8 Seats",imgKey:null,descIt:"Su richiesta",descEs:"Bajo pedido",descEn:"On request"},
+  {id:"10",it:"10 Posti",es:"10 Plazas",en:"10 Seats",imgKey:null,descIt:"Su richiesta",descEs:"Bajo pedido",descEn:"On request"},
+  {id:"12",it:"12 Posti",es:"12 Plazas",en:"12 Seats",imgKey:null,descIt:"Su richiesta",descEs:"Bajo pedido",descEn:"On request"},
   {id:"other",it:"Altre sedute",es:"Otras plazas",en:"Other Seats",imgKey:null,descIt:"Su richiesta",descEs:"Bajo pedido",descEn:"On request"},
 ];
 const SEAT_PRICE_EXTRA = {
@@ -1762,6 +1766,7 @@ const MOTORS = [
   {id:"3.5kw",it:"3.5 kW",es:"3.5 kW",en:"3.5 kW",descIt:"Efficiente e silenzioso",descEs:"Eficiente y silencioso",descEn:"Efficient and silent"},
   {id:"4kw",it:"4 kW",es:"4 kW",en:"4 kW",descIt:"Equilibrio perfetto",descEs:"Equilibrio perfecto",descEn:"Perfect balance"},
   {id:"5kw",it:"5 kW",es:"5 kW",en:"5 kW",descIt:"Massima potenza",descEs:"Máxima potencia",descEn:"Maximum power"},
+  {id:"7.5kw",it:"7.5 kW",es:"7.5 kW",en:"7.5 kW",descIt:"Potenza extra per grandi capacità",descEs:"Potencia extra para gran capacidad",descEn:"Extra power for large capacity"},
 ];
 
 const SEAT_TYPES = [
@@ -2611,16 +2616,30 @@ export default function App() {
     try { localStorage.removeItem(DRAFT_KEY); } catch(e) {}
   };
 
+  // Posti da 6 a 12 sono ordinabili solo su richiesta (nessuna foto, prezzo "Su
+  // Richiesta"), ma il motore di serie assegnato di default segue comunque la
+  // stessa logica delle altre configurazioni.
   const defaultMotorFor = (mdl, seatsId) => {
     if(seatsId === "other") return "5kw";
-    if(seatsId === "4" || seatsId === "4+2") return "4kw";
-    if(seatsId === "2") return mdl==="A" ? "3.5kw" : "4kw";
+    if(mdl === "A") {
+      if(seatsId === "2") return "3.5kw";
+      if(seatsId === "2+2" || seatsId === "4" || seatsId === "4+2") return "4kw";
+      if(seatsId === "6" || seatsId === "8" || seatsId === "10" || seatsId === "12") return "5kw";
+      return "4kw";
+    }
+    // Modelli B, C, D
+    if(seatsId === "6" || seatsId === "8" || seatsId === "10") return "5kw";
     return "4kw";
   };
   const motorPrice = (mdl, seatsId, motorId) => {
     if(motorId === "3.5kw") return 0;
     if(motorId === "4kw") return (mdl==="A" && seatsId==="2") ? 60 : 0;
-    if(motorId === "5kw") return seatsId==="other" ? 0 : 270;
+    if(motorId === "5kw") {
+      // Gratuito quando è già il motore di serie per quella configurazione posti.
+      const fivekwIncluded = mdl==="A" ? ["6","8","10","12"] : ["6","8","10"];
+      return (seatsId==="other" || fivekwIncluded.includes(seatsId)) ? 0 : 250;
+    }
+    if(motorId === "7.5kw") return 550;
     return 0;
   };
   const defaultBatteryFor = (seatsId) => "48v150a-litio";
