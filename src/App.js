@@ -3719,7 +3719,10 @@ export default function App() {
           </h3>
 
           <div style={{color:C.goldLight,fontWeight:800,fontSize:24,textAlign:"center",marginBottom:20}}>
-            ${readyPrice.toLocaleString('en-US')} USD
+            <span style={{textDecoration:"line-through",color:"#777"}}>${readyPrice.toLocaleString('en-US')} USD</span>
+            <span style={{color:C.red,fontWeight:900,fontSize:16,letterSpacing:1,marginLeft:12,textDecoration:"none",display:"inline-block"}}>
+              {t6("SOLD","VENDIDO","VENDUTO","VENDU","SPRZEDANE","ПРОДАНО")}
+            </span>
           </div>
 
           <p style={{color:C.muted,fontSize:14,lineHeight:1.8,marginBottom:20,maxWidth:640,marginLeft:"auto",marginRight:"auto",textAlign:"center"}}>
