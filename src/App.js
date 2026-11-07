@@ -14,6 +14,7 @@ const GolfCartsDRPage = lazy(() => import("./GolfCartsDRPage"));
 const GolfCartsBayahibePage = lazy(() => import("./GolfCartsBayahibePage"));
 const GuidedAssistantPage = lazy(() => import("./GuidedAssistantPage"));
 const ConfiguratorPage = lazy(() => import("./ConfiguratorPage"));
+const BlogPage = lazy(() => import("./BlogPage"));
 
 
 const IMGS = {"modA": "/images/foto-modello-a1.jpg", "modB": "/images/foto-modello-b1.jpg", "homeImg": "/images/foto-home-page.jpg", "modC": "/images/foto-modello-c1.jpg", "modD": "/images/foto-modello-d1.jpg", "mod2p": "/images/foto-2-posti.jpg", "mod2p2": "/images/foto-2-2-posti.jpg", "mod4p2": "/images/foto-4-2-posti.jpg", "solar": "/images/Pannello%20Fotovoltaico.jpg", "opt_rain": "/images/Copertura%20Anti-Pioggia.jpg", "opt_cover": "/images/Cover%20di%20Protezione.jpg", "opt_sun": "/images/Tende%20Parasole.jpg", "opt_mirror": "/images/Specchietti%20con%20LED.jpg", "opt_spots": "/images/Faretti%20LED%20sul%20Tetto.jpg", "opt_led": "/images/Strisicia%20LED%20Sottotetto.jpg", "opt_emerg": "/images/Kit%20Luci%20Emergenza.jpg", "opt_disp": "/images/Display%20Touch%20Screen.jpg", "opt_stereo": "/images/Stereo%20Bluetooth.jpg", "opt_table": "/images/Tavolino%20Posteriore.jpg", "opt_frtlt": "/images/Faro%20LED%20Frontale.jpg", "opt_rearlt": "/images/Luci%20Targa%20%2B%20Stop%20LED.jpg", "opt_rseat": "/images/Sedile%20con%20Cintura.jpg", "opt_rplat": "/images/Pianale%20Ribaltabile.jpg", "opt_storecov": "/images/Vano%20Bagagli.jpg", "opt_ball": "/images/Porta%20Palline%20Golf.jpg", "opt_fbask": "/images/Cestello%20Frontale.jpg", "opt_trunk": "/images/Baule%20Posteriore.jpg", "opt_wiper": "/images/Tergicristallo.jpg", "opt_steps": "/images/Pedana%20in%20Alluminio.jpg", "opt_tow": "/images/Gancio%20Traino.jpg", "opt_water": "/images/Porta%20Bottiglie.jpg", "opt_pedals": "/images/Pedane%20Posteriori.jpg", "opt_cargo": "/images/Cassone%20da%20lavoro.jpg", "opt_ropen": "/images/Pianale%20con%20Corrimano.jpg", "opt_bull": "/images/Bull%20Bar%20Frontale.jpg", "opt_speak": "/images/Speaker%20Marino%20LED.jpg", "opt_cdash": "/images/Pannello%20Carbon%20Fiber.jpg", "opt_vdisp": "/images/Display%20Touch%20Verticale.jpg", "seat_std": "/images/Sedile%20Standard.jpg", "seat_sport": "/images/Sedile%20Sport.jpg", "seat_prem": "/images/Sedile%20Premium%20Imbottito.jpg", "seat_head": "/images/Premium%20con%20Poggiatesta.jpg", "tire_g10": "/images/PneumaticiDaErba10pollici.jpeg", "tire_g12": "/images/Da%20Erba%2012%27%27.jpg", "tire_g14": "/images/Da%20Erba%2014%27%27.jpg", "tire_or12": "/images/Off-Road%2012%27%27.jpg", "tire_or14": "/images/Off-Road%2014%27%27.jpg", "steer_std": "/images/Volante%20Standard.jpg", "steer_sp": "/images/Volante%20Sportivo.jpg", "steer_cf": "/images/Volante%20Carbon%20Fiber.jpg", "wind_std": "/images/Parabrezza%20Standard.jpg", "wind_ft": "/images/Pieghevole%20Trasparente.jpg", "wind_fb": "/images/Pieghevole%20Marrone.jpg", "wind_tmp": "/images/Parabrezza%20Temprato.jpg", "seat4p": "/images/foto-4-posti.jpg", "readyVYC1a": "/images/golf%20cart%20rosso/golf%20cart%20rosso%201a.jpg", "readyVYC1": "/images/golf%20cart%20rosso/golf%20cart%20rosso1.jpg", };
@@ -2034,7 +2035,7 @@ function ServiceConfirm({serviceNote, goBack, goHome, lang="en"}) {
 
 // ── CUSTOMER FORM COMPONENT (inline) ──
 export default function App() {
-  const VALID_PAGES = ["home","about","configurator","service","maintenance","contact","faq","privacy","model-a","model-b","model-c","model-d","choose-your-golf-cart","golf-carts-dominican-republic","golf-carts-bayahibe","guias","como-elegir-carrito-de-golf-republica-dominicana","bateria-litio-vs-plomo-carrito-de-golf","48v-vs-72v-carrito-de-golf","carrito-de-golf-2-4-o-6-plazas","que-revisar-antes-de-comprar-carrito-de-golf","mantenimiento-carrito-de-golf-cerca-del-mar","chooseMode","readyModels"];
+  const VALID_PAGES = ["home","about","configurator","service","maintenance","contact","faq","privacy","model-a","model-b","model-c","model-d","choose-your-golf-cart","golf-carts-dominican-republic","golf-carts-bayahibe","guias","como-elegir-carrito-de-golf-republica-dominicana","bateria-litio-vs-plomo-carrito-de-golf","48v-vs-72v-carrito-de-golf","carrito-de-golf-2-4-o-6-plazas","que-revisar-antes-de-comprar-carrito-de-golf","mantenimiento-carrito-de-golf-cerca-del-mar","chooseMode","readyModels","blog"];
   const pathToPage = (pathname) => {
     const clean = pathname.replace(/^\/+|\/+$/g, "");
     if (!clean) return "home";
@@ -2399,6 +2400,24 @@ export default function App() {
           "Des guides pratiques pour vous aider à choisir, configurer et mieux comprendre les voiturettes de golf électriques en République Dominicaine.",
           "Praktyczne poradniki, które pomogą Ci wybrać, skonfigurować i lepiej poznać elektryczne wózki golfowe na Dominikanie.",
           "Практические гайды, которые помогут выбрать, настроить и лучше понять электрические гольф-кары в Доминиканской Республике."
+        ),
+      },
+      "blog": {
+        title: t6(
+          "Golf Cart Blog | TAAAC Solutions Dominican Republic",
+          "Blog de Carritos de Golf | TAAAC Solutions República Dominicana",
+          "Blog sui Golf Cart | TAAAC Solutions Repubblica Dominicana",
+          "Blog Golf Cart | TAAAC Solutions République Dominicaine",
+          "Blog o Wózkach Golfowych | TAAAC Solutions Dominikana",
+          "Блог о гольф-карах | TAAAC Solutions Доминикана"
+        ),
+        description: t6(
+          "News, tips and insights on electric golf carts in Bayahibe, Dominicus and the Dominican Republic from TAAAC Solutions.",
+          "Noticias, consejos y novedades sobre carritos de golf eléctricos en Bayahibe, Dominicus y República Dominicana, por TAAAC Solutions.",
+          "Novità, consigli e approfondimenti sui golf cart elettrici a Bayahibe, Dominicus e in Repubblica Dominicana, a cura di TAAAC Solutions.",
+          "Actualités, conseils et analyses sur les voiturettes de golf électriques à Bayahibe, Dominicus et en République Dominicaine, par TAAAC Solutions.",
+          "Aktualności, porady i ciekawostki o elektrycznych wózkach golfowych w Bayahibe, Dominicus i na Dominikanie od TAAAC Solutions.",
+          "Новости, советы и материалы об электрических гольф-карах в Bayahibe, Dominicus и Доминиканской Республике от TAAAC Solutions."
         ),
       },
       "como-elegir-carrito-de-golf-republica-dominicana": {
@@ -4003,6 +4022,11 @@ export default function App() {
                       ))}
                     </div>
                   )}
+
+                  <a href="/blog" onClick={(e)=>{navigateTo("/blog", e);setMenuOpen(false);setGuidesOpen(false);}}
+                    style={{display:"block",color:page==="blog"?"#000":C.gold,background:page==="blog"?"linear-gradient(135deg,#C9A84C,#E2C07A)":"transparent",textDecoration:"none",fontWeight:700,fontSize:13,padding:"8px 14px",borderRadius:7,cursor:"pointer"}}>
+                    {t6("Blog","Blog","Blog","Blog","Blog","Блог")}
+                  </a>
                 </div>
               </>
             )}
@@ -4107,6 +4131,15 @@ export default function App() {
         </Suspense>
       )}
       {page==="guias"&&<GuidesPage/>}
+      {page==="blog"&&(
+        <Suspense fallback={
+          <div style={{minHeight:"40vh",display:"flex",alignItems:"center",justifyContent:"center",color:"#888"}}>
+            Loading...
+          </div>
+        }>
+          <BlogPage t6={t6} S={S} C={C} navigateTo={navigateTo} />
+        </Suspense>
+      )}
       {page==="como-elegir-carrito-de-golf-republica-dominicana"&&(
         <Suspense fallback={
           <div style={{minHeight:"40vh",display:"flex",alignItems:"center",justifyContent:"center",color:"#888"}}>
@@ -4224,6 +4257,9 @@ export default function App() {
           <span style={{color:"#555",fontSize:10,cursor:"pointer",textDecoration:"underline"}} onClick={()=>setPage("privacy")}>
             {t("Privacy Policy","Política de Privacidad","Informativa Privacy")}
           </span>
+          <a href="/blog" onClick={(e)=>navigateTo("/blog", e)} style={{color:"#555",fontSize:10,cursor:"pointer",textDecoration:"underline"}}>
+            {t6("Blog","Blog","Blog","Blog","Blog","Блог")}
+          </a>
           <a href="https://www.instagram.com/taaac.solutions" target="_blank" rel="noopener noreferrer" style={{display:"flex",alignItems:"center",color:"#555"}} title="Instagram">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="#555"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
           </a>
