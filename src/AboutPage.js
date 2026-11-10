@@ -5,7 +5,7 @@ function AboutPage({ t, S, C, setPage, lang }) {
     it: [
       "TUTTO È INIZIATO SU UNA SPIAGGIA.",
       "Eravamo in Repubblica Dominicana, davanti al mare, con una Presidente ghiacciata tra le mani. Quasi congelata, come si beve qui.",
-      "Noi siamo Jonathan e Samuele, amici da oltre vent'anni.",
+      "Siamo due amici da oltre vent'anni.",
       "Quel giorno parlavamo del futuro e del paradiso che avevamo davanti agli occhi. Ci siamo chiesti se fosse possibile costruire qualcosa di nostro cercando, allo stesso tempo, un maggiore equilibrio con ciò che ci circondava.",
       "Meno rumore. Meno inquinamento. Un uso più intelligente dell'energia.",
       "La nostra passione per i golf cart e l'elettronica ha fatto il resto.",
@@ -40,7 +40,7 @@ function AboutPage({ t, S, C, setPage, lang }) {
     en: [
       "IT ALL BEGAN ON A BEACH.",
       "We were in the Dominican Republic, facing the sea, an ice-cold Presidente in our hands. That's how it's meant to be enjoyed here.",
-      "We're Jonathan and Samuele, friends for over twenty years.",
+      "We're two friends who have known each other for over twenty years.",
       "That day we talked about the future, and about the paradise right in front of us. We wondered if we could build something of our own while respecting the place that was giving us so much.",
       "Less noise. Less pollution. Energy used more intelligently.",
       "Our passion for golf carts and electronics did the rest.",
@@ -75,7 +75,7 @@ function AboutPage({ t, S, C, setPage, lang }) {
     es: [
       "TODO EMPEZÓ EN UNA PLAYA.",
       "Estábamos en República Dominicana, frente al mar, con una Presidente bien fría en las manos. Casi congelada, como se toma aquí.",
-      "Somos Jonathan y Samuele, amigos desde hace más de veinte años.",
+      "Somos dos amigos desde hace más de veinte años.",
       "Ese día hablábamos del futuro y del paraíso que teníamos delante. Nos preguntamos si era posible construir algo propio, cuidando al mismo tiempo el lugar que tanto nos estaba dando.",
       "Menos ruido. Menos contaminación. Energía usada con más inteligencia.",
       "Nuestra pasión por los golf carts y la electrónica hizo el resto.",
@@ -110,7 +110,7 @@ function AboutPage({ t, S, C, setPage, lang }) {
     fr: [
       "TOUT A COMMENCÉ SUR UNE PLAGE.",
       "Nous étions en République Dominicaine, face à la mer, une Presidente glacée à la main. C'est ainsi qu'on la déguste ici.",
-      "Nous sommes Jonathan et Samuele, amis depuis plus de vingt ans.",
+      "Nous sommes deux amis depuis plus de vingt ans.",
       "Ce jour-là, nous parlions de l'avenir et du paradis qui s'offrait à nous. Nous nous sommes demandé s'il était possible de construire quelque chose à nous, tout en respectant davantage ce qui nous entourait.",
       "Moins de bruit. Moins de pollution. Une énergie utilisée plus intelligemment.",
       "Notre passion pour les golf carts et l'électronique a fait le reste.",
@@ -145,7 +145,7 @@ function AboutPage({ t, S, C, setPage, lang }) {
     pl: [
       "WSZYSTKO ZACZĘŁO SIĘ NA PLAŻY.",
       "Byliśmy w Dominikanie, przed morzem, z lodowato zimną Presidente w dłoniach. Tak się ją tu pije.",
-      "Jesteśmy Jonathan i Samuele, przyjaciółmi od ponad dwudziestu lat.",
+      "Jesteśmy dwoma przyjaciółmi od ponad dwudziestu lat.",
       "Tego dnia rozmawialiśmy o przyszłości i o raju, który mieliśmy przed oczami. Zastanawialiśmy się, czy można zbudować coś swojego, jednocześnie bardziej szanując miejsce, które nam tyle dawało.",
       "Mniej hałasu. Mniej zanieczyszczeń. Mądrzejsze wykorzystanie energii.",
       "Nasza pasja do wózków golfowych i elektroniki zrobiła resztę.",
@@ -180,7 +180,7 @@ function AboutPage({ t, S, C, setPage, lang }) {
     ru: [
       "ВСЁ НАЧАЛОСЬ НА ПЛЯЖЕ.",
       "Мы были в Доминиканской Республике, у моря, с ледяной Presidente в руках. Именно так её пьют здесь.",
-      "Мы — Джонатан и Самуэле, друзья уже больше двадцати лет.",
+      "Мы — два друга уже больше двадцати лет.",
       "В тот день мы говорили о будущем и о рае, который был перед нашими глазами. Мы задались вопросом: можно ли построить что-то своё, при этом бережнее относясь к месту, которое дало нам так много?",
       "Меньше шума. Меньше загрязнения. Более разумное использование энергии.",
       "Наша страсть к гольф-карам и электронике сделала остальное.",

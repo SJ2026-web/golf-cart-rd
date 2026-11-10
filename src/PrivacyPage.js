@@ -6,9 +6,9 @@ function PrivacyPage({ t, S, C, setPage }) {
       en: "1. Data Controller",
       es: "1. Responsable del Tratamiento",
       it: "1. Titolare del Trattamento",
-      body_en: "TAAAC Solutions is the commercial name used by Samuele Maggio for the activity. Samuele Maggio is the Data Controller responsible for the processing of personal data collected through taaac.solutions and TAAAC Solutions contact forms. Contact: info@taaac.solutions",
-      body_es: "TAAAC Solutions es el nombre comercial utilizado por Samuele Maggio para la actividad. Samuele Maggio es el Responsable del Tratamiento de los datos personales recopilados a través de taaac.solutions y de los formularios de contacto de TAAAC Solutions. Contacto: info@taaac.solutions",
-      body_it: "TAAAC Solutions è il nome commerciale utilizzato da Samuele Maggio per l'attività. Samuele Maggio è il Titolare del Trattamento dei dati personali raccolti tramite taaac.solutions e i moduli di contatto di TAAAC Solutions. Contatto: info@taaac.solutions",
+      body_en: "TAAAC Solutions is the Data Controller responsible for the processing of personal data collected through taaac.solutions and TAAAC Solutions contact forms. Contact: info@taaac.solutions",
+      body_es: "TAAAC Solutions es el Responsable del Tratamiento de los datos personales recopilados a través de taaac.solutions y de los formularios de contacto de TAAAC Solutions. Contacto: info@taaac.solutions",
+      body_it: "Il Titolare del Trattamento dei dati personali raccolti tramite taaac.solutions e i moduli di contatto di TAAAC Solutions è TAAAC Solutions. Contatto: info@taaac.solutions",
     },
     {
       en: "2. Data We Collect",
